@@ -51,7 +51,7 @@ void PIN_MANAGER_Initialize(void)
     */
     TRISA = 0xFF;
     TRISB = 0xFE;
-    TRISC = 0xFF;
+    TRISC = 0xBF;
     TRISD = 0xFF;
     TRISE = 0xF;
 
@@ -60,7 +60,7 @@ void PIN_MANAGER_Initialize(void)
     */
     ANSELA = 0xFF;
     ANSELB = 0xFE;
-    ANSELC = 0xFF;
+    ANSELC = 0x3F;
     ANSELD = 0xFF;
     ANSELE = 0x7;
 
@@ -102,6 +102,8 @@ void PIN_MANAGER_Initialize(void)
     /**
     PPS registers
     */
+    RX1PPS = 0x17; //RC7->EUSART1:RX1;
+    RC6PPS = 0x0E;  //RC6->EUSART1:TX1;
 
     /**
     APFCON registers

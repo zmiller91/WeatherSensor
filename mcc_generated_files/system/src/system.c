@@ -38,6 +38,7 @@ void SYSTEM_Initialize(void)
 {
     CLOCK_Initialize();
     PIN_MANAGER_Initialize();
+    EUSART1_Initialize();
     INTERRUPT_Initialize();
 }
 

@@ -1,23 +1,47 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"51 ./mcc_generated_files/system/system.h
-[; ;./mcc_generated_files/system/system.h: 51: void SYSTEM_Initialize(void);
+"52 ./mcc_generated_files/system/../uart/../system/system.h
+[; ;./mcc_generated_files/system/../uart/../system/system.h: 52: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+[v F8330 `(v ~T0 @X0 1 tf ]
+"137 ./mcc_generated_files/system/../uart/eusart1.h
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 137: __attribute__((inline)) void EUSART1_Enable(void);
+[v _EUSART1_Enable `TF8330 ~T0 @X0 0 e ]
+[v F8334 `(v ~T0 @X0 1 tf ]
+"154
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 154: __attribute__((inline)) void EUSART1_TransmitEnable(void);
+[v _EUSART1_TransmitEnable `TF8334 ~T0 @X0 0 e ]
+[v F8338 `(v ~T0 @X0 1 tf ]
+"171
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 171: __attribute__((inline)) void EUSART1_ReceiveEnable(void);
+[v _EUSART1_ReceiveEnable `TF8338 ~T0 @X0 0 e ]
+"273
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 273: uint8_t EUSART1_Read(void);
+[v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
 "1086 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1086:     struct {
-[s S55 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S55 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+[s S56 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S56 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
 "1085
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1085: typedef union {
-[u S54 `S55 1 ]
-[n S54 . . ]
+[u S55 `S56 1 ]
+[n S55 . . ]
 "1097
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1097: extern volatile LATBbits_t LATBbits __attribute__((address(0x019)));
-[v _LATBbits `VS54 ~T0 @X0 0 e@25 ]
-[v F192 `(v ~T0 @X0 1 tf1`ul ]
+[v _LATBbits `VS55 ~T0 @X0 0 e@25 ]
+"283 ./mcc_generated_files/system/../uart/eusart1.h
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 283: void EUSART1_Write(uint8_t txData);
+[v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
+[v F359 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
-[v __delay `JF192 ~T0 @X0 0 e ]
+[v __delay `JF359 ~T0 @X0 0 e ]
 [p i __delay ]
+"255 ./mcc_generated_files/system/../uart/eusart1.h
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 255: _Bool EUSART1_IsTxDone(void);
+[v _EUSART1_IsTxDone `(a ~T0 @X0 0 ef ]
+"54 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h: 54: size_t strlen (const char *);
+[v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
 "110 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1162,40 +1186,137 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 22220: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"41 main.c
-[; ;main.c: 41: int main(void)
+"51 main.c
+[; ;main.c: 51: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"42
-[; ;main.c: 42: {
+"52
+[; ;main.c: 52: {
 {
 [e :U _main ]
 [f ]
-"43
-[; ;main.c: 43:     SYSTEM_Initialize();
+"53
+[; ;main.c: 53:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"62
-[; ;main.c: 62:     while(1)
-[e :U 1082 ]
-"63
-[; ;main.c: 63:     {
+"54
+[; ;main.c: 54:     EUSART1_Enable();
+[e ( _EUSART1_Enable ..  ]
+"55
+[; ;main.c: 55:     EUSART1_TransmitEnable();
+[e ( _EUSART1_TransmitEnable ..  ]
+"56
+[; ;main.c: 56:     EUSART1_ReceiveEnable();
+[e ( _EUSART1_ReceiveEnable ..  ]
+[v F8381 `uc ~T0 @X0 -> 14 `i s ]
+[i F8381
+:U ..
+"73
+[; ;main.c: 73:     char msg[] = "Hello World\r\n";
+-> 72 `c
+-> 101 `c
+-> 108 `c
+-> 108 `c
+-> 111 `c
+-> 32 `c
+-> 87 `c
+-> 111 `c
+-> 114 `c
+-> 108 `c
+-> 100 `c
+-> 13 `c
+-> 10 `c
+-> 0 `c
+..
+]
+[v _msg `uc ~T0 @X0 -> 14 `i a ]
+[e = _msg F8381 ]
+"74
+[; ;main.c: 74:     uint8_t lastr = ((void*)0);
+[v _lastr `uc ~T0 @X0 1 a ]
+[e = _lastr -> -> -> 0 `i `*v `uc ]
+"75
+[; ;main.c: 75:     while(1)
+[e :U 1088 ]
+"76
+[; ;main.c: 76:     {
 {
-"64
-[; ;main.c: 64:         do { LATBbits.LATB0 = ~LATBbits.LATB0; } while(0);
-[e :U 1086 ]
+"84
+[; ;main.c: 84:         uint8_t rec = EUSART1_Read();
+[v _rec `uc ~T0 @X0 1 a ]
+[e = _rec ( _EUSART1_Read ..  ]
+"85
+[; ;main.c: 85:         if(rec == 'H') {
+[e $ ! == -> _rec `ui -> 72 `ui 1090  ]
 {
-[e = . . _LATBbits 0 0 -> ~ -> . . _LATBbits 0 0 `i `uc ]
+"86
+[; ;main.c: 86:             do { LATBbits.LATB0 = 1; } while(0);
+[e :U 1093 ]
+{
+[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 1085 ]
-"65
-[; ;main.c: 65:         _delay((unsigned long)((1000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"66
-[; ;main.c: 66:     }
+[e :U 1092 ]
+"87
+[; ;main.c: 87:         }
 }
-[e :U 1081 ]
-[e $U 1082  ]
-[e :U 1083 ]
-"67
-[; ;main.c: 67: }
-[e :UE 1080 ]
+[e :U 1090 ]
+"89
+[; ;main.c: 89:         if(rec == 'L') {
+[e $ ! == -> _rec `ui -> 76 `ui 1094  ]
+{
+"90
+[; ;main.c: 90:             do { LATBbits.LATB0 = 0; } while(0);
+[e :U 1097 ]
+{
+[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 1096 ]
+"91
+[; ;main.c: 91:         }
+}
+[e :U 1094 ]
+"93
+[; ;main.c: 93:         if(rec == 'R') {
+[e $ ! == -> _rec `ui -> 82 `ui 1098  ]
+{
+"94
+[; ;main.c: 94:             for(uint8_t i = 0; i < strlen(msg); i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $U 1102  ]
+[e :U 1099 ]
+{
+"95
+[; ;main.c: 95:                 EUSART1_Write(msg[i]);
+[e ( _EUSART1_Write (1 -> *U + &U _msg * -> _i `ux -> -> # *U &U _msg `ui `ux `uc ]
+"96
+[; ;main.c: 96:                 while(!EUSART1_IsTxDone()){_delay((unsigned long)((1)*(1000000/4000.0)));}
+[e $U 1103  ]
+[e :U 1104 ]
+{
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+}
+[e :U 1103 ]
+[e $ ! != -> ( _EUSART1_IsTxDone ..  `i -> 0 `i 1104  ]
+[e :U 1105 ]
+"97
+[; ;main.c: 97:             }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1102 ]
+[e $ < -> _i `ui ( _strlen (1 -> &U _msg `*Cuc 1099  ]
+[e :U 1100 ]
+}
+"98
+[; ;main.c: 98:         }
+}
+[e :U 1098 ]
+"101
+[; ;main.c: 101:     }
+}
+[e :U 1087 ]
+[e $U 1088  ]
+[e :U 1089 ]
+"102
+[; ;main.c: 102: }
+[e :UE 1086 ]
 }

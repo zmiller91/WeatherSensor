@@ -30,7 +30,8 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
- 
+#include <stdint.h>
+#include <string.h>
 #include <xc.h>
 #include "mcc_generated_files/system/system.h"
 
@@ -50,7 +51,9 @@
 int main(void)
 {
     SYSTEM_Initialize();
-
+    EUSART1_Enable();
+    EUSART1_TransmitEnable();
+    EUSART1_ReceiveEnable();
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts 
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts 
     // Use the following macros to: 
@@ -67,10 +70,25 @@ int main(void)
     // Disable the Peripheral Interrupts 
     //INTERRUPT_PeripheralInterruptDisable(); 
 
-
+    char msg[] = "Hello World\r\n";
+    uint8_t lastr = NULL;
     while(1)
     {
-        LED_Toggle();
-        __delay_ms(1000);
+        
+        uint8_t rec = EUSART1_Read();
+        if(rec == 'H') {
+            LED_SetHigh();
+        }
+        
+        if(rec == 'L') {
+            LED_SetLow();
+        }
+        
+        if(rec == 'R') {
+            for(uint8_t i = 0; i < strlen(msg); i++) {
+                EUSART1_Write(msg[i]);
+                while(!EUSART1_IsTxDone()){__delay_ms(1);}
+            }
+        }
     }    
 }
