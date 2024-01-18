@@ -11,40 +11,37 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$dist/default/debug\Third.X.debug.o
-cinit CODE 0 16 16 18 2 1
-text1 CODE 0 156 156 17 2 1
-text2 CODE 0 17B 17B D 2 1
-text3 CODE 0 93 93 4D 2 1
-text4 CODE 0 188 188 B 2 1
-text5 CODE 0 1B9 1B9 5 2 1
-text6 CODE 0 13A 13A 1C 2 1
-text7 CODE 0 193 193 B 2 1
-text8 CODE 0 19E 19E B 2 1
-text9 CODE 0 1A9 1A9 A 2 1
-text10 CODE 0 1BE 1BE 4 2 1
-text11 CODE 0 1CA 1CA 3 2 1
-text12 CODE 0 1CD 1CD 3 2 1
-text13 CODE 0 110 110 2A 2 1
-text14 CODE 0 1C2 1C2 4 2 1
-text15 CODE 0 1D3 1D3 1 2 1
-text16 CODE 0 1C6 1C6 4 2 1
-text17 CODE 0 1D0 1D0 3 2 1
-text19 CODE 0 1D4 1D4 1 2 1
-maintext CODE 0 2E 2E 65 2 1
-cstackCOMMON COMMON 1 70 70 7 1 1
-cstackBANK0 BANK0 1 20 20 10 1 1
-inittext CODE 0 1B3 1B3 6 2 1
-stringtext1 STRCODE 0 E0 E0 30 2 1
-intentry CODE 0 4 4 10 2 1
-bssBANK0 BANK0 1 3E 3E 2 1 1
-idataBANK0 CODE 0 16D 16D E 2 1
-dataBANK0 BANK0 1 30 30 E 1 1
-bssCOMMON COMMON 1 77 77 6 1 1
-config CONFIG 4 8007 8007 5 2 1
-$C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_15.o
+$C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_20.o
+heap HEAP 7 20A0 20A0 750 1 1
 reset_vec CODE 0 0 0 2 2 1
 end_init CODE 0 14 14 2 2 1
+config CONFIG 4 8007 8007 5 2 1
+$dist/default/debug\Third.X.debug.o
+cinit CODE 0 16 16 C 2 1
+text1 CODE 0 376 376 10 2 1
+text2 CODE 0 335 335 24 2 1
+text3 CODE 0 F1 F1 A9 2 1
+text4 CODE 0 20D 20D 5D 2 1
+text5 CODE 0 3CC 3CC 1 2 1
+text6 CODE 0 26A 26A 4E 2 1
+text7 CODE 0 19A 19A 73 2 1
+text8 CODE 0 386 386 D 2 1
+text9 CODE 0 2B8 2B8 4D 2 1
+text10 CODE 0 3AB 3AB B 2 1
+text11 CODE 0 3C6 3C6 6 2 1
+text12 CODE 0 359 359 1D 2 1
+text13 CODE 0 393 393 C 2 1
+text14 CODE 0 39F 39F C 2 1
+text15 CODE 0 3B6 3B6 A 2 1
+text17 CODE 0 3CD 3CD 1 2 1
+maintext CODE 0 22 22 CF 2 1
+cstackCOMMON COMMON 1 70 70 E 1 1
+cstackBANK0 BANK0 1 50 50 19 1 1
+cstackBANK1 BANK1 1 A0 A0 50 1 1
+stringtext1 STRCODE 0 305 305 30 2 1
+intentry CODE 0 4 4 10 2 1
+bssBANK0 BANK0 1 20 20 30 1 1
+clrtext CODE 0 3C0 3C0 6 2 1
 config CONFIG 4 8007 8007 5 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -52,8 +49,7 @@ config CONFIG 4 8007 8007 5 2 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 40-6F 1
-RAM A0-EF 1
+RAM 69-6F 1
 RAM 120-16F 1
 RAM 1A0-1EF 1
 RAM 220-26F 1
@@ -78,8 +74,7 @@ RAM B20-B6F 1
 RAM BA0-BEF 1
 RAM C20-C6F 1
 RAM CA0-CBF 1
-BANK0 40-6F 1
-BANK1 A0-EF 1
+BANK0 69-6F 1
 BANK2 120-16F 1
 BANK3 1A0-1EF 1
 BANK4 220-26F 1
@@ -89,9 +84,9 @@ BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
 CONST 2-3 2
-CONST 1D5-3FFF 2
+CONST 3CE-3FFF 2
 ENTRY 2-3 2
-ENTRY 1D5-3FFF 2
+ENTRY 3CE-3FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
 SFR11 580-59F 1
@@ -148,7 +143,7 @@ SFR61 1E80-1EEF 1
 SFR62 1F00-1F6F 1
 SFR63 1F80-1FEF 1
 CODE 2-3 2
-CODE 1D5-3FFF 2
+CODE 3CE-3FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -176,12 +171,11 @@ BANK23 BA0-BEF 1
 BANK24 C20-C6F 1
 BANK25 CA0-CBF 1
 BIGRAM 2000-27EF 1
-COMMON 7D-7D 1
 EEDATA F000-F0FF 2
 STRCODE 2-3 2
-STRCODE 1D5-3FFF 2
+STRCODE 3CE-3FFF 2
 STRING 2-3 2
-STRING 1D5-3FFF 2
+STRING 3CE-3FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -196,196 +190,252 @@ STRING 1D5-3FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/debug\Third.X.debug.o
-16 cinit CODE >5764:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-16 cinit CODE >5767:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-16 cinit CODE >5809:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-17 cinit CODE >5810:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-18 cinit CODE >5811:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-19 cinit CODE >5812:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-1A cinit CODE >5813:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-1B cinit CODE >5814:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-1C cinit CODE >5815:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-1D cinit CODE >5816:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-1E cinit CODE >5817:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-1F cinit CODE >5818:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-22 cinit CODE >5823:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-23 cinit CODE >5824:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-24 cinit CODE >5825:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-25 cinit CODE >5826:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-26 cinit CODE >5827:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-27 cinit CODE >5828:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-28 cinit CODE >5832:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-29 cinit CODE >5833:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-2A cinit CODE >5839:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-2A cinit CODE >5841:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-2B cinit CODE >5842:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-2C cinit CODE >5843:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+16 cinit CODE >5765:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+16 cinit CODE >5768:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+16 cinit CODE >5819:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+17 cinit CODE >5820:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+18 cinit CODE >5821:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+19 cinit CODE >5822:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+1A cinit CODE >5823:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+1B cinit CODE >5824:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+1E cinit CODE >5830:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+1E cinit CODE >5832:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+1F cinit CODE >5833:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+20 cinit CODE >5834:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
 4 intentry CODE >59:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
 6 intentry CODE >62:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
 F intentry CODE >64:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
 12 intentry CODE >70:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
-1D4 text19 CODE >131:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-1D4 text19 CODE >133:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-1D0 text17 CODE >124:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1D0 text17 CODE >126:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1D2 text17 CODE >128:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1C6 text16 CODE >203:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1C6 text16 CODE >205:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1C9 text16 CODE >206:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1D3 text15 CODE >240:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1D3 text15 CODE >243:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1C2 text14 CODE >245:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1C2 text14 CODE >248:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1C4 text14 CODE >249:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1C5 text14 CODE >250:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-110 text13 CODE >213:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-110 text13 CODE >215:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-113 text13 CODE >216:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-118 text13 CODE >218:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-11A text13 CODE >219:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-120 text13 CODE >221:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-125 text13 CODE >224:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-12A text13 CODE >226:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-12C text13 CODE >227:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-132 text13 CODE >229:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-137 text13 CODE >232:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-139 text13 CODE >233:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1CD text12 CODE >146:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1CD text12 CODE >148:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1CF text12 CODE >149:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1CA text11 CODE >136:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1CA text11 CODE >138:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1CC text11 CODE >139:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1BE text10 CODE >235:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1BE text10 CODE >237:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1C1 text10 CODE >238:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1A9 text9 CODE >37:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
-1A9 text9 CODE >41:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
-1AC text9 CODE >43:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
-1AD text9 CODE >45:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
-1AE text9 CODE >47:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
-1AF text9 CODE >49:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
-1B0 text9 CODE >51:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
-1B1 text9 CODE >53:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
-1B2 text9 CODE >54:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
-19E text8 CODE >252:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-19E text8 CODE >254:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1A4 text8 CODE >256:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1A8 text8 CODE >258:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-193 text7 CODE >260:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-193 text7 CODE >262:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-199 text7 CODE >264:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-19D text7 CODE >266:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-13A text6 CODE >94:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-13A text6 CODE >99:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-13D text6 CODE >101:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-13F text6 CODE >103:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-141 text6 CODE >105:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-143 text6 CODE >107:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-144 text6 CODE >109:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-14B text6 CODE >110:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-152 text6 CODE >111:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-155 text6 CODE >113:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
-1B9 text5 CODE >90:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
-1B9 text5 CODE >91:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
-1BD text5 CODE >92:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
-188 text4 CODE >40:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
-188 text4 CODE >44:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
-18A text4 CODE >45:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
-18B text4 CODE >47:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
-192 text4 CODE >50:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
-93 text3 CODE >38:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-93 text3 CODE >43:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-95 text3 CODE >44:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-96 text3 CODE >45:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-97 text3 CODE >46:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-98 text3 CODE >47:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-99 text3 CODE >52:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-9B text3 CODE >53:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-9D text3 CODE >54:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-9F text3 CODE >55:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-A1 text3 CODE >56:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-A3 text3 CODE >61:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-A6 text3 CODE >62:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-A8 text3 CODE >63:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-AA text3 CODE >64:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-AC text3 CODE >65:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-AE text3 CODE >70:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-AF text3 CODE >71:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-B0 text3 CODE >72:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-B1 text3 CODE >73:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-B2 text3 CODE >74:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-B3 text3 CODE >80:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-B4 text3 CODE >81:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-B5 text3 CODE >82:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-B6 text3 CODE >83:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-B7 text3 CODE >84:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-B8 text3 CODE >88:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-BA text3 CODE >89:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-BC text3 CODE >90:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-BE text3 CODE >91:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-C0 text3 CODE >92:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-C2 text3 CODE >96:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-C4 text3 CODE >97:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-C6 text3 CODE >98:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-C8 text3 CODE >99:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-CA text3 CODE >100:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-CC text3 CODE >105:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-CF text3 CODE >106:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-D2 text3 CODE >115:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-D4 text3 CODE >116:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-D5 text3 CODE >117:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-D6 text3 CODE >118:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-D7 text3 CODE >119:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-D8 text3 CODE >120:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-D9 text3 CODE >121:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-DA text3 CODE >122:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-DB text3 CODE >123:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-DC text3 CODE >124:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-DD text3 CODE >125:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-DE text3 CODE >126:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-DF text3 CODE >129:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
-17B text2 CODE >37:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/system.c
-17B text2 CODE >39:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/system.c
-17E text2 CODE >40:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/system.c
-181 text2 CODE >41:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/system.c
-184 text2 CODE >42:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/system.c
-187 text2 CODE >43:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/system.c
-156 text1 CODE >5:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strlen.c
-157 text1 CODE >7:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strlen.c
-159 text1 CODE >8:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strlen.c
-15A text1 CODE >9:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strlen.c
-15E text1 CODE >8:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strlen.c
-166 text1 CODE >11:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strlen.c
-16C text1 CODE >12:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strlen.c
-2E maintext CODE >51:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-2E maintext CODE >53:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-31 maintext CODE >54:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-34 maintext CODE >55:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-37 maintext CODE >56:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-3A maintext CODE >73:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-48 maintext CODE >74:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-48 maintext CODE >84:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-4D maintext CODE >85:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-53 maintext CODE >86:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-54 maintext CODE >89:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-5A maintext CODE >90:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-5B maintext CODE >93:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-61 maintext CODE >94:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-63 maintext CODE >95:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-6C maintext CODE >96:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-75 maintext CODE >96:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-79 maintext CODE >97:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-88 maintext CODE >97:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-8C maintext CODE >97:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
-1B3 inittext CODE >5798:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-1B3 inittext CODE >5799:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-1B4 inittext CODE >5800:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-1B4 inittext CODE >5801:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-1B5 inittext CODE >5802:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-1B6 inittext CODE >5803:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-1B7 inittext CODE >5804:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
-1B8 inittext CODE >5805:C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+3CD text17 CODE >131:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+3CD text17 CODE >133:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+3B6 text15 CODE >37:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
+3B6 text15 CODE >41:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
+3B8 text15 CODE >43:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
+3B9 text15 CODE >45:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
+3BA text15 CODE >47:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
+3BC text15 CODE >49:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
+3BD text15 CODE >51:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
+3BE text15 CODE >53:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
+3BF text15 CODE >54:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/clock.c
+39F text14 CODE >252:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+39F text14 CODE >254:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+3A5 text14 CODE >256:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+3AA text14 CODE >258:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+393 text13 CODE >260:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+393 text13 CODE >262:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+399 text13 CODE >264:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+39E text13 CODE >266:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+359 text12 CODE >94:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+359 text12 CODE >99:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+35C text12 CODE >101:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+35E text12 CODE >103:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+360 text12 CODE >105:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+362 text12 CODE >107:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+364 text12 CODE >109:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+36B text12 CODE >110:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+372 text12 CODE >111:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+375 text12 CODE >113:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+3C6 text11 CODE >90:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
+3C6 text11 CODE >91:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
+3CB text11 CODE >92:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
+3AB text10 CODE >40:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
+3AB text10 CODE >44:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
+3AD text10 CODE >45:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
+3AE text10 CODE >47:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
+3B5 text10 CODE >50:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
+2B8 text9 CODE >38:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2B8 text9 CODE >43:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2BA text9 CODE >44:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2BB text9 CODE >45:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2BC text9 CODE >46:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2BD text9 CODE >47:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2BE text9 CODE >52:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2C0 text9 CODE >53:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2C2 text9 CODE >54:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2C4 text9 CODE >55:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2C6 text9 CODE >56:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2C8 text9 CODE >61:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2CB text9 CODE >62:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2CD text9 CODE >63:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2CF text9 CODE >64:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2D1 text9 CODE >65:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2D3 text9 CODE >70:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2D4 text9 CODE >71:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2D5 text9 CODE >72:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2D6 text9 CODE >73:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2D7 text9 CODE >74:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2D8 text9 CODE >80:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2D9 text9 CODE >81:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2DA text9 CODE >82:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2DB text9 CODE >83:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2DC text9 CODE >84:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2DD text9 CODE >88:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2DF text9 CODE >89:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2E1 text9 CODE >90:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2E3 text9 CODE >91:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2E5 text9 CODE >92:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2E7 text9 CODE >96:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2E9 text9 CODE >97:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2EB text9 CODE >98:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2ED text9 CODE >99:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2EF text9 CODE >100:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2F1 text9 CODE >105:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2F4 text9 CODE >106:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2F7 text9 CODE >115:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2F9 text9 CODE >116:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2FA text9 CODE >117:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2FB text9 CODE >118:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2FC text9 CODE >119:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2FD text9 CODE >120:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2FE text9 CODE >121:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+2FF text9 CODE >122:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+300 text9 CODE >123:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+301 text9 CODE >124:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+302 text9 CODE >125:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+303 text9 CODE >126:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+304 text9 CODE >129:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/pins.c
+386 text8 CODE >37:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/system.c
+386 text8 CODE >39:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/system.c
+389 text8 CODE >40:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/system.c
+38C text8 CODE >41:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/system.c
+38F text8 CODE >42:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/system.c
+392 text8 CODE >43:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/system.c
+19A text7 CODE >67:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+19B text7 CODE >69:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+19D text7 CODE >71:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+1A3 text7 CODE >75:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+1A6 text7 CODE >76:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+1AC text7 CODE >77:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+1B4 text7 CODE >77:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+1B8 text7 CODE >79:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+1C2 text7 CODE >80:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+1D8 text7 CODE >81:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+1DB text7 CODE >83:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+1E4 text7 CODE >83:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+1E8 text7 CODE >85:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+1FF text7 CODE >88:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+205 text7 CODE >89:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+206 text7 CODE >91:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+20C text7 CODE >94:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
+26A text6 CODE >129:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+26B text6 CODE >131:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+270 text6 CODE >131:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+274 text6 CODE >132:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+275 text6 CODE >133:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+276 text6 CODE >134:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+279 text6 CODE >136:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+281 text6 CODE >137:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+289 text6 CODE >138:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+28B text6 CODE >138:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+28F text6 CODE >139:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+29A text6 CODE >140:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+29D text6 CODE >141:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+29D text6 CODE >143:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+2A1 text6 CODE >144:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+2A8 text6 CODE >144:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+2AE text6 CODE >144:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+2B2 text6 CODE >144:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+2B6 text6 CODE >146:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+2B7 text6 CODE >147:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+3CC text5 CODE >7:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\putch.c
+3CC text5 CODE >9:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\putch.c
+20D text4 CODE >8:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
+20D text4 CODE >12:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
+219 text4 CODE >13:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
+21D text4 CODE >14:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
+21E text4 CODE >15:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
+241 text4 CODE >15:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
+245 text4 CODE >15:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
+249 text4 CODE >18:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
+25F text4 CODE >20:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
+267 text4 CODE >20:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
+269 text4 CODE >24:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
+F1 text3 CODE >1048:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+F1 text3 CODE >1062:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+103 text3 CODE >1063:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+109 text3 CODE >1063:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+10B text3 CODE >1065:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+10D text3 CODE >1065:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+112 text3 CODE >1066:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+116 text3 CODE >1143:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+11D text3 CODE >1348:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+127 text3 CODE >1391:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+135 text3 CODE >1393:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+142 text3 CODE >1394:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+145 text3 CODE >1527:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+156 text3 CODE >1528:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+15C text3 CODE >1528:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+15E text3 CODE >1529:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+169 text3 CODE >1530:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+16E text3 CODE >1535:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+174 text3 CODE >1535:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+177 text3 CODE >1540:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+190 text3 CODE >1541:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+196 text3 CODE >1541:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+199 text3 CODE >1543:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+335 text2 CODE >1546:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+335 text2 CODE >1551:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+33A text2 CODE >1553:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+33C text2 CODE >1555:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+33D text2 CODE >1557:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+34D text2 CODE >1555:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+356 text2 CODE >1564:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+358 text2 CODE >1569:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+376 text1 CODE >5:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\printf.c
+376 text1 CODE >9:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\printf.c
+379 text1 CODE >10:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\printf.c
+385 text1 CODE >13:C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\printf.c
+22 maintext CODE >58:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+22 maintext CODE >60:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+25 maintext CODE >61:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+27 maintext CODE >64:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+33 maintext CODE >65:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+35 maintext CODE >66:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+36 maintext CODE >67:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+38 maintext CODE >68:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+44 maintext CODE >73:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+45 maintext CODE >74:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+47 maintext CODE >75:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+48 maintext CODE >78:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+49 maintext CODE >79:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+55 maintext CODE >81:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+57 maintext CODE >82:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+5B maintext CODE >84:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+5D maintext CODE >87:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+61 maintext CODE >91:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+65 maintext CODE >95:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+69 maintext CODE >99:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+6A maintext CODE >102:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+6B maintext CODE >103:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+6C maintext CODE >104:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+70 maintext CODE >103:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+76 maintext CODE >103:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+7A maintext CODE >107:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+7B maintext CODE >108:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+7C maintext CODE >109:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+80 maintext CODE >108:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+86 maintext CODE >108:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+8A maintext CODE >112:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+90 maintext CODE >113:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+97 maintext CODE >114:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+9C maintext CODE >114:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+A0 maintext CODE >116:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+A7 maintext CODE >117:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+AF maintext CODE >118:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+B7 maintext CODE >119:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+BF maintext CODE >121:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+C9 maintext CODE >122:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+D4 maintext CODE >123:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+DF maintext CODE >124:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+EA maintext CODE >125:C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+3C0 clrtext CODE >5808:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+3C0 clrtext CODE >5809:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+3C1 clrtext CODE >5810:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+3C1 clrtext CODE >5811:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+3C2 clrtext CODE >5812:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+3C3 clrtext CODE >5813:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+3C4 clrtext CODE >5814:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
+3C5 clrtext CODE >5815:C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_1.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -399,23 +449,26 @@ DF text3 CODE >129:C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/s
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 3 0 ABS 0 - dist/default/debug\Third.X.debug.o
-__LdataBANK0 0 0 ABS 0 dataBANK0 -
-__Hspace_0 1D5 0 ABS 0 - -
-__Hspace_1 7D 0 ABS 0 - -
+__Hspace_0 3CE 0 ABS 0 - -
+__Hspace_1 F0 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 10013 0 ABS 0 - -
+main@lowTick 66 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
 EUSART1_FramingErrorCallbackRegister@callbackHandler 70 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
-__HidataBANK0 0 0 ABS 0 idataBANK0 -
-_EUSART1_IsTxDone 38C 0 CODE 0 text16 dist/default/debug\Third.X.debug.o
-_EUSART1_Initialize 274 0 CODE 0 text6 dist/default/debug\Third.X.debug.o
+_EUSART1_IsTxDone 0 0 ABS 0 - dist/default/debug\Third.X.debug.o
+parseDHT11Byte@_bit 75 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
+parseDHT11Byte@byte 70 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
+parseDHT11Byte@high 74 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
+_EUSART1_Initialize 6B2 0 CODE 0 text12 dist/default/debug\Third.X.debug.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-__end_of_INTERRUPT_Initialize 326 0 CODE 0 text4 dist/default/debug\Third.X.debug.o
-__end_of_PIN_MANAGER_IOC 3AA 0 CODE 0 text19 dist/default/debug\Third.X.debug.o
+__end_of_INTERRUPT_Initialize 76C 0 CODE 0 text10 dist/default/debug\Third.X.debug.o
+__end_of_PIN_MANAGER_IOC 79C 0 CODE 0 text17 dist/default/debug\Third.X.debug.o
 __L__absolute__ 0 0 ABS 0 __absolute__ -
-main@i 2E 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
+main@i 68 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
 _EUSART1_Deinitialize 0 0 ABS 0 - dist/default/debug\Third.X.debug.o
 __Hstrings 0 0 ABS 0 strings -
+?_vfprintf 56 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
 _LATA 18 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _LATB 19 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _LATC 1A 0 ABS 0 - dist/default/debug\Third.X.debug.o
@@ -426,72 +479,76 @@ _WPUB 1E97 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _WPUC 1EA1 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _WPUD 1EAB 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _WPUE 1EB5 0 ABS 0 - dist/default/debug\Third.X.debug.o
-___sp 0 0 STACK 2 stack C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_15.o
-_main 5C 0 CODE 0 maintext dist/default/debug\Third.X.debug.o
+___sp 0 0 STACK 2 stack C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_20.o
+_free 334 0 CODE 0 text7 dist/default/debug\Third.X.debug.o
+_main 44 0 CODE 0 maintext dist/default/debug\Third.X.debug.o
+_nout 40 0 BANK0 1 bssBANK0 dist/default/debug\Third.X.debug.o
+_prec 44 0 BANK0 1 bssBANK0 dist/default/debug\Third.X.debug.o
 btemp 7E 0 ABS 0 - dist/default/debug\Third.X.debug.o
-start 28 0 CODE 0 init C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_15.o
-__HbssCOMMON 0 0 ABS 0 bssCOMMON -
-__LidataBANK0 0 0 ABS 0 idataBANK0 -
+start 28 0 CODE 0 init C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_20.o
 __Hpowerup 0 0 CODE 0 powerup -
-__end_of_EUSART1_ReceiveEnable 3A0 0 CODE 0 text12 dist/default/debug\Third.X.debug.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_15.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_15.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_15.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_15.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_15.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_15.o
-__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+__end_of_vfpfcnvrt 334 0 CODE 0 text3 dist/default/debug\Third.X.debug.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_20.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_20.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_20.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_20.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_20.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_20.o
 wtemp0 7E 0 ABS 0 - dist/default/debug\Third.X.debug.o
+parseDHT11Byte@byteArray 79 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
 __Hfunctab 0 0 ENTRY 0 functab -
 _RC1STAbits 610 0 ABS 0 - dist/default/debug\Third.X.debug.o
-_PIN_MANAGER_IOC 3A8 0 CODE 0 text19 dist/default/debug\Third.X.debug.o
-EUSART1_Write@txData 70 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
+_PIN_MANAGER_IOC 79A 0 CODE 0 text17 dist/default/debug\Third.X.debug.o
 __Hclrtext 0 0 ABS 0 clrtext -
-_EUSART1_ReceiveEnable 39A 0 CODE 0 text12 dist/default/debug\Third.X.debug.o
+_vfpfcnvrt 1E2 0 CODE 0 text3 dist/default/debug\Third.X.debug.o
 _ACTCON 214 0 ABS 0 - dist/default/debug\Third.X.debug.o
-__end_of_EUSART1_IsTxDone 394 0 CODE 0 text16 dist/default/debug\Third.X.debug.o
 _ANSELA 1E8C 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _ANSELB 1E96 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _ANSELC 1EA0 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _ANSELD 1EAA 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _ANSELE 1EB4 0 ABS 0 - dist/default/debug\Third.X.debug.o
-_EUSART1_Enable 3A0 0 CODE 0 text17 dist/default/debug\Third.X.debug.o
 __end_of_INTERRUPT_InterruptManager 28 0 CODE 0 intentry dist/default/debug\Third.X.debug.o
-main@msg 20 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
-main@rec 2F 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
 __Lmaintext 0 0 ABS 0 maintext -
+?_printf 5D 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
 EUSART1_OverrunErrorCallbackRegister@callbackHandler 70 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
 _INLVLA 1E90 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _INLVLB 1E9A 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _INLVLC 1EA4 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _INLVLD 1EAE 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _INLVLE 1EB8 0 ABS 0 - dist/default/debug\Third.X.debug.o
-?_strlen 70 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
-_EUSART1_TransmitEnable 394 0 CODE 0 text11 dist/default/debug\Third.X.debug.o
-___stackhi 0 0 ABS 0 - C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_15.o
-___stacklo 0 0 ABS 0 - C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_15.o
+main@humidityDecimal 63 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
+_EUSART1_TransmitEnable 0 0 ABS 0 - dist/default/debug\Third.X.debug.o
+___stackhi 0 0 ABS 0 - C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_20.o
+___stacklo 0 0 ABS 0 - C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_20.o
 _EUSART1_ErrorGet 0 0 ABS 0 - dist/default/debug\Third.X.debug.o
-_PIN_MANAGER_Initialize 126 0 CODE 0 text3 dist/default/debug\Third.X.debug.o
+_PIN_MANAGER_Initialize 570 0 CODE 0 text9 dist/default/debug\Third.X.debug.o
+_WPUBbits 1E97 0 ABS 0 - dist/default/debug\Third.X.debug.o
 start_initialization 2C 0 CODE 0 cinit dist/default/debug\Third.X.debug.o
-_eusart1RxLastError 3E 0 BANK0 1 bssBANK0 dist/default/debug\Third.X.debug.o
+_eusart1RxLastError 4A 0 BANK0 1 bssBANK0 dist/default/debug\Third.X.debug.o
 _ODCONA 1E8E 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _ODCONB 1E98 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _ODCONC 1EA2 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _ODCOND 1EAC 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _ODCONE 1EB6 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _OSCFRQ 213 0 ABS 0 - dist/default/debug\Third.X.debug.o
-__end_of_EUSART1_Enable 3A6 0 CODE 0 text17 dist/default/debug\Third.X.debug.o
-__end_of_EUSART1_OverrunErrorCallbackRegister 33C 0 CODE 0 text7 dist/default/debug\Third.X.debug.o
+_TRISBbits 13 0 ABS 0 - dist/default/debug\Third.X.debug.o
+__end_of_EUSART1_OverrunErrorCallbackRegister 73E 0 CODE 0 text13 dist/default/debug\Third.X.debug.o
 _RC1REG 60C 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _RC1STA 610 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _RC6PPS 1DA2 0 ABS 0 - dist/default/debug\Third.X.debug.o
-__end_of_SYSTEM_Initialize 310 0 CODE 0 text2 dist/default/debug\Third.X.debug.o
+__end_of_SYSTEM_Initialize 726 0 CODE 0 text8 dist/default/debug\Third.X.debug.o
 _RX1PPS 1E41 0 ABS 0 - dist/default/debug\Third.X.debug.o
-__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
+clear_ram0 780 0 CODE 0 clrtext dist/default/debug\Third.X.debug.o
+__pcstackBANK0 50 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
+__pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/default/debug\Third.X.debug.o
 _TX1REG 60D 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _TX1STA 611 0 ABS 0 - dist/default/debug\Third.X.debug.o
-___int_sp 0 0 STACK 2 stack C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_15.o
-_EUSART1_Write 37C 0 CODE 0 text10 dist/default/debug\Third.X.debug.o
+__end_of_printf 70C 0 CODE 0 text1 dist/default/debug\Third.X.debug.o
+fputc@fp 72 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
+parseDHT11Byte@idx 76 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
+parseDHT11Byte@low 73 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
+___int_sp 0 0 STACK 2 stack C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_20.o
+_EUSART1_Write 0 0 ABS 0 - dist/default/debug\Third.X.debug.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -502,9 +559,8 @@ __Hbank6 0 0 ABS 0 bank6 -
 __Hbank7 0 0 ABS 0 bank7 -
 __Hbank8 0 0 ABS 0 bank8 -
 __Hbank9 0 0 ABS 0 bank9 -
-__Hcinit 5C 0 CODE 0 cinit -
+__Hcinit 44 0 CODE 0 cinit -
 _INT_DefaultInterruptHandler 0 0 ABS 0 - dist/default/debug\Third.X.debug.o
-__end_of_strlen 2DA 0 CODE 0 text1 dist/default/debug\Third.X.debug.o
 __Hsfr10 0 0 ABS 0 sfr10 -
 __Hsfr11 0 0 ABS 0 sfr11 -
 __Hsfr12 0 0 ABS 0 sfr12 -
@@ -685,15 +741,14 @@ __Lsfr61 0 0 ABS 0 sfr61 -
 __Lsfr62 0 0 ABS 0 sfr62 -
 __Lsfr63 0 0 ABS 0 sfr63 -
 __Lstack 0 0 STACK 2 stack -
-_EUSART1_FramingErrorHandler 79 0 COMMON 1 bssCOMMON dist/default/debug\Third.X.debug.o
-_EUSART1_OverrunErrorHandler 77 0 COMMON 1 bssCOMMON dist/default/debug\Third.X.debug.o
-init_ram 366 0 CODE 0 inittext dist/default/debug\Third.X.debug.o
-__Linittext 0 0 ABS 0 inittext -
+_EUSART1_FramingErrorHandler 48 0 BANK0 1 bssBANK0 dist/default/debug\Third.X.debug.o
+_EUSART1_OverrunErrorHandler 46 0 BANK0 1 bssBANK0 dist/default/debug\Third.X.debug.o
+_PORTBbits D 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _INTCONbits B 0 ABS 0 - dist/default/debug\Third.X.debug.o
-_INTERRUPT_Initialize 310 0 CODE 0 text4 dist/default/debug\Third.X.debug.o
+_INTERRUPT_Initialize 756 0 CODE 0 text10 dist/default/debug\Third.X.debug.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
-__Hheap 0 0 HEAP 7 heap -
+__Hheap 27F0 0 HEAP 7 heap -
 __Hinit 28 0 CODE 0 init -
 __Hsfr0 0 0 ABS 0 sfr0 -
 __Hsfr1 0 0 ABS 0 sfr1 -
@@ -706,10 +761,10 @@ __Hsfr7 0 0 ABS 0 sfr7 -
 __Hsfr8 0 0 ABS 0 sfr8 -
 __Hsfr9 0 0 ABS 0 sfr9 -
 __Htext 0 0 ABS 0 text -
-__end_of_EUSART1_FramingErrorCallbackRegister 352 0 CODE 0 text8 dist/default/debug\Third.X.debug.o
+__end_of_EUSART1_FramingErrorCallbackRegister 756 0 CODE 0 text14 dist/default/debug\Third.X.debug.o
 __Labs1 0 0 ABS 0 abs1 -
 __Lcode 0 0 ABS 0 code -
-__Lheap 0 0 HEAP 7 heap -
+__Lheap 20A0 0 HEAP 7 heap -
 __Linit 28 0 CODE 0 init -
 __Lsfr0 0 0 ABS 0 sfr0 -
 __Lsfr1 0 0 ABS 0 sfr1 -
@@ -722,39 +777,38 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__pstringtext1 1C0 0 STRCODE 0 stringtext1 dist/default/debug\Third.X.debug.o
+__pstringtext1 60A 0 STRCODE 0 stringtext1 dist/default/debug\Third.X.debug.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 int$flags 7E 0 ABS 0 - dist/default/debug\Third.X.debug.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__S0 1D5 0 ABS 0 - -
-__S1 7D 0 ABS 0 - -
+__S0 3CE 0 ABS 0 - -
+__S1 F0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_CLOCK_Initialize 352 0 CODE 0 text9 dist/default/debug\Third.X.debug.o
-__end_of_EUSART1_DefaultFramingErrorCallback 3A8 0 CODE 0 text15 dist/default/debug\Third.X.debug.o
-_SYSTEM_Initialize 2F6 0 CODE 0 text2 dist/default/debug\Third.X.debug.o
-__end_of_EUSART1_DefaultOverrunErrorCallback 38C 0 CODE 0 text14 dist/default/debug\Third.X.debug.o
+__S7 27F0 0 ABS 0 - -
+_CLOCK_Initialize 76C 0 CODE 0 text15 dist/default/debug\Third.X.debug.o
+___freelist 4F 0 BANK0 1 bssBANK0 dist/default/debug\Third.X.debug.o
+main@humidity 62 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
+_SYSTEM_Initialize 70C 0 CODE 0 text8 dist/default/debug\Third.X.debug.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_15.o
-strlen@a 73 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
-strlen@s 74 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_20.o
 _EUSART1_IsTxReady 0 0 ABS 0 - dist/default/debug\Third.X.debug.o
-__pdataBANK0 30 0 BANK0 1 dataBANK0 dist/default/debug\Third.X.debug.o
-__end_of_EUSART1_TransmitEnable 39A 0 CODE 0 text11 dist/default/debug\Third.X.debug.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __Lstringtext1 0 0 ABS 0 stringtext1 -
-_INT_InterruptHandler 7B 0 COMMON 1 bssCOMMON dist/default/debug\Third.X.debug.o
+_INT_InterruptHandler 4C 0 BANK0 1 bssBANK0 dist/default/debug\Third.X.debug.o
+vfpfcnvrt@fmt 7B 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
 _INTERRUPT_InterruptManager 8 0 CODE 0 intentry dist/default/debug\Third.X.debug.o
+_parseDHT11Byte 4D4 0 CODE 0 text6 dist/default/debug\Third.X.debug.o
 _PIE0bits 96 0 ABS 0 - dist/default/debug\Third.X.debug.o
-__ptext10 37C 0 CODE 0 text10 dist/default/debug\Third.X.debug.o
-__ptext11 394 0 CODE 0 text11 dist/default/debug\Third.X.debug.o
-__ptext12 39A 0 CODE 0 text12 dist/default/debug\Third.X.debug.o
-__ptext13 220 0 CODE 0 text13 dist/default/debug\Third.X.debug.o
-__ptext14 384 0 CODE 0 text14 dist/default/debug\Third.X.debug.o
-__ptext15 3A6 0 CODE 0 text15 dist/default/debug\Third.X.debug.o
-__ptext16 38C 0 CODE 0 text16 dist/default/debug\Third.X.debug.o
-__ptext17 3A0 0 CODE 0 text17 dist/default/debug\Third.X.debug.o
-__ptext19 3A8 0 CODE 0 text19 dist/default/debug\Third.X.debug.o
-__end_of_PIN_MANAGER_Initialize 1C0 0 CODE 0 text3 dist/default/debug\Third.X.debug.o
+parseDHT11Byte@result 78 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
+__ptext10 756 0 CODE 0 text10 dist/default/debug\Third.X.debug.o
+__ptext11 78C 0 CODE 0 text11 dist/default/debug\Third.X.debug.o
+__ptext12 6B2 0 CODE 0 text12 dist/default/debug\Third.X.debug.o
+__ptext13 726 0 CODE 0 text13 dist/default/debug\Third.X.debug.o
+__ptext14 73E 0 CODE 0 text14 dist/default/debug\Third.X.debug.o
+__ptext15 76C 0 CODE 0 text15 dist/default/debug\Third.X.debug.o
+__ptext17 79A 0 CODE 0 text17 dist/default/debug\Third.X.debug.o
+__end_of_PIN_MANAGER_Initialize 60A 0 CODE 0 text9 dist/default/debug\Third.X.debug.o
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -809,78 +863,96 @@ __Lbank60 0 0 BANK60 1 bank60 -
 __Lbank61 0 0 BANK61 1 bank61 -
 __Lbank62 0 0 BANK62 1 bank62 -
 __Lbank63 0 0 BANK63 1 bank63 -
-__pmaintext 5C 0 CODE 0 maintext dist/default/debug\Third.X.debug.o
+__pmaintext 44 0 CODE 0 maintext dist/default/debug\Third.X.debug.o
 __Lbigram 0 0 ABS 0 bigram -
+parseDHT11Byte@startPos 77 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
 _EUSART1_AutoBaudSet 0 0 ABS 0 - dist/default/debug\Third.X.debug.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-__Hinittext 0 0 ABS 0 inittext -
+_printf 6EC 0 CODE 0 text1 dist/default/debug\Third.X.debug.o
 _LATBbits 19 0 ABS 0 - dist/default/debug\Third.X.debug.o
-_EUSART1_Read 220 0 CODE 0 text13 dist/default/debug\Third.X.debug.o
-main@F8381 30 0 BANK0 1 dataBANK0 dist/default/debug\Third.X.debug.o
-_strlen 2AC 0 CODE 0 text1 dist/default/debug\Third.X.debug.o
-__end_of_CLOCK_Initialize 366 0 CODE 0 text9 dist/default/debug\Third.X.debug.o
+_EUSART1_Read 0 0 ABS 0 - dist/default/debug\Third.X.debug.o
+main@data A0 0 BANK1 1 cstackBANK1 dist/default/debug\Third.X.debug.o
+main@temp 64 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
+__end_of_CLOCK_Initialize 780 0 CODE 0 text15 dist/default/debug\Third.X.debug.o
 _EUSART1_TransmitDisable 0 0 ABS 0 - dist/default/debug\Third.X.debug.o
-__end_of_EUSART1_Write 384 0 CODE 0 text10 dist/default/debug\Third.X.debug.o
+parseDHT11Byte@i 7A 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
 _OSCCON2 20E 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _OSCCON3 20F 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _OSCSTAT 210 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _OSCTUNE 212 0 ABS 0 - dist/default/debug\Third.X.debug.o
+?_vfpfcnvrt 79 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__pbssCOMMON 77 0 COMMON 1 bssCOMMON dist/default/debug\Third.X.debug.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackBANK1 0 0 ABS 0 cstackBANK1 -
+__end_of_parseDHT11Byte 570 0 CODE 0 text6 dist/default/debug\Third.X.debug.o
 _PIR0bits 8C 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _PIR3bits 8F 0 ABS 0 - dist/default/debug\Third.X.debug.o
 __Lend_init 28 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-end_of_initialization 54 0 CODE 0 cinit dist/default/debug\Third.X.debug.o
+printf@ap 5F 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
+end_of_initialization 3C 0 CODE 0 cinit dist/default/debug\Third.X.debug.o
 __Hintentry 28 0 CODE 0 intentry -
+fputc@c 70 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
 _TX1STAbits 611 0 ABS 0 - dist/default/debug\Third.X.debug.o
-_EUSART1_OverrunErrorCallbackRegister 326 0 CODE 0 text7 dist/default/debug\Third.X.debug.o
+_EUSART1_OverrunErrorCallbackRegister 726 0 CODE 0 text13 dist/default/debug\Third.X.debug.o
 __Lstrings 0 0 ABS 0 strings -
+vfprintf@fmt 58 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
 __Hreset_vec 4 0 CODE 0 reset_vec -
 _BAUD1CONbits 612 0 ABS 0 - dist/default/debug\Third.X.debug.o
-_INT_SetInterruptHandler 372 0 CODE 0 text5 dist/default/debug\Third.X.debug.o
+_INT_SetInterruptHandler 78C 0 CODE 0 text11 dist/default/debug\Third.X.debug.o
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__end_of_INT_SetInterruptHandler 37C 0 CODE 0 text5 dist/default/debug\Third.X.debug.o
-__ptext1 2AC 0 CODE 0 text1 dist/default/debug\Third.X.debug.o
-__ptext2 2F6 0 CODE 0 text2 dist/default/debug\Third.X.debug.o
-__ptext3 126 0 CODE 0 text3 dist/default/debug\Third.X.debug.o
-__ptext4 310 0 CODE 0 text4 dist/default/debug\Third.X.debug.o
-__ptext5 372 0 CODE 0 text5 dist/default/debug\Third.X.debug.o
-__ptext6 274 0 CODE 0 text6 dist/default/debug\Third.X.debug.o
-__ptext7 326 0 CODE 0 text7 dist/default/debug\Third.X.debug.o
-__ptext8 33C 0 CODE 0 text8 dist/default/debug\Third.X.debug.o
-__ptext9 352 0 CODE 0 text9 dist/default/debug\Third.X.debug.o
+__end_of_INT_SetInterruptHandler 798 0 CODE 0 text11 dist/default/debug\Third.X.debug.o
+vfpfcnvrt@ap 7C 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
+vfpfcnvrt@cp 54 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
+vfpfcnvrt@fp 79 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
+__ptext1 6EC 0 CODE 0 text1 dist/default/debug\Third.X.debug.o
+__ptext2 66A 0 CODE 0 text2 dist/default/debug\Third.X.debug.o
+__ptext3 1E2 0 CODE 0 text3 dist/default/debug\Third.X.debug.o
+__ptext4 41A 0 CODE 0 text4 dist/default/debug\Third.X.debug.o
+__ptext5 798 0 CODE 0 text5 dist/default/debug\Third.X.debug.o
+__ptext6 4D4 0 CODE 0 text6 dist/default/debug\Third.X.debug.o
+__ptext7 334 0 CODE 0 text7 dist/default/debug\Third.X.debug.o
+__ptext8 70C 0 CODE 0 text8 dist/default/debug\Third.X.debug.o
+__ptext9 570 0 CODE 0 text9 dist/default/debug\Third.X.debug.o
+vfprintf@ap 5A 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
+vfprintf@fp 56 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
+vfprintf@cfmt 5B 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
+_vfprintf 66A 0 CODE 0 text2 dist/default/debug\Third.X.debug.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __H__absolute__ 0 0 ABS 0 __absolute__ -
-__end_of_EUSART1_Read 274 0 CODE 0 text13 dist/default/debug\Third.X.debug.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __Hstringtext1 0 0 ABS 0 stringtext1 -
+__end_of_vfprintf 6B2 0 CODE 0 text2 dist/default/debug\Third.X.debug.o
 _SLRCONA 1E8F 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _SLRCONB 1E99 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _SLRCONC 1EA3 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _SLRCOND 1EAD 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _SLRCONE 1EB7 0 ABS 0 - dist/default/debug\Third.X.debug.o
-___heap_hi 0 0 ABS 0 - C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_15.o
-___heap_lo 0 0 ABS 0 - C:\Users\zmiller\AppData\Local\Temp\xcAsad4.\driver_tmp_15.o
-__end_of__initialization 54 0 CODE 0 cinit dist/default/debug\Third.X.debug.o
+___heap_hi 27F0 0 HEAP 7 heap C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_20.o
+___heap_lo 20A0 0 HEAP 7 heap C:\Users\zmiller\AppData\Local\Temp\xcAs48s.\driver_tmp_20.o
+main@tempDecimal 65 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
+__end_of__initialization 3C 0 CODE 0 cinit dist/default/debug\Third.X.debug.o
 __Lfunctab 0 0 ENTRY 0 functab -
-__pidataBANK0 2DA 0 CODE 0 idataBANK0 dist/default/debug\Third.X.debug.o
+free@ptr 75 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
+main@highTick 67 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
 _SP1BRGH 60F 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _SP1BRGL 60E 0 ABS 0 - dist/default/debug\Third.X.debug.o
 __Lclrtext 0 0 ABS 0 clrtext -
-_EUSART1_FramingErrorCallbackRegister 33C 0 CODE 0 text8 dist/default/debug\Third.X.debug.o
+_EUSART1_FramingErrorCallbackRegister 73E 0 CODE 0 text14 dist/default/debug\Third.X.debug.o
 INT_SetInterruptHandler@InterruptHandler 70 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
+free@cptr 74 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
 __Hend_init 2C 0 CODE 0 end_init -
-__end_of_main 126 0 CODE 0 maintext dist/default/debug\Third.X.debug.o
-__end_of_UART1 220 0 STRCODE 0 stringtext1 dist/default/debug\Third.X.debug.o
+__end_of_free 41A 0 CODE 0 text7 dist/default/debug\Third.X.debug.o
+__end_of_main 1E2 0 CODE 0 maintext dist/default/debug\Third.X.debug.o
+__end_of_UART1 66A 0 STRCODE 0 stringtext1 dist/default/debug\Third.X.debug.o
+printf@fmt 5D 0 BANK0 1 cstackBANK0 dist/default/debug\Third.X.debug.o
 _IOCAF 1E93 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _IOCAN 1E92 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _IOCAP 1E91 0 ABS 0 - dist/default/debug\Third.X.debug.o
@@ -893,23 +965,29 @@ _IOCCP 1EA5 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _IOCEF 1EBB 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _IOCEN 1EBA 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _IOCEP 1EB9 0 ABS 0 - dist/default/debug\Third.X.debug.o
+__end_of_fputc 4D4 0 CODE 0 text4 dist/default/debug\Third.X.debug.o
 _OSCEN 211 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _TRISA 12 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _TRISB 13 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _TRISC 14 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _TRISD 15 0 ABS 0 - dist/default/debug\Third.X.debug.o
 _TRISE 16 0 ABS 0 - dist/default/debug\Third.X.debug.o
+__end_of_putch 79A 0 CODE 0 text5 dist/default/debug\Third.X.debug.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
+_flags 4E 0 BANK0 1 bssBANK0 dist/default/debug\Third.X.debug.o
+_fputc 41A 0 CODE 0 text4 dist/default/debug\Third.X.debug.o
+_putch 798 0 CODE 0 text5 dist/default/debug\Third.X.debug.o
+_width 42 0 BANK0 1 bssBANK0 dist/default/debug\Third.X.debug.o
 __pintentry 8 0 CODE 0 intentry dist/default/debug\Third.X.debug.o
 _EUSART1_AutoBaudQuery 0 0 ABS 0 - dist/default/debug\Third.X.debug.o
-__HdataBANK0 0 0 ABS 0 dataBANK0 -
-__end_of_EUSART1_Initialize 2AC 0 CODE 0 text6 dist/default/debug\Third.X.debug.o
-_EUSART1_DefaultFramingErrorCallback 3A6 0 CODE 0 text15 dist/default/debug\Third.X.debug.o
+__end_of_EUSART1_Initialize 6EC 0 CODE 0 text12 dist/default/debug\Third.X.debug.o
+_EUSART1_DefaultFramingErrorCallback 0 0 ABS 0 - dist/default/debug\Third.X.debug.o
 __initialization 2C 0 CODE 0 cinit dist/default/debug\Third.X.debug.o
-__pbssBANK0 3E 0 BANK0 1 bssBANK0 dist/default/debug\Third.X.debug.o
+__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/debug\Third.X.debug.o
 _EUSART1_IsRxReady 0 0 ABS 0 - dist/default/debug\Third.X.debug.o
-_EUSART1_DefaultOverrunErrorCallback 384 0 CODE 0 text14 dist/default/debug\Third.X.debug.o
+_EUSART1_DefaultOverrunErrorCallback 0 0 ABS 0 - dist/default/debug\Third.X.debug.o
+free@c 76 0 COMMON 1 cstackCOMMON dist/default/debug\Third.X.debug.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -935,12 +1013,14 @@ _EUSART1_DefaultOverrunErrorCallback 384 0 CODE 0 text14 dist/default/debug\Thir
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text13 0 110 220 C5 2
-cstackCOMMON 1 70 70 D 1
-cstackBANK0 1 20 20 20 1
-stringtext1 0 E0 1C0 30 2
-intentry 0 4 8 DC 2
+text2 0 335 66A 99 2
+cstackCOMMON 1 70 70 E 1
+cstackBANK1 1 A0 A0 50 1
+stringtext1 0 305 60A 30 2
+heap 7 20A0 20A0 750 1
+intentry 0 4 8 301 2
 reset_vec 0 0 0 2 2
+bssBANK0 1 20 20 49 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

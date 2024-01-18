@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 33 "main.c"
+# 37 "main.c"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -113,7 +113,11 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 145 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
-# 33 "main.c" 2
+# 37 "main.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
+# 38 "main.c" 2
+
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
 # 10 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
@@ -177,7 +181,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 34 "main.c" 2
+# 40 "main.c" 2
 
 # 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 3
@@ -13375,13 +13379,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 2 3
-# 35 "main.c" 2
+# 41 "main.c" 2
 
 # 1 "./mcc_generated_files/system/system.h" 1
-# 39 "./mcc_generated_files/system/system.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
-# 39 "./mcc_generated_files/system/system.h" 2
-
+# 40 "./mcc_generated_files/system/system.h"
 # 1 "./mcc_generated_files/system/config_bits.h" 1
 # 37 "./mcc_generated_files/system/config_bits.h"
 # 1 "./mcc_generated_files/system/../system/clock.h" 1
@@ -13392,7 +13393,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 115 "./mcc_generated_files/system/../system/pins.h"
+# 134 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13760,42 +13761,97 @@ void INT_DefaultInterruptHandler(void);
 
 
 void SYSTEM_Initialize(void);
-# 36 "main.c" 2
-# 51 "main.c"
+# 42 "main.c" 2
+# 56 "main.c"
+uint8_t parseDHT11Byte(uint8_t byteArray[], uint8_t byte);
+
 int main(void)
 {
     SYSTEM_Initialize();
-    EUSART1_Enable();
-    EUSART1_TransmitEnable();
-    EUSART1_ReceiveEnable();
-# 73 "main.c"
-    char msg[] = "Hello World\r\n";
-    uint8_t lastr = ((void*)0);
+    do { LATBbits.LATB1 = 1; } while(0);
+
+
+    _delay((unsigned long)((1000)*(32000000/4000.0)));
+    do { TRISBbits.TRISB5 = 0; } while(0);
+    do { LATBbits.LATB5 = 1; } while(0);
+    do { WPUBbits.WPUB5 = 1; } while(0);
+    _delay((unsigned long)((1000)*(32000000/4000.0)));
+
     while(1)
     {
 
+        (INTCONbits.GIE = 0);
+        do { TRISBbits.TRISB5 = 0; } while(0);
+        do { LATBbits.LATB5 = 1; } while(0);
+
+
+        do { LATBbits.LATB5 = 0; } while(0);
+        _delay((unsigned long)((30)*(32000000/4000.0)));
+
+        do { LATBbits.LATB5 = 1; } while(0);
+        _delay((unsigned long)((40)*(32000000/4000000.0)));
+
+        do { TRISBbits.TRISB5 = 1; } while(0);
+
+
+        while(PORTBbits.RB5);
 
 
 
+        while(!PORTBbits.RB5);
 
 
 
-        uint8_t rec = EUSART1_Read();
-        if(rec == 'H') {
-            do { LATBbits.LATB0 = 1; } while(0);
-        }
+        while(PORTBbits.RB5);
 
-        if(rec == 'L') {
-            do { LATBbits.LATB0 = 0; } while(0);
-        }
 
-        if(rec == 'R') {
-            for(uint8_t i = 0; i < strlen(msg); i++) {
-                EUSART1_Write(msg[i]);
-                while(!EUSART1_IsTxDone()){_delay((unsigned long)((1)*(1000000/4000.0)));}
+        uint8_t data[80];
+        for(uint8_t i = 0; i < 80; i = i + 2) {
+
+
+            uint8_t lowTick = 0;
+            while(!PORTBbits.RB5 && lowTick < 100) {
+                lowTick++;
             }
+
+            uint8_t highTick = 0;
+            while(PORTBbits.RB5 && highTick < 100) {
+                highTick++;
+            }
+
+            data[i] = lowTick;
+            data[i + 1] = highTick;
         }
 
+        uint8_t humidity = parseDHT11Byte(data, (uint8_t) 0);
+        uint8_t humidityDecimal = parseDHT11Byte(data, (uint8_t) 1);
+        uint8_t temp = parseDHT11Byte(data, (uint8_t) 2);
+        uint8_t tempDecimal = parseDHT11Byte(data, (uint8_t) 3);
 
+        printf(humidity);
+        printf(humidityDecimal);
+        printf(temp);
+        printf(tempDecimal);
+        free(data);
     }
+}
+
+uint8_t parseDHT11Byte(uint8_t byteArray[], uint8_t byte) {
+
+    uint8_t startPos = 16 * byte;
+    uint8_t result = 0;
+    uint8_t idx = 0;
+    for(uint8_t i = startPos; i < startPos + 16; i = i + 2) {
+
+        uint8_t low = byteArray[i];
+        uint8_t high = byteArray[i + 1];
+        if (low < high) {
+            uint8_t _bit = ((uint8_t)1) << (7 - idx);
+            result = result | _bit;
+        }
+
+        idx++;
+    }
+
+    return result;
 }

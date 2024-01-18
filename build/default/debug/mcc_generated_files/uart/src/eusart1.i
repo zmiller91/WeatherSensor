@@ -13485,7 +13485,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "mcc_generated_files/uart/src/../../system/../system/pins.h" 1
-# 115 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 134 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13763,9 +13763,9 @@ void EUSART1_Initialize(void)
 
     TX1STA = 0x26;
 
-    SP1BRGL = 0x19;
+    SP1BRGL = 0x40;
 
-    SP1BRGH = 0x0;
+    SP1BRGH = 0x3;
 
     EUSART1_FramingErrorCallbackRegister(EUSART1_DefaultFramingErrorCallback);
     EUSART1_OverrunErrorCallbackRegister(EUSART1_DefaultOverrunErrorCallback);

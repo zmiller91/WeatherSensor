@@ -13318,13 +13318,13 @@ void CLOCK_Initialize(void)
 {
 
 
-    OSCCON2 = 0x60;
+    OSCCON2 = 0x0;
 
     OSCCON3 = 0x0;
 
     OSCEN = 0x0;
 
-    OSCFRQ = 0x0;
+    OSCFRQ = 0x5;
 
     OSCSTAT = 0x0;
 

@@ -38,13 +38,13 @@ void CLOCK_Initialize(void)
 {
     // Set the CLOCK CONTROL module to the options selected in the user interface.
     // 
-    OSCCON2 = 0x60;
+    OSCCON2 = 0x0;
     // SOSCPWR Low power; 
     OSCCON3 = 0x0;
     // HFOEN disabled; MFOEN disabled; LFOEN disabled; SOSCEN disabled; ADOEN disabled; 
     OSCEN = 0x0;
-    // HFFRQ 1_MHz; 
-    OSCFRQ = 0x0;
+    // HFFRQ 32_MHz; 
+    OSCFRQ = 0x5;
     // 
     OSCSTAT = 0x0;
     // TUN undefined; 
