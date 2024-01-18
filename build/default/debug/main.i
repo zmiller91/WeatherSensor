@@ -13762,8 +13762,15 @@ void INT_DefaultInterruptHandler(void);
 
 void SYSTEM_Initialize(void);
 # 42 "main.c" 2
-# 56 "main.c"
+# 64 "main.c"
+uint8_t TIMEOUT = 100;
+uint8_t DHT11_ERROR = 101;
+uint8_t DHT11_OK = 202;
+
 uint8_t parseDHT11Byte(uint8_t byteArray[], uint8_t byte);
+void dht11Start();
+uint8_t dht11CheckResponse();
+uint8_t dht11ValidateResponse(uint8_t byteArray[]);
 
 int main(void)
 {
@@ -13779,61 +13786,131 @@ int main(void)
 
     while(1)
     {
-
-        (INTCONbits.GIE = 0);
-        do { TRISBbits.TRISB5 = 0; } while(0);
-        do { LATBbits.LATB5 = 1; } while(0);
-
-
-        do { LATBbits.LATB5 = 0; } while(0);
-        _delay((unsigned long)((30)*(32000000/4000.0)));
-
-        do { LATBbits.LATB5 = 1; } while(0);
-        _delay((unsigned long)((40)*(32000000/4000000.0)));
-
-        do { TRISBbits.TRISB5 = 1; } while(0);
+        dht11Start();
+        uint8_t status = dht11CheckResponse();
+        if(status == DHT11_OK) {
 
 
-        while(PORTBbits.RB5);
+            uint8_t data[80];
+            for(uint8_t i = 0; i < 80; i = i + 2) {
+
+
+                uint8_t lowTick = 0;
+                while(!PORTBbits.RB5 && lowTick < TIMEOUT) {
+                    lowTick++;
+                }
 
 
 
-        while(!PORTBbits.RB5);
+                uint8_t highTick = 0;
+                while(PORTBbits.RB5 && highTick < TIMEOUT) {
+                    highTick++;
+                }
 
 
 
-        while(PORTBbits.RB5);
 
-
-        uint8_t data[80];
-        for(uint8_t i = 0; i < 80; i = i + 2) {
-
-
-            uint8_t lowTick = 0;
-            while(!PORTBbits.RB5 && lowTick < 100) {
-                lowTick++;
+                data[i] = lowTick;
+                data[i + 1] = highTick;
             }
 
-            uint8_t highTick = 0;
-            while(PORTBbits.RB5 && highTick < 100) {
-                highTick++;
+
+
+            if(dht11ValidateResponse(data) == DHT11_OK) {
+
+                uint8_t humidity = parseDHT11Byte(data, (uint8_t) 0);
+                uint8_t humidityDecimal = parseDHT11Byte(data, (uint8_t) 1);
+                uint8_t temp = parseDHT11Byte(data, (uint8_t) 2);
+                uint8_t tempDecimal = parseDHT11Byte(data, (uint8_t) 3);
+                uint8_t checkSum = parseDHT11Byte(data, (uint8_t) 4);
+
+                if (checkSum == ((humidity + humidityDecimal + temp + tempDecimal) & 0xFF)) {
+                    printf("VALID");
+                }
+
+                printf(humidity);
+                printf(humidityDecimal);
+                printf(temp);
+                printf(tempDecimal);
+                free(data);
             }
 
-            data[i] = lowTick;
-            data[i + 1] = highTick;
+        }
+    }
+}
+
+
+
+
+
+
+
+void dht11Start() {
+
+
+    (INTCONbits.GIE = 0);
+
+
+    do { TRISBbits.TRISB5 = 0; } while(0);
+    do { LATBbits.LATB5 = 1; } while(0);
+    _delay((unsigned long)((30)*(32000000/4000.0)));
+
+
+    do { LATBbits.LATB5 = 0; } while(0);
+    _delay((unsigned long)((30)*(32000000/4000.0)));
+
+
+    do { LATBbits.LATB5 = 1; } while(0);
+    _delay((unsigned long)((40)*(32000000/4000000.0)));
+
+    do { TRISBbits.TRISB5 = 1; } while(0);
+}
+
+uint8_t dht11CheckResponse() {
+
+
+
+    uint8_t tick = 0;
+    while(PORTBbits.RB5) {
+        if(tick > TIMEOUT) {
+            return DHT11_ERROR;
         }
 
-        uint8_t humidity = parseDHT11Byte(data, (uint8_t) 0);
-        uint8_t humidityDecimal = parseDHT11Byte(data, (uint8_t) 1);
-        uint8_t temp = parseDHT11Byte(data, (uint8_t) 2);
-        uint8_t tempDecimal = parseDHT11Byte(data, (uint8_t) 3);
+        tick++;
+    };
 
-        printf(humidity);
-        printf(humidityDecimal);
-        printf(temp);
-        printf(tempDecimal);
-        free(data);
+
+    tick = 0;
+    while(!PORTBbits.RB5) {
+        if(tick > TIMEOUT) {
+            return DHT11_ERROR;
+        }
+
+        tick++;
+    };
+
+
+    tick = 0;
+    while(PORTBbits.RB5) {
+        if(tick > TIMEOUT) {
+            return DHT11_ERROR;
+        }
+
+        tick++;
+    };
+
+
+    return DHT11_OK;
+}
+
+uint8_t dht11ValidateResponse(uint8_t byteArray[]) {
+    for(uint8_t i = 0; i < 80; i++) {
+        if(byteArray[i] == TIMEOUT) {
+            return DHT11_ERROR;
+        }
     }
+
+    return DHT11_OK;
 }
 
 uint8_t parseDHT11Byte(uint8_t byteArray[], uint8_t byte) {

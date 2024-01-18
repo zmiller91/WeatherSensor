@@ -68,6 +68,7 @@ uint8_t DHT11_OK = 202;
 uint8_t parseDHT11Byte(uint8_t byteArray[], uint8_t byte);
 void dht11Start();
 uint8_t dht11CheckResponse();
+uint8_t dht11ValidateResponse(uint8_t byteArray[]);
 
 int main(void)
 {
@@ -83,60 +84,56 @@ int main(void)
     
     while(1)
     {
-        // Start signal
-        INTERRUPT_GlobalInterruptDisable();
-        IO_RB5_SetDigitalOutput();
-        IO_RB5_SetHigh();
-      
+        dht11Start();
+        uint8_t status = dht11CheckResponse();
+        if(status == DHT11_OK) {
         
-        IO_RB5_SetLow();
-        __delay_ms(30);
-        
-        IO_RB5_SetHigh();
-        __delay_us(40);
-        
-        IO_RB5_SetDigitalInput();
-        
-        // Wait while voltage is high
-        while(IO_RB5_GetValue());
-        
-        // DHT pulled down pin as it's response. It'll be pulled down for 80us
-        // Wait while voltage is low
-        while(!IO_RB5_GetValue());
-        
-        // DHT pulled up pin as it's response. It'll be pulled up for 80s
-        // Wait while voltage is high 
-        while(IO_RB5_GetValue());
-        
-        // DHT pulled down pin to start transmission
-        uint8_t data[80];
-        for(uint8_t i = 0; i < 80; i = i + 2) {
+            // DHT11 starting transmission
+            uint8_t data[80];
+            for(uint8_t i = 0; i < 80; i = i + 2) {
 
-            // Wait while the pin is pulled back up
-            uint8_t lowTick = 0;
-            while(!IO_RB5_GetValue() && lowTick < 100) {
-                lowTick++;
+                // DHT11 will keep the pin LOW for 50us
+                uint8_t lowTick = 0;
+                while(!IO_RB5_GetValue() && lowTick < TIMEOUT) {
+                    lowTick++;
+                }
+
+                // DHT11 will then pull the pin HIGH for 26us or 70us depending
+                // on if the bit is a 0 or 1, respectively. 
+                uint8_t highTick = 0;
+                while(IO_RB5_GetValue() && highTick < TIMEOUT) {
+                    highTick++;
+                }
+
+                // Store the ticks of the high and low bits. We will compare
+                // these late. If the lowTick < highTick then the bit is a 1, 
+                // otherwise it's a 0. 
+                data[i] = lowTick;
+                data[i + 1] = highTick;
             }
 
-            uint8_t highTick = 0;
-            while(IO_RB5_GetValue() && highTick < 100) {
-                highTick++;
-            }
+            // Parse the results into bytes. The DHT11 responds with 5 bytes with
+            // the last being a checksum. 
+            if(dht11ValidateResponse(data) == DHT11_OK) {
+                
+                uint8_t humidity = parseDHT11Byte(data, (uint8_t) 0);
+                uint8_t humidityDecimal = parseDHT11Byte(data, (uint8_t) 1);
+                uint8_t temp = parseDHT11Byte(data, (uint8_t) 2);
+                uint8_t tempDecimal = parseDHT11Byte(data, (uint8_t) 3);
+                uint8_t checkSum = parseDHT11Byte(data, (uint8_t) 4);
+                
+                if (checkSum == ((humidity + humidityDecimal + temp + tempDecimal) & 0xFF)) {
+                    printf("VALID");
+                }
 
-            data[i] = lowTick;
-            data[i + 1] = highTick;
-        }
-        
-        uint8_t humidity = parseDHT11Byte(data, (uint8_t) 0);
-        uint8_t humidityDecimal = parseDHT11Byte(data, (uint8_t) 1);
-        uint8_t temp = parseDHT11Byte(data, (uint8_t) 2);
-        uint8_t tempDecimal = parseDHT11Byte(data, (uint8_t) 3);
-        
-        printf(humidity);
-        printf(humidityDecimal);
-        printf(temp);
-        printf(tempDecimal);
-        free(data);        
+                printf(humidity);
+                printf(humidityDecimal);
+                printf(temp);
+                printf(tempDecimal);
+                free(data);
+            } 
+            
+        }       
     }    
 }
 
@@ -146,7 +143,7 @@ int main(void)
  * 
  * @return 
  */
-uint8_t dht11Start() {
+void dht11Start() {
     
     // Turn off global interrupts since the DHT11 sequence is timing critical
     INTERRUPT_GlobalInterruptDisable();
@@ -201,6 +198,16 @@ uint8_t dht11CheckResponse() {
     };
     
     // The DHT11 pulled the GPIO pin back to LOW to start data transmission. 
+    return DHT11_OK;
+}
+
+uint8_t dht11ValidateResponse(uint8_t byteArray[]) {
+    for(uint8_t i = 0; i < 80; i++) {
+        if(byteArray[i] == TIMEOUT) {
+            return DHT11_ERROR;
+        }
+    }
+    
     return DHT11_OK;
 }
 
