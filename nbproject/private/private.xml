@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/zmiller/MPLABXProjects/Third.X/mcc_generated_files/system/pins.h</file>
-            <file>file:/C:/Users/zmiller/MPLABXProjects/Third.X/mcc_generated_files/system/interrupt.h</file>
-            <file>file:/C:/Users/zmiller/MPLABXProjects/Third.X/mcc_generated_files/system/src/interrupt.c</file>
-            <file>file:/C:/Users/zmiller/MPLABXProjects/Third.X/queuelogs/debugtool</file>
-            <file>file:/C:/Program%20Files/Microchip/xc8/v2.41/pic/sources/c99/common/lite_free.c</file>
-            <file>file:/C:/Users/zmiller/MPLABXProjects/Third.X/mcc_generated_files/system/src/system.c</file>
-            <file>file:/C:/Users/zmiller/MPLABXProjects/Third.X/main.c</file>
-            <file>file:/C:/Users/zmiller/MPLABXProjects/Third.X/mcc_generated_files/system/src/clock.c</file>
-            <file>file:/C:/Users/zmiller/MPLABXProjects/Third.X/mcc_generated_files/system/src/pins.c</file>
-            <file>file:/C:/Users/zmiller/MPLABXProjects/Third.X/mcc_generated_files/system/clock.h</file>
-            <file>file:/C:/Program%20Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8/pic/include/proc/pic16f18076.h</file>
-            <file>file:/C:/Users/zmiller/MPLABXProjects/Third.X/mcc_generated_files/system/system.h</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

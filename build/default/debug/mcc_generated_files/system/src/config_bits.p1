@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "36 mcc_generated_files/system/src/config_bits.c
-[p x FEXTOSC  =  ECL     ]
+[p x FEXTOSC  =  ECH     ]
 "37
 [p x RSTOSC  =  HFINTOSC_32MHz     ]
 "38

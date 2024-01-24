@@ -31,15 +31,14 @@
     THIS SOFTWARE.
 */
 
-#define DHT11_PIN      RB4
-#define DHT11_PIN_DIR  TRISB4
-
 #include <stdint.h>
 #include <stdbool.h>
 
 #include <string.h>
 #include <xc.h>
 #include "mcc_generated_files/system/system.h"
+#include "common.h"
+#include "bme280.h"
 
 /**
  * To get this program to work you have to:
@@ -60,173 +59,97 @@
  * 
  * @return 
  */
+#define BME280_I2C_ADDRESS  0xEC
+#define SAMPLE_COUNT  UINT8_C(50)
+uint8_t data[26] = { 0 };
+static int8_t get_temperature(uint32_t period, struct bme280_dev *dev);
 
-uint8_t TIMEOUT = 100;
-uint8_t DHT11_ERROR = 101;
-uint8_t DHT11_OK = 202;
-
-uint8_t parseDHT11Byte(uint8_t byteArray[], uint8_t byte);
-void dht11Start();
-uint8_t dht11CheckResponse();
-uint8_t dht11ValidateResponse(uint8_t byteArray[]);
-
-int main(void)
-{
+int main(void){
     SYSTEM_Initialize();
-    LED_SetHigh();
     
+    IO_RB1_SetDigitalMode();
+    IO_RB1_SetPullup();
+    IO_RB2_SetDigitalMode();
+    IO_RB2_SetPullup();
+    
+    INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();
     
     __delay_ms(1000);
-    IO_RB5_SetDigitalOutput();
-    IO_RB5_SetHigh();
-    IO_RB5_SetPullup();
-    __delay_ms(1000);
     
-    while(1)
-    {
-        dht11Start();
-        uint8_t status = dht11CheckResponse();
-        if(status == DHT11_OK) {
-        
-            // DHT11 starting transmission
-            uint8_t data[80];
-            for(uint8_t i = 0; i < 80; i = i + 2) {
+    uint8_t address = UINT8_C(0x76);
+    uint8_t chipId = UINT8_C(0xD0);
+    
+    
+    int8_t rslt;
+    uint32_t period;
+    struct bme280_dev dev;
+    struct bme280_settings settings;
+    
+    rslt = bme280_interface_selection(&dev, BME280_I2C_INTF);
+    rslt = bme280_init(&dev);
+    rslt = bme280_get_sensor_settings(&settings, &dev);
 
-                // DHT11 will keep the pin LOW for 50us
-                uint8_t lowTick = 0;
-                while(!IO_RB5_GetValue() && lowTick < TIMEOUT) {
-                    lowTick++;
-                }
+    /* Configuring the over-sampling rate, filter coefficient and standby time */
+    /* Overwrite the desired settings */
+    settings.filter = BME280_FILTER_COEFF_2;
 
-                // DHT11 will then pull the pin HIGH for 26us or 70us depending
-                // on if the bit is a 0 or 1, respectively. 
-                uint8_t highTick = 0;
-                while(IO_RB5_GetValue() && highTick < TIMEOUT) {
-                    highTick++;
-                }
+    /* Over-sampling rate for humidity, temperature and pressure */
+    settings.osr_h = BME280_OVERSAMPLING_1X;
+    settings.osr_p = BME280_OVERSAMPLING_1X;
+    settings.osr_t = BME280_OVERSAMPLING_1X;
 
-                // Store the ticks of the high and low bits. We will compare
-                // these late. If the lowTick < highTick then the bit is a 1, 
-                // otherwise it's a 0. 
-                data[i] = lowTick;
-                data[i + 1] = highTick;
-            }
+    /* Setting the standby time */
+    settings.standby_time = BME280_STANDBY_TIME_0_5_MS;
 
-            // Parse the results into bytes. The DHT11 responds with 5 bytes with
-            // the last being a checksum. 
-            if(dht11ValidateResponse(data) == DHT11_OK) {
-                
-                uint8_t humidity = parseDHT11Byte(data, (uint8_t) 0);
-                uint8_t humidityDecimal = parseDHT11Byte(data, (uint8_t) 1);
-                uint8_t temp = parseDHT11Byte(data, (uint8_t) 2);
-                uint8_t tempDecimal = parseDHT11Byte(data, (uint8_t) 3);
-                uint8_t checkSum = parseDHT11Byte(data, (uint8_t) 4);
-                
-                if (checkSum == ((humidity + humidityDecimal + temp + tempDecimal) & 0xFF)) {
-                    printf("VALID");
-                }
-
-                printf(humidity);
-                printf(humidityDecimal);
-                printf(temp);
-                printf(tempDecimal);
-                free(data);
-            } 
-            
-        }       
+    rslt = bme280_set_sensor_settings(BME280_SEL_ALL_SETTINGS, &settings, &dev);
+    rslt = bme280_set_sensor_mode(BME280_POWERMODE_NORMAL, &dev);
+    
+    
+    uint8_t sensor_mode;
+    bme280_get_sensor_mode(&sensor_mode, &dev);
+    printf(sensor_mode);
+    
+    rslt = bme280_cal_meas_delay(&period, &settings);
+    
+    
+    
+//    uint8_t readData;
+//    I2C2_WriteRead(address, &chipId, 1, &readData, 1);
+//    while(I2C2_IsBusy());
+//    printf(readData);
+    
+    rslt = get_temperature(period, &dev);
+    while(1) {
+        printf(rslt);
     }    
 }
 
-/**
- * The DHT11 is started by setting the GPIO pin to LOW for at least 18ms and 
- * then pulling the GPIO pin to HIGH for 20-40us. 
- * 
- * @return 
+/*!
+ *  @brief This internal API is used to get compensated temperature data.
  */
-void dht11Start() {
-    
-    // Turn off global interrupts since the DHT11 sequence is timing critical
-    INTERRUPT_GlobalInterruptDisable();
-    
-    // Turn the GPIO pin to high to ensure DHT11 will receive LOW signal
-    IO_RB5_SetDigitalOutput();
-    IO_RB5_SetHigh();
-    __delay_ms(30);
+static int8_t get_temperature(uint32_t period, struct bme280_dev *dev)
+{
+    int8_t rslt = BME280_E_NULL_PTR;
+    int8_t idx = 0;
+    uint8_t status_reg;
+    struct bme280_data comp_data;
 
-    // Turn the GPIO pin to LOW for 30 ms, per the DHT11 data sheet
-    IO_RB5_SetLow();
-    __delay_ms(30);
+    while (idx < SAMPLE_COUNT)
+    {
+        rslt = bme280_get_regs(BME280_REG_STATUS, &status_reg, 1, dev);
 
-    // Turn the GPIO pin to HIGH for 40us, per the DHT11 data sheet
-    IO_RB5_SetHigh();
-    __delay_us(40);
+        if (status_reg & BME280_STATUS_MEAS_DONE)
+        {
+            /* Measurement time delay given to read sample */
+            dev->delay_us(period, dev->intf_ptr);
 
-    IO_RB5_SetDigitalInput();
-}
-
-uint8_t dht11CheckResponse() {
-    
-    // Wait while the GPIO pin is high. After the start sequence the DHT11
-    // will pull it to LOW. 
-    uint8_t tick = 0;
-    while(IO_RB5_GetValue()) {
-        if(tick > TIMEOUT) {
-            return DHT11_ERROR;
-        }
-        
-        tick++;
-    };
-
-    // DHT11 pulled the GPIO pin as low. It will keep it here for 80us.
-    tick = 0;
-    while(!IO_RB5_GetValue()) {
-        if(tick > TIMEOUT) {
-            return DHT11_ERROR;
-        }
-        
-        tick++;
-    };
-
-    // DHT11 pulled the GPIO pin to HIGH. It will keep it here for 80us.
-    tick = 0;
-    while(IO_RB5_GetValue()) {
-        if(tick > TIMEOUT) {
-            return DHT11_ERROR;
-        }
-        
-        tick++;
-    };
-    
-    // The DHT11 pulled the GPIO pin back to LOW to start data transmission. 
-    return DHT11_OK;
-}
-
-uint8_t dht11ValidateResponse(uint8_t byteArray[]) {
-    for(uint8_t i = 0; i < 80; i++) {
-        if(byteArray[i] == TIMEOUT) {
-            return DHT11_ERROR;
+            /* Read compensated data */
+            rslt = bme280_get_sensor_data(BME280_ALL, &comp_data, dev);
+            printf(&comp_data);
+            idx++;
         }
     }
-    
-    return DHT11_OK;
-}
 
-uint8_t parseDHT11Byte(uint8_t byteArray[], uint8_t byte) {
-    
-    uint8_t startPos = 16 * byte;
-    uint8_t result = 0;
-    uint8_t idx = 0;
-    for(uint8_t i = startPos; i < startPos + 16; i = i + 2) {
-
-        uint8_t low = byteArray[i];
-        uint8_t high = byteArray[i + 1];
-        if (low < high) {
-            uint8_t _bit = ((uint8_t)1) << (7 - idx);
-            result = result | _bit; 
-        }
-
-        idx++;    
-    }
-    
-    return result;
+    return rslt;
 }

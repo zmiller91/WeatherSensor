@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 37 "main.c"
+# 34 "main.c"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -113,10 +113,10 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 145 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
-# 37 "main.c" 2
+# 34 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
-# 38 "main.c" 2
+# 35 "main.c" 2
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
@@ -181,7 +181,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 40 "main.c" 2
+# 37 "main.c" 2
 
 # 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 3
@@ -13379,7 +13379,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 2 3
-# 41 "main.c" 2
+# 38 "main.c" 2
 
 # 1 "./mcc_generated_files/system/system.h" 1
 # 40 "./mcc_generated_files/system/system.h"
@@ -13738,6 +13738,121 @@ void EUSART1_FramingErrorCallbackRegister(void (* callbackHandler)(void));
 void EUSART1_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
 # 43 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
+# 1 "./mcc_generated_files/system/../i2c_host/mssp2.h" 1
+# 44 "./mcc_generated_files/system/../i2c_host/mssp2.h"
+# 1 "./mcc_generated_files/system/../i2c_host/i2c_host_event_types.h" 1
+# 37 "./mcc_generated_files/system/../i2c_host/i2c_host_event_types.h"
+# 1 "./mcc_generated_files/system/../i2c_host/i2c_host_types.h" 1
+# 42 "./mcc_generated_files/system/../i2c_host/i2c_host_types.h"
+typedef enum
+{
+    I2C_ERROR_NONE,
+    I2C_ERROR_ADDR_NACK,
+    I2C_ERROR_DATA_NACK,
+    I2C_ERROR_BUS_COLLISION,
+} i2c_host_error_t;
+
+
+
+
+
+
+typedef struct
+{
+  uint32_t clkSpeed;
+} i2c_host_transfer_setup_t;
+# 37 "./mcc_generated_files/system/../i2c_host/i2c_host_event_types.h" 2
+
+
+
+
+
+
+
+typedef enum
+{
+    I2C_STATE_IDLE = 0,
+    I2C_STATE_SEND_RD_ADDR,
+    I2C_STATE_SEND_WR_ADDR,
+    I2C_STATE_TX,
+    I2C_STATE_RX,
+    I2C_STATE_NACK,
+    I2C_STATE_ERROR,
+    I2C_STATE_STOP,
+    I2C_STATE_RESET
+} i2c_host_event_states_t;
+
+
+
+
+
+
+typedef struct
+{
+    _Bool busy;
+    uint16_t address;
+    uint8_t *writePtr;
+    size_t writeLength;
+    uint8_t *readPtr;
+    size_t readLength;
+    _Bool switchToRead;
+    i2c_host_error_t errorState;
+    i2c_host_event_states_t state;
+} i2c_host_event_status_t;
+# 44 "./mcc_generated_files/system/../i2c_host/mssp2.h" 2
+
+# 1 "./mcc_generated_files/system/../i2c_host/i2c_host_interface.h" 1
+# 50 "./mcc_generated_files/system/../i2c_host/i2c_host_interface.h"
+typedef struct
+{
+    void (*Initialize)(void);
+    void (*Deinitialize)(void);
+    _Bool (*Write)(uint16_t address, uint8_t *data, size_t dataLength);
+    _Bool (*Read)(uint16_t address, uint8_t *data, size_t dataLength);
+    _Bool (*WriteRead)(uint16_t address, uint8_t *writeData, size_t writeLength, uint8_t *readData, size_t readLength);
+    _Bool (*TransferSetup)(i2c_host_transfer_setup_t* setup, uint32_t srcClkFreq);
+    i2c_host_error_t (*ErrorGet)(void);
+    _Bool (*IsBusy)(void);
+    void (*CallbackRegister)(void (*callback)(void));
+    void (*Tasks)(void);
+} i2c_host_interface_t;
+# 45 "./mcc_generated_files/system/../i2c_host/mssp2.h" 2
+# 67 "./mcc_generated_files/system/../i2c_host/mssp2.h"
+extern const i2c_host_interface_t I2C2_Host;
+# 76 "./mcc_generated_files/system/../i2c_host/mssp2.h"
+void I2C2_Initialize(void);
+# 85 "./mcc_generated_files/system/../i2c_host/mssp2.h"
+void I2C2_Deinitialize(void);
+# 116 "./mcc_generated_files/system/../i2c_host/mssp2.h"
+_Bool I2C2_Write(uint16_t address, uint8_t *data, size_t dataLength);
+# 147 "./mcc_generated_files/system/../i2c_host/mssp2.h"
+_Bool I2C2_Read(uint16_t address, uint8_t *data, size_t dataLength);
+# 182 "./mcc_generated_files/system/../i2c_host/mssp2.h"
+_Bool I2C2_WriteRead(uint16_t address, uint8_t *writeData, size_t writeLength, uint8_t *readData, size_t readLength);
+# 193 "./mcc_generated_files/system/../i2c_host/mssp2.h"
+i2c_host_error_t I2C2_ErrorGet(void);
+# 204 "./mcc_generated_files/system/../i2c_host/mssp2.h"
+_Bool I2C2_IsBusy(void);
+# 231 "./mcc_generated_files/system/../i2c_host/mssp2.h"
+void I2C2_CallbackRegister(void (*callbackHandler)(void));
+
+
+
+
+
+
+
+void I2C2_ISR(void);
+
+
+
+
+
+
+
+void I2C2_ERROR_ISR(void);
+# 44 "./mcc_generated_files/system/../uart/../system/system.h" 2
+
 # 1 "./mcc_generated_files/system/../system/interrupt.h" 1
 # 85 "./mcc_generated_files/system/../system/interrupt.h"
 void INTERRUPT_Initialize (void);
@@ -13751,7 +13866,7 @@ void INT_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT_InterruptHandler)(void);
 # 175 "./mcc_generated_files/system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
-# 44 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 
 
@@ -13761,174 +13876,349 @@ void INT_DefaultInterruptHandler(void);
 
 
 void SYSTEM_Initialize(void);
-# 42 "main.c" 2
-# 64 "main.c"
-uint8_t TIMEOUT = 100;
-uint8_t DHT11_ERROR = 101;
-uint8_t DHT11_OK = 202;
+# 39 "main.c" 2
 
-uint8_t parseDHT11Byte(uint8_t byteArray[], uint8_t byte);
-void dht11Start();
-uint8_t dht11CheckResponse();
-uint8_t dht11ValidateResponse(uint8_t byteArray[]);
+# 1 "./common.h" 1
+# 11 "./common.h"
+# 1 "./bme280.h" 1
+# 50 "./bme280.h"
+# 1 "./bme280_defs.h" 1
+# 44 "./bme280_defs.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 1 3
+# 19 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 132 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef int ptrdiff_t;
+# 20 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 2 3
+# 44 "./bme280_defs.h" 2
+# 259 "./bme280_defs.h"
+enum bme280_intf {
 
-int main(void)
+    BME280_SPI_INTF,
+
+    BME280_I2C_INTF
+};
+# 284 "./bme280_defs.h"
+typedef int8_t (*bme280_read_fptr_t)(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, void *intf_ptr);
+# 301 "./bme280_defs.h"
+typedef int8_t (*bme280_write_fptr_t)(uint8_t reg_addr, const uint8_t *reg_data, uint32_t len,
+                                                    void *intf_ptr);
+# 313 "./bme280_defs.h"
+typedef void (*bme280_delay_us_fptr_t)(uint32_t period, void *intf_ptr);
+# 322 "./bme280_defs.h"
+struct bme280_calib_data
 {
+
+    uint16_t dig_t1;
+
+
+    int16_t dig_t2;
+
+
+    int16_t dig_t3;
+
+
+    uint16_t dig_p1;
+
+
+    int16_t dig_p2;
+
+
+    int16_t dig_p3;
+
+
+    int16_t dig_p4;
+
+
+    int16_t dig_p5;
+
+
+    int16_t dig_p6;
+
+
+    int16_t dig_p7;
+
+
+    int16_t dig_p8;
+
+
+    int16_t dig_p9;
+
+
+    uint8_t dig_h1;
+
+
+    int16_t dig_h2;
+
+
+    uint8_t dig_h3;
+
+
+    int16_t dig_h4;
+
+
+    int16_t dig_h5;
+
+
+    int8_t dig_h6;
+
+
+    int32_t t_fine;
+};
+
+
+
+
+
+
+struct bme280_data
+{
+
+    double pressure;
+
+
+    double temperature;
+
+
+    double humidity;
+};
+# 416 "./bme280_defs.h"
+struct bme280_uncomp_data
+{
+
+    uint32_t pressure;
+
+
+    uint32_t temperature;
+
+
+    uint32_t humidity;
+};
+
+
+
+
+
+struct bme280_settings
+{
+
+    uint8_t osr_p;
+
+
+    uint8_t osr_t;
+
+
+    uint8_t osr_h;
+
+
+    uint8_t filter;
+
+
+    uint8_t standby_time;
+};
+
+
+
+
+struct bme280_dev
+{
+
+    uint8_t chip_id;
+
+
+
+
+
+    enum bme280_intf intf;
+
+
+
+
+
+
+
+    void *intf_ptr;
+
+
+    int8_t intf_rslt;
+
+
+    bme280_read_fptr_t read;
+
+
+    bme280_write_fptr_t write;
+
+
+    bme280_delay_us_fptr_t delay_us;
+
+
+    struct bme280_calib_data calib_data;
+};
+# 50 "./bme280.h" 2
+# 77 "./bme280.h"
+int8_t bme280_init(struct bme280_dev *dev);
+# 106 "./bme280.h"
+int8_t bme280_set_regs(uint8_t *reg_addr, const uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
+# 128 "./bme280.h"
+int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
+# 171 "./bme280.h"
+int8_t bme280_set_sensor_settings(uint8_t desired_settings,
+                                  const struct bme280_settings *settings,
+                                  struct bme280_dev *dev);
+# 194 "./bme280.h"
+int8_t bme280_get_sensor_settings(struct bme280_settings *settings, struct bme280_dev *dev);
+# 228 "./bme280.h"
+int8_t bme280_set_sensor_mode(uint8_t sensor_mode, struct bme280_dev *dev);
+# 256 "./bme280.h"
+int8_t bme280_get_sensor_mode(uint8_t *sensor_mode, struct bme280_dev *dev);
+# 281 "./bme280.h"
+int8_t bme280_soft_reset(struct bme280_dev *dev);
+# 290 "./bme280.h"
+int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
+# 320 "./bme280.h"
+int8_t bme280_compensate_data(uint8_t sensor_comp,
+                              const struct bme280_uncomp_data *uncomp_data,
+                              struct bme280_data *comp_data,
+                              struct bme280_calib_data *calib_data);
+# 352 "./bme280.h"
+int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *settings);
+# 11 "./common.h" 2
+# 35 "./common.h"
+int8_t bme280_spi_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, void *intf_ptr);
+# 52 "./common.h"
+int8_t bme280_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, void *intf_ptr);
+# 70 "./common.h"
+int8_t bme280_spi_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr);
+# 88 "./common.h"
+int8_t bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr);
+# 99 "./common.h"
+void bme280_delay_us(uint32_t period_us, void *intf_ptr);
+# 113 "./common.h"
+int8_t bme280_interface_selection(struct bme280_dev *dev, uint8_t intf);
+# 123 "./common.h"
+void bme280_error_codes_print_result(const char api_name[], int8_t rslt);
+
+
+
+
+
+
+
+void bme280_coines_deinit(void);
+# 40 "main.c" 2
+
+# 1 "./bme280.h" 1
+# 77 "./bme280.h"
+int8_t bme280_init(struct bme280_dev *dev);
+# 106 "./bme280.h"
+int8_t bme280_set_regs(uint8_t *reg_addr, const uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
+# 128 "./bme280.h"
+int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
+# 171 "./bme280.h"
+int8_t bme280_set_sensor_settings(uint8_t desired_settings,
+                                  const struct bme280_settings *settings,
+                                  struct bme280_dev *dev);
+# 194 "./bme280.h"
+int8_t bme280_get_sensor_settings(struct bme280_settings *settings, struct bme280_dev *dev);
+# 228 "./bme280.h"
+int8_t bme280_set_sensor_mode(uint8_t sensor_mode, struct bme280_dev *dev);
+# 256 "./bme280.h"
+int8_t bme280_get_sensor_mode(uint8_t *sensor_mode, struct bme280_dev *dev);
+# 281 "./bme280.h"
+int8_t bme280_soft_reset(struct bme280_dev *dev);
+# 290 "./bme280.h"
+int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
+# 320 "./bme280.h"
+int8_t bme280_compensate_data(uint8_t sensor_comp,
+                              const struct bme280_uncomp_data *uncomp_data,
+                              struct bme280_data *comp_data,
+                              struct bme280_calib_data *calib_data);
+# 352 "./bme280.h"
+int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *settings);
+# 41 "main.c" 2
+# 64 "main.c"
+uint8_t data[26] = { 0 };
+static int8_t get_temperature(uint32_t period, struct bme280_dev *dev);
+
+int main(void){
     SYSTEM_Initialize();
-    do { LATBbits.LATB1 = 1; } while(0);
 
+    do { ANSELBbits.ANSB1 = 0; } while(0);
+    do { WPUBbits.WPUB1 = 1; } while(0);
+    do { ANSELBbits.ANSB2 = 0; } while(0);
+    do { WPUBbits.WPUB2 = 1; } while(0);
+
+    (INTCONbits.GIE = 1);
+    (INTCONbits.PEIE = 1);
 
     _delay((unsigned long)((1000)*(32000000/4000.0)));
-    do { TRISBbits.TRISB5 = 0; } while(0);
-    do { LATBbits.LATB5 = 1; } while(0);
-    do { WPUBbits.WPUB5 = 1; } while(0);
-    _delay((unsigned long)((1000)*(32000000/4000.0)));
 
-    while(1)
+    uint8_t address = 0x76;
+    uint8_t chipId = 0xD0;
+
+
+    int8_t rslt;
+    uint32_t period;
+    struct bme280_dev dev;
+    struct bme280_settings settings;
+
+    rslt = bme280_interface_selection(&dev, BME280_I2C_INTF);
+    rslt = bme280_init(&dev);
+    rslt = bme280_get_sensor_settings(&settings, &dev);
+
+
+
+    settings.filter = (0x01);
+
+
+    settings.osr_h = 0x01;
+    settings.osr_p = 0x01;
+    settings.osr_t = 0x01;
+
+
+    settings.standby_time = (0x00);
+
+    rslt = bme280_set_sensor_settings(0x1F, &settings, &dev);
+    rslt = bme280_set_sensor_mode(0x03, &dev);
+
+
+    uint8_t sensor_mode;
+    bme280_get_sensor_mode(&sensor_mode, &dev);
+    printf(sensor_mode);
+
+    rslt = bme280_cal_meas_delay(&period, &settings);
+# 122 "main.c"
+    rslt = get_temperature(period, &dev);
+    while(1) {
+        printf(rslt);
+    }
+}
+
+
+
+
+static int8_t get_temperature(uint32_t period, struct bme280_dev *dev)
+{
+    int8_t rslt = -1;
+    int8_t idx = 0;
+    uint8_t status_reg;
+    struct bme280_data comp_data;
+
+    while (idx < 50)
     {
-        dht11Start();
-        uint8_t status = dht11CheckResponse();
-        if(status == DHT11_OK) {
+        rslt = bme280_get_regs(0xF3, &status_reg, 1, dev);
+
+        if (status_reg & 0x08)
+        {
+
+            dev->delay_us(period, dev->intf_ptr);
 
 
-            uint8_t data[80];
-            for(uint8_t i = 0; i < 80; i = i + 2) {
-
-
-                uint8_t lowTick = 0;
-                while(!PORTBbits.RB5 && lowTick < TIMEOUT) {
-                    lowTick++;
-                }
-
-
-
-                uint8_t highTick = 0;
-                while(PORTBbits.RB5 && highTick < TIMEOUT) {
-                    highTick++;
-                }
-
-
-
-
-                data[i] = lowTick;
-                data[i + 1] = highTick;
-            }
-
-
-
-            if(dht11ValidateResponse(data) == DHT11_OK) {
-
-                uint8_t humidity = parseDHT11Byte(data, (uint8_t) 0);
-                uint8_t humidityDecimal = parseDHT11Byte(data, (uint8_t) 1);
-                uint8_t temp = parseDHT11Byte(data, (uint8_t) 2);
-                uint8_t tempDecimal = parseDHT11Byte(data, (uint8_t) 3);
-                uint8_t checkSum = parseDHT11Byte(data, (uint8_t) 4);
-
-                if (checkSum == ((humidity + humidityDecimal + temp + tempDecimal) & 0xFF)) {
-                    printf("VALID");
-                }
-
-                printf(humidity);
-                printf(humidityDecimal);
-                printf(temp);
-                printf(tempDecimal);
-                free(data);
-            }
-
-        }
-    }
-}
-
-
-
-
-
-
-
-void dht11Start() {
-
-
-    (INTCONbits.GIE = 0);
-
-
-    do { TRISBbits.TRISB5 = 0; } while(0);
-    do { LATBbits.LATB5 = 1; } while(0);
-    _delay((unsigned long)((30)*(32000000/4000.0)));
-
-
-    do { LATBbits.LATB5 = 0; } while(0);
-    _delay((unsigned long)((30)*(32000000/4000.0)));
-
-
-    do { LATBbits.LATB5 = 1; } while(0);
-    _delay((unsigned long)((40)*(32000000/4000000.0)));
-
-    do { TRISBbits.TRISB5 = 1; } while(0);
-}
-
-uint8_t dht11CheckResponse() {
-
-
-
-    uint8_t tick = 0;
-    while(PORTBbits.RB5) {
-        if(tick > TIMEOUT) {
-            return DHT11_ERROR;
-        }
-
-        tick++;
-    };
-
-
-    tick = 0;
-    while(!PORTBbits.RB5) {
-        if(tick > TIMEOUT) {
-            return DHT11_ERROR;
-        }
-
-        tick++;
-    };
-
-
-    tick = 0;
-    while(PORTBbits.RB5) {
-        if(tick > TIMEOUT) {
-            return DHT11_ERROR;
-        }
-
-        tick++;
-    };
-
-
-    return DHT11_OK;
-}
-
-uint8_t dht11ValidateResponse(uint8_t byteArray[]) {
-    for(uint8_t i = 0; i < 80; i++) {
-        if(byteArray[i] == TIMEOUT) {
-            return DHT11_ERROR;
+            rslt = bme280_get_sensor_data(0x07, &comp_data, dev);
+            printf(&comp_data);
+            idx++;
         }
     }
 
-    return DHT11_OK;
-}
-
-uint8_t parseDHT11Byte(uint8_t byteArray[], uint8_t byte) {
-
-    uint8_t startPos = 16 * byte;
-    uint8_t result = 0;
-    uint8_t idx = 0;
-    for(uint8_t i = startPos; i < startPos + 16; i = i + 2) {
-
-        uint8_t low = byteArray[i];
-        uint8_t high = byteArray[i + 1];
-        if (low < high) {
-            uint8_t _bit = ((uint8_t)1) << (7 - idx);
-            result = result | _bit;
-        }
-
-        idx++;
-    }
-
-    return result;
+    return rslt;
 }

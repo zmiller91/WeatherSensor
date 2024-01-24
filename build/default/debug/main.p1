@@ -1,34 +1,23 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"52 ./mcc_generated_files/system/../uart/../system/system.h
-[; ;./mcc_generated_files/system/../uart/../system/system.h: 52: void SYSTEM_Initialize(void);
+"53 ./mcc_generated_files/system/../uart/../system/system.h
+[; ;./mcc_generated_files/system/../uart/../system/system.h: 53: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"1086 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1086:     struct {
-[s S56 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S56 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
-"1085
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1085: typedef union {
-[u S55 `S56 1 ]
-[n S55 . . ]
-"1097
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1097: extern volatile LATBbits_t LATBbits __attribute__((address(0x019)));
-[v _LATBbits `VS55 ~T0 @X0 0 e@25 ]
-[v F359 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
-[v __delay `JF359 ~T0 @X0 0 e ]
-[p i __delay ]
-"800 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 800:     struct {
-[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S46 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
-"799
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 799: typedef union {
-[u S45 `S46 1 ]
-[n S45 . . ]
-"811
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 811: extern volatile TRISBbits_t TRISBbits __attribute__((address(0x013)));
-[v _TRISBbits `VS45 ~T0 @X0 0 e@19 ]
+"19951 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19951:     struct {
+[s S977 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S977 . ANSELB0 ANSELB1 ANSELB2 ANSELB3 ANSELB4 ANSELB5 ANSELB6 ANSELB7 ]
+"19961
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19961:     struct {
+[s S978 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S978 . ANSB0 ANSB1 ANSB2 ANSB3 ANSB4 ANSB5 ANSB6 ANSB7 ]
+"19950
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19950: typedef union {
+[u S976 `S977 1 `S978 1 ]
+[n S976 . . . ]
+"19972
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19972: extern volatile ANSELBbits_t ANSELBbits __attribute__((address(0x1E96)));
+[v _ANSELBbits `VS976 ~T0 @X0 0 e@7830 ]
 "20063
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 20063:     struct {
 [s S980 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -40,36 +29,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20074
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 20074: extern volatile WPUBbits_t WPUBbits __attribute__((address(0x1E97)));
 [v _WPUBbits `VS979 ~T0 @X0 0 e@7831 ]
-"69 main.c
-[; ;main.c: 69: void dht11Start();
-[v _dht11Start `(v ~T0 @X0 0 e? ]
-"70
-[; ;main.c: 70: uint8_t dht11CheckResponse();
-[v _dht11CheckResponse `(uc ~T0 @X0 0 e? ]
-"514 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 514:     struct {
-[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S36 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"513
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 513: typedef union {
-[u S35 `S36 1 ]
-[n S35 . . ]
-"525
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 525: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
-[v _PORTBbits `VS35 ~T0 @X0 0 e@13 ]
-"71 main.c
-[; ;main.c: 71: uint8_t dht11ValidateResponse(uint8_t byteArray[]);
-[v _dht11ValidateResponse `(uc ~T0 @X0 0 ef1`*uc ]
-"68
-[; ;main.c: 68: uint8_t parseDHT11Byte(uint8_t byteArray[], uint8_t byte);
-[v _parseDHT11Byte `(uc ~T0 @X0 0 ef2`*uc`uc ]
-"107 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h
-[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 107: int printf(const char *restrict, ...);
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"45 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdlib.h
-[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdlib.h: 45: void free (void *);
-[v _free `(v ~T0 @X0 0 ef1`*v ]
-"419 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
+"419
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 419:     struct {
 [s S32 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S32 . INTEDG . PEIE GIE ]
@@ -80,6 +40,74 @@ Version 4.0 HI-TECH Software Intermediate Code
 "426
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS31 ~T0 @X0 0 e@11 ]
+[v F359 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
+[v __delay `JF359 ~T0 @X0 0 e ]
+[p i __delay ]
+"86 main.c
+[; ;main.c: 86:     struct bme280_dev dev;
+[c E8474 0 1 .. ]
+[n E8474 bme280_intf BME280_SPI_INTF BME280_I2C_INTF  ]
+[v F8533 `(c ~T0 @X0 0 tf4`uc`*uc`ul`*v ]
+[v F8539 `(c ~T0 @X0 0 tf4`uc`*Cuc`ul`*v ]
+[v F8545 `(v ~T0 @X0 0 tf2`ul`*v ]
+"323 ./bme280_defs.h
+[; ;./bme280_defs.h: 323: {
+[s S1089 `us 1 `s 1 `s 1 `us 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `uc 1 `s 1 `uc 1 `s 1 `s 1 `c 1 `l 1 ]
+[n S1089 bme280_calib_data dig_t1 dig_t2 dig_t3 dig_p1 dig_p2 dig_p3 dig_p4 dig_p5 dig_p6 dig_p7 dig_p8 dig_p9 dig_h1 dig_h2 dig_h3 dig_h4 dig_h5 dig_h6 t_fine ]
+"454
+[; ;./bme280_defs.h: 454: {
+[s S1093 `uc 1 `E8474 1 `*v 1 `c 1 `*F8533 1 `*F8539 1 `*F8545 1 `S1089 1 ]
+[n S1093 bme280_dev chip_id intf intf_ptr intf_rslt read write delay_us calib_data ]
+"433
+[; ;./bme280_defs.h: 433: {
+[s S1092 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1092 bme280_settings osr_p osr_t osr_h filter standby_time ]
+"113 ./common.h
+[; ;./common.h: 113: int8_t bme280_interface_selection(struct bme280_dev *dev, uint8_t intf);
+[v _bme280_interface_selection `(c ~T0 @X0 0 ef2`*S1093`uc ]
+"77 ./bme280.h
+[; ;./bme280.h: 77: int8_t bme280_init(struct bme280_dev *dev);
+[; ;./bme280.h: 77: int8_t bme280_init(struct bme280_dev *dev);
+[v _bme280_init `(c ~T0 @X0 0 ef1`*S1093 ]
+"194
+[; ;./bme280.h: 194: int8_t bme280_get_sensor_settings(struct bme280_settings *settings, struct bme280_dev *dev);
+[; ;./bme280.h: 194: int8_t bme280_get_sensor_settings(struct bme280_settings *settings, struct bme280_dev *dev);
+[v _bme280_get_sensor_settings `(c ~T0 @X0 0 ef2`*S1092`*S1093 ]
+"171
+[; ;./bme280.h: 171: int8_t bme280_set_sensor_settings(uint8_t desired_settings,
+[; ;./bme280.h: 171: int8_t bme280_set_sensor_settings(uint8_t desired_settings,
+[v _bme280_set_sensor_settings `(c ~T0 @X0 0 ef3`uc`*CS1092`*S1093 ]
+"228
+[; ;./bme280.h: 228: int8_t bme280_set_sensor_mode(uint8_t sensor_mode, struct bme280_dev *dev);
+[; ;./bme280.h: 228: int8_t bme280_set_sensor_mode(uint8_t sensor_mode, struct bme280_dev *dev);
+[v _bme280_set_sensor_mode `(c ~T0 @X0 0 ef2`uc`*S1093 ]
+"256
+[; ;./bme280.h: 256: int8_t bme280_get_sensor_mode(uint8_t *sensor_mode, struct bme280_dev *dev);
+[; ;./bme280.h: 256: int8_t bme280_get_sensor_mode(uint8_t *sensor_mode, struct bme280_dev *dev);
+[v _bme280_get_sensor_mode `(c ~T0 @X0 0 ef2`*uc`*S1093 ]
+"107 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 107: int printf(const char *restrict, ...);
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"352 ./bme280.h
+[; ;./bme280.h: 352: int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *settings);
+[; ;./bme280.h: 352: int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *settings);
+[v _bme280_cal_meas_delay `(c ~T0 @X0 0 ef2`*ul`*CS1092 ]
+"65 main.c
+[; ;main.c: 65: static int8_t get_temperature(uint32_t period, struct bme280_dev *dev);
+[v _get_temperature `(c ~T0 @X0 0 sf2`ul`*S1093 ]
+"388 ./bme280_defs.h
+[; ;./bme280_defs.h: 388: {
+[s S1090 `d 1 `d 1 `d 1 ]
+[n S1090 bme280_data pressure temperature humidity ]
+"128 ./bme280.h
+[; ;./bme280.h: 128: int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
+[; ;./bme280.h: 128: int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
+[v _bme280_get_regs `(c ~T0 @X0 0 ef4`uc`*uc`ul`*S1093 ]
+"290
+[; ;./bme280.h: 290: int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
+[; ;./bme280.h: 290: int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
+[v _bme280_get_sensor_data `(c ~T0 @X0 0 ef3`uc`*S1090`*S1093 ]
 "110 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1224,496 +1252,216 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 22220: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
 "64 main.c
-[; ;main.c: 64: uint8_t TIMEOUT = 100;
-[v _TIMEOUT `uc ~T0 @X0 1 e ]
-[i _TIMEOUT
--> -> 100 `i `uc
-]
-"65
-[; ;main.c: 65: uint8_t DHT11_ERROR = 101;
-[v _DHT11_ERROR `uc ~T0 @X0 1 e ]
-[i _DHT11_ERROR
--> -> 101 `i `uc
-]
-"66
-[; ;main.c: 66: uint8_t DHT11_OK = 202;
-[v _DHT11_OK `uc ~T0 @X0 1 e ]
-[i _DHT11_OK
--> -> 202 `i `uc
+[; ;main.c: 64: uint8_t data[26] = { 0 };
+[v _data `uc ~T0 @X0 -> 26 `i e ]
+[i _data
+:U ..
+-> -> 0 `i `uc
+..
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"73
-[; ;main.c: 73: int main(void)
+"67
+[; ;main.c: 67: int main(void){
 [v _main `(i ~T0 @X0 1 ef ]
-"74
-[; ;main.c: 74: {
 {
 [e :U _main ]
 [f ]
-"75
-[; ;main.c: 75:     SYSTEM_Initialize();
+"68
+[; ;main.c: 68:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"76
-[; ;main.c: 76:     do { LATBbits.LATB1 = 1; } while(0);
-[e :U 1089 ]
-{
-[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
-}
-[e :U 1088 ]
-"79
-[; ;main.c: 79:     _delay((unsigned long)((1000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"80
-[; ;main.c: 80:     do { TRISBbits.TRISB5 = 0; } while(0);
-[e :U 1092 ]
-{
-[e = . . _TRISBbits 0 5 -> -> 0 `i `uc ]
-}
-[e :U 1091 ]
-"81
-[; ;main.c: 81:     do { LATBbits.LATB5 = 1; } while(0);
-[e :U 1095 ]
-{
-[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
-}
-[e :U 1094 ]
-"82
-[; ;main.c: 82:     do { WPUBbits.WPUB5 = 1; } while(0);
-[e :U 1098 ]
-{
-[e = . . _WPUBbits 0 5 -> -> 1 `i `uc ]
-}
+"70
+[; ;main.c: 70:     do { ANSELBbits.ANSB1 = 0; } while(0);
 [e :U 1097 ]
-"83
-[; ;main.c: 83:     _delay((unsigned long)((1000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"85
-[; ;main.c: 85:     while(1)
+{
+[e = . . _ANSELBbits 1 1 -> -> 0 `i `uc ]
+}
+[e :U 1096 ]
+"71
+[; ;main.c: 71:     do { WPUBbits.WPUB1 = 1; } while(0);
 [e :U 1100 ]
-"86
-[; ;main.c: 86:     {
 {
-"87
-[; ;main.c: 87:         dht11Start();
-[e ( _dht11Start ..  ]
-"88
-[; ;main.c: 88:         uint8_t status = dht11CheckResponse();
-[v _status `uc ~T0 @X0 1 a ]
-[e = _status ( _dht11CheckResponse ..  ]
-"89
-[; ;main.c: 89:         if(status == DHT11_OK) {
-[e $ ! == -> _status `i -> _DHT11_OK `i 1102  ]
-{
-"92
-[; ;main.c: 92:             uint8_t data[80];
-[v _data `uc ~T0 @X0 -> 80 `i a ]
-"93
-[; ;main.c: 93:             for(uint8_t i = 0; i < 80; i = i + 2) {
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 80 `i 1103  ]
-[e $U 1104  ]
-[e :U 1103 ]
-{
-"96
-[; ;main.c: 96:                 uint8_t lowTick = 0;
-[v _lowTick `uc ~T0 @X0 1 a ]
-[e = _lowTick -> -> 0 `i `uc ]
-"97
-[; ;main.c: 97:                 while(!PORTBbits.RB5 && lowTick < TIMEOUT) {
-[e $U 1106  ]
-[e :U 1107 ]
-{
-"98
-[; ;main.c: 98:                     lowTick++;
-[e ++ _lowTick -> -> 1 `i `uc ]
-"99
-[; ;main.c: 99:                 }
-}
-[e :U 1106 ]
-"97
-[; ;main.c: 97:                 while(!PORTBbits.RB5 && lowTick < TIMEOUT) {
-[e $ && ! != -> . . _PORTBbits 0 5 `i -> 0 `i < -> _lowTick `i -> _TIMEOUT `i 1107  ]
-[e :U 1108 ]
-"103
-[; ;main.c: 103:                 uint8_t highTick = 0;
-[v _highTick `uc ~T0 @X0 1 a ]
-[e = _highTick -> -> 0 `i `uc ]
-"104
-[; ;main.c: 104:                 while(PORTBbits.RB5 && highTick < TIMEOUT) {
-[e $U 1109  ]
-[e :U 1110 ]
-{
-"105
-[; ;main.c: 105:                     highTick++;
-[e ++ _highTick -> -> 1 `i `uc ]
-"106
-[; ;main.c: 106:                 }
-}
-[e :U 1109 ]
-"104
-[; ;main.c: 104:                 while(PORTBbits.RB5 && highTick < TIMEOUT) {
-[e $ && != -> . . _PORTBbits 0 5 `i -> 0 `i < -> _highTick `i -> _TIMEOUT `i 1110  ]
-[e :U 1111 ]
-"111
-[; ;main.c: 111:                 data[i] = lowTick;
-[e = *U + &U _data * -> _i `ux -> -> # *U &U _data `ui `ux _lowTick ]
-"112
-[; ;main.c: 112:                 data[i + 1] = highTick;
-[e = *U + &U _data * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux _highTick ]
-"113
-[; ;main.c: 113:             }
-}
-[e = _i -> + -> _i `i -> 2 `i `uc ]
-[e $ < -> _i `i -> 80 `i 1103  ]
-[e :U 1104 ]
-}
-"117
-[; ;main.c: 117:             if(dht11ValidateResponse(data) == DHT11_OK) {
-[e $ ! == -> ( _dht11ValidateResponse (1 &U _data `i -> _DHT11_OK `i 1112  ]
-{
-"119
-[; ;main.c: 119:                 uint8_t humidity = parseDHT11Byte(data, (uint8_t) 0);
-[v _humidity `uc ~T0 @X0 1 a ]
-[e = _humidity ( _parseDHT11Byte (2 , &U _data -> -> 0 `i `uc ]
-"120
-[; ;main.c: 120:                 uint8_t humidityDecimal = parseDHT11Byte(data, (uint8_t) 1);
-[v _humidityDecimal `uc ~T0 @X0 1 a ]
-[e = _humidityDecimal ( _parseDHT11Byte (2 , &U _data -> -> 1 `i `uc ]
-"121
-[; ;main.c: 121:                 uint8_t temp = parseDHT11Byte(data, (uint8_t) 2);
-[v _temp `uc ~T0 @X0 1 a ]
-[e = _temp ( _parseDHT11Byte (2 , &U _data -> -> 2 `i `uc ]
-"122
-[; ;main.c: 122:                 uint8_t tempDecimal = parseDHT11Byte(data, (uint8_t) 3);
-[v _tempDecimal `uc ~T0 @X0 1 a ]
-[e = _tempDecimal ( _parseDHT11Byte (2 , &U _data -> -> 3 `i `uc ]
-"123
-[; ;main.c: 123:                 uint8_t checkSum = parseDHT11Byte(data, (uint8_t) 4);
-[v _checkSum `uc ~T0 @X0 1 a ]
-[e = _checkSum ( _parseDHT11Byte (2 , &U _data -> -> 4 `i `uc ]
-"125
-[; ;main.c: 125:                 if (checkSum == ((humidity + humidityDecimal + temp + tempDecimal) & 0xFF)) {
-[e $ ! == -> _checkSum `i & + + + -> _humidity `i -> _humidityDecimal `i -> _temp `i -> _tempDecimal `i -> 255 `i 1113  ]
-{
-"126
-[; ;main.c: 126:                     printf("VALID");
-[e ( _printf :s 1C ]
-"127
-[; ;main.c: 127:                 }
-}
-[e :U 1113 ]
-"129
-[; ;main.c: 129:                 printf(humidity);
-[e ( _printf -> _humidity `*Cuc ]
-"130
-[; ;main.c: 130:                 printf(humidityDecimal);
-[e ( _printf -> _humidityDecimal `*Cuc ]
-"131
-[; ;main.c: 131:                 printf(temp);
-[e ( _printf -> _temp `*Cuc ]
-"132
-[; ;main.c: 132:                 printf(tempDecimal);
-[e ( _printf -> _tempDecimal `*Cuc ]
-"133
-[; ;main.c: 133:                 free(data);
-[e ( _free (1 -> &U _data `*v ]
-"134
-[; ;main.c: 134:             }
-}
-[e :U 1112 ]
-"136
-[; ;main.c: 136:         }
-}
-[e :U 1102 ]
-"137
-[; ;main.c: 137:     }
+[e = . . _WPUBbits 0 1 -> -> 1 `i `uc ]
 }
 [e :U 1099 ]
-[e $U 1100  ]
-[e :U 1101 ]
+"72
+[; ;main.c: 72:     do { ANSELBbits.ANSB2 = 0; } while(0);
+[e :U 1103 ]
+{
+[e = . . _ANSELBbits 1 2 -> -> 0 `i `uc ]
+}
+[e :U 1102 ]
+"73
+[; ;main.c: 73:     do { WPUBbits.WPUB2 = 1; } while(0);
+[e :U 1106 ]
+{
+[e = . . _WPUBbits 0 2 -> -> 1 `i `uc ]
+}
+[e :U 1105 ]
+"75
+[; ;main.c: 75:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+"76
+[; ;main.c: 76:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+"78
+[; ;main.c: 78:     _delay((unsigned long)((1000)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"80
+[; ;main.c: 80:     uint8_t address = 0x76;
+[v _address `uc ~T0 @X0 1 a ]
+[e = _address -> -> 118 `i `uc ]
+"81
+[; ;main.c: 81:     uint8_t chipId = 0xD0;
+[v _chipId `uc ~T0 @X0 1 a ]
+[e = _chipId -> -> 208 `i `uc ]
+"84
+[; ;main.c: 84:     int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"85
+[; ;main.c: 85:     uint32_t period;
+[v _period `ul ~T0 @X0 1 a ]
+"86
+[; ;main.c: 86:     struct bme280_dev dev;
+[v _dev `S1093 ~T0 @X0 1 a ]
+"87
+[; ;main.c: 87:     struct bme280_settings settings;
+[v _settings `S1092 ~T0 @X0 1 a ]
+"89
+[; ;main.c: 89:     rslt = bme280_interface_selection(&dev, BME280_I2C_INTF);
+[e = _rslt ( _bme280_interface_selection (2 , &U _dev -> . `E8474 1 `uc ]
+"90
+[; ;main.c: 90:     rslt = bme280_init(&dev);
+[e = _rslt ( _bme280_init (1 &U _dev ]
+"91
+[; ;main.c: 91:     rslt = bme280_get_sensor_settings(&settings, &dev);
+[e = _rslt ( _bme280_get_sensor_settings (2 , &U _settings &U _dev ]
+"95
+[; ;main.c: 95:     settings.filter = (0x01);
+[e = . _settings 3 -> -> 1 `i `uc ]
+"98
+[; ;main.c: 98:     settings.osr_h = 0x01;
+[e = . _settings 2 -> -> 1 `i `uc ]
+"99
+[; ;main.c: 99:     settings.osr_p = 0x01;
+[e = . _settings 0 -> -> 1 `i `uc ]
+"100
+[; ;main.c: 100:     settings.osr_t = 0x01;
+[e = . _settings 1 -> -> 1 `i `uc ]
+"103
+[; ;main.c: 103:     settings.standby_time = (0x00);
+[e = . _settings 4 -> -> 0 `i `uc ]
+"105
+[; ;main.c: 105:     rslt = bme280_set_sensor_settings(0x1F, &settings, &dev);
+[e = _rslt ( _bme280_set_sensor_settings (3 , , -> -> 31 `i `uc -> &U _settings `*CS1092 &U _dev ]
+"106
+[; ;main.c: 106:     rslt = bme280_set_sensor_mode(0x03, &dev);
+[e = _rslt ( _bme280_set_sensor_mode (2 , -> -> 3 `i `uc &U _dev ]
+"109
+[; ;main.c: 109:     uint8_t sensor_mode;
+[v _sensor_mode `uc ~T0 @X0 1 a ]
+"110
+[; ;main.c: 110:     bme280_get_sensor_mode(&sensor_mode, &dev);
+[e ( _bme280_get_sensor_mode (2 , &U _sensor_mode &U _dev ]
+"111
+[; ;main.c: 111:     printf(sensor_mode);
+[e ( _printf -> _sensor_mode `*Cuc ]
+"113
+[; ;main.c: 113:     rslt = bme280_cal_meas_delay(&period, &settings);
+[e = _rslt ( _bme280_cal_meas_delay (2 , &U _period -> &U _settings `*CS1092 ]
+"122
+[; ;main.c: 122:     rslt = get_temperature(period, &dev);
+[e = _rslt ( _get_temperature (2 , _period &U _dev ]
+"123
+[; ;main.c: 123:     while(1) {
+[e :U 1108 ]
+{
+"124
+[; ;main.c: 124:         printf(rslt);
+[e ( _printf -> -> _rslt `*Cc `*Cuc ]
+"125
+[; ;main.c: 125:     }
+}
+[e :U 1107 ]
+[e $U 1108  ]
+[e :U 1109 ]
+"126
+[; ;main.c: 126: }
+[e :UE 1094 ]
+}
+"131
+[; ;main.c: 131: static int8_t get_temperature(uint32_t period, struct bme280_dev *dev)
+[v _get_temperature `(c ~T0 @X0 1 sf2`ul`*S1093 ]
+"132
+[; ;main.c: 132: {
+{
+[e :U _get_temperature ]
+"131
+[; ;main.c: 131: static int8_t get_temperature(uint32_t period, struct bme280_dev *dev)
+[v _period `ul ~T0 @X0 1 r1 ]
+[v _dev `*S1093 ~T0 @X0 1 r2 ]
+"132
+[; ;main.c: 132: {
+[f ]
+"133
+[; ;main.c: 133:     int8_t rslt = -1;
+[v _rslt `c ~T0 @X0 1 a ]
+[e = _rslt -> -U -> 1 `i `c ]
+"134
+[; ;main.c: 134:     int8_t idx = 0;
+[v _idx `c ~T0 @X0 1 a ]
+[e = _idx -> -> 0 `i `c ]
+"135
+[; ;main.c: 135:     uint8_t status_reg;
+[v _status_reg `uc ~T0 @X0 1 a ]
+"136
+[; ;main.c: 136:     struct bme280_data comp_data;
+[v _comp_data `S1090 ~T0 @X0 1 a ]
 "138
-[; ;main.c: 138: }
-[e :UE 1086 ]
-}
-"146
-[; ;main.c: 146: void dht11Start() {
-[v _dht11Start `(v ~T0 @X0 1 ef ]
+[; ;main.c: 138:     while (idx < 50)
+[e $U 1111  ]
+[e :U 1112 ]
+"139
+[; ;main.c: 139:     {
 {
-[e :U _dht11Start ]
-[f ]
+"140
+[; ;main.c: 140:         rslt = bme280_get_regs(0xF3, &status_reg, 1, dev);
+[e = _rslt ( _bme280_get_regs (4 , , , -> -> 243 `i `uc &U _status_reg -> -> -> 1 `i `l `ul _dev ]
+"142
+[; ;main.c: 142:         if (status_reg & 0x08)
+[e $ ! != & -> _status_reg `i -> 8 `i -> 0 `i 1114  ]
+"143
+[; ;main.c: 143:         {
+{
+"145
+[; ;main.c: 145:             dev->delay_us(period, dev->intf_ptr);
+[e ( *U . *U _dev 6 (2 , _period . *U _dev 2 ]
+"148
+[; ;main.c: 148:             rslt = bme280_get_sensor_data(0x07, &comp_data, dev);
+[e = _rslt ( _bme280_get_sensor_data (3 , , -> -> 7 `i `uc &U _comp_data _dev ]
 "149
-[; ;main.c: 149:     (INTCONbits.GIE = 0);
-[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 149:             printf(&comp_data);
+[e ( _printf -> &U _comp_data `*Cuc ]
+"150
+[; ;main.c: 150:             idx++;
+[e ++ _idx -> -> 1 `i `c ]
+"151
+[; ;main.c: 151:         }
+}
+[e :U 1114 ]
 "152
-[; ;main.c: 152:     do { TRISBbits.TRISB5 = 0; } while(0);
-[e :U 1117 ]
-{
-[e = . . _TRISBbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 152:     }
 }
-[e :U 1116 ]
-"153
-[; ;main.c: 153:     do { LATBbits.LATB5 = 1; } while(0);
-[e :U 1120 ]
-{
-[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
-}
-[e :U 1119 ]
+[e :U 1111 ]
+"138
+[; ;main.c: 138:     while (idx < 50)
+[e $ < -> _idx `i -> 50 `i 1112  ]
+[e :U 1113 ]
 "154
-[; ;main.c: 154:     _delay((unsigned long)((30)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"157
-[; ;main.c: 157:     do { LATBbits.LATB5 = 0; } while(0);
-[e :U 1123 ]
-{
-[e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
-}
-[e :U 1122 ]
-"158
-[; ;main.c: 158:     _delay((unsigned long)((30)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"161
-[; ;main.c: 161:     do { LATBbits.LATB5 = 1; } while(0);
-[e :U 1126 ]
-{
-[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
-}
-[e :U 1125 ]
-"162
-[; ;main.c: 162:     _delay((unsigned long)((40)*(32000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"164
-[; ;main.c: 164:     do { TRISBbits.TRISB5 = 1; } while(0);
-[e :U 1129 ]
-{
-[e = . . _TRISBbits 0 5 -> -> 1 `i `uc ]
-}
-[e :U 1128 ]
-"165
-[; ;main.c: 165: }
-[e :UE 1114 ]
-}
-"167
-[; ;main.c: 167: uint8_t dht11CheckResponse() {
-[v _dht11CheckResponse `(uc ~T0 @X0 1 ef ]
-{
-[e :U _dht11CheckResponse ]
-[f ]
-"171
-[; ;main.c: 171:     uint8_t tick = 0;
-[v _tick `uc ~T0 @X0 1 a ]
-[e = _tick -> -> 0 `i `uc ]
-"172
-[; ;main.c: 172:     while(PORTBbits.RB5) {
-[e $U 1131  ]
-[e :U 1132 ]
-{
-"173
-[; ;main.c: 173:         if(tick > TIMEOUT) {
-[e $ ! > -> _tick `i -> _TIMEOUT `i 1134  ]
-{
-"174
-[; ;main.c: 174:             return DHT11_ERROR;
-[e ) _DHT11_ERROR ]
-[e $UE 1130  ]
-"175
-[; ;main.c: 175:         }
-}
-[e :U 1134 ]
-"177
-[; ;main.c: 177:         tick++;
-[e ++ _tick -> -> 1 `i `uc ]
-"178
-[; ;main.c: 178:     };
-}
-[e :U 1131 ]
-"172
-[; ;main.c: 172:     while(PORTBbits.RB5) {
-[e $ != -> . . _PORTBbits 0 5 `i -> 0 `i 1132  ]
-[e :U 1133 ]
-"181
-[; ;main.c: 181:     tick = 0;
-[e = _tick -> -> 0 `i `uc ]
-"182
-[; ;main.c: 182:     while(!PORTBbits.RB5) {
-[e $U 1135  ]
-[e :U 1136 ]
-{
-"183
-[; ;main.c: 183:         if(tick > TIMEOUT) {
-[e $ ! > -> _tick `i -> _TIMEOUT `i 1138  ]
-{
-"184
-[; ;main.c: 184:             return DHT11_ERROR;
-[e ) _DHT11_ERROR ]
-[e $UE 1130  ]
-"185
-[; ;main.c: 185:         }
-}
-[e :U 1138 ]
-"187
-[; ;main.c: 187:         tick++;
-[e ++ _tick -> -> 1 `i `uc ]
-"188
-[; ;main.c: 188:     };
-}
-[e :U 1135 ]
-"182
-[; ;main.c: 182:     while(!PORTBbits.RB5) {
-[e $ ! != -> . . _PORTBbits 0 5 `i -> 0 `i 1136  ]
-[e :U 1137 ]
-"191
-[; ;main.c: 191:     tick = 0;
-[e = _tick -> -> 0 `i `uc ]
-"192
-[; ;main.c: 192:     while(PORTBbits.RB5) {
-[e $U 1139  ]
-[e :U 1140 ]
-{
-"193
-[; ;main.c: 193:         if(tick > TIMEOUT) {
-[e $ ! > -> _tick `i -> _TIMEOUT `i 1142  ]
-{
-"194
-[; ;main.c: 194:             return DHT11_ERROR;
-[e ) _DHT11_ERROR ]
-[e $UE 1130  ]
-"195
-[; ;main.c: 195:         }
-}
-[e :U 1142 ]
-"197
-[; ;main.c: 197:         tick++;
-[e ++ _tick -> -> 1 `i `uc ]
-"198
-[; ;main.c: 198:     };
-}
-[e :U 1139 ]
-"192
-[; ;main.c: 192:     while(PORTBbits.RB5) {
-[e $ != -> . . _PORTBbits 0 5 `i -> 0 `i 1140  ]
-[e :U 1141 ]
-"201
-[; ;main.c: 201:     return DHT11_OK;
-[e ) _DHT11_OK ]
-[e $UE 1130  ]
-"202
-[; ;main.c: 202: }
-[e :UE 1130 ]
-}
-"204
-[; ;main.c: 204: uint8_t dht11ValidateResponse(uint8_t byteArray[]) {
-[v _dht11ValidateResponse `(uc ~T0 @X0 1 ef1`*uc ]
-{
-[e :U _dht11ValidateResponse ]
-[v _byteArray `*uc ~T0 @X0 1 r1 ]
-[f ]
-"205
-[; ;main.c: 205:     for(uint8_t i = 0; i < 80; i++) {
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 80 `i 1144  ]
-[e $U 1145  ]
-[e :U 1144 ]
-{
-"206
-[; ;main.c: 206:         if(byteArray[i] == TIMEOUT) {
-[e $ ! == -> *U + _byteArray * -> _i `ux -> -> # *U _byteArray `ui `ux `i -> _TIMEOUT `i 1147  ]
-{
-"207
-[; ;main.c: 207:             return DHT11_ERROR;
-[e ) _DHT11_ERROR ]
-[e $UE 1143  ]
-"208
-[; ;main.c: 208:         }
-}
-[e :U 1147 ]
-"209
-[; ;main.c: 209:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 80 `i 1144  ]
-[e :U 1145 ]
-}
-"211
-[; ;main.c: 211:     return DHT11_OK;
-[e ) _DHT11_OK ]
-[e $UE 1143  ]
-"212
-[; ;main.c: 212: }
-[e :UE 1143 ]
-}
-"214
-[; ;main.c: 214: uint8_t parseDHT11Byte(uint8_t byteArray[], uint8_t byte) {
-[v _parseDHT11Byte `(uc ~T0 @X0 1 ef2`*uc`uc ]
-{
-[e :U _parseDHT11Byte ]
-[v _byteArray `*uc ~T0 @X0 1 r1 ]
-[v _byte `uc ~T0 @X0 1 r2 ]
-[f ]
-"216
-[; ;main.c: 216:     uint8_t startPos = 16 * byte;
-[v _startPos `uc ~T0 @X0 1 a ]
-[e = _startPos -> * -> 16 `i -> _byte `i `uc ]
-"217
-[; ;main.c: 217:     uint8_t result = 0;
-[v _result `uc ~T0 @X0 1 a ]
-[e = _result -> -> 0 `i `uc ]
-"218
-[; ;main.c: 218:     uint8_t idx = 0;
-[v _idx `uc ~T0 @X0 1 a ]
-[e = _idx -> -> 0 `i `uc ]
-"219
-[; ;main.c: 219:     for(uint8_t i = startPos; i < startPos + 16; i = i + 2) {
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i _startPos ]
-[e $U 1152  ]
-[e :U 1149 ]
-{
-"221
-[; ;main.c: 221:         uint8_t low = byteArray[i];
-[v _low `uc ~T0 @X0 1 a ]
-[e = _low *U + _byteArray * -> _i `ux -> -> # *U _byteArray `ui `ux ]
-"222
-[; ;main.c: 222:         uint8_t high = byteArray[i + 1];
-[v _high `uc ~T0 @X0 1 a ]
-[e = _high *U + _byteArray * -> + -> _i `i -> 1 `i `x -> -> # *U _byteArray `i `x ]
-"223
-[; ;main.c: 223:         if (low < high) {
-[e $ ! < -> _low `i -> _high `i 1153  ]
-{
-"224
-[; ;main.c: 224:             uint8_t _bit = ((uint8_t)1) << (7 - idx);
-[v __bit `uc ~T0 @X0 1 a ]
-[e = __bit -> << -> -> -> 1 `i `uc `i - -> 7 `i -> _idx `i `uc ]
-"225
-[; ;main.c: 225:             result = result | _bit;
-[e = _result -> | -> _result `i -> __bit `i `uc ]
-"226
-[; ;main.c: 226:         }
-}
-[e :U 1153 ]
-"228
-[; ;main.c: 228:         idx++;
-[e ++ _idx -> -> 1 `i `uc ]
-"229
-[; ;main.c: 229:     }
-}
-[e = _i -> + -> _i `i -> 2 `i `uc ]
-[e :U 1152 ]
-[e $ < -> _i `i + -> _startPos `i -> 16 `i 1149  ]
-[e :U 1150 ]
-}
-"231
-[; ;main.c: 231:     return result;
-[e ) _result ]
-[e $UE 1148  ]
-"232
-[; ;main.c: 232: }
-[e :UE 1148 ]
+[; ;main.c: 154:     return rslt;
+[e ) _rslt ]
+[e $UE 1110  ]
+"155
+[; ;main.c: 155: }
+[e :UE 1110 ]
 }
 [p f _printf 9437696 ]
-[a 1C 86 65 76 73 68 0 ]

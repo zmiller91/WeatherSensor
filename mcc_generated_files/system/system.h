@@ -41,6 +41,7 @@
 #include "../system/clock.h"
 #include "../system/pins.h"
 #include "../uart/eusart1.h"
+#include "../i2c_host/mssp2.h"
 #include "../system/interrupt.h"
 
 /**

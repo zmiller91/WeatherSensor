@@ -63,6 +63,21 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     {
         PIN_MANAGER_IOC();
     }
+    else if(INTCONbits.PEIE == 1)
+    {
+        if(PIE4bits.BCL2IE == 1 && PIR4bits.BCL2IF == 1)
+        {
+            I2C2_ERROR_ISR();
+        } 
+        else if(PIE4bits.SSP2IE == 1 && PIR4bits.SSP2IF == 1)
+        {
+            I2C2_ISR();
+        } 
+        else
+        {
+            //Unhandled Interrupt
+        }
+    }      
     else
     {
         //Unhandled Interrupt

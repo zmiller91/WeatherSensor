@@ -8,7 +8,7 @@
 # 2 "<built-in>" 2
 # 1 "mcc_generated_files/system/src/config_bits.c" 2
 # 36 "mcc_generated_files/system/src/config_bits.c"
-#pragma config FEXTOSC = ECL
+#pragma config FEXTOSC = ECH
 #pragma config RSTOSC = HFINTOSC_32MHz
 #pragma config CLKOUTEN = OFF
 #pragma config VDDAR = HI
