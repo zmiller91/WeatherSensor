@@ -1,8 +1,27 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"53 ./mcc_generated_files/system/../uart/../system/system.h
-[; ;./mcc_generated_files/system/../uart/../system/system.h: 53: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"862 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 862:     struct {
+[s S48 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S48 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"861
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 861: typedef union {
+[u S47 `S48 1 ]
+[n S47 . . ]
+"873
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 873: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x014)));
+[v _TRISCbits `VS47 ~T0 @X0 0 e@20 ]
+[v F8330 `(v ~T0 @X0 1 tf ]
+"137 ./mcc_generated_files/system/../uart/eusart1.h
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 137: __attribute__((inline)) void EUSART1_Enable(void);
+[v _EUSART1_Enable `TF8330 ~T0 @X0 0 e ]
+[v F8334 `(v ~T0 @X0 1 tf ]
+"154
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 154: __attribute__((inline)) void EUSART1_TransmitEnable(void);
+[v _EUSART1_TransmitEnable `TF8334 ~T0 @X0 0 e ]
+[v F8338 `(v ~T0 @X0 1 tf ]
+"171
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 171: __attribute__((inline)) void EUSART1_ReceiveEnable(void);
+[v _EUSART1_ReceiveEnable `TF8338 ~T0 @X0 0 e ]
 "19951 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19951:     struct {
 [s S977 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -29,23 +48,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20074
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 20074: extern volatile WPUBbits_t WPUBbits __attribute__((address(0x1E97)));
 [v _WPUBbits `VS979 ~T0 @X0 0 e@7831 ]
-"419
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 419:     struct {
-[s S32 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S32 . INTEDG . PEIE GIE ]
-"418
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 418: typedef union {
-[u S31 `S32 1 ]
-[n S31 . . ]
-"426
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS31 ~T0 @X0 0 e@11 ]
-[v F359 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
-[v __delay `JF359 ~T0 @X0 0 e ]
-[p i __delay ]
-"86 main.c
-[; ;main.c: 86:     struct bme280_dev dev;
+"100 main.c
+[; ;main.c: 100: struct bme280_dev get_bme280() {
 [c E8474 0 1 .. ]
 [n E8474 bme280_intf BME280_SPI_INTF BME280_I2C_INTF  ]
 [v F8533 `(c ~T0 @X0 0 tf4`uc`*uc`ul`*v ]
@@ -82,32 +86,76 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./bme280.h: 228: int8_t bme280_set_sensor_mode(uint8_t sensor_mode, struct bme280_dev *dev);
 [; ;./bme280.h: 228: int8_t bme280_set_sensor_mode(uint8_t sensor_mode, struct bme280_dev *dev);
 [v _bme280_set_sensor_mode `(c ~T0 @X0 0 ef2`uc`*S1093 ]
-"256
-[; ;./bme280.h: 256: int8_t bme280_get_sensor_mode(uint8_t *sensor_mode, struct bme280_dev *dev);
-[; ;./bme280.h: 256: int8_t bme280_get_sensor_mode(uint8_t *sensor_mode, struct bme280_dev *dev);
-[v _bme280_get_sensor_mode `(c ~T0 @X0 0 ef2`*uc`*S1093 ]
-"107 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h
+"348 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\math.h
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\math.h: 348: float roundf(float);
+[v _roundf `(f ~T0 @X0 0 ef1`f ]
+"111 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 111: int sprintf(char *restrict, const char *restrict, ...);
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"113
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 113: int snprintf(char *restrict, size_t, const char *restrict, ...);
+[v _snprintf `(i ~T0 @X0 0 e2v`*uc`ui`*Cuc ]
+"107
 [; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 107: int printf(const char *restrict, ...);
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"352 ./bme280.h
-[; ;./bme280.h: 352: int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *settings);
-[; ;./bme280.h: 352: int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *settings);
-[v _bme280_cal_meas_delay `(c ~T0 @X0 0 ef2`*ul`*CS1092 ]
-"65 main.c
-[; ;main.c: 65: static int8_t get_temperature(uint32_t period, struct bme280_dev *dev);
-[v _get_temperature `(c ~T0 @X0 0 sf2`ul`*S1093 ]
+"78 main.c
+[; ;main.c: 78: void write_lora(char data[]);
+[v _write_lora `(v ~T0 @X0 0 ef1`*uc ]
+"79
+[; ;main.c: 79: void read_lora();
+[v _read_lora `(v ~T0 @X0 0 e? ]
+"283 ./mcc_generated_files/system/../uart/eusart1.h
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 283: void EUSART1_Write(uint8_t txData);
+[v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
+"255
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 255: _Bool EUSART1_IsTxDone(void);
+[v _EUSART1_IsTxDone `(a ~T0 @X0 0 ef ]
+"237
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 237: _Bool EUSART1_IsRxReady(void);
+[v _EUSART1_IsRxReady `(a ~T0 @X0 0 ef ]
+"273
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 273: uint8_t EUSART1_Read(void);
+[v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
+"39 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h: 39: int strcmp (const char *, const char *);
+[v _strcmp `(i ~T0 @X0 0 ef2`*Cuc`*Cuc ]
+[p mainexit ]
+"53 ./mcc_generated_files/system/../uart/../system/system.h
+[; ;./mcc_generated_files/system/../uart/../system/system.h: 53: void SYSTEM_Initialize(void);
+[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"419 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 419:     struct {
+[s S32 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S32 . INTEDG . PEIE GIE ]
+"418
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 418: typedef union {
+[u S31 `S32 1 ]
+[n S31 . . ]
+"426
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS31 ~T0 @X0 0 e@11 ]
 "388 ./bme280_defs.h
 [; ;./bme280_defs.h: 388: {
 [s S1090 `d 1 `d 1 `d 1 ]
 [n S1090 bme280_data pressure temperature humidity ]
-"128 ./bme280.h
-[; ;./bme280.h: 128: int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
-[; ;./bme280.h: 128: int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
-[v _bme280_get_regs `(c ~T0 @X0 0 ef4`uc`*uc`ul`*S1093 ]
-"290
+"76 main.c
+[; ;main.c: 76: struct bme280_data get_temperature(struct bme280_dev *dev);
+[v _get_temperature `(S1090 ~T0 @X0 0 ef1`*S1093 ]
+[v F359 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
+[v __delay `JF359 ~T0 @X0 0 e ]
+[p i __delay ]
+"77 main.c
+[; ;main.c: 77: _Bool is_measurement_done(struct bme280_dev *dev);
+[v _is_measurement_done `(a ~T0 @X0 0 ef1`*S1093 ]
+"290 ./bme280.h
 [; ;./bme280.h: 290: int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
 [; ;./bme280.h: 290: int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
 [v _bme280_get_sensor_data `(c ~T0 @X0 0 ef3`uc`*S1090`*S1093 ]
+"128
+[; ;./bme280.h: 128: int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
+[; ;./bme280.h: 128: int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
+[v _bme280_get_regs `(c ~T0 @X0 0 ef4`uc`*uc`ul`*S1093 ]
 "110 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1251,217 +1299,546 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22220
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 22220: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"64 main.c
-[; ;main.c: 64: uint8_t data[26] = { 0 };
+"68 main.c
+[; ;main.c: 68: uint8_t data[26] = { 0 };
 [v _data `uc ~T0 @X0 -> 26 `i e ]
 [i _data
 :U ..
 -> -> 0 `i `uc
 ..
 ]
+"82
+[; ;main.c: 82: void setup_lora() {
+[v _setup_lora `(v ~T0 @X0 1 ef ]
+{
+[e :U _setup_lora ]
+[f ]
+"84
+[; ;main.c: 84:     do { TRISCbits.TRISC7 = 1; } while(0);
+[e :U 1097 ]
+{
+[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
+}
+[e :U 1096 ]
+"85
+[; ;main.c: 85:     do { TRISCbits.TRISC6 = 0; } while(0);
+[e :U 1100 ]
+{
+[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
+}
+[e :U 1099 ]
+"87
+[; ;main.c: 87:     EUSART1_Enable();
+[e ( _EUSART1_Enable ..  ]
+"88
+[; ;main.c: 88:     EUSART1_TransmitEnable();
+[e ( _EUSART1_TransmitEnable ..  ]
+"89
+[; ;main.c: 89:     EUSART1_ReceiveEnable();
+[e ( _EUSART1_ReceiveEnable ..  ]
+"90
+[; ;main.c: 90: }
+[e :UE 1094 ]
+}
+"92
+[; ;main.c: 92: void setup_bme280() {
+[v _setup_bme280 `(v ~T0 @X0 1 ef ]
+{
+[e :U _setup_bme280 ]
+[f ]
+"94
+[; ;main.c: 94:     do { ANSELBbits.ANSB1 = 0; } while(0);
+[e :U 1104 ]
+{
+[e = . . _ANSELBbits 1 1 -> -> 0 `i `uc ]
+}
+[e :U 1103 ]
+"95
+[; ;main.c: 95:     do { WPUBbits.WPUB1 = 1; } while(0);
+[e :U 1107 ]
+{
+[e = . . _WPUBbits 0 1 -> -> 1 `i `uc ]
+}
+[e :U 1106 ]
+"96
+[; ;main.c: 96:     do { ANSELBbits.ANSB2 = 0; } while(0);
+[e :U 1110 ]
+{
+[e = . . _ANSELBbits 1 2 -> -> 0 `i `uc ]
+}
+[e :U 1109 ]
+"97
+[; ;main.c: 97:     do { WPUBbits.WPUB2 = 1; } while(0);
+[e :U 1113 ]
+{
+[e = . . _WPUBbits 0 2 -> -> 1 `i `uc ]
+}
+[e :U 1112 ]
+"98
+[; ;main.c: 98: }
+[e :UE 1101 ]
+}
+"100
+[; ;main.c: 100: struct bme280_dev get_bme280() {
+[v _get_bme280 `(S1093 ~T0 @X0 1 ef ]
+{
+[e :U _get_bme280 ]
+[f ]
+"102
+[; ;main.c: 102:     int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"103
+[; ;main.c: 103:     struct bme280_dev dev;
+[v _dev `S1093 ~T0 @X0 1 a ]
+"104
+[; ;main.c: 104:     struct bme280_settings settings;
+[v _settings `S1092 ~T0 @X0 1 a ]
+"106
+[; ;main.c: 106:     rslt = bme280_interface_selection(&dev, BME280_I2C_INTF);
+[e = _rslt ( _bme280_interface_selection (2 , &U _dev -> . `E8474 1 `uc ]
+"107
+[; ;main.c: 107:     rslt = bme280_init(&dev);
+[e = _rslt ( _bme280_init (1 &U _dev ]
+"108
+[; ;main.c: 108:     rslt = bme280_get_sensor_settings(&settings, &dev);
+[e = _rslt ( _bme280_get_sensor_settings (2 , &U _settings &U _dev ]
+"112
+[; ;main.c: 112:     settings.filter = (0x00);
+[e = . _settings 3 -> -> 0 `i `uc ]
+"115
+[; ;main.c: 115:     settings.osr_h = 0x01;
+[e = . _settings 2 -> -> 1 `i `uc ]
+"116
+[; ;main.c: 116:     settings.osr_p = 0x01;
+[e = . _settings 0 -> -> 1 `i `uc ]
+"117
+[; ;main.c: 117:     settings.osr_t = 0x01;
+[e = . _settings 1 -> -> 1 `i `uc ]
+"120
+[; ;main.c: 120:     settings.standby_time = (0x00);
+[e = . _settings 4 -> -> 0 `i `uc ]
+"122
+[; ;main.c: 122:     rslt = bme280_set_sensor_settings(0x1F, &settings, &dev);
+[e = _rslt ( _bme280_set_sensor_settings (3 , , -> -> 31 `i `uc -> &U _settings `*CS1092 &U _dev ]
+"123
+[; ;main.c: 123:     rslt = bme280_set_sensor_mode(0x00, &dev);
+[e = _rslt ( _bme280_set_sensor_mode (2 , -> -> 0 `i `uc &U _dev ]
+"125
+[; ;main.c: 125:     return dev;
+[e ) _dev ]
+[e $UE 1114  ]
+"126
+[; ;main.c: 126: }
+[e :UE 1114 ]
+}
+"128
+[; ;main.c: 128: void send(uint8_t address, char tag[], double metric) {
+[v _send `(v ~T0 @X0 1 ef3`uc`*uc`d ]
+{
+[e :U _send ]
+[v _address `uc ~T0 @X0 1 r1 ]
+[v _tag `*uc ~T0 @X0 1 r2 ]
+[v _metric `d ~T0 @X0 1 r3 ]
+[f ]
+"131
+[; ;main.c: 131:     if(sizeof(tag) > 20) {
+[e $ ! > -> # _tag `ui -> -> 20 `i `ui 1116  ]
+{
+"133
+[; ;main.c: 133:     }
+}
+[e :U 1116 ]
+"137
+[; ;main.c: 137:     char t[10];
+[v _t `uc ~T0 @X0 -> 10 `i a ]
+"138
+[; ;main.c: 138:     float rounded = roundf(metric * 100) / 100;
+[v _rounded `f ~T0 @X0 1 a ]
+[e = _rounded / ( _roundf (1 -> * _metric -> -> 100 `i `d `f -> -> 100 `i `f ]
+"139
+[; ;main.c: 139:     sprintf(t, "%g", rounded);
+[e ( _sprintf (1 , (. , &U _t :s 1C -> _rounded `d ]
+"143
+[; ;main.c: 143:     int payload_size = snprintf(((void*)0), 0, "%s::%s", tag, t);
+[v _payload_size `i ~T0 @X0 1 a ]
+[e = _payload_size ( _snprintf (2 , , (. , , -> -> -> 0 `i `*v `*uc -> -> 0 `i `ui :s 2C _tag &U _t ]
+"144
+[; ;main.c: 144:     printf(payload_size);
+[e ( _printf -> _payload_size `*Cuc ]
+[v F9109 `uc ~T0 @X0 -> 50 `i s ]
+[i F9109
+:U ..
+"147
+[; ;main.c: 147:     char buffer[50] = {0};
+-> -> 0 `i `uc
+..
+]
+[v _buffer `uc ~T0 @X0 -> 50 `i a ]
+[e = _buffer F9109 ]
+"148
+[; ;main.c: 148:     sprintf(buffer, "AT+SEND=%i,%i,%s::%s\r\n", address, payload_size, tag, t);
+[e ( _sprintf (1 , , , , (. , &U _buffer :s 3C -> _address `i _payload_size _tag &U _t ]
+"149
+[; ;main.c: 149:     printf(buffer);
+[e ( _printf -> &U _buffer `*Cuc ]
+"151
+[; ;main.c: 151:     write_lora(&buffer);
+[e ( _write_lora (1 -> &U _buffer `*uc ]
+"152
+[; ;main.c: 152:     read_lora();
+[e ( _read_lora ..  ]
+"153
+[; ;main.c: 153: }
+[e :UE 1115 ]
+}
+"155
+[; ;main.c: 155: void write_lora(char *data) {
+[v _write_lora `(v ~T0 @X0 1 ef1`*uc ]
+{
+[e :U _write_lora ]
+[v _data `*uc ~T0 @X0 1 r1 ]
+[f ]
+"157
+[; ;main.c: 157:     _Bool carriage_found = 0;
+[v _carriage_found `a ~T0 @X0 1 a ]
+[e = _carriage_found -> -> 0 `i `a ]
+"158
+[; ;main.c: 158:     _Bool newline_found = 0;
+[v _newline_found `a ~T0 @X0 1 a ]
+[e = _newline_found -> -> 0 `i `a ]
+"160
+[; ;main.c: 160:     uint8_t size = sizeof(data);
+[v _size `uc ~T0 @X0 1 a ]
+[e = _size -> -> # _data `ui `uc ]
+"161
+[; ;main.c: 161:     printf(size);
+[e ( _printf -> _size `*Cuc ]
+"162
+[; ;main.c: 162:     for(uint8_t i = 0; i < 50; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 50 `i 1118  ]
+[e $U 1119  ]
+[e :U 1118 ]
+{
+"164
+[; ;main.c: 164:         char c = data[i];
+[v _c `uc ~T0 @X0 1 a ]
+[e = _c *U + _data * -> _i `ux -> -> # *U _data `ui `ux ]
+"165
+[; ;main.c: 165:         EUSART1_Write(c);
+[e ( _EUSART1_Write (1 -> _c `uc ]
+"166
+[; ;main.c: 166:         while(!EUSART1_IsTxDone());
+[e $U 1121  ]
+[e :U 1122 ]
+[e :U 1121 ]
+[e $ ! != -> ( _EUSART1_IsTxDone ..  `i -> 0 `i 1122  ]
+[e :U 1123 ]
+"168
+[; ;main.c: 168:         carriage_found = carriage_found || (data[i] == '\r');
+[e = _carriage_found -> -> || != -> _carriage_found `i -> 0 `i == -> *U + _data * -> _i `ux -> -> # *U _data `ui `ux `ui -> 13 `ui `i `a ]
+"169
+[; ;main.c: 169:         newline_found = newline_found || (data[i] == '\n');
+[e = _newline_found -> -> || != -> _newline_found `i -> 0 `i == -> *U + _data * -> _i `ux -> -> # *U _data `ui `ux `ui -> 10 `ui `i `a ]
+"170
+[; ;main.c: 170:         if(carriage_found && newline_found) {
+[e $ ! && != -> _carriage_found `i -> 0 `i != -> _newline_found `i -> 0 `i 1124  ]
+{
+"171
+[; ;main.c: 171:             break;
+[e $U 1119  ]
+"172
+[; ;main.c: 172:         }
+}
+[e :U 1124 ]
+"173
+[; ;main.c: 173:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 50 `i 1118  ]
+[e :U 1119 ]
+}
+"175
+[; ;main.c: 175:     if(!carriage_found || !newline_found) {
+[e $ ! || ! != -> _carriage_found `i -> 0 `i ! != -> _newline_found `i -> 0 `i 1125  ]
+{
+"177
+[; ;main.c: 177:     }
+}
+[e :U 1125 ]
+"178
+[; ;main.c: 178: }
+[e :UE 1117 ]
+}
+"180
+[; ;main.c: 180: void read_lora() {
+[v _read_lora `(v ~T0 @X0 1 ef ]
+{
+[e :U _read_lora ]
+[f ]
+"183
+[; ;main.c: 183:     while(!EUSART1_IsRxReady());
+[e $U 1127  ]
+[e :U 1128 ]
+[e :U 1127 ]
+[e $ ! != -> ( _EUSART1_IsRxReady ..  `i -> 0 `i 1128  ]
+[e :U 1129 ]
+"185
+[; ;main.c: 185:     _Bool carriage_found = 0;
+[v _carriage_found `a ~T0 @X0 1 a ]
+[e = _carriage_found -> -> 0 `i `a ]
+"186
+[; ;main.c: 186:     _Bool newline_found = 0;
+[v _newline_found `a ~T0 @X0 1 a ]
+[e = _newline_found -> -> 0 `i `a ]
+[v F9122 `uc ~T0 @X0 -> 50 `i s ]
+[i F9122
+:U ..
+"188
+[; ;main.c: 188:     char data[50] = {0};
+-> -> 0 `i `uc
+..
+]
+[v _data `uc ~T0 @X0 -> 50 `i a ]
+[e = _data F9122 ]
+"189
+[; ;main.c: 189:     for(uint8_t i = 0; i < sizeof(data); i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `ui -> # _data `ui 1130  ]
+[e $U 1131  ]
+[e :U 1130 ]
+{
+"191
+[; ;main.c: 191:         uint8_t byte = EUSART1_Read();
+[v _byte `uc ~T0 @X0 1 a ]
+[e = _byte ( _EUSART1_Read ..  ]
+"192
+[; ;main.c: 192:         carriage_found = carriage_found || (byte == '\r');
+[e = _carriage_found -> -> || != -> _carriage_found `i -> 0 `i == -> _byte `ui -> 13 `ui `i `a ]
+"193
+[; ;main.c: 193:         newline_found = newline_found || (byte == '\n');
+[e = _newline_found -> -> || != -> _newline_found `i -> 0 `i == -> _byte `ui -> 10 `ui `i `a ]
+"195
+[; ;main.c: 195:         if(!(byte == '\r' || byte == '\n')) {
+[e $ ! ! || == -> _byte `ui -> 13 `ui == -> _byte `ui -> 10 `ui 1133  ]
+{
+"196
+[; ;main.c: 196:             data[i] = byte;
+[e = *U + &U _data * -> _i `ux -> -> # *U &U _data `ui `ux -> _byte `uc ]
+"197
+[; ;main.c: 197:         }
+}
+[e :U 1133 ]
+"199
+[; ;main.c: 199:         if(carriage_found && newline_found) {
+[e $ ! && != -> _carriage_found `i -> 0 `i != -> _newline_found `i -> 0 `i 1134  ]
+{
+"200
+[; ;main.c: 200:             break;
+[e $U 1131  ]
+"201
+[; ;main.c: 201:         }
+}
+[e :U 1134 ]
+"204
+[; ;main.c: 204:         while(!EUSART1_IsRxReady());
+[e $U 1135  ]
+[e :U 1136 ]
+[e :U 1135 ]
+[e $ ! != -> ( _EUSART1_IsRxReady ..  `i -> 0 `i 1136  ]
+[e :U 1137 ]
+"206
+[; ;main.c: 206:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `ui -> # _data `ui 1130  ]
+[e :U 1131 ]
+}
+"208
+[; ;main.c: 208:     _Bool success = strcmp("+OK", data) == 0;
+[v _success `a ~T0 @X0 1 a ]
+[e = _success -> -> == ( _strcmp (2 , :s 4C -> &U _data `*Cuc -> 0 `i `i `a ]
+"209
+[; ;main.c: 209:     printf(success);
+[e ( _printf -> _success `*Cuc ]
+"211
+[; ;main.c: 211: }
+[e :UE 1126 ]
+}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"67
-[; ;main.c: 67: int main(void){
+"213
+[; ;main.c: 213: int main(void){
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"68
-[; ;main.c: 68:     SYSTEM_Initialize();
+"215
+[; ;main.c: 215:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"70
-[; ;main.c: 70:     do { ANSELBbits.ANSB1 = 0; } while(0);
-[e :U 1097 ]
-{
-[e = . . _ANSELBbits 1 1 -> -> 0 `i `uc ]
-}
-[e :U 1096 ]
-"71
-[; ;main.c: 71:     do { WPUBbits.WPUB1 = 1; } while(0);
-[e :U 1100 ]
-{
-[e = . . _WPUBbits 0 1 -> -> 1 `i `uc ]
-}
-[e :U 1099 ]
-"72
-[; ;main.c: 72:     do { ANSELBbits.ANSB2 = 0; } while(0);
-[e :U 1103 ]
-{
-[e = . . _ANSELBbits 1 2 -> -> 0 `i `uc ]
-}
-[e :U 1102 ]
-"73
-[; ;main.c: 73:     do { WPUBbits.WPUB2 = 1; } while(0);
-[e :U 1106 ]
-{
-[e = . . _WPUBbits 0 2 -> -> 1 `i `uc ]
-}
-[e :U 1105 ]
-"75
-[; ;main.c: 75:     (INTCONbits.GIE = 1);
+"216
+[; ;main.c: 216:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"76
-[; ;main.c: 76:     (INTCONbits.PEIE = 1);
+"217
+[; ;main.c: 217:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"78
-[; ;main.c: 78:     _delay((unsigned long)((1000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"80
-[; ;main.c: 80:     uint8_t address = 0x76;
-[v _address `uc ~T0 @X0 1 a ]
-[e = _address -> -> 118 `i `uc ]
-"81
-[; ;main.c: 81:     uint8_t chipId = 0xD0;
-[v _chipId `uc ~T0 @X0 1 a ]
-[e = _chipId -> -> 208 `i `uc ]
-"84
-[; ;main.c: 84:     int8_t rslt;
-[v _rslt `c ~T0 @X0 1 a ]
-"85
-[; ;main.c: 85:     uint32_t period;
-[v _period `ul ~T0 @X0 1 a ]
-"86
-[; ;main.c: 86:     struct bme280_dev dev;
+"218
+[; ;main.c: 218:     setup_lora();
+[e ( _setup_lora ..  ]
+"219
+[; ;main.c: 219:     setup_bme280();
+[e ( _setup_bme280 ..  ]
+"221
+[; ;main.c: 221:     struct bme280_dev dev = get_bme280();
 [v _dev `S1093 ~T0 @X0 1 a ]
-"87
-[; ;main.c: 87:     struct bme280_settings settings;
-[v _settings `S1092 ~T0 @X0 1 a ]
-"89
-[; ;main.c: 89:     rslt = bme280_interface_selection(&dev, BME280_I2C_INTF);
-[e = _rslt ( _bme280_interface_selection (2 , &U _dev -> . `E8474 1 `uc ]
-"90
-[; ;main.c: 90:     rslt = bme280_init(&dev);
-[e = _rslt ( _bme280_init (1 &U _dev ]
-"91
-[; ;main.c: 91:     rslt = bme280_get_sensor_settings(&settings, &dev);
-[e = _rslt ( _bme280_get_sensor_settings (2 , &U _settings &U _dev ]
-"95
-[; ;main.c: 95:     settings.filter = (0x01);
-[e = . _settings 3 -> -> 1 `i `uc ]
-"98
-[; ;main.c: 98:     settings.osr_h = 0x01;
-[e = . _settings 2 -> -> 1 `i `uc ]
-"99
-[; ;main.c: 99:     settings.osr_p = 0x01;
-[e = . _settings 0 -> -> 1 `i `uc ]
-"100
-[; ;main.c: 100:     settings.osr_t = 0x01;
-[e = . _settings 1 -> -> 1 `i `uc ]
-"103
-[; ;main.c: 103:     settings.standby_time = (0x00);
-[e = . _settings 4 -> -> 0 `i `uc ]
-"105
-[; ;main.c: 105:     rslt = bme280_set_sensor_settings(0x1F, &settings, &dev);
-[e = _rslt ( _bme280_set_sensor_settings (3 , , -> -> 31 `i `uc -> &U _settings `*CS1092 &U _dev ]
-"106
-[; ;main.c: 106:     rslt = bme280_set_sensor_mode(0x03, &dev);
-[e = _rslt ( _bme280_set_sensor_mode (2 , -> -> 3 `i `uc &U _dev ]
-"109
-[; ;main.c: 109:     uint8_t sensor_mode;
-[v _sensor_mode `uc ~T0 @X0 1 a ]
-"110
-[; ;main.c: 110:     bme280_get_sensor_mode(&sensor_mode, &dev);
-[e ( _bme280_get_sensor_mode (2 , &U _sensor_mode &U _dev ]
-"111
-[; ;main.c: 111:     printf(sensor_mode);
-[e ( _printf -> _sensor_mode `*Cuc ]
-"113
-[; ;main.c: 113:     rslt = bme280_cal_meas_delay(&period, &settings);
-[e = _rslt ( _bme280_cal_meas_delay (2 , &U _period -> &U _settings `*CS1092 ]
-"122
-[; ;main.c: 122:     rslt = get_temperature(period, &dev);
-[e = _rslt ( _get_temperature (2 , _period &U _dev ]
-"123
-[; ;main.c: 123:     while(1) {
-[e :U 1108 ]
+[e = _dev ( _get_bme280 ..  ]
+"222
+[; ;main.c: 222:     struct bme280_data weather = get_temperature(&dev);
+[v _weather `S1090 ~T0 @X0 1 a ]
+[e = _weather ( _get_temperature (1 &U _dev ]
+"224
+[; ;main.c: 224:     while(1) {
+[e :U 1140 ]
 {
-"124
-[; ;main.c: 124:         printf(rslt);
-[e ( _printf -> -> _rslt `*Cc `*Cuc ]
-"125
-[; ;main.c: 125:     }
+"225
+[; ;main.c: 225:         struct bme280_data weather = get_temperature(&dev);
+[v _weather `S1090 ~T0 @X0 1 a ]
+[e = _weather ( _get_temperature (1 &U _dev ]
+"227
+[; ;main.c: 227:         send(32, "TEMPERATURE", weather.temperature);
+[e ( _send (3 , , -> -> 32 `i `uc :s 5C . _weather 1 ]
+"228
+[; ;main.c: 228:         _delay((unsigned long)((1000)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"230
+[; ;main.c: 230:         send(32, "HUMIDITY", weather.humidity);
+[e ( _send (3 , , -> -> 32 `i `uc :s 6C . _weather 2 ]
+"231
+[; ;main.c: 231:         _delay((unsigned long)((1000)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"233
+[; ;main.c: 233:         send(32, "PRESSURE", weather.pressure);
+[e ( _send (3 , , -> -> 32 `i `uc :s 7C . _weather 0 ]
+"234
+[; ;main.c: 234:         _delay((unsigned long)((1000)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"237
+[; ;main.c: 237:         for(uint8_t i = 0; i < 15; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 15 `i 1142  ]
+[e $U 1143  ]
+[e :U 1142 ]
+{
+"238
+[; ;main.c: 238:             _delay((unsigned long)((2000)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"239
+[; ;main.c: 239:         }
 }
-[e :U 1107 ]
-[e $U 1108  ]
-[e :U 1109 ]
-"126
-[; ;main.c: 126: }
-[e :UE 1094 ]
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 15 `i 1142  ]
+[e :U 1143 ]
 }
-"131
-[; ;main.c: 131: static int8_t get_temperature(uint32_t period, struct bme280_dev *dev)
-[v _get_temperature `(c ~T0 @X0 1 sf2`ul`*S1093 ]
-"132
-[; ;main.c: 132: {
+"242
+[; ;main.c: 242:     }
+}
+[e :U 1139 ]
+[e $U 1140  ]
+[e :U 1141 ]
+"243
+[; ;main.c: 243: }
+[e :UE 1138 ]
+}
+"248
+[; ;main.c: 248: struct bme280_data get_temperature(struct bme280_dev *dev)
+[v _get_temperature `(S1090 ~T0 @X0 1 ef1`*S1093 ]
+"249
+[; ;main.c: 249: {
 {
 [e :U _get_temperature ]
-"131
-[; ;main.c: 131: static int8_t get_temperature(uint32_t period, struct bme280_dev *dev)
-[v _period `ul ~T0 @X0 1 r1 ]
-[v _dev `*S1093 ~T0 @X0 1 r2 ]
-"132
-[; ;main.c: 132: {
+"248
+[; ;main.c: 248: struct bme280_data get_temperature(struct bme280_dev *dev)
+[v _dev `*S1093 ~T0 @X0 1 r1 ]
+"249
+[; ;main.c: 249: {
 [f ]
-"133
-[; ;main.c: 133:     int8_t rslt = -1;
+"250
+[; ;main.c: 250:     int8_t rslt = -1;
 [v _rslt `c ~T0 @X0 1 a ]
 [e = _rslt -> -U -> 1 `i `c ]
-"134
-[; ;main.c: 134:     int8_t idx = 0;
-[v _idx `c ~T0 @X0 1 a ]
-[e = _idx -> -> 0 `i `c ]
-"135
-[; ;main.c: 135:     uint8_t status_reg;
-[v _status_reg `uc ~T0 @X0 1 a ]
-"136
-[; ;main.c: 136:     struct bme280_data comp_data;
+"251
+[; ;main.c: 251:     struct bme280_data comp_data;
 [v _comp_data `S1090 ~T0 @X0 1 a ]
-"138
-[; ;main.c: 138:     while (idx < 50)
-[e $U 1111  ]
-[e :U 1112 ]
-"139
-[; ;main.c: 139:     {
+"254
+[; ;main.c: 254:     rslt = bme280_set_sensor_mode(0x03, dev);
+[e = _rslt ( _bme280_set_sensor_mode (2 , -> -> 3 `i `uc _dev ]
+"255
+[; ;main.c: 255:     printf(rslt);
+[e ( _printf -> -> _rslt `*Cc `*Cuc ]
+"256
+[; ;main.c: 256:     _delay((unsigned long)((1000)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"259
+[; ;main.c: 259:     while(!is_measurement_done(dev)) {
+[e $U 1146  ]
+[e :U 1147 ]
 {
-"140
-[; ;main.c: 140:         rslt = bme280_get_regs(0xF3, &status_reg, 1, dev);
-[e = _rslt ( _bme280_get_regs (4 , , , -> -> 243 `i `uc &U _status_reg -> -> -> 1 `i `l `ul _dev ]
-"142
-[; ;main.c: 142:         if (status_reg & 0x08)
-[e $ ! != & -> _status_reg `i -> 8 `i -> 0 `i 1114  ]
-"143
-[; ;main.c: 143:         {
-{
-"145
-[; ;main.c: 145:             dev->delay_us(period, dev->intf_ptr);
-[e ( *U . *U _dev 6 (2 , _period . *U _dev 2 ]
-"148
-[; ;main.c: 148:             rslt = bme280_get_sensor_data(0x07, &comp_data, dev);
+"260
+[; ;main.c: 260:         _delay((unsigned long)((100)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"261
+[; ;main.c: 261:     }
+}
+[e :U 1146 ]
+"259
+[; ;main.c: 259:     while(!is_measurement_done(dev)) {
+[e $ ! != -> ( _is_measurement_done (1 _dev `i -> 0 `i 1147  ]
+[e :U 1148 ]
+"264
+[; ;main.c: 264:     rslt = bme280_get_sensor_data(0x07, &comp_data, dev);
 [e = _rslt ( _bme280_get_sensor_data (3 , , -> -> 7 `i `uc &U _comp_data _dev ]
-"149
-[; ;main.c: 149:             printf(&comp_data);
-[e ( _printf -> &U _comp_data `*Cuc ]
-"150
-[; ;main.c: 150:             idx++;
-[e ++ _idx -> -> 1 `i `c ]
-"151
-[; ;main.c: 151:         }
+"265
+[; ;main.c: 265:     return comp_data;
+[e ) _comp_data ]
+[e $UE 1145  ]
+"266
+[; ;main.c: 266: }
+[e :UE 1145 ]
 }
-[e :U 1114 ]
-"152
-[; ;main.c: 152:     }
+"269
+[; ;main.c: 269: _Bool is_measurement_done(struct bme280_dev *dev) {
+[v _is_measurement_done `(a ~T0 @X0 1 ef1`*S1093 ]
+{
+[e :U _is_measurement_done ]
+[v _dev `*S1093 ~T0 @X0 1 r1 ]
+[f ]
+"270
+[; ;main.c: 270:     uint8_t status_reg;
+[v _status_reg `uc ~T0 @X0 1 a ]
+"271
+[; ;main.c: 271:     int8_t rslt = bme280_get_regs(0xF3, &status_reg, 1, dev);
+[v _rslt `c ~T0 @X0 1 a ]
+[e = _rslt ( _bme280_get_regs (4 , , , -> -> 243 `i `uc &U _status_reg -> -> -> 1 `i `l `ul _dev ]
+"272
+[; ;main.c: 272:     return !(status_reg & 0x08);
+[e ) -> -> ! != & -> _status_reg `i -> 8 `i -> 0 `i `i `a ]
+[e $UE 1149  ]
+"273
+[; ;main.c: 273: }
+[e :UE 1149 ]
 }
-[e :U 1111 ]
-"138
-[; ;main.c: 138:     while (idx < 50)
-[e $ < -> _idx `i -> 50 `i 1112  ]
-[e :U 1113 ]
-"154
-[; ;main.c: 154:     return rslt;
-[e ) _rslt ]
-[e $UE 1110  ]
-"155
-[; ;main.c: 155: }
-[e :UE 1110 ]
-}
+[p f _snprintf 8650752 ]
+[p f _sprintf 8654976 ]
 [p f _printf 9437696 ]
+[a 2C 37 115 58 58 37 115 0 ]
+[a 1C 37 103 0 ]
+[a 6C 72 85 77 73 68 73 84 89 0 ]
+[a 4C 43 79 75 0 ]
+[a 5C 84 69 77 80 69 82 65 84 85 82 69 0 ]
+[a 7C 80 82 69 83 83 85 82 69 0 ]
+[a 3C 65 84 43 83 69 78 68 61 37 105 44 37 105 44 37 115 58 58 37 115 13 10 0 ]

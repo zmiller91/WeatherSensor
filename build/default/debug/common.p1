@@ -15,8 +15,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
 [v __delay `JF667 ~T0 @X0 0 e ]
 [p i __delay ]
-"129 common.c
-[; ;common.c: 129: int8_t bme280_interface_selection(struct bme280_dev *dev, uint8_t intf)
+"131 common.c
+[; ;common.c: 131: int8_t bme280_interface_selection(struct bme280_dev *dev, uint8_t intf)
 [c E508 0 1 .. ]
 [n E508 bme280_intf BME280_SPI_INTF BME280_I2C_INTF  ]
 [v F567 `(c ~T0 @X0 0 tf4`uc`*uc`ul`*v ]
@@ -1359,95 +1359,95 @@ Version 4.0 HI-TECH Software Intermediate Code
 "83
 [; ;common.c: 83: {
 [f ]
-"84
-[; ;common.c: 84:     _delay((unsigned long)((1000)*(32000000/4000000.0)));
+"86
+[; ;common.c: 86:     _delay((unsigned long)((1000)*(32000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"85
-[; ;common.c: 85: }
+"87
+[; ;common.c: 87: }
 [e :UE 1109 ]
 }
-"90
-[; ;common.c: 90: void bme280_error_codes_print_result(const char api_name[], int8_t rslt)
+"92
+[; ;common.c: 92: void bme280_error_codes_print_result(const char api_name[], int8_t rslt)
 [v _bme280_error_codes_print_result `(v ~T0 @X0 1 ef2`*Cuc`c ]
-"91
-[; ;common.c: 91: {
+"93
+[; ;common.c: 93: {
 {
 [e :U _bme280_error_codes_print_result ]
-"90
-[; ;common.c: 90: void bme280_error_codes_print_result(const char api_name[], int8_t rslt)
+"92
+[; ;common.c: 92: void bme280_error_codes_print_result(const char api_name[], int8_t rslt)
 [v _api_name `*Cuc ~T0 @X0 1 r1 ]
 [v _rslt `c ~T0 @X0 1 r2 ]
-"91
-[; ;common.c: 91: {
-[f ]
-"92
-[; ;common.c: 92:     if (rslt != 0)
-[e $ ! != -> _rslt `i -> 0 `i 1111  ]
 "93
-[; ;common.c: 93:     {
-{
+[; ;common.c: 93: {
+[f ]
 "94
-[; ;common.c: 94:         printf("%s\t", api_name);
-[e ( _printf , (. :s 1C _api_name ]
-"96
-[; ;common.c: 96:         switch (rslt)
-[e $U 1113  ]
-"97
-[; ;common.c: 97:         {
+[; ;common.c: 94:     if (rslt != 0)
+[e $ ! != -> _rslt `i -> 0 `i 1111  ]
+"95
+[; ;common.c: 95:     {
 {
+"96
+[; ;common.c: 96:         printf("%s\t", api_name);
+[e ( _printf , (. :s 1C _api_name ]
 "98
-[; ;common.c: 98:             case -1:
-[e :U 1114 ]
+[; ;common.c: 98:         switch (rslt)
+[e $U 1113  ]
 "99
-[; ;common.c: 99:                 printf("Error [%d] : Null pointer error.", rslt);
-[e ( _printf , (. :s 2C -> _rslt `i ]
+[; ;common.c: 99:         {
+{
 "100
-[; ;common.c: 100:                 printf(
-[e ( _printf :s 3C ]
+[; ;common.c: 100:             case -1:
+[e :U 1114 ]
+"101
+[; ;common.c: 101:                 printf("Error [%d] : Null pointer error.", rslt);
+[e ( _printf , (. :s 2C -> _rslt `i ]
 "102
-[; ;common.c: 102:                 break;
-[e $U 1112  ]
+[; ;common.c: 102:                 printf(
+[e ( _printf :s 3C ]
 "104
-[; ;common.c: 104:             case -2:
-[e :U 1115 ]
-"105
-[; ;common.c: 105:                 printf("Error [%d] : Communication failure error.", rslt);
-[e ( _printf , (. :s 4C -> _rslt `i ]
+[; ;common.c: 104:                 break;
+[e $U 1112  ]
 "106
-[; ;common.c: 106:                 printf(
-[e ( _printf :s 5C ]
+[; ;common.c: 106:             case -2:
+[e :U 1115 ]
+"107
+[; ;common.c: 107:                 printf("Error [%d] : Communication failure error.", rslt);
+[e ( _printf , (. :s 4C -> _rslt `i ]
 "108
-[; ;common.c: 108:                 break;
-[e $U 1112  ]
+[; ;common.c: 108:                 printf(
+[e ( _printf :s 5C ]
 "110
-[; ;common.c: 110:             case -4:
+[; ;common.c: 110:                 break;
+[e $U 1112  ]
+"112
+[; ;common.c: 112:             case -4:
 [e :U 1116 ]
-"111
-[; ;common.c: 111:                 printf("Error [%d] : Device not found error. It occurs when the device chip id is incorrectly read\r\n",
-[e ( _printf , (. :s 6C -> _rslt `i ]
 "113
-[; ;common.c: 113:                 break;
-[e $U 1112  ]
+[; ;common.c: 113:                 printf("Error [%d] : Device not found error. It occurs when the device chip id is incorrectly read\r\n",
+[e ( _printf , (. :s 6C -> _rslt `i ]
 "115
-[; ;common.c: 115:             case -3:
-[e :U 1117 ]
-"116
-[; ;common.c: 116:                 printf("Error [%d] : Invalid length error. It occurs when write is done with invalid length\r\n", rslt);
-[e ( _printf , (. :s 7C -> _rslt `i ]
+[; ;common.c: 115:                 break;
+[e $U 1112  ]
 "117
-[; ;common.c: 117:                 break;
-[e $U 1112  ]
+[; ;common.c: 117:             case -3:
+[e :U 1117 ]
+"118
+[; ;common.c: 118:                 printf("Error [%d] : Invalid length error. It occurs when write is done with invalid length\r\n", rslt);
+[e ( _printf , (. :s 7C -> _rslt `i ]
 "119
-[; ;common.c: 119:             default:
-[e :U 1118 ]
-"120
-[; ;common.c: 120:                 printf("Error [%d] : Unknown error code\r\n", rslt);
-[e ( _printf , (. :s 8C -> _rslt `i ]
-"121
-[; ;common.c: 121:                 break;
+[; ;common.c: 119:                 break;
 [e $U 1112  ]
+"121
+[; ;common.c: 121:             default:
+[e :U 1118 ]
 "122
-[; ;common.c: 122:         }
+[; ;common.c: 122:                 printf("Error [%d] : Unknown error code\r\n", rslt);
+[e ( _printf , (. :s 8C -> _rslt `i ]
+"123
+[; ;common.c: 123:                 break;
+[e $U 1112  ]
+"124
+[; ;common.c: 124:         }
 }
 [e $U 1112  ]
 [e :U 1113 ]
@@ -1457,104 +1457,104 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -U -> 3 `i 1117
  1118 ]
 [e :U 1112 ]
-"123
-[; ;common.c: 123:     }
+"125
+[; ;common.c: 125:     }
 }
 [e :U 1111 ]
-"124
-[; ;common.c: 124: }
+"126
+[; ;common.c: 126: }
 [e :UE 1110 ]
 }
-"129
-[; ;common.c: 129: int8_t bme280_interface_selection(struct bme280_dev *dev, uint8_t intf)
+"131
+[; ;common.c: 131: int8_t bme280_interface_selection(struct bme280_dev *dev, uint8_t intf)
 [v _bme280_interface_selection `(c ~T0 @X0 1 ef2`*S12`uc ]
-"130
-[; ;common.c: 130: {
+"132
+[; ;common.c: 132: {
 {
 [e :U _bme280_interface_selection ]
-"129
-[; ;common.c: 129: int8_t bme280_interface_selection(struct bme280_dev *dev, uint8_t intf)
+"131
+[; ;common.c: 131: int8_t bme280_interface_selection(struct bme280_dev *dev, uint8_t intf)
 [v _dev `*S12 ~T0 @X0 1 r1 ]
 [v _intf `uc ~T0 @X0 1 r2 ]
-"130
-[; ;common.c: 130: {
+"132
+[; ;common.c: 132: {
 [f ]
-"131
-[; ;common.c: 131:     int8_t rslt = 0;
+"133
+[; ;common.c: 133:     int8_t rslt = 0;
 [v _rslt `c ~T0 @X0 1 a ]
 [e = _rslt -> -> 0 `i `c ]
-"133
-[; ;common.c: 133:     if (dev != ((void*)0))
+"135
+[; ;common.c: 135:     if (dev != ((void*)0))
 [e $ ! != _dev -> -> -> 0 `i `*v `*S12 1120  ]
-"134
-[; ;common.c: 134:     {
-{
-"137
-[; ;common.c: 137:         if (intf == BME280_I2C_INTF)
-[e $ ! == -> _intf `i -> . `E508 1 `i 1121  ]
-"138
-[; ;common.c: 138:         {
+"136
+[; ;common.c: 136:     {
 {
 "139
-[; ;common.c: 139:             printf("I2C Interface\n");
-[e ( _printf :s 9C ]
+[; ;common.c: 139:         if (intf == BME280_I2C_INTF)
+[e $ ! == -> _intf `i -> . `E508 1 `i 1121  ]
+"140
+[; ;common.c: 140:         {
+{
 "141
-[; ;common.c: 141:             dev_addr = 0x76;
-[e = _dev_addr -> -> 118 `i `uc ]
-"142
-[; ;common.c: 142:             dev->read = bme280_i2c_read;
-[e = . *U _dev 4 &U _bme280_i2c_read ]
+[; ;common.c: 141:             printf("I2C Interface\n");
+[e ( _printf :s 9C ]
 "143
-[; ;common.c: 143:             dev->write = bme280_i2c_write;
-[e = . *U _dev 5 &U _bme280_i2c_write ]
+[; ;common.c: 143:             dev_addr = 0x76;
+[e = _dev_addr -> -> 118 `i `uc ]
 "144
-[; ;common.c: 144:             dev->intf = BME280_I2C_INTF;
-[e = . *U _dev 1 . `E508 1 ]
+[; ;common.c: 144:             dev->read = bme280_i2c_read;
+[e = . *U _dev 4 &U _bme280_i2c_read ]
 "145
-[; ;common.c: 145:         }
+[; ;common.c: 145:             dev->write = bme280_i2c_write;
+[e = . *U _dev 5 &U _bme280_i2c_write ]
+"146
+[; ;common.c: 146:             dev->intf = BME280_I2C_INTF;
+[e = . *U _dev 1 . `E508 1 ]
+"147
+[; ;common.c: 147:         }
 }
 [e :U 1121 ]
-"148
-[; ;common.c: 148:         dev->intf_ptr = &dev_addr;
+"150
+[; ;common.c: 150:         dev->intf_ptr = &dev_addr;
 [e = . *U _dev 2 -> &U _dev_addr `*v ]
-"151
-[; ;common.c: 151:         dev->delay_us = bme280_delay_us;
+"153
+[; ;common.c: 153:         dev->delay_us = bme280_delay_us;
 [e = . *U _dev 6 &U _bme280_delay_us ]
-"152
-[; ;common.c: 152:     }
+"154
+[; ;common.c: 154:     }
 }
 [e $U 1122  ]
-"153
-[; ;common.c: 153:     else
-[e :U 1120 ]
-"154
-[; ;common.c: 154:     {
-{
 "155
-[; ;common.c: 155:         rslt = -1;
-[e = _rslt -> -U -> 1 `i `c ]
+[; ;common.c: 155:     else
+[e :U 1120 ]
 "156
-[; ;common.c: 156:     }
+[; ;common.c: 156:     {
+{
+"157
+[; ;common.c: 157:         rslt = -1;
+[e = _rslt -> -U -> 1 `i `c ]
+"158
+[; ;common.c: 158:     }
 }
 [e :U 1122 ]
-"158
-[; ;common.c: 158:     return rslt;
+"160
+[; ;common.c: 160:     return rslt;
 [e ) _rslt ]
 [e $UE 1119  ]
-"159
-[; ;common.c: 159: }
+"161
+[; ;common.c: 161: }
 [e :UE 1119 ]
 }
-"164
-[; ;common.c: 164: void bme280_coines_deinit(void)
+"166
+[; ;common.c: 166: void bme280_coines_deinit(void)
 [v _bme280_coines_deinit `(v ~T0 @X0 1 ef ]
-"165
-[; ;common.c: 165: {
+"167
+[; ;common.c: 167: {
 {
 [e :U _bme280_coines_deinit ]
 [f ]
-"167
-[; ;common.c: 167: }
+"169
+[; ;common.c: 169: }
 [e :UE 1123 ]
 }
 [p f _printf 9699968 ]

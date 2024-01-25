@@ -14136,6 +14136,8 @@ int8_t bme280_spi_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t leng
 
 void bme280_delay_us(uint32_t period, void *intf_ptr)
 {
+
+
     _delay((unsigned long)((1000)*(32000000/4000000.0)));
 }
 

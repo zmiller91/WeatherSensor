@@ -13878,9 +13878,9 @@ void EUSART1_Initialize(void)
 
     TX1STA = 0x26;
 
-    SP1BRGL = 0x40;
+    SP1BRGL = 0x44;
 
-    SP1BRGH = 0x3;
+    SP1BRGH = 0x0;
 
     EUSART1_FramingErrorCallbackRegister(EUSART1_DefaultFramingErrorCallback);
     EUSART1_OverrunErrorCallbackRegister(EUSART1_DefaultOverrunErrorCallback);

@@ -81,6 +81,8 @@ BME280_INTF_RET_TYPE bme280_spi_write(uint8_t reg_addr, const uint8_t *reg_data,
  */
 void bme280_delay_us(uint32_t period, void *intf_ptr)
 {
+    //TODO: This needs to be changed to something real. But for some reason
+    // I can't use variable length data.
     __delay_us(1000);
 }
 
