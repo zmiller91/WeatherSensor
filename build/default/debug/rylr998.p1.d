@@ -1,5 +1,5 @@
-build/default/debug/main.p1:  \
-main.c  \
+build/default/debug/rylr998.p1:  \
+rylr998.c  \
 mcc_generated_files/system/system.h  \
 mcc_generated_files/system/config_bits.h  \
 mcc_generated_files/system/../system/clock.h  \
@@ -13,7 +13,4 @@ mcc_generated_files/system/../i2c_host/i2c_host_event_types.h  \
 mcc_generated_files/system/../i2c_host/i2c_host_types.h  \
 mcc_generated_files/system/../i2c_host/i2c_host_interface.h  \
 mcc_generated_files/system/../system/interrupt.h  \
-weather.h  \
-bme280.h  \
-bme280_defs.h  \
 rylr998.h 

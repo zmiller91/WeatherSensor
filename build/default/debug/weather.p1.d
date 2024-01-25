@@ -1,8 +1,8 @@
-build/default/debug/common.p1:  \
-common.c  \
+build/default/debug/weather.p1:  \
+weather.c  \
 bme280.h  \
 bme280_defs.h  \
-common.h  \
+weather.h  \
 mcc_generated_files/system/system.h  \
 mcc_generated_files/system/config_bits.h  \
 mcc_generated_files/system/../system/clock.h  \

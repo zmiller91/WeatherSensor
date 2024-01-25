@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "weather.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,13 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 34 "main.c"
+# 1 "weather.c" 2
+
+
+
+
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -113,93 +118,18 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 145 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
-# 34 "main.c" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
-# 35 "main.c" 2
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\features.h" 1 3
-# 11 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 2 3
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 122 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned size_t;
-# 411 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 26 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 2 3
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
-
-
-
-
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
-
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 37 "main.c" 2
-
-# 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 1 3
-# 18 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 3
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\xc8debug.h" 1 3
-
-
+# 7 "weather.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\features.h" 1 3
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
+# 122 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned size_t;
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
 
 int atoi (const char *);
@@ -257,7 +187,146 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\xc8debug.h" 2 3
+# 8 "weather.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+
+
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+int getch(void);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+void putch(char);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
 
 
 
@@ -265,6 +334,256 @@ uldiv_t uldiv (unsigned long, unsigned long);
 
 
 
+char *tempnam(const char *, const char *);
+# 9 "weather.c" 2
+
+
+# 1 "./bme280.h" 1
+# 50 "./bme280.h"
+# 1 "./bme280_defs.h" 1
+# 44 "./bme280_defs.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 1 3
+# 19 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 132 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef int ptrdiff_t;
+# 20 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 2 3
+# 44 "./bme280_defs.h" 2
+# 259 "./bme280_defs.h"
+enum bme280_intf {
+
+    BME280_SPI_INTF,
+
+    BME280_I2C_INTF
+};
+# 284 "./bme280_defs.h"
+typedef int8_t (*bme280_read_fptr_t)(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, void *intf_ptr);
+# 301 "./bme280_defs.h"
+typedef int8_t (*bme280_write_fptr_t)(uint8_t reg_addr, const uint8_t *reg_data, uint32_t len,
+                                                    void *intf_ptr);
+# 313 "./bme280_defs.h"
+typedef void (*bme280_delay_us_fptr_t)(uint32_t period, void *intf_ptr);
+# 322 "./bme280_defs.h"
+struct bme280_calib_data
+{
+
+    uint16_t dig_t1;
+
+
+    int16_t dig_t2;
+
+
+    int16_t dig_t3;
+
+
+    uint16_t dig_p1;
+
+
+    int16_t dig_p2;
+
+
+    int16_t dig_p3;
+
+
+    int16_t dig_p4;
+
+
+    int16_t dig_p5;
+
+
+    int16_t dig_p6;
+
+
+    int16_t dig_p7;
+
+
+    int16_t dig_p8;
+
+
+    int16_t dig_p9;
+
+
+    uint8_t dig_h1;
+
+
+    int16_t dig_h2;
+
+
+    uint8_t dig_h3;
+
+
+    int16_t dig_h4;
+
+
+    int16_t dig_h5;
+
+
+    int8_t dig_h6;
+
+
+    int32_t t_fine;
+};
+
+
+
+
+
+
+struct bme280_data
+{
+
+    double pressure;
+
+
+    double temperature;
+
+
+    double humidity;
+};
+# 416 "./bme280_defs.h"
+struct bme280_uncomp_data
+{
+
+    uint32_t pressure;
+
+
+    uint32_t temperature;
+
+
+    uint32_t humidity;
+};
+
+
+
+
+
+struct bme280_settings
+{
+
+    uint8_t osr_p;
+
+
+    uint8_t osr_t;
+
+
+    uint8_t osr_h;
+
+
+    uint8_t filter;
+
+
+    uint8_t standby_time;
+};
+
+
+
+
+struct bme280_dev
+{
+
+    uint8_t chip_id;
+
+
+
+
+
+    enum bme280_intf intf;
+
+
+
+
+
+
+
+    void *intf_ptr;
+
+
+    int8_t intf_rslt;
+
+
+    bme280_read_fptr_t read;
+
+
+    bme280_write_fptr_t write;
+
+
+    bme280_delay_us_fptr_t delay_us;
+
+
+    struct bme280_calib_data calib_data;
+};
+# 50 "./bme280.h" 2
+# 77 "./bme280.h"
+int8_t bme280_init(struct bme280_dev *dev);
+# 106 "./bme280.h"
+int8_t bme280_set_regs(uint8_t *reg_addr, const uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
+# 128 "./bme280.h"
+int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
+# 171 "./bme280.h"
+int8_t bme280_set_sensor_settings(uint8_t desired_settings,
+                                  const struct bme280_settings *settings,
+                                  struct bme280_dev *dev);
+# 194 "./bme280.h"
+int8_t bme280_get_sensor_settings(struct bme280_settings *settings, struct bme280_dev *dev);
+# 228 "./bme280.h"
+int8_t bme280_set_sensor_mode(uint8_t sensor_mode, struct bme280_dev *dev);
+# 256 "./bme280.h"
+int8_t bme280_get_sensor_mode(uint8_t *sensor_mode, struct bme280_dev *dev);
+# 281 "./bme280.h"
+int8_t bme280_soft_reset(struct bme280_dev *dev);
+# 290 "./bme280.h"
+int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
+# 320 "./bme280.h"
+int8_t bme280_compensate_data(uint8_t sensor_comp,
+                              const struct bme280_uncomp_data *uncomp_data,
+                              struct bme280_data *comp_data,
+                              struct bme280_calib_data *calib_data);
+# 352 "./bme280.h"
+int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *settings);
+# 11 "weather.c" 2
+
+# 1 "./weather.h" 1
+# 11 "./weather.h"
+# 1 "./bme280.h" 1
+# 77 "./bme280.h"
+int8_t bme280_init(struct bme280_dev *dev);
+# 106 "./bme280.h"
+int8_t bme280_set_regs(uint8_t *reg_addr, const uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
+# 128 "./bme280.h"
+int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
+# 171 "./bme280.h"
+int8_t bme280_set_sensor_settings(uint8_t desired_settings,
+                                  const struct bme280_settings *settings,
+                                  struct bme280_dev *dev);
+# 194 "./bme280.h"
+int8_t bme280_get_sensor_settings(struct bme280_settings *settings, struct bme280_dev *dev);
+# 228 "./bme280.h"
+int8_t bme280_set_sensor_mode(uint8_t sensor_mode, struct bme280_dev *dev);
+# 256 "./bme280.h"
+int8_t bme280_get_sensor_mode(uint8_t *sensor_mode, struct bme280_dev *dev);
+# 281 "./bme280.h"
+int8_t bme280_soft_reset(struct bme280_dev *dev);
+# 290 "./bme280.h"
+int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
+# 320 "./bme280.h"
+int8_t bme280_compensate_data(uint8_t sensor_comp,
+                              const struct bme280_uncomp_data *uncomp_data,
+                              struct bme280_data *comp_data,
+                              struct bme280_calib_data *calib_data);
+# 352 "./bme280.h"
+int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *settings);
+# 11 "./weather.h" 2
+
+# 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 1 3
+# 18 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 3
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\xc8debug.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\xc8debug.h" 3
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 # 24 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 2 3
@@ -13379,10 +13698,13 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 2 3
-# 38 "main.c" 2
+# 12 "./weather.h" 2
 
 # 1 "./mcc_generated_files/system/system.h" 1
-# 40 "./mcc_generated_files/system/system.h"
+# 39 "./mcc_generated_files/system/system.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
+# 39 "./mcc_generated_files/system/system.h" 2
+
 # 1 "./mcc_generated_files/system/config_bits.h" 1
 # 37 "./mcc_generated_files/system/config_bits.h"
 # 1 "./mcc_generated_files/system/../system/clock.h" 1
@@ -13406,155 +13728,7 @@ void PIN_MANAGER_IOC(void);
 # 42 "./mcc_generated_files/system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../uart/eusart1.h" 1
-# 42 "./mcc_generated_files/system/../uart/eusart1.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
-
-
-
-
-
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 137 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 246 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 399 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-int getch(void);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-void putch(char);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-__attribute__((__format__(__printf__, 1, 2)))
-int printf(const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int fprintf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int sprintf(char *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 3, 4)))
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-__attribute__((__format__(__printf__, 1, 0)))
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 2, 0)))
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 3, 0)))
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-__attribute__((__format__(__scanf__, 1, 2)))
-int scanf(const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int fscanf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int sscanf(const char *restrict, const char *restrict, ...);
-
-__attribute__((__format__(__scanf__, 1, 0)))
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__scanf__, 2, 0)))
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 42 "./mcc_generated_files/system/../uart/eusart1.h" 2
-
+# 43 "./mcc_generated_files/system/../uart/eusart1.h"
 # 1 "./mcc_generated_files/system/../uart/../system/system.h" 1
 # 43 "./mcc_generated_files/system/../uart/eusart1.h" 2
 
@@ -13876,215 +14050,7 @@ void INT_DefaultInterruptHandler(void);
 
 
 void SYSTEM_Initialize(void);
-# 39 "main.c" 2
-
-# 1 "./weather.h" 1
-# 11 "./weather.h"
-# 1 "./bme280.h" 1
-# 50 "./bme280.h"
-# 1 "./bme280_defs.h" 1
-# 44 "./bme280_defs.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 1 3
-# 19 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 132 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef int ptrdiff_t;
-# 20 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 2 3
-# 44 "./bme280_defs.h" 2
-# 259 "./bme280_defs.h"
-enum bme280_intf {
-
-    BME280_SPI_INTF,
-
-    BME280_I2C_INTF
-};
-# 284 "./bme280_defs.h"
-typedef int8_t (*bme280_read_fptr_t)(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, void *intf_ptr);
-# 301 "./bme280_defs.h"
-typedef int8_t (*bme280_write_fptr_t)(uint8_t reg_addr, const uint8_t *reg_data, uint32_t len,
-                                                    void *intf_ptr);
-# 313 "./bme280_defs.h"
-typedef void (*bme280_delay_us_fptr_t)(uint32_t period, void *intf_ptr);
-# 322 "./bme280_defs.h"
-struct bme280_calib_data
-{
-
-    uint16_t dig_t1;
-
-
-    int16_t dig_t2;
-
-
-    int16_t dig_t3;
-
-
-    uint16_t dig_p1;
-
-
-    int16_t dig_p2;
-
-
-    int16_t dig_p3;
-
-
-    int16_t dig_p4;
-
-
-    int16_t dig_p5;
-
-
-    int16_t dig_p6;
-
-
-    int16_t dig_p7;
-
-
-    int16_t dig_p8;
-
-
-    int16_t dig_p9;
-
-
-    uint8_t dig_h1;
-
-
-    int16_t dig_h2;
-
-
-    uint8_t dig_h3;
-
-
-    int16_t dig_h4;
-
-
-    int16_t dig_h5;
-
-
-    int8_t dig_h6;
-
-
-    int32_t t_fine;
-};
-
-
-
-
-
-
-struct bme280_data
-{
-
-    double pressure;
-
-
-    double temperature;
-
-
-    double humidity;
-};
-# 416 "./bme280_defs.h"
-struct bme280_uncomp_data
-{
-
-    uint32_t pressure;
-
-
-    uint32_t temperature;
-
-
-    uint32_t humidity;
-};
-
-
-
-
-
-struct bme280_settings
-{
-
-    uint8_t osr_p;
-
-
-    uint8_t osr_t;
-
-
-    uint8_t osr_h;
-
-
-    uint8_t filter;
-
-
-    uint8_t standby_time;
-};
-
-
-
-
-struct bme280_dev
-{
-
-    uint8_t chip_id;
-
-
-
-
-
-    enum bme280_intf intf;
-
-
-
-
-
-
-
-    void *intf_ptr;
-
-
-    int8_t intf_rslt;
-
-
-    bme280_read_fptr_t read;
-
-
-    bme280_write_fptr_t write;
-
-
-    bme280_delay_us_fptr_t delay_us;
-
-
-    struct bme280_calib_data calib_data;
-};
-# 50 "./bme280.h" 2
-# 77 "./bme280.h"
-int8_t bme280_init(struct bme280_dev *dev);
-# 106 "./bme280.h"
-int8_t bme280_set_regs(uint8_t *reg_addr, const uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
-# 128 "./bme280.h"
-int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
-# 171 "./bme280.h"
-int8_t bme280_set_sensor_settings(uint8_t desired_settings,
-                                  const struct bme280_settings *settings,
-                                  struct bme280_dev *dev);
-# 194 "./bme280.h"
-int8_t bme280_get_sensor_settings(struct bme280_settings *settings, struct bme280_dev *dev);
-# 228 "./bme280.h"
-int8_t bme280_set_sensor_mode(uint8_t sensor_mode, struct bme280_dev *dev);
-# 256 "./bme280.h"
-int8_t bme280_get_sensor_mode(uint8_t *sensor_mode, struct bme280_dev *dev);
-# 281 "./bme280.h"
-int8_t bme280_soft_reset(struct bme280_dev *dev);
-# 290 "./bme280.h"
-int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
-# 320 "./bme280.h"
-int8_t bme280_compensate_data(uint8_t sensor_comp,
-                              const struct bme280_uncomp_data *uncomp_data,
-                              struct bme280_data *comp_data,
-                              struct bme280_calib_data *calib_data);
-# 352 "./bme280.h"
-int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *settings);
-# 11 "./weather.h" 2
-
-
+# 13 "./weather.h" 2
 
 
 void weather_init();
@@ -14097,74 +14063,128 @@ int8_t bme280_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, voi
 int8_t bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr);
 # 69 "./weather.h"
 void bme280_delay_us(uint32_t period_us, void *intf_ptr);
-# 40 "main.c" 2
-
-# 1 "./bme280.h" 1
-# 77 "./bme280.h"
-int8_t bme280_init(struct bme280_dev *dev);
-# 106 "./bme280.h"
-int8_t bme280_set_regs(uint8_t *reg_addr, const uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
-# 128 "./bme280.h"
-int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
-# 171 "./bme280.h"
-int8_t bme280_set_sensor_settings(uint8_t desired_settings,
-                                  const struct bme280_settings *settings,
-                                  struct bme280_dev *dev);
-# 194 "./bme280.h"
-int8_t bme280_get_sensor_settings(struct bme280_settings *settings, struct bme280_dev *dev);
-# 228 "./bme280.h"
-int8_t bme280_set_sensor_mode(uint8_t sensor_mode, struct bme280_dev *dev);
-# 256 "./bme280.h"
-int8_t bme280_get_sensor_mode(uint8_t *sensor_mode, struct bme280_dev *dev);
-# 281 "./bme280.h"
-int8_t bme280_soft_reset(struct bme280_dev *dev);
-# 290 "./bme280.h"
-int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
-# 320 "./bme280.h"
-int8_t bme280_compensate_data(uint8_t sensor_comp,
-                              const struct bme280_uncomp_data *uncomp_data,
-                              struct bme280_data *comp_data,
-                              struct bme280_calib_data *calib_data);
-# 352 "./bme280.h"
-int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *settings);
-# 41 "main.c" 2
-
-# 1 "./rylr998.h" 1
-# 31 "./rylr998.h"
-void rylr998_init();
-void rylr998_send(uint8_t address, char tag[], double metric);
-void rylr998_write(char data[]);
-void rylr998_read();
-# 42 "main.c" 2
-# 66 "main.c"
-int main(void){
-
-    SYSTEM_Initialize();
-    (INTCONbits.GIE = 1);
-    (INTCONbits.PEIE = 1);
-
-    rylr998_init();
-    weather_init();
-
-    struct bme280_dev dev = weather_dev();
-
-    while(1) {
-
-        struct bme280_data weather = weather_read(&dev);
-
-        rylr998_send(32, "TEMPERATURE", weather.temperature);
-        _delay((unsigned long)((1000)*(32000000/4000.0)));
-
-        rylr998_send(32, "HUMIDITY", weather.humidity);
-        _delay((unsigned long)((1000)*(32000000/4000.0)));
-
-        rylr998_send(32, "PRESSURE", weather.pressure);
-        _delay((unsigned long)((1000)*(32000000/4000.0)));
+# 12 "weather.c" 2
+# 23 "weather.c"
+static uint8_t dev_addr;
 
 
-        for(uint8_t i = 0; i < 15; i++) {
-            _delay((unsigned long)((2000)*(32000000/4000.0)));
-        }
 
+
+
+
+
+void weather_init() {
+    do { ANSELBbits.ANSB1 = 0; } while(0);
+    do { WPUBbits.WPUB1 = 1; } while(0);
+    do { ANSELBbits.ANSB2 = 0; } while(0);
+    do { WPUBbits.WPUB2 = 1; } while(0);
+}
+
+struct bme280_dev weather_dev() {
+
+    int8_t rslt;
+    struct bme280_dev dev;
+    struct bme280_settings settings;
+
+
+    dev_addr = 0x76;
+    dev.read = bme280_i2c_read;
+    dev.write = bme280_i2c_write;
+    dev.intf = BME280_I2C_INTF;
+    dev.intf_ptr = &dev_addr;
+    dev.delay_us = bme280_delay_us;
+
+
+    rslt = bme280_init(&dev);
+    rslt = bme280_get_sensor_settings(&settings, &dev);
+
+
+
+    settings.filter = (0x00);
+
+
+    settings.osr_h = 0x01;
+    settings.osr_p = 0x01;
+    settings.osr_t = 0x01;
+
+
+    settings.standby_time = (0x00);
+
+    rslt = bme280_set_sensor_settings(0x1F, &settings, &dev);
+    rslt = bme280_set_sensor_mode(0x00, &dev);
+
+    return dev;
+}
+
+
+
+
+
+struct bme280_data weather_read(struct bme280_dev *dev)
+{
+    int8_t rslt = -1;
+    struct bme280_data comp_data;
+
+
+    rslt = bme280_set_sensor_mode(0x03, dev);
+    printf(rslt);
+    _delay((unsigned long)((1000)*(32000000/4000.0)));
+
+
+    while(!weather_is_measurement_done(dev)) {
+        _delay((unsigned long)((100)*(32000000/4000.0)));
     }
+
+
+    rslt = bme280_get_sensor_data(0x07, &comp_data, dev);
+    return comp_data;
+}
+
+
+_Bool weather_is_measurement_done(struct bme280_dev *dev) {
+    uint8_t status_reg;
+    int8_t rslt = bme280_get_regs(0xF3, &status_reg, 1, dev);
+    return !(status_reg & 0x08);
+}
+# 120 "weather.c"
+int8_t bme280_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, void *intf_ptr)
+{
+
+    if(!I2C2_WriteRead(dev_addr, &reg_addr, 1, reg_data, length)){
+        return -2;
+    }
+
+    while(I2C2_IsBusy());
+    printf(reg_data);
+    return 0;
+}
+
+
+
+
+int8_t bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr)
+{
+    uint8_t buf[10 * 2] = {0};
+    buf[0] = reg_addr;
+    for(uint8_t i = 0; i < length + 1; i++) {
+        buf[i + 1] = reg_data[i];
+    }
+
+
+    if(!I2C2_Write(dev_addr, &buf, length + 1)) {
+        return -2;
+    }
+
+    while(I2C2_IsBusy());
+    return 0;
+}
+
+
+
+
+void bme280_delay_us(uint32_t period, void *intf_ptr)
+{
+
+
+    _delay((unsigned long)((1000)*(32000000/4000000.0)));
 }

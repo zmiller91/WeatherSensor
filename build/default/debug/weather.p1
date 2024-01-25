@@ -1,57 +1,105 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"53 ./mcc_generated_files/system/../uart/../system/system.h
-[; ;./mcc_generated_files/system/../uart/../system/system.h: 53: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"419 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 419:     struct {
-[s S32 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S32 . INTEDG . PEIE GIE ]
-"418
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 418: typedef union {
-[u S31 `S32 1 ]
-[n S31 . . ]
-"426
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS31 ~T0 @X0 0 e@11 ]
-"31 ./rylr998.h
-[; ;./rylr998.h: 31: void rylr998_init();
-[v _rylr998_init `(v ~T0 @X0 0 e? ]
-"15 ./weather.h
-[; ;./weather.h: 15: void weather_init();
-[v _weather_init `(v ~T0 @X0 0 e? ]
-"75 main.c
-[; ;main.c: 75:     struct bme280_dev dev = weather_dev();
-[c E8474 0 1 .. ]
-[n E8474 bme280_intf BME280_SPI_INTF BME280_I2C_INTF  ]
-[v F8533 `(c ~T0 @X0 0 tf4`uc`*uc`ul`*v ]
-[v F8539 `(c ~T0 @X0 0 tf4`uc`*Cuc`ul`*v ]
-[v F8545 `(v ~T0 @X0 0 tf2`ul`*v ]
+"19951 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19951:     struct {
+[s S983 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S983 . ANSELB0 ANSELB1 ANSELB2 ANSELB3 ANSELB4 ANSELB5 ANSELB6 ANSELB7 ]
+"19961
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19961:     struct {
+[s S984 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S984 . ANSB0 ANSB1 ANSB2 ANSB3 ANSB4 ANSB5 ANSB6 ANSB7 ]
+"19950
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19950: typedef union {
+[u S982 `S983 1 `S984 1 ]
+[n S982 . . . ]
+"19972
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19972: extern volatile ANSELBbits_t ANSELBbits __attribute__((address(0x1E96)));
+[v _ANSELBbits `VS982 ~T0 @X0 0 e@7830 ]
+"20063
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 20063:     struct {
+[s S986 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S986 . WPUB0 WPUB1 WPUB2 WPUB3 WPUB4 WPUB5 WPUB6 WPUB7 ]
+"20062
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 20062: typedef union {
+[u S985 `S986 1 ]
+[n S985 . . ]
+"20074
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 20074: extern volatile WPUBbits_t WPUBbits __attribute__((address(0x1E97)));
+[v _WPUBbits `VS985 ~T0 @X0 0 e@7831 ]
+"38 weather.c
+[; ;weather.c: 38: struct bme280_dev weather_dev() {
+[c E508 0 1 .. ]
+[n E508 bme280_intf BME280_SPI_INTF BME280_I2C_INTF  ]
+[v F567 `(c ~T0 @X0 0 tf4`uc`*uc`ul`*v ]
+[v F573 `(c ~T0 @X0 0 tf4`uc`*Cuc`ul`*v ]
+[v F579 `(v ~T0 @X0 0 tf2`ul`*v ]
 "323 ./bme280_defs.h
 [; ;./bme280_defs.h: 323: {
-[s S1089 `us 1 `s 1 `s 1 `us 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `uc 1 `s 1 `uc 1 `s 1 `s 1 `c 1 `l 1 ]
-[n S1089 bme280_calib_data dig_t1 dig_t2 dig_t3 dig_p1 dig_p2 dig_p3 dig_p4 dig_p5 dig_p6 dig_p7 dig_p8 dig_p9 dig_h1 dig_h2 dig_h3 dig_h4 dig_h5 dig_h6 t_fine ]
+[s S8 `us 1 `s 1 `s 1 `us 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `uc 1 `s 1 `uc 1 `s 1 `s 1 `c 1 `l 1 ]
+[n S8 bme280_calib_data dig_t1 dig_t2 dig_t3 dig_p1 dig_p2 dig_p3 dig_p4 dig_p5 dig_p6 dig_p7 dig_p8 dig_p9 dig_h1 dig_h2 dig_h3 dig_h4 dig_h5 dig_h6 t_fine ]
 "454
 [; ;./bme280_defs.h: 454: {
-[s S1093 `uc 1 `E8474 1 `*v 1 `c 1 `*F8533 1 `*F8539 1 `*F8545 1 `S1089 1 ]
-[n S1093 bme280_dev chip_id intf intf_ptr intf_rslt read write delay_us calib_data ]
-"16 ./weather.h
-[; ;./weather.h: 16: struct bme280_dev weather_dev();
-[v _weather_dev `(S1093 ~T0 @X0 0 e? ]
+[s S12 `uc 1 `E508 1 `*v 1 `c 1 `*F567 1 `*F573 1 `*F579 1 `S8 1 ]
+[n S12 bme280_dev chip_id intf intf_ptr intf_rslt read write delay_us calib_data ]
+"433
+[; ;./bme280_defs.h: 433: {
+[s S11 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S11 bme280_settings osr_p osr_t osr_h filter standby_time ]
+"40 ./weather.h
+[; ;./weather.h: 40: int8_t bme280_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, void *intf_ptr);
+[v _bme280_i2c_read `(c ~T0 @X0 0 ef4`uc`*uc`ul`*v ]
+"58
+[; ;./weather.h: 58: int8_t bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr);
+[v _bme280_i2c_write `(c ~T0 @X0 0 ef4`uc`*Cuc`ul`*v ]
+"69
+[; ;./weather.h: 69: void bme280_delay_us(uint32_t period_us, void *intf_ptr);
+[v _bme280_delay_us `(v ~T0 @X0 0 ef2`ul`*v ]
+"77 ./bme280.h
+[; ;./bme280.h: 77: int8_t bme280_init(struct bme280_dev *dev);
+[; ;./bme280.h: 77: int8_t bme280_init(struct bme280_dev *dev);
+[v _bme280_init `(c ~T0 @X0 0 ef1`*S12 ]
+"194
+[; ;./bme280.h: 194: int8_t bme280_get_sensor_settings(struct bme280_settings *settings, struct bme280_dev *dev);
+[; ;./bme280.h: 194: int8_t bme280_get_sensor_settings(struct bme280_settings *settings, struct bme280_dev *dev);
+[v _bme280_get_sensor_settings `(c ~T0 @X0 0 ef2`*S11`*S12 ]
+"171
+[; ;./bme280.h: 171: int8_t bme280_set_sensor_settings(uint8_t desired_settings,
+[; ;./bme280.h: 171: int8_t bme280_set_sensor_settings(uint8_t desired_settings,
+[v _bme280_set_sensor_settings `(c ~T0 @X0 0 ef3`uc`*CS11`*S12 ]
+"228
+[; ;./bme280.h: 228: int8_t bme280_set_sensor_mode(uint8_t sensor_mode, struct bme280_dev *dev);
+[; ;./bme280.h: 228: int8_t bme280_set_sensor_mode(uint8_t sensor_mode, struct bme280_dev *dev);
+[v _bme280_set_sensor_mode `(c ~T0 @X0 0 ef2`uc`*S12 ]
 "388 ./bme280_defs.h
 [; ;./bme280_defs.h: 388: {
-[s S1090 `d 1 `d 1 `d 1 ]
-[n S1090 bme280_data pressure temperature humidity ]
-"17 ./weather.h
-[; ;./weather.h: 17: struct bme280_data weather_read(struct bme280_dev *dev);
-[v _weather_read `(S1090 ~T0 @X0 0 ef1`*S1093 ]
-"32 ./rylr998.h
-[; ;./rylr998.h: 32: void rylr998_send(uint8_t address, char tag[], double metric);
-[v _rylr998_send `(v ~T0 @X0 0 ef3`uc`*uc`d ]
-[v F359 `(v ~T0 @X0 1 tf1`ul ]
+[s S9 `d 1 `d 1 `d 1 ]
+[n S9 bme280_data pressure temperature humidity ]
+"107 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 107: int printf(const char *restrict, ...);
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+[v F667 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
-[v __delay `JF359 ~T0 @X0 0 e ]
+[v __delay `JF667 ~T0 @X0 0 e ]
 [p i __delay ]
+"18 ./weather.h
+[; ;./weather.h: 18: _Bool weather_is_measurement_done(struct bme280_dev *dev);
+[v _weather_is_measurement_done `(a ~T0 @X0 0 ef1`*S12 ]
+"290 ./bme280.h
+[; ;./bme280.h: 290: int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
+[; ;./bme280.h: 290: int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
+[v _bme280_get_sensor_data `(c ~T0 @X0 0 ef3`uc`*S9`*S12 ]
+"128
+[; ;./bme280.h: 128: int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
+[; ;./bme280.h: 128: int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
+[v _bme280_get_regs `(c ~T0 @X0 0 ef4`uc`*uc`ul`*S12 ]
+"182 ./mcc_generated_files/system/../i2c_host/mssp2.h
+[; ;./mcc_generated_files/system/../i2c_host/mssp2.h: 182: _Bool I2C2_WriteRead(uint16_t address, uint8_t *writeData, size_t writeLength, uint8_t *readData, size_t readLength);
+[v _I2C2_WriteRead `(a ~T0 @X0 0 ef5`us`*uc`ui`*uc`ui ]
+"204
+[; ;./mcc_generated_files/system/../i2c_host/mssp2.h: 204: _Bool I2C2_IsBusy(void);
+[v _I2C2_IsBusy `(a ~T0 @X0 0 ef ]
+"116
+[; ;./mcc_generated_files/system/../i2c_host/mssp2.h: 116: _Bool I2C2_Write(uint16_t address, uint8_t *data, size_t dataLength);
+[v _I2C2_Write `(a ~T0 @X0 0 ef3`us`*uc`ui ]
 "110 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1195,87 +1243,333 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22220
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 22220: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
-"66 main.c
-[; ;main.c: 66: int main(void){
-[v _main `(i ~T0 @X0 1 ef ]
+"23 weather.c
+[; ;weather.c: 23: static uint8_t dev_addr;
+[v _dev_addr `uc ~T0 @X0 1 s ]
+"31
+[; ;weather.c: 31: void weather_init() {
+[v _weather_init `(v ~T0 @X0 1 ef ]
 {
-[e :U _main ]
+[e :U _weather_init ]
 [f ]
-"68
-[; ;main.c: 68:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"69
-[; ;main.c: 69:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"70
-[; ;main.c: 70:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"72
-[; ;main.c: 72:     rylr998_init();
-[e ( _rylr998_init ..  ]
-"73
-[; ;main.c: 73:     weather_init();
-[e ( _weather_init ..  ]
-"75
-[; ;main.c: 75:     struct bme280_dev dev = weather_dev();
-[v _dev `S1093 ~T0 @X0 1 a ]
-[e = _dev ( _weather_dev ..  ]
-"77
-[; ;main.c: 77:     while(1) {
+"32
+[; ;weather.c: 32:     do { ANSELBbits.ANSB1 = 0; } while(0);
 [e :U 1096 ]
 {
+[e = . . _ANSELBbits 1 1 -> -> 0 `i `uc ]
+}
+[e :U 1095 ]
+"33
+[; ;weather.c: 33:     do { WPUBbits.WPUB1 = 1; } while(0);
+[e :U 1099 ]
+{
+[e = . . _WPUBbits 0 1 -> -> 1 `i `uc ]
+}
+[e :U 1098 ]
+"34
+[; ;weather.c: 34:     do { ANSELBbits.ANSB2 = 0; } while(0);
+[e :U 1102 ]
+{
+[e = . . _ANSELBbits 1 2 -> -> 0 `i `uc ]
+}
+[e :U 1101 ]
+"35
+[; ;weather.c: 35:     do { WPUBbits.WPUB2 = 1; } while(0);
+[e :U 1105 ]
+{
+[e = . . _WPUBbits 0 2 -> -> 1 `i `uc ]
+}
+[e :U 1104 ]
+"36
+[; ;weather.c: 36: }
+[e :UE 1093 ]
+}
+"38
+[; ;weather.c: 38: struct bme280_dev weather_dev() {
+[v _weather_dev `(S12 ~T0 @X0 1 ef ]
+{
+[e :U _weather_dev ]
+[f ]
+"40
+[; ;weather.c: 40:     int8_t rslt;
+[v _rslt `c ~T0 @X0 1 a ]
+"41
+[; ;weather.c: 41:     struct bme280_dev dev;
+[v _dev `S12 ~T0 @X0 1 a ]
+"42
+[; ;weather.c: 42:     struct bme280_settings settings;
+[v _settings `S11 ~T0 @X0 1 a ]
+"45
+[; ;weather.c: 45:     dev_addr = 0x76;
+[e = _dev_addr -> -> 118 `i `uc ]
+"46
+[; ;weather.c: 46:     dev.read = bme280_i2c_read;
+[e = . _dev 4 &U _bme280_i2c_read ]
+"47
+[; ;weather.c: 47:     dev.write = bme280_i2c_write;
+[e = . _dev 5 &U _bme280_i2c_write ]
+"48
+[; ;weather.c: 48:     dev.intf = BME280_I2C_INTF;
+[e = . _dev 1 . `E508 1 ]
+"49
+[; ;weather.c: 49:     dev.intf_ptr = &dev_addr;
+[e = . _dev 2 -> &U _dev_addr `*v ]
+"50
+[; ;weather.c: 50:     dev.delay_us = bme280_delay_us;
+[e = . _dev 6 &U _bme280_delay_us ]
+"53
+[; ;weather.c: 53:     rslt = bme280_init(&dev);
+[e = _rslt ( _bme280_init (1 &U _dev ]
+"54
+[; ;weather.c: 54:     rslt = bme280_get_sensor_settings(&settings, &dev);
+[e = _rslt ( _bme280_get_sensor_settings (2 , &U _settings &U _dev ]
+"58
+[; ;weather.c: 58:     settings.filter = (0x00);
+[e = . _settings 3 -> -> 0 `i `uc ]
+"61
+[; ;weather.c: 61:     settings.osr_h = 0x01;
+[e = . _settings 2 -> -> 1 `i `uc ]
+"62
+[; ;weather.c: 62:     settings.osr_p = 0x01;
+[e = . _settings 0 -> -> 1 `i `uc ]
+"63
+[; ;weather.c: 63:     settings.osr_t = 0x01;
+[e = . _settings 1 -> -> 1 `i `uc ]
+"66
+[; ;weather.c: 66:     settings.standby_time = (0x00);
+[e = . _settings 4 -> -> 0 `i `uc ]
+"68
+[; ;weather.c: 68:     rslt = bme280_set_sensor_settings(0x1F, &settings, &dev);
+[e = _rslt ( _bme280_set_sensor_settings (3 , , -> -> 31 `i `uc -> &U _settings `*CS11 &U _dev ]
+"69
+[; ;weather.c: 69:     rslt = bme280_set_sensor_mode(0x00, &dev);
+[e = _rslt ( _bme280_set_sensor_mode (2 , -> -> 0 `i `uc &U _dev ]
+"71
+[; ;weather.c: 71:     return dev;
+[e ) _dev ]
+[e $UE 1106  ]
+"72
+[; ;weather.c: 72: }
+[e :UE 1106 ]
+}
+"78
+[; ;weather.c: 78: struct bme280_data weather_read(struct bme280_dev *dev)
+[v _weather_read `(S9 ~T0 @X0 1 ef1`*S12 ]
 "79
-[; ;main.c: 79:         struct bme280_data weather = weather_read(&dev);
-[v _weather `S1090 ~T0 @X0 1 a ]
-[e = _weather ( _weather_read (1 &U _dev ]
+[; ;weather.c: 79: {
+{
+[e :U _weather_read ]
+"78
+[; ;weather.c: 78: struct bme280_data weather_read(struct bme280_dev *dev)
+[v _dev `*S12 ~T0 @X0 1 r1 ]
+"79
+[; ;weather.c: 79: {
+[f ]
+"80
+[; ;weather.c: 80:     int8_t rslt = -1;
+[v _rslt `c ~T0 @X0 1 a ]
+[e = _rslt -> -U -> 1 `i `c ]
 "81
-[; ;main.c: 81:         rylr998_send(32, "TEMPERATURE", weather.temperature);
-[e ( _rylr998_send (3 , , -> -> 32 `i `uc :s 1C . _weather 1 ]
-"82
-[; ;main.c: 82:         _delay((unsigned long)((1000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;weather.c: 81:     struct bme280_data comp_data;
+[v _comp_data `S9 ~T0 @X0 1 a ]
 "84
-[; ;main.c: 84:         rylr998_send(32, "HUMIDITY", weather.humidity);
-[e ( _rylr998_send (3 , , -> -> 32 `i `uc :s 2C . _weather 2 ]
+[; ;weather.c: 84:     rslt = bme280_set_sensor_mode(0x03, dev);
+[e = _rslt ( _bme280_set_sensor_mode (2 , -> -> 3 `i `uc _dev ]
 "85
-[; ;main.c: 85:         _delay((unsigned long)((1000)*(32000000/4000.0)));
+[; ;weather.c: 85:     printf(rslt);
+[e ( _printf -> -> _rslt `*Cc `*Cuc ]
+"86
+[; ;weather.c: 86:     _delay((unsigned long)((1000)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"87
-[; ;main.c: 87:         rylr998_send(32, "PRESSURE", weather.pressure);
-[e ( _rylr998_send (3 , , -> -> 32 `i `uc :s 3C . _weather 0 ]
-"88
-[; ;main.c: 88:         _delay((unsigned long)((1000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"89
+[; ;weather.c: 89:     while(!weather_is_measurement_done(dev)) {
+[e $U 1108  ]
+[e :U 1109 ]
+{
+"90
+[; ;weather.c: 90:         _delay((unsigned long)((100)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "91
-[; ;main.c: 91:         for(uint8_t i = 0; i < 15; i++) {
+[; ;weather.c: 91:     }
+}
+[e :U 1108 ]
+"89
+[; ;weather.c: 89:     while(!weather_is_measurement_done(dev)) {
+[e $ ! != -> ( _weather_is_measurement_done (1 _dev `i -> 0 `i 1109  ]
+[e :U 1110 ]
+"94
+[; ;weather.c: 94:     rslt = bme280_get_sensor_data(0x07, &comp_data, dev);
+[e = _rslt ( _bme280_get_sensor_data (3 , , -> -> 7 `i `uc &U _comp_data _dev ]
+"95
+[; ;weather.c: 95:     return comp_data;
+[e ) _comp_data ]
+[e $UE 1107  ]
+"96
+[; ;weather.c: 96: }
+[e :UE 1107 ]
+}
+"99
+[; ;weather.c: 99: _Bool weather_is_measurement_done(struct bme280_dev *dev) {
+[v _weather_is_measurement_done `(a ~T0 @X0 1 ef1`*S12 ]
+{
+[e :U _weather_is_measurement_done ]
+[v _dev `*S12 ~T0 @X0 1 r1 ]
+[f ]
+"100
+[; ;weather.c: 100:     uint8_t status_reg;
+[v _status_reg `uc ~T0 @X0 1 a ]
+"101
+[; ;weather.c: 101:     int8_t rslt = bme280_get_regs(0xF3, &status_reg, 1, dev);
+[v _rslt `c ~T0 @X0 1 a ]
+[e = _rslt ( _bme280_get_regs (4 , , , -> -> 243 `i `uc &U _status_reg -> -> -> 1 `i `l `ul _dev ]
+"102
+[; ;weather.c: 102:     return !(status_reg & 0x08);
+[e ) -> -> ! != & -> _status_reg `i -> 8 `i -> 0 `i `i `a ]
+[e $UE 1111  ]
+"103
+[; ;weather.c: 103: }
+[e :UE 1111 ]
+}
+"120
+[; ;weather.c: 120: int8_t bme280_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, void *intf_ptr)
+[v _bme280_i2c_read `(c ~T0 @X0 1 ef4`uc`*uc`ul`*v ]
+"121
+[; ;weather.c: 121: {
+{
+[e :U _bme280_i2c_read ]
+"120
+[; ;weather.c: 120: int8_t bme280_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, void *intf_ptr)
+[v _reg_addr `uc ~T0 @X0 1 r1 ]
+[v _reg_data `*uc ~T0 @X0 1 r2 ]
+[v _length `ul ~T0 @X0 1 r3 ]
+[v _intf_ptr `*v ~T0 @X0 1 r4 ]
+"121
+[; ;weather.c: 121: {
+[f ]
+"123
+[; ;weather.c: 123:     if(!I2C2_WriteRead(dev_addr, &reg_addr, 1, reg_data, length)){
+[e $ ! ! != -> ( _I2C2_WriteRead (4 , , , , -> _dev_addr `us &U _reg_addr -> -> 1 `i `ui _reg_data -> _length `ui `i -> 0 `i 1113  ]
+{
+"124
+[; ;weather.c: 124:         return -2;
+[e ) -> -U -> 2 `i `c ]
+[e $UE 1112  ]
+"125
+[; ;weather.c: 125:     }
+}
+[e :U 1113 ]
+"127
+[; ;weather.c: 127:     while(I2C2_IsBusy());
+[e $U 1114  ]
+[e :U 1115 ]
+[e :U 1114 ]
+[e $ != -> ( _I2C2_IsBusy ..  `i -> 0 `i 1115  ]
+[e :U 1116 ]
+"128
+[; ;weather.c: 128:     printf(reg_data);
+[e ( _printf -> _reg_data `*Cuc ]
+"129
+[; ;weather.c: 129:     return 0;
+[e ) -> -> 0 `i `c ]
+[e $UE 1112  ]
+"130
+[; ;weather.c: 130: }
+[e :UE 1112 ]
+}
+"135
+[; ;weather.c: 135: int8_t bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr)
+[v _bme280_i2c_write `(c ~T0 @X0 1 ef4`uc`*Cuc`ul`*v ]
+"136
+[; ;weather.c: 136: {
+{
+[e :U _bme280_i2c_write ]
+"135
+[; ;weather.c: 135: int8_t bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr)
+[v _reg_addr `uc ~T0 @X0 1 r1 ]
+[v _reg_data `*Cuc ~T0 @X0 1 r2 ]
+[v _length `ul ~T0 @X0 1 r3 ]
+[v _intf_ptr `*v ~T0 @X0 1 r4 ]
+"136
+[; ;weather.c: 136: {
+[f ]
+[v F8542 `uc ~T0 @X0 -> 20 `i s ]
+[i F8542
+:U ..
+"137
+[; ;weather.c: 137:     uint8_t buf[10 * 2] = {0};
+-> -> 0 `i `uc
+..
+]
+[v _buf `uc ~T0 @X0 -> 20 `i a ]
+[e = _buf F8542 ]
+"138
+[; ;weather.c: 138:     buf[0] = reg_addr;
+[e = *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux _reg_addr ]
+"139
+[; ;weather.c: 139:     for(uint8_t i = 0; i < length + 1; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 15 `i 1098  ]
-[e $U 1099  ]
-[e :U 1098 ]
+[e $U 1121  ]
+[e :U 1118 ]
 {
-"92
-[; ;main.c: 92:             _delay((unsigned long)((2000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"93
-[; ;main.c: 93:         }
+"140
+[; ;weather.c: 140:         buf[i + 1] = reg_data[i];
+[e = *U + &U _buf * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _buf `ui `ux *U + _reg_data * -> _i `ux -> -> # *U _reg_data `ui `ux ]
+"141
+[; ;weather.c: 141:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 15 `i 1098  ]
-[e :U 1099 ]
+[e :U 1121 ]
+[e $ < -> _i `ul + _length -> -> -> 1 `i `l `ul 1118  ]
+[e :U 1119 ]
 }
-"95
-[; ;main.c: 95:     }
+"144
+[; ;weather.c: 144:     if(!I2C2_Write(dev_addr, &buf, length + 1)) {
+[e $ ! ! != -> ( _I2C2_Write (3 , , -> _dev_addr `us -> &U _buf `*uc -> + _length -> -> -> 1 `i `l `ul `ui `i -> 0 `i 1122  ]
+{
+"145
+[; ;weather.c: 145:         return -2;
+[e ) -> -U -> 2 `i `c ]
+[e $UE 1117  ]
+"146
+[; ;weather.c: 146:     }
 }
-[e :U 1095 ]
-[e $U 1096  ]
-[e :U 1097 ]
-"96
-[; ;main.c: 96: }
-[e :UE 1094 ]
+[e :U 1122 ]
+"148
+[; ;weather.c: 148:     while(I2C2_IsBusy());
+[e $U 1123  ]
+[e :U 1124 ]
+[e :U 1123 ]
+[e $ != -> ( _I2C2_IsBusy ..  `i -> 0 `i 1124  ]
+[e :U 1125 ]
+"149
+[; ;weather.c: 149:     return 0;
+[e ) -> -> 0 `i `c ]
+[e $UE 1117  ]
+"150
+[; ;weather.c: 150: }
+[e :UE 1117 ]
 }
-[a 2C 72 85 77 73 68 73 84 89 0 ]
-[a 1C 84 69 77 80 69 82 65 84 85 82 69 0 ]
-[a 3C 80 82 69 83 83 85 82 69 0 ]
+"155
+[; ;weather.c: 155: void bme280_delay_us(uint32_t period, void *intf_ptr)
+[v _bme280_delay_us `(v ~T0 @X0 1 ef2`ul`*v ]
+"156
+[; ;weather.c: 156: {
+{
+[e :U _bme280_delay_us ]
+"155
+[; ;weather.c: 155: void bme280_delay_us(uint32_t period, void *intf_ptr)
+[v _period `ul ~T0 @X0 1 r1 ]
+[v _intf_ptr `*v ~T0 @X0 1 r2 ]
+"156
+[; ;weather.c: 156: {
+[f ]
+"159
+[; ;weather.c: 159:     _delay((unsigned long)((1000)*(32000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
+"160
+[; ;weather.c: 160: }
+[e :UE 1126 ]
+}
+[p f _printf 9437696 ]

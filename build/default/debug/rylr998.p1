@@ -1,35 +1,60 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"182 ./mcc_generated_files/system/../i2c_host/mssp2.h
-[; ;./mcc_generated_files/system/../i2c_host/mssp2.h: 182: _Bool I2C2_WriteRead(uint16_t address, uint8_t *writeData, size_t writeLength, uint8_t *readData, size_t readLength);
-[v _I2C2_WriteRead `(a ~T0 @X0 0 ef5`us`*uc`ui`*uc`ui ]
-"204
-[; ;./mcc_generated_files/system/../i2c_host/mssp2.h: 204: _Bool I2C2_IsBusy(void);
-[v _I2C2_IsBusy `(a ~T0 @X0 0 ef ]
-"107 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h
+"862 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 862:     struct {
+[s S50 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S50 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"861
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 861: typedef union {
+[u S49 `S50 1 ]
+[n S49 . . ]
+"873
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 873: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x014)));
+[v _TRISCbits `VS49 ~T0 @X0 0 e@20 ]
+[v F8754 `(v ~T0 @X0 1 tf ]
+"137 ./mcc_generated_files/system/../uart/eusart1.h
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 137: __attribute__((inline)) void EUSART1_Enable(void);
+[v _EUSART1_Enable `TF8754 ~T0 @X0 0 e ]
+[v F8758 `(v ~T0 @X0 1 tf ]
+"154
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 154: __attribute__((inline)) void EUSART1_TransmitEnable(void);
+[v _EUSART1_TransmitEnable `TF8758 ~T0 @X0 0 e ]
+[v F8762 `(v ~T0 @X0 1 tf ]
+"171
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 171: __attribute__((inline)) void EUSART1_ReceiveEnable(void);
+[v _EUSART1_ReceiveEnable `TF8762 ~T0 @X0 0 e ]
+"348 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\math.h
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\math.h: 348: float roundf(float);
+[v _roundf `(f ~T0 @X0 0 ef1`f ]
+"111 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 111: int sprintf(char *restrict, const char *restrict, ...);
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"113
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 113: int snprintf(char *restrict, size_t, const char *restrict, ...);
+[v _snprintf `(i ~T0 @X0 0 e2v`*uc`ui`*Cuc ]
+"107
 [; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 107: int printf(const char *restrict, ...);
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"116 ./mcc_generated_files/system/../i2c_host/mssp2.h
-[; ;./mcc_generated_files/system/../i2c_host/mssp2.h: 116: _Bool I2C2_Write(uint16_t address, uint8_t *data, size_t dataLength);
-[v _I2C2_Write `(a ~T0 @X0 0 ef3`us`*uc`ui ]
-[v F667 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
-[v __delay `JF667 ~T0 @X0 0 e ]
-[p i __delay ]
-"131 common.c
-[; ;common.c: 131: int8_t bme280_interface_selection(struct bme280_dev *dev, uint8_t intf)
-[c E508 0 1 .. ]
-[n E508 bme280_intf BME280_SPI_INTF BME280_I2C_INTF  ]
-[v F567 `(c ~T0 @X0 0 tf4`uc`*uc`ul`*v ]
-[v F573 `(c ~T0 @X0 0 tf4`uc`*Cuc`ul`*v ]
-[v F579 `(v ~T0 @X0 0 tf2`ul`*v ]
-"323 ./bme280_defs.h
-[; ;./bme280_defs.h: 323: {
-[s S8 `us 1 `s 1 `s 1 `us 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `uc 1 `s 1 `uc 1 `s 1 `s 1 `c 1 `l 1 ]
-[n S8 bme280_calib_data dig_t1 dig_t2 dig_t3 dig_p1 dig_p2 dig_p3 dig_p4 dig_p5 dig_p6 dig_p7 dig_p8 dig_p9 dig_h1 dig_h2 dig_h3 dig_h4 dig_h5 dig_h6 t_fine ]
-"454
-[; ;./bme280_defs.h: 454: {
-[s S12 `uc 1 `E508 1 `*v 1 `c 1 `*F567 1 `*F573 1 `*F579 1 `S8 1 ]
-[n S12 bme280_dev chip_id intf intf_ptr intf_rslt read write delay_us calib_data ]
+"33 ./rylr998.h
+[; ;./rylr998.h: 33: void rylr998_write(char data[]);
+[v _rylr998_write `(v ~T0 @X0 0 ef1`*uc ]
+"34
+[; ;./rylr998.h: 34: void rylr998_read();
+[v _rylr998_read `(v ~T0 @X0 0 e? ]
+"283 ./mcc_generated_files/system/../uart/eusart1.h
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 283: void EUSART1_Write(uint8_t txData);
+[v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
+"255
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 255: _Bool EUSART1_IsTxDone(void);
+[v _EUSART1_IsTxDone `(a ~T0 @X0 0 ef ]
+"237
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 237: _Bool EUSART1_IsRxReady(void);
+[v _EUSART1_IsRxReady `(a ~T0 @X0 0 ef ]
+"273
+[; ;./mcc_generated_files/system/../uart/eusart1.h: 273: uint8_t EUSART1_Read(void);
+[v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
+"39 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\string.h: 39: int strcmp (const char *, const char *);
+[v _strcmp `(i ~T0 @X0 0 ef2`*Cuc`*Cuc ]
 "110 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1173,397 +1198,281 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22220
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 22220: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"23 common.c
-[; ;common.c: 23: static uint8_t dev_addr;
-[v _dev_addr `uc ~T0 @X0 1 s ]
-"31
-[; ;common.c: 31: int8_t bme280_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, void *intf_ptr)
-[v _bme280_i2c_read `(c ~T0 @X0 1 ef4`uc`*uc`ul`*v ]
-"32
-[; ;common.c: 32: {
+"20 rylr998.c
+[; ;rylr998.c: 20: void rylr998_init() {
+[v _rylr998_init `(v ~T0 @X0 1 ef ]
 {
-[e :U _bme280_i2c_read ]
-"31
-[; ;common.c: 31: int8_t bme280_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, void *intf_ptr)
-[v _reg_addr `uc ~T0 @X0 1 r1 ]
-[v _reg_data `*uc ~T0 @X0 1 r2 ]
-[v _length `ul ~T0 @X0 1 r3 ]
-[v _intf_ptr `*v ~T0 @X0 1 r4 ]
-"32
-[; ;common.c: 32: {
+[e :U _rylr998_init ]
 [f ]
-"34
-[; ;common.c: 34:     if(!I2C2_WriteRead(dev_addr, &reg_addr, 1, reg_data, length)){
-[e $ ! ! != -> ( _I2C2_WriteRead (4 , , , , -> _dev_addr `us &U _reg_addr -> -> 1 `i `ui _reg_data -> _length `ui `i -> 0 `i 1094  ]
+"23
+[; ;rylr998.c: 23:     do { TRISCbits.TRISC7 = 1; } while(0);
+[e :U 1092 ]
 {
-"35
-[; ;common.c: 35:         return -2;
-[e ) -> -U -> 2 `i `c ]
-[e $UE 1093  ]
-"36
-[; ;common.c: 36:     }
+[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
+}
+[e :U 1091 ]
+"24
+[; ;rylr998.c: 24:     do { TRISCbits.TRISC6 = 0; } while(0);
+[e :U 1095 ]
+{
+[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
 }
 [e :U 1094 ]
-"38
-[; ;common.c: 38:     while(I2C2_IsBusy());
-[e $U 1095  ]
-[e :U 1096 ]
-[e :U 1095 ]
-[e $ != -> ( _I2C2_IsBusy ..  `i -> 0 `i 1096  ]
-[e :U 1097 ]
-"39
-[; ;common.c: 39:     printf(reg_data);
-[e ( _printf -> _reg_data `*Cuc ]
-"40
-[; ;common.c: 40:     return 0;
-[e ) -> -> 0 `i `c ]
-[e $UE 1093  ]
-"41
-[; ;common.c: 41: }
-[e :UE 1093 ]
+"26
+[; ;rylr998.c: 26:     EUSART1_Enable();
+[e ( _EUSART1_Enable ..  ]
+"27
+[; ;rylr998.c: 27:     EUSART1_TransmitEnable();
+[e ( _EUSART1_TransmitEnable ..  ]
+"28
+[; ;rylr998.c: 28:     EUSART1_ReceiveEnable();
+[e ( _EUSART1_ReceiveEnable ..  ]
+"29
+[; ;rylr998.c: 29: }
+[e :UE 1089 ]
 }
-"46
-[; ;common.c: 46: int8_t bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr)
-[v _bme280_i2c_write `(c ~T0 @X0 1 ef4`uc`*Cuc`ul`*v ]
-"47
-[; ;common.c: 47: {
+"31
+[; ;rylr998.c: 31: void rylr998_send(uint8_t address, char tag[], double metric) {
+[v _rylr998_send `(v ~T0 @X0 1 ef3`uc`*uc`d ]
 {
-[e :U _bme280_i2c_write ]
-"46
-[; ;common.c: 46: int8_t bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr)
-[v _reg_addr `uc ~T0 @X0 1 r1 ]
-[v _reg_data `*Cuc ~T0 @X0 1 r2 ]
-[v _length `ul ~T0 @X0 1 r3 ]
-[v _intf_ptr `*v ~T0 @X0 1 r4 ]
-"47
-[; ;common.c: 47: {
+[e :U _rylr998_send ]
+[v _address `uc ~T0 @X0 1 r1 ]
+[v _tag `*uc ~T0 @X0 1 r2 ]
+[v _metric `d ~T0 @X0 1 r3 ]
 [f ]
-[v F8501 `uc ~T0 @X0 -> 20 `i s ]
-[i F8501
+"34
+[; ;rylr998.c: 34:     if(sizeof(tag) > 20) {
+[e $ ! > -> # _tag `ui -> -> 20 `i `ui 1097  ]
+{
+"36
+[; ;rylr998.c: 36:     }
+}
+[e :U 1097 ]
+"40
+[; ;rylr998.c: 40:     char t[10];
+[v _t `uc ~T0 @X0 -> 10 `i a ]
+"41
+[; ;rylr998.c: 41:     float rounded = roundf(metric * 100) / 100;
+[v _rounded `f ~T0 @X0 1 a ]
+[e = _rounded / ( _roundf (1 -> * _metric -> -> 100 `i `d `f -> -> 100 `i `f ]
+"42
+[; ;rylr998.c: 42:     sprintf(t, "%g", rounded);
+[e ( _sprintf (1 , (. , &U _t :s 1C -> _rounded `d ]
+"46
+[; ;rylr998.c: 46:     int payload_size = snprintf(((void*)0), 0, "%s::%s", tag, t);
+[v _payload_size `i ~T0 @X0 1 a ]
+[e = _payload_size ( _snprintf (2 , , (. , , -> -> -> 0 `i `*v `*uc -> -> 0 `i `ui :s 2C _tag &U _t ]
+"47
+[; ;rylr998.c: 47:     printf(payload_size);
+[e ( _printf -> _payload_size `*Cuc ]
+[v F8913 `uc ~T0 @X0 -> 50 `i s ]
+[i F8913
 :U ..
-"48
-[; ;common.c: 48:     uint8_t buf[10 * 2] = {0};
+"50
+[; ;rylr998.c: 50:     char buffer[50] = {0};
 -> -> 0 `i `uc
 ..
 ]
-[v _buf `uc ~T0 @X0 -> 20 `i a ]
-[e = _buf F8501 ]
-"49
-[; ;common.c: 49:     buf[0] = reg_addr;
-[e = *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux _reg_addr ]
-"50
-[; ;common.c: 50:     for(uint8_t i = 0; i < length + 1; i++) {
+[v _buffer `uc ~T0 @X0 -> 50 `i a ]
+[e = _buffer F8913 ]
+"51
+[; ;rylr998.c: 51:     sprintf(buffer, "AT+SEND=%i,%i,%s::%s\r\n", address, payload_size, tag, t);
+[e ( _sprintf (1 , , , , (. , &U _buffer :s 3C -> _address `i _payload_size _tag &U _t ]
+"52
+[; ;rylr998.c: 52:     printf(buffer);
+[e ( _printf -> &U _buffer `*Cuc ]
+"54
+[; ;rylr998.c: 54:     rylr998_write(&buffer);
+[e ( _rylr998_write (1 -> &U _buffer `*uc ]
+"55
+[; ;rylr998.c: 55:     rylr998_read();
+[e ( _rylr998_read ..  ]
+"56
+[; ;rylr998.c: 56: }
+[e :UE 1096 ]
+}
+"58
+[; ;rylr998.c: 58: void rylr998_write(char *data) {
+[v _rylr998_write `(v ~T0 @X0 1 ef1`*uc ]
+{
+[e :U _rylr998_write ]
+[v _data `*uc ~T0 @X0 1 r1 ]
+[f ]
+"60
+[; ;rylr998.c: 60:     _Bool carriage_found = 0;
+[v _carriage_found `a ~T0 @X0 1 a ]
+[e = _carriage_found -> -> 0 `i `a ]
+"61
+[; ;rylr998.c: 61:     _Bool newline_found = 0;
+[v _newline_found `a ~T0 @X0 1 a ]
+[e = _newline_found -> -> 0 `i `a ]
+"63
+[; ;rylr998.c: 63:     uint8_t size = sizeof(data);
+[v _size `uc ~T0 @X0 1 a ]
+[e = _size -> -> # _data `ui `uc ]
+"64
+[; ;rylr998.c: 64:     printf(size);
+[e ( _printf -> _size `*Cuc ]
+"65
+[; ;rylr998.c: 65:     for(uint8_t i = 0; i < 50; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $U 1102  ]
+[e $ < -> _i `i -> 50 `i 1099  ]
+[e $U 1100  ]
 [e :U 1099 ]
 {
-"51
-[; ;common.c: 51:         buf[i + 1] = reg_data[i];
-[e = *U + &U _buf * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _buf `ui `ux *U + _reg_data * -> _i `ux -> -> # *U _reg_data `ui `ux ]
-"52
-[; ;common.c: 52:     }
+"67
+[; ;rylr998.c: 67:         char c = data[i];
+[v _c `uc ~T0 @X0 1 a ]
+[e = _c *U + _data * -> _i `ux -> -> # *U _data `ui `ux ]
+"68
+[; ;rylr998.c: 68:         EUSART1_Write(c);
+[e ( _EUSART1_Write (1 -> _c `uc ]
+"69
+[; ;rylr998.c: 69:         while(!EUSART1_IsTxDone());
+[e $U 1102  ]
+[e :U 1103 ]
+[e :U 1102 ]
+[e $ ! != -> ( _EUSART1_IsTxDone ..  `i -> 0 `i 1103  ]
+[e :U 1104 ]
+"71
+[; ;rylr998.c: 71:         carriage_found = carriage_found || (data[i] == '\r');
+[e = _carriage_found -> -> || != -> _carriage_found `i -> 0 `i == -> *U + _data * -> _i `ux -> -> # *U _data `ui `ux `ui -> 13 `ui `i `a ]
+"72
+[; ;rylr998.c: 72:         newline_found = newline_found || (data[i] == '\n');
+[e = _newline_found -> -> || != -> _newline_found `i -> 0 `i == -> *U + _data * -> _i `ux -> -> # *U _data `ui `ux `ui -> 10 `ui `i `a ]
+"73
+[; ;rylr998.c: 73:         if(carriage_found && newline_found) {
+[e $ ! && != -> _carriage_found `i -> 0 `i != -> _newline_found `i -> 0 `i 1105  ]
+{
+"74
+[; ;rylr998.c: 74:             break;
+[e $U 1100  ]
+"75
+[; ;rylr998.c: 75:         }
+}
+[e :U 1105 ]
+"76
+[; ;rylr998.c: 76:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 1102 ]
-[e $ < -> _i `ul + _length -> -> -> 1 `i `l `ul 1099  ]
+[e $ < -> _i `i -> 50 `i 1099  ]
 [e :U 1100 ]
 }
-"55
-[; ;common.c: 55:     if(!I2C2_Write(dev_addr, &buf, length + 1)) {
-[e $ ! ! != -> ( _I2C2_Write (3 , , -> _dev_addr `us -> &U _buf `*uc -> + _length -> -> -> 1 `i `l `ul `ui `i -> 0 `i 1103  ]
+"78
+[; ;rylr998.c: 78:     if(!carriage_found || !newline_found) {
+[e $ ! || ! != -> _carriage_found `i -> 0 `i ! != -> _newline_found `i -> 0 `i 1106  ]
 {
-"56
-[; ;common.c: 56:         return -2;
-[e ) -> -U -> 2 `i `c ]
-[e $UE 1098  ]
-"57
-[; ;common.c: 57:     }
+"80
+[; ;rylr998.c: 80:     }
 }
-[e :U 1103 ]
-"59
-[; ;common.c: 59:     while(I2C2_IsBusy());
-[e $U 1104  ]
-[e :U 1105 ]
-[e :U 1104 ]
-[e $ != -> ( _I2C2_IsBusy ..  `i -> 0 `i 1105  ]
 [e :U 1106 ]
-"60
-[; ;common.c: 60:     return 0;
-[e ) -> -> 0 `i `c ]
-[e $UE 1098  ]
-"61
-[; ;common.c: 61: }
+"81
+[; ;rylr998.c: 81: }
 [e :UE 1098 ]
 }
-"66
-[; ;common.c: 66: int8_t bme280_spi_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, void *intf_ptr)
-[v _bme280_spi_read `(c ~T0 @X0 1 ef4`uc`*uc`ul`*v ]
-"67
-[; ;common.c: 67: {
-{
-[e :U _bme280_spi_read ]
-"66
-[; ;common.c: 66: int8_t bme280_spi_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, void *intf_ptr)
-[v _reg_addr `uc ~T0 @X0 1 r1 ]
-[v _reg_data `*uc ~T0 @X0 1 r2 ]
-[v _length `ul ~T0 @X0 1 r3 ]
-[v _intf_ptr `*v ~T0 @X0 1 r4 ]
-"67
-[; ;common.c: 67: {
-[f ]
-"68
-[; ;common.c: 68:     return 0;
-[e ) -> -> 0 `i `c ]
-[e $UE 1107  ]
-"69
-[; ;common.c: 69: }
-[e :UE 1107 ]
-}
-"74
-[; ;common.c: 74: int8_t bme280_spi_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr)
-[v _bme280_spi_write `(c ~T0 @X0 1 ef4`uc`*Cuc`ul`*v ]
-"75
-[; ;common.c: 75: {
-{
-[e :U _bme280_spi_write ]
-"74
-[; ;common.c: 74: int8_t bme280_spi_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr)
-[v _reg_addr `uc ~T0 @X0 1 r1 ]
-[v _reg_data `*Cuc ~T0 @X0 1 r2 ]
-[v _length `ul ~T0 @X0 1 r3 ]
-[v _intf_ptr `*v ~T0 @X0 1 r4 ]
-"75
-[; ;common.c: 75: {
-[f ]
-"76
-[; ;common.c: 76:     return 0;
-[e ) -> -> 0 `i `c ]
-[e $UE 1108  ]
-"77
-[; ;common.c: 77: }
-[e :UE 1108 ]
-}
-"82
-[; ;common.c: 82: void bme280_delay_us(uint32_t period, void *intf_ptr)
-[v _bme280_delay_us `(v ~T0 @X0 1 ef2`ul`*v ]
 "83
-[; ;common.c: 83: {
+[; ;rylr998.c: 83: void rylr998_read() {
+[v _rylr998_read `(v ~T0 @X0 1 ef ]
 {
-[e :U _bme280_delay_us ]
-"82
-[; ;common.c: 82: void bme280_delay_us(uint32_t period, void *intf_ptr)
-[v _period `ul ~T0 @X0 1 r1 ]
-[v _intf_ptr `*v ~T0 @X0 1 r2 ]
-"83
-[; ;common.c: 83: {
+[e :U _rylr998_read ]
 [f ]
 "86
-[; ;common.c: 86:     _delay((unsigned long)((1000)*(32000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"87
-[; ;common.c: 87: }
-[e :UE 1109 ]
-}
+[; ;rylr998.c: 86:     while(!EUSART1_IsRxReady());
+[e $U 1108  ]
+[e :U 1109 ]
+[e :U 1108 ]
+[e $ ! != -> ( _EUSART1_IsRxReady ..  `i -> 0 `i 1109  ]
+[e :U 1110 ]
+"88
+[; ;rylr998.c: 88:     _Bool carriage_found = 0;
+[v _carriage_found `a ~T0 @X0 1 a ]
+[e = _carriage_found -> -> 0 `i `a ]
+"89
+[; ;rylr998.c: 89:     _Bool newline_found = 0;
+[v _newline_found `a ~T0 @X0 1 a ]
+[e = _newline_found -> -> 0 `i `a ]
+[v F8926 `uc ~T0 @X0 -> 50 `i s ]
+[i F8926
+:U ..
+"91
+[; ;rylr998.c: 91:     char data[50] = {0};
+-> -> 0 `i `uc
+..
+]
+[v _data `uc ~T0 @X0 -> 50 `i a ]
+[e = _data F8926 ]
 "92
-[; ;common.c: 92: void bme280_error_codes_print_result(const char api_name[], int8_t rslt)
-[v _bme280_error_codes_print_result `(v ~T0 @X0 1 ef2`*Cuc`c ]
-"93
-[; ;common.c: 93: {
+[; ;rylr998.c: 92:     for(uint8_t i = 0; i < sizeof(data); i++) {
 {
-[e :U _bme280_error_codes_print_result ]
-"92
-[; ;common.c: 92: void bme280_error_codes_print_result(const char api_name[], int8_t rslt)
-[v _api_name `*Cuc ~T0 @X0 1 r1 ]
-[v _rslt `c ~T0 @X0 1 r2 ]
-"93
-[; ;common.c: 93: {
-[f ]
-"94
-[; ;common.c: 94:     if (rslt != 0)
-[e $ ! != -> _rslt `i -> 0 `i 1111  ]
-"95
-[; ;common.c: 95:     {
-{
-"96
-[; ;common.c: 96:         printf("%s\t", api_name);
-[e ( _printf , (. :s 1C _api_name ]
-"98
-[; ;common.c: 98:         switch (rslt)
-[e $U 1113  ]
-"99
-[; ;common.c: 99:         {
-{
-"100
-[; ;common.c: 100:             case -1:
-[e :U 1114 ]
-"101
-[; ;common.c: 101:                 printf("Error [%d] : Null pointer error.", rslt);
-[e ( _printf , (. :s 2C -> _rslt `i ]
-"102
-[; ;common.c: 102:                 printf(
-[e ( _printf :s 3C ]
-"104
-[; ;common.c: 104:                 break;
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `ui -> # _data `ui 1111  ]
 [e $U 1112  ]
-"106
-[; ;common.c: 106:             case -2:
+[e :U 1111 ]
+{
+"94
+[; ;rylr998.c: 94:         uint8_t byte = EUSART1_Read();
+[v _byte `uc ~T0 @X0 1 a ]
+[e = _byte ( _EUSART1_Read ..  ]
+"95
+[; ;rylr998.c: 95:         carriage_found = carriage_found || (byte == '\r');
+[e = _carriage_found -> -> || != -> _carriage_found `i -> 0 `i == -> _byte `ui -> 13 `ui `i `a ]
+"96
+[; ;rylr998.c: 96:         newline_found = newline_found || (byte == '\n');
+[e = _newline_found -> -> || != -> _newline_found `i -> 0 `i == -> _byte `ui -> 10 `ui `i `a ]
+"98
+[; ;rylr998.c: 98:         if(!(byte == '\r' || byte == '\n')) {
+[e $ ! ! || == -> _byte `ui -> 13 `ui == -> _byte `ui -> 10 `ui 1114  ]
+{
+"99
+[; ;rylr998.c: 99:             data[i] = byte;
+[e = *U + &U _data * -> _i `ux -> -> # *U &U _data `ui `ux -> _byte `uc ]
+"100
+[; ;rylr998.c: 100:         }
+}
+[e :U 1114 ]
+"102
+[; ;rylr998.c: 102:         if(carriage_found && newline_found) {
+[e $ ! && != -> _carriage_found `i -> 0 `i != -> _newline_found `i -> 0 `i 1115  ]
+{
+"103
+[; ;rylr998.c: 103:             break;
+[e $U 1112  ]
+"104
+[; ;rylr998.c: 104:         }
+}
 [e :U 1115 ]
 "107
-[; ;common.c: 107:                 printf("Error [%d] : Communication failure error.", rslt);
-[e ( _printf , (. :s 4C -> _rslt `i ]
-"108
-[; ;common.c: 108:                 printf(
-[e ( _printf :s 5C ]
-"110
-[; ;common.c: 110:                 break;
-[e $U 1112  ]
-"112
-[; ;common.c: 112:             case -4:
-[e :U 1116 ]
-"113
-[; ;common.c: 113:                 printf("Error [%d] : Device not found error. It occurs when the device chip id is incorrectly read\r\n",
-[e ( _printf , (. :s 6C -> _rslt `i ]
-"115
-[; ;common.c: 115:                 break;
-[e $U 1112  ]
-"117
-[; ;common.c: 117:             case -3:
+[; ;rylr998.c: 107:         while(!EUSART1_IsRxReady());
+[e $U 1116  ]
 [e :U 1117 ]
-"118
-[; ;common.c: 118:                 printf("Error [%d] : Invalid length error. It occurs when write is done with invalid length\r\n", rslt);
-[e ( _printf , (. :s 7C -> _rslt `i ]
-"119
-[; ;common.c: 119:                 break;
-[e $U 1112  ]
-"121
-[; ;common.c: 121:             default:
+[e :U 1116 ]
+[e $ ! != -> ( _EUSART1_IsRxReady ..  `i -> 0 `i 1117  ]
 [e :U 1118 ]
-"122
-[; ;common.c: 122:                 printf("Error [%d] : Unknown error code\r\n", rslt);
-[e ( _printf , (. :s 8C -> _rslt `i ]
-"123
-[; ;common.c: 123:                 break;
-[e $U 1112  ]
-"124
-[; ;common.c: 124:         }
+"109
+[; ;rylr998.c: 109:     }
 }
-[e $U 1112  ]
-[e :U 1113 ]
-[e [\ -> _rslt `i , $ -U -> 1 `i 1114
- , $ -U -> 2 `i 1115
- , $ -U -> 4 `i 1116
- , $ -U -> 3 `i 1117
- 1118 ]
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `ui -> # _data `ui 1111  ]
 [e :U 1112 ]
-"125
-[; ;common.c: 125:     }
 }
-[e :U 1111 ]
-"126
-[; ;common.c: 126: }
-[e :UE 1110 ]
+"111
+[; ;rylr998.c: 111:     _Bool success = strcmp("+OK", data) == 0;
+[v _success `a ~T0 @X0 1 a ]
+[e = _success -> -> == ( _strcmp (2 , :s 4C -> &U _data `*Cuc -> 0 `i `i `a ]
+"112
+[; ;rylr998.c: 112:     printf(success);
+[e ( _printf -> _success `*Cuc ]
+"114
+[; ;rylr998.c: 114: }
+[e :UE 1107 ]
 }
-"131
-[; ;common.c: 131: int8_t bme280_interface_selection(struct bme280_dev *dev, uint8_t intf)
-[v _bme280_interface_selection `(c ~T0 @X0 1 ef2`*S12`uc ]
-"132
-[; ;common.c: 132: {
-{
-[e :U _bme280_interface_selection ]
-"131
-[; ;common.c: 131: int8_t bme280_interface_selection(struct bme280_dev *dev, uint8_t intf)
-[v _dev `*S12 ~T0 @X0 1 r1 ]
-[v _intf `uc ~T0 @X0 1 r2 ]
-"132
-[; ;common.c: 132: {
-[f ]
-"133
-[; ;common.c: 133:     int8_t rslt = 0;
-[v _rslt `c ~T0 @X0 1 a ]
-[e = _rslt -> -> 0 `i `c ]
-"135
-[; ;common.c: 135:     if (dev != ((void*)0))
-[e $ ! != _dev -> -> -> 0 `i `*v `*S12 1120  ]
-"136
-[; ;common.c: 136:     {
-{
-"139
-[; ;common.c: 139:         if (intf == BME280_I2C_INTF)
-[e $ ! == -> _intf `i -> . `E508 1 `i 1121  ]
-"140
-[; ;common.c: 140:         {
-{
-"141
-[; ;common.c: 141:             printf("I2C Interface\n");
-[e ( _printf :s 9C ]
-"143
-[; ;common.c: 143:             dev_addr = 0x76;
-[e = _dev_addr -> -> 118 `i `uc ]
-"144
-[; ;common.c: 144:             dev->read = bme280_i2c_read;
-[e = . *U _dev 4 &U _bme280_i2c_read ]
-"145
-[; ;common.c: 145:             dev->write = bme280_i2c_write;
-[e = . *U _dev 5 &U _bme280_i2c_write ]
-"146
-[; ;common.c: 146:             dev->intf = BME280_I2C_INTF;
-[e = . *U _dev 1 . `E508 1 ]
-"147
-[; ;common.c: 147:         }
-}
-[e :U 1121 ]
-"150
-[; ;common.c: 150:         dev->intf_ptr = &dev_addr;
-[e = . *U _dev 2 -> &U _dev_addr `*v ]
-"153
-[; ;common.c: 153:         dev->delay_us = bme280_delay_us;
-[e = . *U _dev 6 &U _bme280_delay_us ]
-"154
-[; ;common.c: 154:     }
-}
-[e $U 1122  ]
-"155
-[; ;common.c: 155:     else
-[e :U 1120 ]
-"156
-[; ;common.c: 156:     {
-{
-"157
-[; ;common.c: 157:         rslt = -1;
-[e = _rslt -> -U -> 1 `i `c ]
-"158
-[; ;common.c: 158:     }
-}
-[e :U 1122 ]
-"160
-[; ;common.c: 160:     return rslt;
-[e ) _rslt ]
-[e $UE 1119  ]
-"161
-[; ;common.c: 161: }
-[e :UE 1119 ]
-}
-"166
-[; ;common.c: 166: void bme280_coines_deinit(void)
-[v _bme280_coines_deinit `(v ~T0 @X0 1 ef ]
-"167
-[; ;common.c: 167: {
-{
-[e :U _bme280_coines_deinit ]
-[f ]
-"169
-[; ;common.c: 169: }
-[e :UE 1123 ]
-}
-[p f _printf 9699968 ]
-[a 2C 69 114 114 111 114 32 91 37 100 93 32 58 32 78 117 108 108 32 112 111 105 110 116 101 114 32 101 114 114 111 114 46 0 ]
-[a 4C 69 114 114 111 114 32 91 37 100 93 32 58 32 67 111 109 109 117 110 105 99 97 116 105 111 110 32 102 97 105 108 117 114 101 32 101 114 114 111 114 46 0 ]
-[a 9C 73 50 67 32 73 110 116 101 114 102 97 99 101 10 0 ]
-[a 5C 73 116 32 111 99 99 117 114 115 32 100 117 101 32 116 111 32 114 101 97 100 47 119 114 105 116 101 32 111 112 101 114 97 116 105 111 110 32 102 97 105 108 117 114 101 32 97 110 100 32 97 108 115 111 32 100 117 101 32 116 111 32 112 111 119 101 114 32 102 97 105 108 117 114 101 32 100 117 114 105 110 103 32 99 111 109 109 117 110 105 99 97 116 105 111 110 13 10 0 ]
-[a 7C 69 114 114 111 114 32 91 37 100 93 32 58 32 73 110 118 97 108 105 100 32 108 101 110 103 116 104 32 101 114 114 111 114 46 32 73 116 32 111 99 99 117 114 115 32 119 104 101 110 32 119 114 105 116 101 32 105 115 32 100 111 110 101 32 119 105 116 104 32 105 110 118 97 108 105 100 32 108 101 110 103 116 104 13 10 0 ]
-[a 8C 69 114 114 111 114 32 91 37 100 93 32 58 32 85 110 107 110 111 119 110 32 101 114 114 111 114 32 99 111 100 101 13 10 0 ]
-[a 6C 69 114 114 111 114 32 91 37 100 93 32 58 32 68 101 118 105 99 101 32 110 111 116 32 102 111 117 110 100 32 101 114 114 111 114 46 32 73 116 32 111 99 99 117 114 115 32 119 104 101 110 32 116 104 101 32 100 101 118 105 99 101 32 99 104 105 112 32 105 100 32 105 115 32 105 110 99 111 114 114 101 99 116 108 121 32 114 101 97 100 13 10 0 ]
-[a 3C 73 116 32 111 99 99 117 114 115 32 119 104 101 110 32 116 104 101 32 117 115 101 114 32 116 114 105 101 115 32 116 111 32 97 115 115 105 103 110 32 118 97 108 117 101 32 40 110 111 116 32 97 100 100 114 101 115 115 41 32 116 111 32 97 32 112 111 105 110 116 101 114 44 32 119 104 105 99 104 32 104 97 115 32 98 101 101 110 32 105 110 105 116 105 97 108 105 122 101 100 32 116 111 32 78 85 76 76 46 13 10 0 ]
-[a 1C 37 115 9 0 ]
+[p f _printf 9437696 ]
+[p f _sprintf 8654976 ]
+[p f _snprintf 8650752 ]
+[a 2C 37 115 58 58 37 115 0 ]
+[a 1C 37 103 0 ]
+[a 4C 43 79 75 0 ]
+[a 3C 65 84 43 83 69 78 68 61 37 105 44 37 105 44 37 115 58 58 37 115 13 10 0 ]

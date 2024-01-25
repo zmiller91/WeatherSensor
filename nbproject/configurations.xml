@@ -28,7 +28,8 @@
       </logicalFolder>
       <itemPath>bme280.h</itemPath>
       <itemPath>bme280_defs.h</itemPath>
-      <itemPath>common.h</itemPath>
+      <itemPath>rylr998.h</itemPath>
+      <itemPath>weather.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -64,7 +65,8 @@
       <itemPath>dht11.c</itemPath>
       <itemPath>dht11.h</itemPath>
       <itemPath>bme280.c</itemPath>
-      <itemPath>common.c</itemPath>
+      <itemPath>rylr998.c</itemPath>
+      <itemPath>weather.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

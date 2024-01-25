@@ -1,4 +1,4 @@
-# 1 "common.c"
+# 1 "rylr998.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "common.c" 2
+# 1 "rylr998.c" 2
+
+
 
 
 
@@ -118,76 +120,445 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 145 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
-# 7 "common.c" 2
+# 9 "rylr998.c" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
+# 10 "rylr998.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\features.h" 1 3
-# 11 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
-# 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 2 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 18 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int wchar_t;
 # 122 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
+# 411 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 26 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 2 3
 
-int atoi (const char *);
-long atol (const char *);
-long long atoll (const char *);
-double atof (const char *);
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
 
-float strtof (const char *restrict, char **restrict);
-double strtod (const char *restrict, char **restrict);
-long double strtold (const char *restrict, char **restrict);
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
 
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
 
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
 
-long strtol (const char *restrict, char **restrict, int);
-unsigned long strtoul (const char *restrict, char **restrict, int);
-long long strtoll (const char *restrict, char **restrict, int);
-unsigned long long strtoull (const char *restrict, char **restrict, int);
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
 
-int rand (void);
-void srand (unsigned);
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
 
-void *malloc (size_t);
-void *calloc (size_t, size_t);
-void *realloc (void *, size_t);
-void free (void *);
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
 
-          void abort (void);
-int atexit (void (*) (void));
-          void exit (int);
-          void _Exit (int);
+size_t strlen (const char *);
 
-void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
-
-
-
-
+char *strerror (int);
 
 
 
-__attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
 
-int abs (int);
-long labs (long);
-long long llabs (long long);
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
-typedef struct { int quot, rem; } div_t;
-typedef struct { long quot, rem; } ldiv_t;
-typedef struct { long long quot, rem; } lldiv_t;
 
-div_t div (int, int);
-ldiv_t ldiv (long, long);
-lldiv_t lldiv (long long, long long);
 
-typedef struct { unsigned int quot, rem; } udiv_t;
-typedef struct { unsigned long quot, rem; } uldiv_t;
-udiv_t udiv (unsigned int, unsigned int);
-uldiv_t uldiv (unsigned long, unsigned long);
-# 8 "common.c" 2
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 11 "rylr998.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\math.h" 1 3
+# 15 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\math.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 33 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef float float_t;
+
+
+
+
+typedef double double_t;
+# 16 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\math.h" 2 3
+# 42 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\math.h" 3
+int __fpclassifyf(float);
+
+
+
+
+
+
+
+int __signbitf(float);
+# 59 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\math.h" 3
+double acos(double);
+float acosf(float);
+long double acosl(long double);
+
+
+
+double acosh(double);
+float acoshf(float);
+long double acoshl(long double);
+
+
+
+double asin(double);
+float asinf(float);
+long double asinl(long double);
+
+
+
+double asinh(double);
+float asinhf(float);
+long double asinhl(long double);
+
+
+
+double atan(double);
+float atanf(float);
+long double atanl(long double);
+
+
+
+double atan2(double, double);
+float atan2f(float, float);
+long double atan2l(long double, long double);
+
+
+
+double atanh(double);
+float atanhf(float);
+long double atanhl(long double);
+
+
+
+double cbrt(double);
+float cbrtf(float);
+long double cbrtl(long double);
+
+
+
+double ceil(double);
+float ceilf(float);
+long double ceill(long double);
+
+
+
+double copysign(double, double);
+float copysignf(float, float);
+long double copysignl(long double, long double);
+
+
+
+double cos(double);
+float cosf(float);
+long double cosl(long double);
+
+
+
+double cosh(double);
+float coshf(float);
+long double coshl(long double);
+
+
+
+double erf(double);
+float erff(float);
+long double erfl(long double);
+
+
+
+double erfc(double);
+float erfcf(float);
+long double erfcl(long double);
+
+
+
+double exp(double);
+float expf(float);
+long double expl(long double);
+
+
+
+double exp2(double);
+float exp2f(float);
+long double exp2l(long double);
+
+
+
+double expm1(double);
+float expm1f(float);
+long double expm1l(long double);
+
+
+
+double fabs(double);
+float fabsf(float);
+long double fabsl(long double);
+
+
+
+double fdim(double, double);
+float fdimf(float, float);
+long double fdiml(long double, long double);
+
+
+
+double floor(double);
+float floorf(float);
+long double floorl(long double);
+
+
+
+double fma(double, double, double);
+float fmaf(float, float, float);
+long double fmal(long double, long double, long double);
+
+
+
+double fmax(double, double);
+float fmaxf(float, float);
+long double fmaxl(long double, long double);
+
+
+
+double fmin(double, double);
+float fminf(float, float);
+long double fminl(long double, long double);
+
+
+
+double fmod(double, double);
+float fmodf(float, float);
+long double fmodl(long double, long double);
+
+
+
+double frexp(double, int *);
+float frexpf(float, int *);
+long double frexpl(long double, int *);
+
+
+
+double hypot(double, double);
+float hypotf(float, float);
+long double hypotl(long double, long double);
+
+
+
+int ilogb(double);
+int ilogbf(float);
+int ilogbl(long double);
+
+
+
+double ldexp(double, int);
+float ldexpf(float, int);
+long double ldexpl(long double, int);
+
+
+
+double lgamma(double);
+float lgammaf(float);
+long double lgammal(long double);
+
+
+
+long long llrint(double);
+long long llrintf(float);
+long long llrintl(long double);
+
+
+
+long long llround(double);
+long long llroundf(float);
+long long llroundl(long double);
+
+
+
+double log(double);
+float logf(float);
+long double logl(long double);
+
+
+
+double log10(double);
+float log10f(float);
+long double log10l(long double);
+
+
+
+double log1p(double);
+float log1pf(float);
+long double log1pl(long double);
+
+
+
+double log2(double);
+float log2f(float);
+long double log2l(long double);
+
+
+
+double logb(double);
+float logbf(float);
+long double logbl(long double);
+
+
+
+long lrint(double);
+long lrintf(float);
+long lrintl(long double);
+
+
+
+long lround(double);
+long lroundf(float);
+long lroundl(long double);
+
+
+
+double modf(double, double *);
+float modff(float, float *);
+long double modfl(long double, long double *);
+
+
+
+double nan(const char *);
+float nanf(const char *);
+long double nanl(const char *);
+
+
+
+double nearbyint(double);
+float nearbyintf(float);
+long double nearbyintl(long double);
+
+
+
+double nextafter(double, double);
+float nextafterf(float, float);
+long double nextafterl(long double, long double);
+
+
+
+double nexttoward(double, long double);
+float nexttowardf(float, long double);
+long double nexttowardl(long double, long double);
+# 323 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\math.h" 3
+double pow(double, double);
+__attribute__((nonreentrant)) float powf(float, float);
+long double powl(long double, long double);
+
+
+
+double remainder(double, double);
+float remainderf(float, float);
+long double remainderl(long double, long double);
+
+
+
+double remquo(double, double, int *);
+float remquof(float, float, int *);
+long double remquol(long double, long double, int *);
+
+
+
+double rint(double);
+float rintf(float);
+long double rintl(long double);
+
+
+
+double round(double);
+float roundf(float);
+long double roundl(long double);
+
+
+
+double scalbln(double, long);
+float scalblnf(float, long);
+long double scalblnl(long double, long);
+
+
+
+double scalbn(double, int);
+float scalbnf(float, int);
+long double scalbnl(long double, int);
+
+
+
+double sin(double);
+float sinf(float);
+long double sinl(long double);
+
+
+
+double sinh(double);
+float sinhf(float);
+long double sinhl(long double);
+
+
+
+double sqrt(double);
+float sqrtf(float);
+long double sqrtl(long double);
+
+
+
+double tan(double);
+float tanf(float);
+long double tanl(long double);
+
+
+
+double tanh(double);
+float tanhf(float);
+long double tanhl(long double);
+
+
+
+double tgamma(double);
+float tgammaf(float);
+long double tgammal(long double);
+
+
+
+double trunc(double);
+float truncf(float);
+long double truncl(long double);
+# 428 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\math.h" 3
+extern int signgam;
+
+double j0(double);
+double j1(double);
+double jn(int, double);
+
+double y0(double);
+double y1(double);
+double yn(int, double);
+# 12 "rylr998.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
@@ -335,244 +706,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 9 "common.c" 2
+# 13 "rylr998.c" 2
 
-
-# 1 "./bme280.h" 1
-# 50 "./bme280.h"
-# 1 "./bme280_defs.h" 1
-# 44 "./bme280_defs.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 1 3
-# 19 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 132 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef int ptrdiff_t;
-# 20 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 2 3
-# 44 "./bme280_defs.h" 2
-# 259 "./bme280_defs.h"
-enum bme280_intf {
-
-    BME280_SPI_INTF,
-
-    BME280_I2C_INTF
-};
-# 284 "./bme280_defs.h"
-typedef int8_t (*bme280_read_fptr_t)(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, void *intf_ptr);
-# 301 "./bme280_defs.h"
-typedef int8_t (*bme280_write_fptr_t)(uint8_t reg_addr, const uint8_t *reg_data, uint32_t len,
-                                                    void *intf_ptr);
-# 313 "./bme280_defs.h"
-typedef void (*bme280_delay_us_fptr_t)(uint32_t period, void *intf_ptr);
-# 322 "./bme280_defs.h"
-struct bme280_calib_data
-{
-
-    uint16_t dig_t1;
-
-
-    int16_t dig_t2;
-
-
-    int16_t dig_t3;
-
-
-    uint16_t dig_p1;
-
-
-    int16_t dig_p2;
-
-
-    int16_t dig_p3;
-
-
-    int16_t dig_p4;
-
-
-    int16_t dig_p5;
-
-
-    int16_t dig_p6;
-
-
-    int16_t dig_p7;
-
-
-    int16_t dig_p8;
-
-
-    int16_t dig_p9;
-
-
-    uint8_t dig_h1;
-
-
-    int16_t dig_h2;
-
-
-    uint8_t dig_h3;
-
-
-    int16_t dig_h4;
-
-
-    int16_t dig_h5;
-
-
-    int8_t dig_h6;
-
-
-    int32_t t_fine;
-};
-
-
-
-
-
-
-struct bme280_data
-{
-
-    double pressure;
-
-
-    double temperature;
-
-
-    double humidity;
-};
-# 416 "./bme280_defs.h"
-struct bme280_uncomp_data
-{
-
-    uint32_t pressure;
-
-
-    uint32_t temperature;
-
-
-    uint32_t humidity;
-};
-
-
-
-
-
-struct bme280_settings
-{
-
-    uint8_t osr_p;
-
-
-    uint8_t osr_t;
-
-
-    uint8_t osr_h;
-
-
-    uint8_t filter;
-
-
-    uint8_t standby_time;
-};
-
-
-
-
-struct bme280_dev
-{
-
-    uint8_t chip_id;
-
-
-
-
-
-    enum bme280_intf intf;
-
-
-
-
-
-
-
-    void *intf_ptr;
-
-
-    int8_t intf_rslt;
-
-
-    bme280_read_fptr_t read;
-
-
-    bme280_write_fptr_t write;
-
-
-    bme280_delay_us_fptr_t delay_us;
-
-
-    struct bme280_calib_data calib_data;
-};
-# 50 "./bme280.h" 2
-# 77 "./bme280.h"
-int8_t bme280_init(struct bme280_dev *dev);
-# 106 "./bme280.h"
-int8_t bme280_set_regs(uint8_t *reg_addr, const uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
-# 128 "./bme280.h"
-int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
-# 171 "./bme280.h"
-int8_t bme280_set_sensor_settings(uint8_t desired_settings,
-                                  const struct bme280_settings *settings,
-                                  struct bme280_dev *dev);
-# 194 "./bme280.h"
-int8_t bme280_get_sensor_settings(struct bme280_settings *settings, struct bme280_dev *dev);
-# 228 "./bme280.h"
-int8_t bme280_set_sensor_mode(uint8_t sensor_mode, struct bme280_dev *dev);
-# 256 "./bme280.h"
-int8_t bme280_get_sensor_mode(uint8_t *sensor_mode, struct bme280_dev *dev);
-# 281 "./bme280.h"
-int8_t bme280_soft_reset(struct bme280_dev *dev);
-# 290 "./bme280.h"
-int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
-# 320 "./bme280.h"
-int8_t bme280_compensate_data(uint8_t sensor_comp,
-                              const struct bme280_uncomp_data *uncomp_data,
-                              struct bme280_data *comp_data,
-                              struct bme280_calib_data *calib_data);
-# 352 "./bme280.h"
-int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *settings);
-# 11 "common.c" 2
-
-# 1 "./common.h" 1
-# 11 "./common.h"
-# 1 "./bme280.h" 1
-# 77 "./bme280.h"
-int8_t bme280_init(struct bme280_dev *dev);
-# 106 "./bme280.h"
-int8_t bme280_set_regs(uint8_t *reg_addr, const uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
-# 128 "./bme280.h"
-int8_t bme280_get_regs(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, struct bme280_dev *dev);
-# 171 "./bme280.h"
-int8_t bme280_set_sensor_settings(uint8_t desired_settings,
-                                  const struct bme280_settings *settings,
-                                  struct bme280_dev *dev);
-# 194 "./bme280.h"
-int8_t bme280_get_sensor_settings(struct bme280_settings *settings, struct bme280_dev *dev);
-# 228 "./bme280.h"
-int8_t bme280_set_sensor_mode(uint8_t sensor_mode, struct bme280_dev *dev);
-# 256 "./bme280.h"
-int8_t bme280_get_sensor_mode(uint8_t *sensor_mode, struct bme280_dev *dev);
-# 281 "./bme280.h"
-int8_t bme280_soft_reset(struct bme280_dev *dev);
-# 290 "./bme280.h"
-int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
-# 320 "./bme280.h"
-int8_t bme280_compensate_data(uint8_t sensor_comp,
-                              const struct bme280_uncomp_data *uncomp_data,
-                              struct bme280_data *comp_data,
-                              struct bme280_calib_data *calib_data);
-# 352 "./bme280.h"
-int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *settings);
-# 11 "./common.h" 2
 
 # 1 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 3
@@ -583,7 +718,79 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\xc8debug.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\xc8debug.h" 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 18 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int wchar_t;
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
+
+int atoi (const char *);
+long atol (const char *);
+long long atoll (const char *);
+double atof (const char *);
+
+float strtof (const char *restrict, char **restrict);
+double strtod (const char *restrict, char **restrict);
+long double strtold (const char *restrict, char **restrict);
+
+
+
+long strtol (const char *restrict, char **restrict, int);
+unsigned long strtoul (const char *restrict, char **restrict, int);
+long long strtoll (const char *restrict, char **restrict, int);
+unsigned long long strtoull (const char *restrict, char **restrict, int);
+
+int rand (void);
+void srand (unsigned);
+
+void *malloc (size_t);
+void *calloc (size_t, size_t);
+void *realloc (void *, size_t);
+void free (void *);
+
+          void abort (void);
+int atexit (void (*) (void));
+          void exit (int);
+          void _Exit (int);
+
+void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
+
+
+
+
+
+
+
+__attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
+
+int abs (int);
+long labs (long);
+long long llabs (long long);
+
+typedef struct { int quot, rem; } div_t;
+typedef struct { long quot, rem; } ldiv_t;
+typedef struct { long long quot, rem; } lldiv_t;
+
+div_t div (int, int);
+ldiv_t ldiv (long, long);
+lldiv_t lldiv (long long, long long);
+
+typedef struct { unsigned int quot, rem; } udiv_t;
+typedef struct { unsigned long quot, rem; } uldiv_t;
+udiv_t udiv (unsigned int, unsigned int);
+uldiv_t uldiv (unsigned long, unsigned long);
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\xc8debug.h" 2 3
+
+
+
+
+
+
+
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 # 24 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 2 3
@@ -13698,13 +13905,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 2 3
-# 12 "./common.h" 2
+# 15 "rylr998.c" 2
 
 # 1 "./mcc_generated_files/system/system.h" 1
-# 39 "./mcc_generated_files/system/system.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
-# 39 "./mcc_generated_files/system/system.h" 2
-
+# 40 "./mcc_generated_files/system/system.h"
 # 1 "./mcc_generated_files/system/config_bits.h" 1
 # 37 "./mcc_generated_files/system/config_bits.h"
 # 1 "./mcc_generated_files/system/../system/clock.h" 1
@@ -14050,175 +14254,110 @@ void INT_DefaultInterruptHandler(void);
 
 
 void SYSTEM_Initialize(void);
-# 13 "./common.h" 2
-# 35 "./common.h"
-int8_t bme280_spi_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, void *intf_ptr);
-# 52 "./common.h"
-int8_t bme280_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, void *intf_ptr);
-# 70 "./common.h"
-int8_t bme280_spi_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr);
-# 88 "./common.h"
-int8_t bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr);
-# 99 "./common.h"
-void bme280_delay_us(uint32_t period_us, void *intf_ptr);
-# 113 "./common.h"
-int8_t bme280_interface_selection(struct bme280_dev *dev, uint8_t intf);
-# 123 "./common.h"
-void bme280_error_codes_print_result(const char api_name[], int8_t rslt);
+# 16 "rylr998.c" 2
 
 
+# 1 "./rylr998.h" 1
+# 31 "./rylr998.h"
+void rylr998_init();
+void rylr998_send(uint8_t address, char tag[], double metric);
+void rylr998_write(char data[]);
+void rylr998_read();
+# 18 "rylr998.c" 2
 
 
+void rylr998_init() {
 
 
+    do { TRISCbits.TRISC7 = 1; } while(0);
+    do { TRISCbits.TRISC6 = 0; } while(0);
 
-void bme280_coines_deinit(void);
-# 12 "common.c" 2
-# 23 "common.c"
-static uint8_t dev_addr;
-
-
-
-
-
-
-
-int8_t bme280_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, void *intf_ptr)
-{
-
-    if(!I2C2_WriteRead(dev_addr, &reg_addr, 1, reg_data, length)){
-        return -2;
-    }
-
-    while(I2C2_IsBusy());
-    printf(reg_data);
-    return 0;
+    EUSART1_Enable();
+    EUSART1_TransmitEnable();
+    EUSART1_ReceiveEnable();
 }
 
+void rylr998_send(uint8_t address, char tag[], double metric) {
 
 
+    if(sizeof(tag) > 20) {
 
-int8_t bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr)
-{
-    uint8_t buf[10 * 2] = {0};
-    buf[0] = reg_addr;
-    for(uint8_t i = 0; i < length + 1; i++) {
-        buf[i + 1] = reg_data[i];
     }
 
 
-    if(!I2C2_Write(dev_addr, &buf, length + 1)) {
-        return -2;
-    }
 
-    while(I2C2_IsBusy());
-    return 0;
+    char t[10];
+    float rounded = roundf(metric * 100) / 100;
+    sprintf(t, "%g", rounded);
+
+
+
+    int payload_size = snprintf(((void*)0), 0, "%s::%s", tag, t);
+    printf(payload_size);
+
+
+    char buffer[50] = {0};
+    sprintf(buffer, "AT+SEND=%i,%i,%s::%s\r\n", address, payload_size, tag, t);
+    printf(buffer);
+
+    rylr998_write(&buffer);
+    rylr998_read();
 }
 
+void rylr998_write(char *data) {
 
+    _Bool carriage_found = 0;
+    _Bool newline_found = 0;
 
+    uint8_t size = sizeof(data);
+    printf(size);
+    for(uint8_t i = 0; i < 50; i++) {
 
-int8_t bme280_spi_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, void *intf_ptr)
-{
-    return 0;
-}
+        char c = data[i];
+        EUSART1_Write(c);
+        while(!EUSART1_IsTxDone());
 
-
-
-
-int8_t bme280_spi_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr)
-{
-    return 0;
-}
-
-
-
-
-void bme280_delay_us(uint32_t period, void *intf_ptr)
-{
-
-
-    _delay((unsigned long)((1000)*(32000000/4000000.0)));
-}
-
-
-
-
-void bme280_error_codes_print_result(const char api_name[], int8_t rslt)
-{
-    if (rslt != 0)
-    {
-        printf("%s\t", api_name);
-
-        switch (rslt)
-        {
-            case -1:
-                printf("Error [%d] : Null pointer error.", rslt);
-                printf(
-                    "It occurs when the user tries to assign value (not address) to a pointer, which has been initialized to NULL.\r\n");
-                break;
-
-            case -2:
-                printf("Error [%d] : Communication failure error.", rslt);
-                printf(
-                    "It occurs due to read/write operation failure and also due to power failure during communication\r\n");
-                break;
-
-            case -4:
-                printf("Error [%d] : Device not found error. It occurs when the device chip id is incorrectly read\r\n",
-                       rslt);
-                break;
-
-            case -3:
-                printf("Error [%d] : Invalid length error. It occurs when write is done with invalid length\r\n", rslt);
-                break;
-
-            default:
-                printf("Error [%d] : Unknown error code\r\n", rslt);
-                break;
+        carriage_found = carriage_found || (data[i] == '\r');
+        newline_found = newline_found || (data[i] == '\n');
+        if(carriage_found && newline_found) {
+            break;
         }
     }
+
+    if(!carriage_found || !newline_found) {
+
+    }
 }
 
+void rylr998_read() {
 
 
+    while(!EUSART1_IsRxReady());
 
-int8_t bme280_interface_selection(struct bme280_dev *dev, uint8_t intf)
-{
-    int8_t rslt = 0;
+    _Bool carriage_found = 0;
+    _Bool newline_found = 0;
 
-    if (dev != ((void*)0))
-    {
+    char data[50] = {0};
+    for(uint8_t i = 0; i < sizeof(data); i++) {
 
+        uint8_t byte = EUSART1_Read();
+        carriage_found = carriage_found || (byte == '\r');
+        newline_found = newline_found || (byte == '\n');
 
-        if (intf == BME280_I2C_INTF)
-        {
-            printf("I2C Interface\n");
+        if(!(byte == '\r' || byte == '\n')) {
+            data[i] = byte;
+        }
 
-            dev_addr = 0x76;
-            dev->read = bme280_i2c_read;
-            dev->write = bme280_i2c_write;
-            dev->intf = BME280_I2C_INTF;
+        if(carriage_found && newline_found) {
+            break;
         }
 
 
-        dev->intf_ptr = &dev_addr;
+        while(!EUSART1_IsRxReady());
 
-
-        dev->delay_us = bme280_delay_us;
-    }
-    else
-    {
-        rslt = -1;
     }
 
-    return rslt;
-}
-
-
-
-
-void bme280_coines_deinit(void)
-{
+    _Bool success = strcmp("+OK", data) == 0;
+    printf(success);
 
 }
