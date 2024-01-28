@@ -13393,7 +13393,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 134 "./mcc_generated_files/system/../system/pins.h"
+# 153 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -14142,6 +14142,8 @@ int main(void){
     SYSTEM_Initialize();
     (INTCONbits.GIE = 1);
     (INTCONbits.PEIE = 1);
+    do { LATAbits.LATA2 = 1; } while(0);
+    _delay((unsigned long)((1000)*(32000000/4000.0)));
 
     rylr998_init();
     weather_init();
@@ -14149,6 +14151,9 @@ int main(void){
     struct bme280_dev dev = weather_dev();
 
     while(1) {
+
+        do { LATAbits.LATA2 = 1; } while(0);
+        _delay((unsigned long)((1000)*(32000000/4000.0)));
 
         struct bme280_data weather = weather_read(&dev);
 
@@ -14162,6 +14167,7 @@ int main(void){
         _delay((unsigned long)((1000)*(32000000/4000.0)));
 
 
+        do { LATAbits.LATA2 = 0; } while(0);
         for(uint8_t i = 0; i < 15; i++) {
             _delay((unsigned long)((2000)*(32000000/4000.0)));
         }

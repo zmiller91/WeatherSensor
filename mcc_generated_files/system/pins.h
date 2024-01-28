@@ -49,6 +49,25 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+// get/set IO_RA2 aliases
+#define DEV_PWR_TRIS                 TRISAbits.TRISA2
+#define DEV_PWR_LAT                  LATAbits.LATA2
+#define DEV_PWR_PORT                 PORTAbits.RA2
+#define DEV_PWR_WPU                  WPUAbits.WPUA2
+#define DEV_PWR_OD                   ODCONAbits.ODCA2
+#define DEV_PWR_ANS                  ANSELAbits.ANSA2
+#define DEV_PWR_SetHigh()            do { LATAbits.LATA2 = 1; } while(0)
+#define DEV_PWR_SetLow()             do { LATAbits.LATA2 = 0; } while(0)
+#define DEV_PWR_Toggle()             do { LATAbits.LATA2 = ~LATAbits.LATA2; } while(0)
+#define DEV_PWR_GetValue()           PORTAbits.RA2
+#define DEV_PWR_SetDigitalInput()    do { TRISAbits.TRISA2 = 1; } while(0)
+#define DEV_PWR_SetDigitalOutput()   do { TRISAbits.TRISA2 = 0; } while(0)
+#define DEV_PWR_SetPullup()          do { WPUAbits.WPUA2 = 1; } while(0)
+#define DEV_PWR_ResetPullup()        do { WPUAbits.WPUA2 = 0; } while(0)
+#define DEV_PWR_SetPushPull()        do { ODCONAbits.ODCA2 = 0; } while(0)
+#define DEV_PWR_SetOpenDrain()       do { ODCONAbits.ODCA2 = 1; } while(0)
+#define DEV_PWR_SetAnalogMode()      do { ANSELAbits.ANSA2 = 1; } while(0)
+#define DEV_PWR_SetDigitalMode()     do { ANSELAbits.ANSA2 = 0; } while(0)
 // get/set IO_RB5 aliases
 #define UART_RX_TRIS                 TRISBbits.TRISB5
 #define UART_RX_LAT                  LATBbits.LATB5

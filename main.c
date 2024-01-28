@@ -68,6 +68,8 @@ int main(void){
     SYSTEM_Initialize();
     INTERRUPT_GlobalInterruptEnable();
     INTERRUPT_PeripheralInterruptEnable();
+    DEV_PWR_SetHigh();
+    __delay_ms(1000);
     
     rylr998_init();
     weather_init();
@@ -75,6 +77,9 @@ int main(void){
     struct bme280_dev dev = weather_dev();
 
     while(1) {
+        
+        DEV_PWR_SetHigh();
+        __delay_ms(1000);
         
         struct bme280_data weather = weather_read(&dev);
 
@@ -88,6 +93,7 @@ int main(void){
         __delay_ms(1000);
         
         
+        DEV_PWR_SetLow();
         for(uint8_t i = 0; i < 15; i++) {
             __delay_ms(2000);
         }
