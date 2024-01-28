@@ -13853,10 +13853,77 @@ void I2C2_ISR(void);
 void I2C2_ERROR_ISR(void);
 # 44 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
+# 1 "./mcc_generated_files/system/../nvm/nvm.h" 1
+# 66 "./mcc_generated_files/system/../nvm/nvm.h"
+typedef uint8_t eeprom_data_t;
+
+
+
+
+typedef uint16_t eeprom_address_t;
+
+
+
+
+
+
+typedef enum
+{
+    NVM_OK,
+    NVM_ERROR
+} nvm_status_t;
+
+
+
+
+
+
+
+void NVM_Initialize(void);
+# 99 "./mcc_generated_files/system/../nvm/nvm.h"
+_Bool NVM_IsBusy(void);
+# 108 "./mcc_generated_files/system/../nvm/nvm.h"
+nvm_status_t NVM_StatusGet(void);
+
+
+
+
+
+
+
+void NVM_StatusClear(void);
+
+
+
+
+
+
+
+void NVM_UnlockKeySet(uint16_t unlockKey);
+
+
+
+
+
+
+
+void NVM_UnlockKeyClear(void);
+
+
+
+
+
+
+
+eeprom_data_t EEPROM_Read(eeprom_address_t address);
+# 153 "./mcc_generated_files/system/../nvm/nvm.h"
+void EEPROM_Write(eeprom_address_t address, eeprom_data_t data);
+# 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
+
 # 1 "./mcc_generated_files/system/../system/watchdog.h" 1
 # 52 "./mcc_generated_files/system/../system/watchdog.h"
 void WDT_Initialize(void);
-# 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../system/interrupt.h" 1
 # 85 "./mcc_generated_files/system/../system/interrupt.h"
@@ -13871,7 +13938,7 @@ void INT_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT_InterruptHandler)(void);
 # 175 "./mcc_generated_files/system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
-# 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 47 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 
 
@@ -14142,14 +14209,48 @@ void rylr998_write(char data[]);
 void rylr998_read();
 # 42 "main.c" 2
 # 66 "main.c"
+void write_eeprom(uint16_t address, uint8_t data) {
+    while(NVM_IsBusy());
+    EEPROM_Write(address, data);
+}
+
+uint8_t read_eeprom(uint16_t address) {
+    while(NVM_IsBusy());
+    return EEPROM_Read(address);
+}
+
 int main(void){
 
     SYSTEM_Initialize();
     (INTCONbits.GIE = 1);
     (INTCONbits.PEIE = 1);
 
+    NVM_UnlockKeySet(0xaa55);
+
+    write_eeprom(0xF000, 'a');
+    write_eeprom(0xF001, 'b');
+    write_eeprom(0xF002, 'c');
+    write_eeprom(0xF003, 'd');
+    write_eeprom(0xF004, 'e');
+    write_eeprom(0xF005, 'a');
+    write_eeprom(0xF006, 'g');
+    write_eeprom(0xF007, 'h');
+
     rylr998_init();
     weather_init();
+
+    uint8_t serial_number[] = {
+        read_eeprom(0xF000),
+        read_eeprom(0xF001),
+        read_eeprom(0xF002),
+        read_eeprom(0xF003),
+        read_eeprom(0xF004),
+        read_eeprom(0xF005),
+        read_eeprom(0xF006),
+        read_eeprom(0xF007)
+    };
+
+    printf(serial_number);
 
     while(1) {
 

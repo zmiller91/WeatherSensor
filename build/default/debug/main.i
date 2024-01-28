@@ -13853,10 +13853,77 @@ void I2C2_ISR(void);
 void I2C2_ERROR_ISR(void);
 # 44 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
+# 1 "./mcc_generated_files/system/../nvm/nvm.h" 1
+# 66 "./mcc_generated_files/system/../nvm/nvm.h"
+typedef uint8_t eeprom_data_t;
+
+
+
+
+typedef uint16_t eeprom_address_t;
+
+
+
+
+
+
+typedef enum
+{
+    NVM_OK,
+    NVM_ERROR
+} nvm_status_t;
+
+
+
+
+
+
+
+void NVM_Initialize(void);
+# 99 "./mcc_generated_files/system/../nvm/nvm.h"
+_Bool NVM_IsBusy(void);
+# 108 "./mcc_generated_files/system/../nvm/nvm.h"
+nvm_status_t NVM_StatusGet(void);
+
+
+
+
+
+
+
+void NVM_StatusClear(void);
+
+
+
+
+
+
+
+void NVM_UnlockKeySet(uint16_t unlockKey);
+
+
+
+
+
+
+
+void NVM_UnlockKeyClear(void);
+
+
+
+
+
+
+
+eeprom_data_t EEPROM_Read(eeprom_address_t address);
+# 153 "./mcc_generated_files/system/../nvm/nvm.h"
+void EEPROM_Write(eeprom_address_t address, eeprom_data_t data);
+# 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
+
 # 1 "./mcc_generated_files/system/../system/watchdog.h" 1
 # 52 "./mcc_generated_files/system/../system/watchdog.h"
 void WDT_Initialize(void);
-# 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../system/interrupt.h" 1
 # 85 "./mcc_generated_files/system/../system/interrupt.h"
@@ -13871,7 +13938,7 @@ void INT_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT_InterruptHandler)(void);
 # 175 "./mcc_generated_files/system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
-# 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 47 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 
 
@@ -14137,21 +14204,51 @@ int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *
 # 1 "./rylr998.h" 1
 # 31 "./rylr998.h"
 void rylr998_init();
-void rylr998_send(uint8_t address, char tag[], double metric);
+void rylr998_send(uint8_t address, char serial[], char tag[], double metric);
 void rylr998_write(char data[]);
 void rylr998_read();
 # 42 "main.c" 2
 # 66 "main.c"
+void write_eeprom(uint16_t address, uint8_t *data, uint8_t size) {
+
+    NVM_UnlockKeySet(0xaa55);
+    printf(size);
+    for(uint8_t i = 0; i < size; i++) {
+        while(NVM_IsBusy());
+        EEPROM_Write(address + i, data[i]);
+    }
+}
+
+uint8_t read_eeprom(uint16_t address, uint8_t data[], uint8_t size) {
+
+    NVM_UnlockKeySet(0xaa55);
+    for(uint8_t i = 0; i < size; i++) {
+        while(NVM_IsBusy());
+        data[i] = EEPROM_Read(address + i);
+    }
+}
+
 int main(void){
 
     SYSTEM_Initialize();
     (INTCONbits.GIE = 1);
     (INTCONbits.PEIE = 1);
 
+
+
+
+    uint8_t serial_number[9] = {0};
+    write_eeprom(0xF000, "ABCDEFGH", 8);
+    read_eeprom(0xF000, serial_number, 8);
+    printf(serial_number);
+    serial_number[9] = '\0';
+
     rylr998_init();
     weather_init();
 
+
     while(1) {
+
 
         do { LATAbits.LATA2 = 1; } while(0);
         _delay((unsigned long)((1000)*(32000000/4000.0)));
@@ -14162,21 +14259,23 @@ int main(void){
         struct bme280_dev dev = weather_dev();
         struct bme280_data weather = weather_read(&dev);
 
-        rylr998_send(32, "TEMPERATURE", weather.temperature);
+        rylr998_send(32, &serial_number, "TEMPERATURE", weather.temperature);
         _delay((unsigned long)((1000)*(32000000/4000.0)));
 
-        rylr998_send(32, "HUMIDITY", weather.humidity);
+        rylr998_send(32, serial_number, "HUMIDITY", weather.humidity);
         _delay((unsigned long)((1000)*(32000000/4000.0)));
 
-        rylr998_send(32, "PRESSURE", weather.pressure);
+        rylr998_send(32, serial_number, "PRESSURE", weather.pressure);
         _delay((unsigned long)((1000)*(32000000/4000.0)));
 
 
         do { LATAbits.LATA2 = 0; } while(0);
 
 
+
+
         WDTCON = 0x1B;
-        for(uint8_t i = 0; i < 8; i++) {
+        for(uint8_t i = 0; i < 114; i++) {
             __asm("sleep");
         }
         WDTCON = 0x1A;

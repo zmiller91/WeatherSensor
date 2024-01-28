@@ -13799,11 +13799,78 @@ void I2C2_ISR(void);
 void I2C2_ERROR_ISR(void);
 # 44 "mcc_generated_files/system/src/../../system/../uart/../system/system.h" 2
 
+# 1 "mcc_generated_files/system/src/../../system/../nvm/nvm.h" 1
+# 66 "mcc_generated_files/system/src/../../system/../nvm/nvm.h"
+typedef uint8_t eeprom_data_t;
+
+
+
+
+typedef uint16_t eeprom_address_t;
+
+
+
+
+
+
+typedef enum
+{
+    NVM_OK,
+    NVM_ERROR
+} nvm_status_t;
+
+
+
+
+
+
+
+void NVM_Initialize(void);
+# 99 "mcc_generated_files/system/src/../../system/../nvm/nvm.h"
+_Bool NVM_IsBusy(void);
+# 108 "mcc_generated_files/system/src/../../system/../nvm/nvm.h"
+nvm_status_t NVM_StatusGet(void);
+
+
+
+
+
+
+
+void NVM_StatusClear(void);
+
+
+
+
+
+
+
+void NVM_UnlockKeySet(uint16_t unlockKey);
+
+
+
+
+
+
+
+void NVM_UnlockKeyClear(void);
+
+
+
+
+
+
+
+eeprom_data_t EEPROM_Read(eeprom_address_t address);
+# 153 "mcc_generated_files/system/src/../../system/../nvm/nvm.h"
+void EEPROM_Write(eeprom_address_t address, eeprom_data_t data);
+# 45 "mcc_generated_files/system/src/../../system/../uart/../system/system.h" 2
+
 # 1 "mcc_generated_files/system/src/../../system/../system/watchdog.h" 1
 # 52 "mcc_generated_files/system/src/../../system/../system/watchdog.h"
 void WDT_Initialize(void);
-# 45 "mcc_generated_files/system/src/../../system/../uart/../system/system.h" 2
-# 54 "mcc_generated_files/system/src/../../system/../uart/../system/system.h"
+# 46 "mcc_generated_files/system/src/../../system/../uart/../system/system.h" 2
+# 55 "mcc_generated_files/system/src/../../system/../uart/../system/system.h"
 void SYSTEM_Initialize(void);
 # 35 "mcc_generated_files/system/src/interrupt.c" 2
 

@@ -29,7 +29,7 @@
 #define RYLR998_UNLISTED_FAILURE                        INT8_C(-99)
 
 void rylr998_init();
-void rylr998_send(uint8_t address, char tag[], double metric);
+void rylr998_send(uint8_t address, char serial[], char tag[], double metric);
 void rylr998_write(char data[]);
 void rylr998_read();
 

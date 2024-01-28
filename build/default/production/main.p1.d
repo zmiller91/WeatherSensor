@@ -12,6 +12,7 @@ mcc_generated_files/system/../i2c_host/mssp2.h  \
 mcc_generated_files/system/../i2c_host/i2c_host_event_types.h  \
 mcc_generated_files/system/../i2c_host/i2c_host_types.h  \
 mcc_generated_files/system/../i2c_host/i2c_host_interface.h  \
+mcc_generated_files/system/../nvm/nvm.h  \
 mcc_generated_files/system/../system/watchdog.h  \
 mcc_generated_files/system/../system/interrupt.h  \
 weather.h  \

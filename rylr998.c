@@ -28,7 +28,7 @@ void rylr998_init() {
     EUSART1_ReceiveEnable();
 }
 
-void rylr998_send(uint8_t address, char tag[], double metric) {
+void rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
     
     // Limit the size of the tag to 20 characters
     if(sizeof(tag) > 20) {
@@ -37,18 +37,15 @@ void rylr998_send(uint8_t address, char tag[], double metric) {
     
     // There shouldn't be more than 10 characters in the metric, including
     // decimals and negative signs.
-    char t[10];
+    char data[10];
     float rounded = roundf(metric * 100) / 100;
-    sprintf(t, "%g", rounded);
+    sprintf(data, "%g", rounded);
     
     // Calculate the payload size, since any null values won't be written
     // to the final buffer.
-    int payload_size = snprintf(NULL, 0, "%s::%s", tag, t);
-    printf(payload_size);
-    
-    // The final result to send should not be greater than 50 characters
-    char buffer[50] = {0};
-    sprintf(buffer, "AT+SEND=%i,%i,%s::%s\r\n", address, payload_size, tag, t);
+    int payload_size = snprintf(NULL, 0, "%s::%s::%s", serial, tag, data);
+    char buffer[60] = {0};
+    sprintf(buffer, "AT+SEND=%i,%i,%s::%s::%s\r\n", address, payload_size, serial, tag, data);
     printf(buffer);
     
     rylr998_write(&buffer);
@@ -62,7 +59,7 @@ void rylr998_write(char *data) {
     
     uint8_t size = sizeof(data);
     printf(size);
-    for(uint8_t i = 0; i < 50; i++) {
+    for(uint8_t i = 0; i < 60; i++) {
         
         char c = data[i];
         EUSART1_Write(c);
@@ -88,7 +85,7 @@ void rylr998_read() {
     bool carriage_found = false;
     bool newline_found = false;
     
-    char data[50] = {0};
+    char data[60] = {0};
     for(uint8_t i = 0; i < sizeof(data); i++) {
         
         uint8_t byte = EUSART1_Read();

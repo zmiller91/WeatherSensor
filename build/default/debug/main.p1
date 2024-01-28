@@ -1,7 +1,22 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"124 ./mcc_generated_files/system/../nvm/nvm.h
+[; ;./mcc_generated_files/system/../nvm/nvm.h: 124: void NVM_UnlockKeySet(uint16_t unlockKey);
+[v _NVM_UnlockKeySet `(v ~T0 @X0 0 ef1`us ]
+"107 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 107: int printf(const char *restrict, ...);
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"99 ./mcc_generated_files/system/../nvm/nvm.h
+[; ;./mcc_generated_files/system/../nvm/nvm.h: 99: _Bool NVM_IsBusy(void);
+[v _NVM_IsBusy `(a ~T0 @X0 0 ef ]
+"153
+[; ;./mcc_generated_files/system/../nvm/nvm.h: 153: void EEPROM_Write(eeprom_address_t address, eeprom_data_t data);
+[v _EEPROM_Write `(v ~T0 @X0 0 ef2`us`uc ]
+"140
+[; ;./mcc_generated_files/system/../nvm/nvm.h: 140: eeprom_data_t EEPROM_Read(eeprom_address_t address);
+[v _EEPROM_Read `(uc ~T0 @X0 0 ef1`us ]
 [p mainexit ]
-"54 ./mcc_generated_files/system/../uart/../system/system.h
-[; ;./mcc_generated_files/system/../uart/../system/system.h: 54: void SYSTEM_Initialize(void);
+"55 ./mcc_generated_files/system/../uart/../system/system.h
+[; ;./mcc_generated_files/system/../uart/../system/system.h: 55: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "419 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 419:     struct {
@@ -35,20 +50,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
 [v __delay `JF359 ~T0 @X0 0 e ]
 [p i __delay ]
-"83 main.c
-[; ;main.c: 83:         struct bme280_dev dev = weather_dev();
-[c E8475 0 1 .. ]
-[n E8475 bme280_intf BME280_SPI_INTF BME280_I2C_INTF  ]
-[v F8534 `(c ~T0 @X0 0 tf4`uc`*uc`ul`*v ]
-[v F8540 `(c ~T0 @X0 0 tf4`uc`*Cuc`ul`*v ]
-[v F8546 `(v ~T0 @X0 0 tf2`ul`*v ]
+"113 main.c
+[; ;main.c: 113:         struct bme280_dev dev = weather_dev();
+[c E8493 0 1 .. ]
+[n E8493 bme280_intf BME280_SPI_INTF BME280_I2C_INTF  ]
+[v F8552 `(c ~T0 @X0 0 tf4`uc`*uc`ul`*v ]
+[v F8558 `(c ~T0 @X0 0 tf4`uc`*Cuc`ul`*v ]
+[v F8564 `(v ~T0 @X0 0 tf2`ul`*v ]
 "323 ./bme280_defs.h
 [; ;./bme280_defs.h: 323: {
 [s S1089 `us 1 `s 1 `s 1 `us 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `uc 1 `s 1 `uc 1 `s 1 `s 1 `c 1 `l 1 ]
 [n S1089 bme280_calib_data dig_t1 dig_t2 dig_t3 dig_p1 dig_p2 dig_p3 dig_p4 dig_p5 dig_p6 dig_p7 dig_p8 dig_p9 dig_h1 dig_h2 dig_h3 dig_h4 dig_h5 dig_h6 t_fine ]
 "454
 [; ;./bme280_defs.h: 454: {
-[s S1093 `uc 1 `E8475 1 `*v 1 `c 1 `*F8534 1 `*F8540 1 `*F8546 1 `S1089 1 ]
+[s S1093 `uc 1 `E8493 1 `*v 1 `c 1 `*F8552 1 `*F8558 1 `*F8564 1 `S1089 1 ]
 [n S1093 bme280_dev chip_id intf intf_ptr intf_rslt read write delay_us calib_data ]
 "16 ./weather.h
 [; ;./weather.h: 16: struct bme280_dev weather_dev();
@@ -61,8 +76,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./weather.h: 17: struct bme280_data weather_read(struct bme280_dev *dev);
 [v _weather_read `(S1090 ~T0 @X0 0 ef1`*S1093 ]
 "32 ./rylr998.h
-[; ;./rylr998.h: 32: void rylr998_send(uint8_t address, char tag[], double metric);
-[v _rylr998_send `(v ~T0 @X0 0 ef3`uc`*uc`d ]
+[; ;./rylr998.h: 32: void rylr998_send(uint8_t address, char serial[], char tag[], double metric);
+[v _rylr998_send `(v ~T0 @X0 0 ef4`uc`*uc`*uc`d ]
 "1832 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1832: extern volatile unsigned char WDTCON __attribute__((address(0x18C)));
 [v _WDTCON `Vuc ~T0 @X0 0 e@396 ]
@@ -1209,116 +1224,227 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22220
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 22220: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
 "66 main.c
-[; ;main.c: 66: int main(void){
+[; ;main.c: 66: void write_eeprom(uint16_t address, uint8_t *data, uint8_t size) {
+[v _write_eeprom `(v ~T0 @X0 1 ef3`us`*uc`uc ]
+{
+[e :U _write_eeprom ]
+[v _address `us ~T0 @X0 1 r1 ]
+[v _data `*uc ~T0 @X0 1 r2 ]
+[v _size `uc ~T0 @X0 1 r3 ]
+[f ]
+"68
+[; ;main.c: 68:     NVM_UnlockKeySet(0xaa55);
+[e ( _NVM_UnlockKeySet (1 -> -> 43605 `ui `us ]
+"69
+[; ;main.c: 69:     printf(size);
+[e ( _printf -> _size `*Cuc ]
+"70
+[; ;main.c: 70:     for(uint8_t i = 0; i < size; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $U 1098  ]
+[e :U 1095 ]
+{
+"71
+[; ;main.c: 71:         while(NVM_IsBusy());
+[e $U 1099  ]
+[e :U 1100 ]
+[e :U 1099 ]
+[e $ != -> ( _NVM_IsBusy ..  `i -> 0 `i 1100  ]
+[e :U 1101 ]
+"72
+[; ;main.c: 72:         EEPROM_Write(address + i, data[i]);
+[e ( _EEPROM_Write (2 , -> + -> _address `ui -> _i `ui `us *U + _data * -> _i `ux -> -> # *U _data `ui `ux ]
+"73
+[; ;main.c: 73:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1098 ]
+[e $ < -> _i `i -> _size `i 1095  ]
+[e :U 1096 ]
+}
+"74
+[; ;main.c: 74: }
+[e :UE 1094 ]
+}
+"76
+[; ;main.c: 76: uint8_t read_eeprom(uint16_t address, uint8_t data[], uint8_t size) {
+[v _read_eeprom `(uc ~T0 @X0 1 ef3`us`*uc`uc ]
+{
+[e :U _read_eeprom ]
+[v _address `us ~T0 @X0 1 r1 ]
+[v _data `*uc ~T0 @X0 1 r2 ]
+[v _size `uc ~T0 @X0 1 r3 ]
+[f ]
+"78
+[; ;main.c: 78:     NVM_UnlockKeySet(0xaa55);
+[e ( _NVM_UnlockKeySet (1 -> -> 43605 `ui `us ]
+"79
+[; ;main.c: 79:     for(uint8_t i = 0; i < size; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $U 1106  ]
+[e :U 1103 ]
+{
+"80
+[; ;main.c: 80:         while(NVM_IsBusy());
+[e $U 1107  ]
+[e :U 1108 ]
+[e :U 1107 ]
+[e $ != -> ( _NVM_IsBusy ..  `i -> 0 `i 1108  ]
+[e :U 1109 ]
+"81
+[; ;main.c: 81:         data[i] = EEPROM_Read(address + i);
+[e = *U + _data * -> _i `ux -> -> # *U _data `ui `ux ( _EEPROM_Read (1 -> + -> _address `ui -> _i `ui `us ]
+"82
+[; ;main.c: 82:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1106 ]
+[e $ < -> _i `i -> _size `i 1103  ]
+[e :U 1104 ]
+}
+"83
+[; ;main.c: 83: }
+[e :UE 1102 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"85
+[; ;main.c: 85: int main(void){
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"68
-[; ;main.c: 68:     SYSTEM_Initialize();
+"87
+[; ;main.c: 87:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"69
-[; ;main.c: 69:     (INTCONbits.GIE = 1);
+"88
+[; ;main.c: 88:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"70
-[; ;main.c: 70:     (INTCONbits.PEIE = 1);
+"89
+[; ;main.c: 89:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"72
-[; ;main.c: 72:     rylr998_init();
+[v F8685 `uc ~T0 @X0 -> 9 `i s ]
+[i F8685
+:U ..
+"94
+[; ;main.c: 94:     uint8_t serial_number[9] = {0};
+-> -> 0 `i `uc
+..
+]
+[v _serial_number `uc ~T0 @X0 -> 9 `i a ]
+[e = _serial_number F8685 ]
+"95
+[; ;main.c: 95:     write_eeprom(0xF000, "ABCDEFGH", 8);
+[e ( _write_eeprom (3 , , -> -> 61440 `ui `us :s 1C -> -> 8 `i `uc ]
+"96
+[; ;main.c: 96:     read_eeprom(0xF000, serial_number, 8);
+[e ( _read_eeprom (3 , , -> -> 61440 `ui `us &U _serial_number -> -> 8 `i `uc ]
+"97
+[; ;main.c: 97:     printf(serial_number);
+[e ( _printf -> &U _serial_number `*Cuc ]
+"98
+[; ;main.c: 98:     serial_number[9] = '\0';
+[e = *U + &U _serial_number * -> -> -> 9 `i `ui `ux -> -> # *U &U _serial_number `ui `ux -> -> 0 `ui `uc ]
+"100
+[; ;main.c: 100:     rylr998_init();
 [e ( _rylr998_init ..  ]
-"73
-[; ;main.c: 73:     weather_init();
+"101
+[; ;main.c: 101:     weather_init();
 [e ( _weather_init ..  ]
-"75
-[; ;main.c: 75:     while(1) {
-[e :U 1096 ]
+"104
+[; ;main.c: 104:     while(1) {
+[e :U 1112 ]
 {
-"77
-[; ;main.c: 77:         do { LATAbits.LATA2 = 1; } while(0);
-[e :U 1100 ]
+"107
+[; ;main.c: 107:         do { LATAbits.LATA2 = 1; } while(0);
+[e :U 1116 ]
 {
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 }
-[e :U 1099 ]
-"78
-[; ;main.c: 78:         _delay((unsigned long)((1000)*(32000000/4000.0)));
+[e :U 1115 ]
+"108
+[; ;main.c: 108:         _delay((unsigned long)((1000)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"80
-[; ;main.c: 80:         rylr998_init();
+"110
+[; ;main.c: 110:         rylr998_init();
 [e ( _rylr998_init ..  ]
-"81
-[; ;main.c: 81:         weather_init();
+"111
+[; ;main.c: 111:         weather_init();
 [e ( _weather_init ..  ]
-"83
-[; ;main.c: 83:         struct bme280_dev dev = weather_dev();
+"113
+[; ;main.c: 113:         struct bme280_dev dev = weather_dev();
 [v _dev `S1093 ~T0 @X0 1 a ]
 [e = _dev ( _weather_dev ..  ]
-"84
-[; ;main.c: 84:         struct bme280_data weather = weather_read(&dev);
+"114
+[; ;main.c: 114:         struct bme280_data weather = weather_read(&dev);
 [v _weather `S1090 ~T0 @X0 1 a ]
 [e = _weather ( _weather_read (1 &U _dev ]
-"86
-[; ;main.c: 86:         rylr998_send(32, "TEMPERATURE", weather.temperature);
-[e ( _rylr998_send (3 , , -> -> 32 `i `uc :s 1C . _weather 1 ]
-"87
-[; ;main.c: 87:         _delay((unsigned long)((1000)*(32000000/4000.0)));
+"116
+[; ;main.c: 116:         rylr998_send(32, &serial_number, "TEMPERATURE", weather.temperature);
+[e ( _rylr998_send (4 , , , -> -> 32 `i `uc -> &U _serial_number `*uc :s 2C . _weather 1 ]
+"117
+[; ;main.c: 117:         _delay((unsigned long)((1000)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"89
-[; ;main.c: 89:         rylr998_send(32, "HUMIDITY", weather.humidity);
-[e ( _rylr998_send (3 , , -> -> 32 `i `uc :s 2C . _weather 2 ]
-"90
-[; ;main.c: 90:         _delay((unsigned long)((1000)*(32000000/4000.0)));
+"119
+[; ;main.c: 119:         rylr998_send(32, serial_number, "HUMIDITY", weather.humidity);
+[e ( _rylr998_send (4 , , , -> -> 32 `i `uc -> &U _serial_number `*uc :s 3C . _weather 2 ]
+"120
+[; ;main.c: 120:         _delay((unsigned long)((1000)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"92
-[; ;main.c: 92:         rylr998_send(32, "PRESSURE", weather.pressure);
-[e ( _rylr998_send (3 , , -> -> 32 `i `uc :s 3C . _weather 0 ]
-"93
-[; ;main.c: 93:         _delay((unsigned long)((1000)*(32000000/4000.0)));
+"122
+[; ;main.c: 122:         rylr998_send(32, serial_number, "PRESSURE", weather.pressure);
+[e ( _rylr998_send (4 , , , -> -> 32 `i `uc -> &U _serial_number `*uc :s 4C . _weather 0 ]
+"123
+[; ;main.c: 123:         _delay((unsigned long)((1000)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"96
-[; ;main.c: 96:         do { LATAbits.LATA2 = 0; } while(0);
-[e :U 1103 ]
+"126
+[; ;main.c: 126:         do { LATAbits.LATA2 = 0; } while(0);
+[e :U 1119 ]
 {
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 1102 ]
-"99
-[; ;main.c: 99:         WDTCON = 0x1B;
+[e :U 1118 ]
+"131
+[; ;main.c: 131:         WDTCON = 0x1B;
 [e = _WDTCON -> -> 27 `i `uc ]
-"100
-[; ;main.c: 100:         for(uint8_t i = 0; i < 8; i++) {
+"132
+[; ;main.c: 132:         for(uint8_t i = 0; i < 114; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1104  ]
-[e $U 1105  ]
-[e :U 1104 ]
+[e $ < -> _i `i -> 114 `i 1120  ]
+[e $U 1121  ]
+[e :U 1120 ]
 {
-"101
-[; ;main.c: 101:             __asm("sleep");
+"133
+[; ;main.c: 133:             __asm("sleep");
 [; <" sleep ;# ">
-"102
-[; ;main.c: 102:         }
+"134
+[; ;main.c: 134:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 1104  ]
-[e :U 1105 ]
+[e $ < -> _i `i -> 114 `i 1120  ]
+[e :U 1121 ]
 }
-"103
-[; ;main.c: 103:         WDTCON = 0x1A;
+"135
+[; ;main.c: 135:         WDTCON = 0x1A;
 [e = _WDTCON -> -> 26 `i `uc ]
-"105
-[; ;main.c: 105:     }
+"137
+[; ;main.c: 137:     }
 }
-[e :U 1095 ]
-[e $U 1096  ]
-[e :U 1097 ]
-"106
-[; ;main.c: 106: }
-[e :UE 1094 ]
+[e :U 1111 ]
+[e $U 1112  ]
+[e :U 1113 ]
+"138
+[; ;main.c: 138: }
+[e :UE 1110 ]
 }
-[a 2C 72 85 77 73 68 73 84 89 0 ]
-[a 1C 84 69 77 80 69 82 65 84 85 82 69 0 ]
-[a 3C 80 82 69 83 83 85 82 69 0 ]
+[p f _printf 9437696 ]
+[a 3C 72 85 77 73 68 73 84 89 0 ]
+[a 1C 65 66 67 68 69 70 71 72 0 ]
+[a 2C 84 69 77 80 69 82 65 84 85 82 69 0 ]
+[a 4C 80 82 69 83 83 85 82 69 0 ]

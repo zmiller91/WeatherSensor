@@ -2,7 +2,7 @@
 
 manifest_file_version: 1.0.0
 project: Third
-creation_date: 2024-01-27T21:10:42.077-06:00[America/Chicago]
+creation_date: 2024-01-27T21:38:59.397-06:00[America/Chicago]
 operating_system: Windows 10
 mcc_mode: IDE
 mcc_mode_version: v6.10
@@ -25,6 +25,7 @@ modules:
 - {name: '@mchp-mcc/pin-content-processor', type: MELODY, version: 3.8.0}
 - {name: '@mchp-mcc/scf-pic8-eusart-v1', type: MELODY, version: 7.1.5}
 - {name: '@mchp-mcc/scf-pic8-interrupt-v2', type: MELODY, version: 5.2.11}
+- {name: '@mchp-mcc/scf-pic8-memory-v2', type: MELODY, version: 5.0.1}
 - {name: '@mchp-mcc/scf-pic8-mssp-v1', type: MELODY, version: 7.0.1}
 - {name: '@mchp-mcc/scf-pic8-osc-v3', type: MELODY, version: 1.0.1}
 - {name: '@mchp-mcc/scf-pic8-wdt-v1', type: MELODY, version: 5.0.5}

@@ -1276,8 +1276,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47
 [; ;rylr998.c: 47:     printf(payload_size);
 [e ( _printf -> _payload_size `*Cuc ]
-[v F8914 `uc ~T0 @X0 -> 50 `i s ]
-[i F8914
+[v F8932 `uc ~T0 @X0 -> 50 `i s ]
+[i F8932
 :U ..
 "50
 [; ;rylr998.c: 50:     char buffer[50] = {0};
@@ -1285,7 +1285,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer `uc ~T0 @X0 -> 50 `i a ]
-[e = _buffer F8914 ]
+[e = _buffer F8932 ]
 "51
 [; ;rylr998.c: 51:     sprintf(buffer, "AT+SEND=%i,%i,%s::%s\r\n", address, payload_size, tag, t);
 [e ( _sprintf (1 , , , , (. , &U _buffer :s 3C -> _address `i _payload_size _tag &U _t ]
@@ -1404,8 +1404,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;rylr998.c: 89:     _Bool newline_found = 0;
 [v _newline_found `a ~T0 @X0 1 a ]
 [e = _newline_found -> -> 0 `i `a ]
-[v F8927 `uc ~T0 @X0 -> 50 `i s ]
-[i F8927
+[v F8945 `uc ~T0 @X0 -> 50 `i s ]
+[i F8945
 :U ..
 "91
 [; ;rylr998.c: 91:     char data[50] = {0};
@@ -1413,7 +1413,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _data `uc ~T0 @X0 -> 50 `i a ]
-[e = _data F8927 ]
+[e = _data F8945 ]
 "92
 [; ;rylr998.c: 92:     for(uint8_t i = 0; i < sizeof(data); i++) {
 {
@@ -1481,8 +1481,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 1107 ]
 }
 [p f _sprintf 8654976 ]
-[p f _printf 9437696 ]
 [p f _snprintf 8650752 ]
+[p f _printf 9437696 ]
 [a 2C 37 115 58 58 37 115 0 ]
 [a 1C 37 103 0 ]
 [a 4C 43 79 75 0 ]

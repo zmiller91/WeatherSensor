@@ -14231,10 +14231,77 @@ void I2C2_ISR(void);
 void I2C2_ERROR_ISR(void);
 # 44 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
+# 1 "./mcc_generated_files/system/../nvm/nvm.h" 1
+# 66 "./mcc_generated_files/system/../nvm/nvm.h"
+typedef uint8_t eeprom_data_t;
+
+
+
+
+typedef uint16_t eeprom_address_t;
+
+
+
+
+
+
+typedef enum
+{
+    NVM_OK,
+    NVM_ERROR
+} nvm_status_t;
+
+
+
+
+
+
+
+void NVM_Initialize(void);
+# 99 "./mcc_generated_files/system/../nvm/nvm.h"
+_Bool NVM_IsBusy(void);
+# 108 "./mcc_generated_files/system/../nvm/nvm.h"
+nvm_status_t NVM_StatusGet(void);
+
+
+
+
+
+
+
+void NVM_StatusClear(void);
+
+
+
+
+
+
+
+void NVM_UnlockKeySet(uint16_t unlockKey);
+
+
+
+
+
+
+
+void NVM_UnlockKeyClear(void);
+
+
+
+
+
+
+
+eeprom_data_t EEPROM_Read(eeprom_address_t address);
+# 153 "./mcc_generated_files/system/../nvm/nvm.h"
+void EEPROM_Write(eeprom_address_t address, eeprom_data_t data);
+# 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
+
 # 1 "./mcc_generated_files/system/../system/watchdog.h" 1
 # 52 "./mcc_generated_files/system/../system/watchdog.h"
 void WDT_Initialize(void);
-# 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../system/interrupt.h" 1
 # 85 "./mcc_generated_files/system/../system/interrupt.h"
@@ -14249,7 +14316,7 @@ void INT_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT_InterruptHandler)(void);
 # 175 "./mcc_generated_files/system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
-# 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 47 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 
 
@@ -14265,7 +14332,7 @@ void SYSTEM_Initialize(void);
 # 1 "./rylr998.h" 1
 # 31 "./rylr998.h"
 void rylr998_init();
-void rylr998_send(uint8_t address, char tag[], double metric);
+void rylr998_send(uint8_t address, char serial[], char tag[], double metric);
 void rylr998_write(char data[]);
 void rylr998_read();
 # 18 "rylr998.c" 2
@@ -14282,7 +14349,7 @@ void rylr998_init() {
     EUSART1_ReceiveEnable();
 }
 
-void rylr998_send(uint8_t address, char tag[], double metric) {
+void rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
 
 
     if(sizeof(tag) > 20) {
@@ -14291,18 +14358,15 @@ void rylr998_send(uint8_t address, char tag[], double metric) {
 
 
 
-    char t[10];
+    char data[10];
     float rounded = roundf(metric * 100) / 100;
-    sprintf(t, "%g", rounded);
+    sprintf(data, "%g", rounded);
 
 
 
-    int payload_size = snprintf(((void*)0), 0, "%s::%s", tag, t);
-    printf(payload_size);
-
-
-    char buffer[50] = {0};
-    sprintf(buffer, "AT+SEND=%i,%i,%s::%s\r\n", address, payload_size, tag, t);
+    int payload_size = snprintf(((void*)0), 0, "%s::%s::%s", serial, tag, data);
+    char buffer[60] = {0};
+    sprintf(buffer, "AT+SEND=%i,%i,%s::%s::%s\r\n", address, payload_size, serial, tag, data);
     printf(buffer);
 
     rylr998_write(&buffer);
@@ -14316,7 +14380,7 @@ void rylr998_write(char *data) {
 
     uint8_t size = sizeof(data);
     printf(size);
-    for(uint8_t i = 0; i < 50; i++) {
+    for(uint8_t i = 0; i < 60; i++) {
 
         char c = data[i];
         EUSART1_Write(c);
@@ -14342,7 +14406,7 @@ void rylr998_read() {
     _Bool carriage_found = 0;
     _Bool newline_found = 0;
 
-    char data[50] = {0};
+    char data[60] = {0};
     for(uint8_t i = 0; i < sizeof(data); i++) {
 
         uint8_t byte = EUSART1_Read();
