@@ -13329,9 +13329,9 @@ void PIN_MANAGER_Initialize(void)
 
 
     LATA = 0x0;
-    LATB = 0x6;
+    LATB = 0x0;
     LATC = 0x0;
-    LATD = 0x0;
+    LATD = 0xC;
     LATE = 0x0;
 
 
@@ -13339,7 +13339,7 @@ void PIN_MANAGER_Initialize(void)
 
     TRISA = 0xFF;
     TRISB = 0xFF;
-    TRISC = 0xBF;
+    TRISC = 0xFB;
     TRISD = 0xFF;
     TRISE = 0xF;
 
@@ -13347,9 +13347,9 @@ void PIN_MANAGER_Initialize(void)
 
 
     ANSELA = 0xFF;
-    ANSELB = 0xF9;
-    ANSELC = 0x3F;
-    ANSELD = 0xFF;
+    ANSELB = 0xDF;
+    ANSELC = 0xFB;
+    ANSELD = 0xF3;
     ANSELE = 0x7;
 
 
@@ -13390,12 +13390,12 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    RX1PPS = 0x17;
-    RC6PPS = 0x0E;
-    SSP2CLKPPS = 0x9;
-    RB1PPS = 0x17;
-    SSP2DATPPS = 0xA;
-    RB2PPS = 0x18;
+    RX1PPS = 0xD;
+    RC2PPS = 0x0E;
+    SSP2CLKPPS = 0x1A;
+    RD2PPS = 0x17;
+    SSP2DATPPS = 0x1B;
+    RD3PPS = 0x18;
 # 119 "mcc_generated_files/system/src/pins.c"
     IOCAP = 0x0;
     IOCAN = 0x0;

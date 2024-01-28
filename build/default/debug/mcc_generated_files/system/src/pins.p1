@@ -107,21 +107,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18993
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 18993: extern volatile unsigned char RX1PPS __attribute__((address(0x1E41)));
 [v _RX1PPS `Vuc ~T0 @X0 0 e@7745 ]
-"17937
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 17937: extern volatile unsigned char RC6PPS __attribute__((address(0x1DA2)));
-[v _RC6PPS `Vuc ~T0 @X0 0 e@7586 ]
+"17857
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 17857: extern volatile unsigned char RC2PPS __attribute__((address(0x1D9E)));
+[v _RC2PPS `Vuc ~T0 @X0 0 e@7582 ]
 "19319
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19319: extern volatile unsigned char SSP2CLKPPS __attribute__((address(0x1E4A)));
 [v _SSP2CLKPPS `Vuc ~T0 @X0 0 e@7754 ]
-"17677
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 17677: extern volatile unsigned char RB1PPS __attribute__((address(0x1D95)));
-[v _RB1PPS `Vuc ~T0 @X0 0 e@7573 ]
+"18017
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 18017: extern volatile unsigned char RD2PPS __attribute__((address(0x1DA6)));
+[v _RD2PPS `Vuc ~T0 @X0 0 e@7590 ]
 "19339
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19339: extern volatile unsigned char SSP2DATPPS __attribute__((address(0x1E4B)));
 [v _SSP2DATPPS `Vuc ~T0 @X0 0 e@7755 ]
-"17697
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 17697: extern volatile unsigned char RB2PPS __attribute__((address(0x1D96)));
-[v _RB2PPS `Vuc ~T0 @X0 0 e@7574 ]
+"18037
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 18037: extern volatile unsigned char RD3PPS __attribute__((address(0x1DA7)));
+[v _RD3PPS `Vuc ~T0 @X0 0 e@7591 ]
 "19759
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19759: extern volatile unsigned char IOCAP __attribute__((address(0x1E91)));
 [v _IOCAP `Vuc ~T0 @X0 0 e@7825 ]
@@ -1313,14 +1313,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 43:     LATA = 0x0;
 [e = _LATA -> -> 0 `i `uc ]
 "44
-[; ;mcc_generated_files/system/src/pins.c: 44:     LATB = 0x6;
-[e = _LATB -> -> 6 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 44:     LATB = 0x0;
+[e = _LATB -> -> 0 `i `uc ]
 "45
 [; ;mcc_generated_files/system/src/pins.c: 45:     LATC = 0x0;
 [e = _LATC -> -> 0 `i `uc ]
 "46
-[; ;mcc_generated_files/system/src/pins.c: 46:     LATD = 0x0;
-[e = _LATD -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 46:     LATD = 0xC;
+[e = _LATD -> -> 12 `i `uc ]
 "47
 [; ;mcc_generated_files/system/src/pins.c: 47:     LATE = 0x0;
 [e = _LATE -> -> 0 `i `uc ]
@@ -1331,8 +1331,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 53:     TRISB = 0xFF;
 [e = _TRISB -> -> 255 `i `uc ]
 "54
-[; ;mcc_generated_files/system/src/pins.c: 54:     TRISC = 0xBF;
-[e = _TRISC -> -> 191 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 54:     TRISC = 0xFB;
+[e = _TRISC -> -> 251 `i `uc ]
 "55
 [; ;mcc_generated_files/system/src/pins.c: 55:     TRISD = 0xFF;
 [e = _TRISD -> -> 255 `i `uc ]
@@ -1343,14 +1343,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 61:     ANSELA = 0xFF;
 [e = _ANSELA -> -> 255 `i `uc ]
 "62
-[; ;mcc_generated_files/system/src/pins.c: 62:     ANSELB = 0xF9;
-[e = _ANSELB -> -> 249 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 62:     ANSELB = 0xDF;
+[e = _ANSELB -> -> 223 `i `uc ]
 "63
-[; ;mcc_generated_files/system/src/pins.c: 63:     ANSELC = 0x3F;
-[e = _ANSELC -> -> 63 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 63:     ANSELC = 0xFB;
+[e = _ANSELC -> -> 251 `i `uc ]
 "64
-[; ;mcc_generated_files/system/src/pins.c: 64:     ANSELD = 0xFF;
-[e = _ANSELD -> -> 255 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 64:     ANSELD = 0xF3;
+[e = _ANSELD -> -> 243 `i `uc ]
 "65
 [; ;mcc_generated_files/system/src/pins.c: 65:     ANSELE = 0x7;
 [e = _ANSELE -> -> 7 `i `uc ]
@@ -1415,23 +1415,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 100:     INLVLE = 0xF;
 [e = _INLVLE -> -> 15 `i `uc ]
 "105
-[; ;mcc_generated_files/system/src/pins.c: 105:     RX1PPS = 0x17;
-[e = _RX1PPS -> -> 23 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 105:     RX1PPS = 0xD;
+[e = _RX1PPS -> -> 13 `i `uc ]
 "106
-[; ;mcc_generated_files/system/src/pins.c: 106:     RC6PPS = 0x0E;
-[e = _RC6PPS -> -> 14 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 106:     RC2PPS = 0x0E;
+[e = _RC2PPS -> -> 14 `i `uc ]
 "107
-[; ;mcc_generated_files/system/src/pins.c: 107:     SSP2CLKPPS = 0x9;
-[e = _SSP2CLKPPS -> -> 9 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 107:     SSP2CLKPPS = 0x1A;
+[e = _SSP2CLKPPS -> -> 26 `i `uc ]
 "108
-[; ;mcc_generated_files/system/src/pins.c: 108:     RB1PPS = 0x17;
-[e = _RB1PPS -> -> 23 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 108:     RD2PPS = 0x17;
+[e = _RD2PPS -> -> 23 `i `uc ]
 "109
-[; ;mcc_generated_files/system/src/pins.c: 109:     SSP2DATPPS = 0xA;
-[e = _SSP2DATPPS -> -> 10 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 109:     SSP2DATPPS = 0x1B;
+[e = _SSP2DATPPS -> -> 27 `i `uc ]
 "110
-[; ;mcc_generated_files/system/src/pins.c: 110:     RB2PPS = 0x18;
-[e = _RB2PPS -> -> 24 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 110:     RD3PPS = 0x18;
+[e = _RD3PPS -> -> 24 `i `uc ]
 "119
 [; ;mcc_generated_files/system/src/pins.c: 119:     IOCAP = 0x0;
 [e = _IOCAP -> -> 0 `i `uc ]

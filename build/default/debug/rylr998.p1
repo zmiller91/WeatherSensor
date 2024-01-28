@@ -1,5 +1,16 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"862 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
+"800 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 800:     struct {
+[s S48 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S48 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+"799
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 799: typedef union {
+[u S47 `S48 1 ]
+[n S47 . . ]
+"811
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 811: extern volatile TRISBbits_t TRISBbits __attribute__((address(0x013)));
+[v _TRISBbits `VS47 ~T0 @X0 0 e@19 ]
+"862
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 862:     struct {
 [s S50 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S50 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
@@ -1205,17 +1216,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _rylr998_init ]
 [f ]
 "23
-[; ;rylr998.c: 23:     do { TRISCbits.TRISC7 = 1; } while(0);
+[; ;rylr998.c: 23:     do { TRISBbits.TRISB5 = 1; } while(0);
 [e :U 1092 ]
 {
-[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
+[e = . . _TRISBbits 0 5 -> -> 1 `i `uc ]
 }
 [e :U 1091 ]
 "24
-[; ;rylr998.c: 24:     do { TRISCbits.TRISC6 = 0; } while(0);
+[; ;rylr998.c: 24:     do { TRISCbits.TRISC2 = 0; } while(0);
 [e :U 1095 ]
 {
-[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
 }
 [e :U 1094 ]
 "26
@@ -1469,9 +1480,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;rylr998.c: 114: }
 [e :UE 1107 ]
 }
+[p f _snprintf 8650752 ]
 [p f _printf 9437696 ]
 [p f _sprintf 8654976 ]
-[p f _snprintf 8650752 ]
 [a 2C 37 115 58 58 37 115 0 ]
 [a 1C 37 103 0 ]
 [a 4C 43 79 75 0 ]

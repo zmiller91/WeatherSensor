@@ -14074,10 +14074,10 @@ static uint8_t dev_addr;
 
 
 void weather_init() {
-    do { ANSELBbits.ANSB1 = 0; } while(0);
-    do { WPUBbits.WPUB1 = 1; } while(0);
-    do { ANSELBbits.ANSB2 = 0; } while(0);
-    do { WPUBbits.WPUB2 = 1; } while(0);
+    do { ANSELDbits.ANSD2 = 0; } while(0);
+    do { WPUDbits.WPUD2 = 1; } while(0);
+    do { ANSELDbits.ANSD3 = 0; } while(0);
+    do { WPUDbits.WPUD3 = 1; } while(0);
 }
 
 struct bme280_dev weather_dev() {

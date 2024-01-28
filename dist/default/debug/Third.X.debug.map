@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\dat\20230322162823_en.msgs \
   -cn -h+dist/default/debug\Third.X.debug.sym \
   --cmf=dist/default/debug\Third.X.debug.cmf -z -Q16F18076 \
-  -oC:\Users\zmiller\AppData\Local\Temp\xcAskq8.\driver_tmp_3.o \
+  -oC:\Users\zmiller\AppData\Local\Temp\xcAs18ek.\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/debug/Third.X.debug.map \
-  --md=C:\Users\zmiller\AppData\Local\Temp\xcAskq8.\driver_tmp_0.dat -E1 \
+  --md=C:\Users\zmiller\AppData\Local\Temp\xcAs18ek.\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler --acfsm=1493 -AHEAP=0235Ch-027EFh -pheap=HEAP \
   -ACODE=00h-07FFhx8 -ASTRCODE=00h-03FFFh -ASTRING=00h-0FFhx64 \
   -ACONST=00h-0FFhx64 -AENTRY=00h-0FFhx64 -ACOMMON=070h-07Fh \
@@ -50,7 +50,7 @@ Linker command line:
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
   -pfunctab=ENTRY -k \
-  C:\Users\zmiller\AppData\Local\Temp\xcAskq8.\driver_tmp_20.o \
+  C:\Users\zmiller\AppData\Local\Temp\xcAs18ek.\driver_tmp_20.o \
   dist/default/debug\Third.X.debug.o 
 
 Object code version is 3.11
@@ -60,7 +60,7 @@ Machine type is 16F18076
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\zmiller\AppData\Local\Temp\xcAskq8.\driver_tmp_20.o
+C:\Users\zmiller\AppData\Local\Temp\xcAs18ek.\driver_tmp_20.o
                 heap                               235C     235C      494     235C       7
                 end_init                             31       31        2        8       0
                 reset_vec                             0        0        2        0       0
@@ -1042,9 +1042,9 @@ INT_SetInterruptHandler@InterruptHandler             cstackBANK0  000020
 _ACTCON                                              (abs)        000214
 _ANSELA                                              (abs)        001E8C
 _ANSELB                                              (abs)        001E96
-_ANSELBbits                                          (abs)        001E96
 _ANSELC                                              (abs)        001EA0
 _ANSELD                                              (abs)        001EAA
+_ANSELDbits                                          (abs)        001EAA
 _ANSELE                                              (abs)        001EB4
 _BAUD1CON                                            (abs)        000612
 _BAUD1CONbits                                        (abs)        000612
@@ -1161,12 +1161,12 @@ _PIN_MANAGER_Initialize                              text93       00350D
 _PIR0bits                                            (abs)        00008C
 _PIR3bits                                            (abs)        00008F
 _PIR4bits                                            (abs)        000090
-_RB1PPS                                              (abs)        001D95
-_RB2PPS                                              (abs)        001D96
 _RC1REG                                              (abs)        00060C
 _RC1STA                                              (abs)        000610
 _RC1STAbits                                          (abs)        000610
-_RC6PPS                                              (abs)        001DA2
+_RC2PPS                                              (abs)        001D9E
+_RD2PPS                                              (abs)        001DA6
+_RD3PPS                                              (abs)        001DA7
 _RX1PPS                                              (abs)        001E41
 _SLRCONA                                             (abs)        001E8F
 _SLRCONB                                             (abs)        001E99
@@ -1189,6 +1189,7 @@ _SSP2STATbits                                        (abs)        000699
 _SYSTEM_Initialize                                   text92       003D2B
 _TRISA                                               (abs)        000012
 _TRISB                                               (abs)        000013
+_TRISBbits                                           (abs)        000013
 _TRISC                                               (abs)        000014
 _TRISCbits                                           (abs)        000014
 _TRISD                                               (abs)        000015
@@ -1198,9 +1199,9 @@ _TX1STA                                              (abs)        000611
 _TX1STAbits                                          (abs)        000611
 _WPUA                                                (abs)        001E8D
 _WPUB                                                (abs)        001E97
-_WPUBbits                                            (abs)        001E97
 _WPUC                                                (abs)        001EA1
 _WPUD                                                (abs)        001EAB
+_WPUDbits                                            (abs)        001EAB
 _WPUE                                                (abs)        001EB5
 __H__absolute__                                      __absolute__ 000000
 __Habs1                                              abs1         000000
@@ -1995,22 +1996,22 @@ _bme280_set_sensor_mode                              text14       0030E5
 _bme280_set_sensor_settings                          text12       0029F2
 _bme280_soft_reset                                   text31       00290D
 _compensate_humidity                                 text8        001405
-_compensate_humidity$3958                            cstackBANK1  0000E2
-_compensate_humidity$3959                            cstackBANK1  0000C5
+_compensate_humidity$3987                            cstackBANK1  0000E2
+_compensate_humidity$3988                            cstackBANK1  0000C5
 _compensate_pressure                                 text7        0009C4
-_compensate_pressure$3954                            cstackBANK1  0000D6
-_compensate_pressure$3955                            cstackBANK1  0000BD
-_compensate_pressure$3956                            cstackBANK1  0000C1
-_compensate_pressure$3957                            cstackBANK1  0000C5
+_compensate_pressure$3983                            cstackBANK1  0000D6
+_compensate_pressure$3984                            cstackBANK1  0000BD
+_compensate_pressure$3985                            cstackBANK1  0000C1
+_compensate_pressure$3986                            cstackBANK1  0000C5
 _compensate_temperature                              text6        001D4E
-_compensate_temperature$3953                         cstackBANK1  0000B9
+_compensate_temperature$3982                         cstackBANK1  0000B9
 _dbuf                                                bssBANK7     0003A0
 _dev_addr                                            bssBANK3     0001ED
 _dtoa                                                text68       00181F
-_dtoa$3437                                           cstackBANK0  00003C
+_dtoa$3466                                           cstackBANK0  00003C
 _efgtoa                                              text59       0022D3
-_efgtoa$3468                                         cstackBANK2  000120
-_efgtoa$3473                                         cstackBANK2  000122
+_efgtoa$3497                                         cstackBANK2  000120
+_efgtoa$3502                                         cstackBANK2  000122
 _errno                                               bssBANK5     0002E0
 _eusart1RxLastError                                  bssBANK5     0002E2
 _fill_filter_settings                                text25       003D82
@@ -2041,23 +2042,23 @@ _put_device_to_sleep                                 text16       003332
 _putch                                               text73       001800
 _reload_device_settings                              text17       003EE9
 _roundf                                              text81       00114D
-_roundf$3961                                         cstackBANK1  0000BF
-_roundf$3962                                         cstackBANK1  0000B9
+_roundf$3990                                         cstackBANK1  0000BF
+_roundf$3991                                         cstackBANK1  0000B9
 _rylr998_init                                        text88       003CC7
 _rylr998_read                                        text52       002D25
-_rylr998_read$2549                                   cstackBANK3  0001D3
-_rylr998_read$2550                                   cstackBANK3  0001D4
+_rylr998_read$2578                                   cstackBANK3  0001D3
+_rylr998_read$2579                                   cstackBANK3  0001D4
 _rylr998_send                                        text46       002F12
-_rylr998_send$3960                                   cstackBANK4  000261
+_rylr998_send$3989                                   cstackBANK4  000261
 _rylr998_write                                       text49       002AE5
-_rylr998_write$2540                                  cstackBANK1  0000D8
-_rylr998_write$2541                                  cstackBANK1  0000D9
+_rylr998_write$2569                                  cstackBANK1  0000D8
+_rylr998_write$2570                                  cstackBANK1  0000D9
 _set_filter_standby_settings                         text23       00367A
 _set_osr_humidity_settings                           text22       00079A
 _set_osr_press_temp_settings                         text19       0036D7
 _set_osr_settings                                    text18       003F72
 _snprintf                                            text48       002BF0
-_snprintf$3347                                       cstackBANK1  0000DA
+_snprintf$3376                                       cstackBANK1  0000DA
 _sprintf                                             text47       003E0F
 _stoa                                                text58       002DC4
 _strcmp                                              text53       003018
@@ -2065,7 +2066,7 @@ _strcpy                                              text60       003DEF
 _strlen                                              text70       003D4E
 _strncmp                                             text57       00361D
 _vfpfcnvrt                                           text56       0018E4
-_vfpfcnvrt$3501                                      cstackBANK1  0000CA
+_vfpfcnvrt$3530                                      cstackBANK1  0000CA
 _vfprintf                                            text55       00307C
 _weather_dev                                         text11       00337A
 _weather_init                                        text10       003C4C

@@ -373,9 +373,21 @@ BME280_I2C_INTF 1
 [v _TRISA TRISA `VEuc  1 e 1 @18 ]
 "794
 [v _TRISB TRISB `VEuc  1 e 1 @19 ]
+[s S2445 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"811
+[u S2454 . 1 `S2445 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES2454  1 e 1 @19 ]
 "856
 [v _TRISC TRISC `VEuc  1 e 1 @20 ]
-[s S2445 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S2466 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -385,8 +397,8 @@ BME280_I2C_INTF 1
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "873
-[u S2454 . 1 `S2445 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES2454  1 e 1 @20 ]
+[u S2475 . 1 `S2466 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES2475  1 e 1 @20 ]
 "918
 [v _TRISD TRISD `VEuc  1 e 1 @21 ]
 "980
@@ -676,12 +688,12 @@ BME280_I2C_INTF 1
 [v _SSP2CON2bits SSP2CON2bits `VES576  1 e 1 @1691 ]
 "12379
 [v _SSP2CON3 SSP2CON3 `VEuc  1 e 1 @1692 ]
-"17677
-[v _RB1PPS RB1PPS `VEuc  1 e 1 @7573 ]
-"17697
-[v _RB2PPS RB2PPS `VEuc  1 e 1 @7574 ]
-"17937
-[v _RC6PPS RC6PPS `VEuc  1 e 1 @7586 ]
+"17857
+[v _RC2PPS RC2PPS `VEuc  1 e 1 @7582 ]
+"18017
+[v _RD2PPS RD2PPS `VEuc  1 e 1 @7590 ]
+"18037
+[v _RD3PPS RD3PPS `VEuc  1 e 1 @7591 ]
 "18993
 [v _RX1PPS RX1PPS `VEuc  1 e 1 @7745 ]
 "19319
@@ -706,41 +718,8 @@ BME280_I2C_INTF 1
 [v _IOCAF IOCAF `VEuc  1 e 1 @7827 ]
 "19945
 [v _ANSELB ANSELB `VEuc  1 e 1 @7830 ]
-[s S2553 . 1 `uc 1 ANSELB0 1 0 :1:0 
-`uc 1 ANSELB1 1 0 :1:1 
-`uc 1 ANSELB2 1 0 :1:2 
-`uc 1 ANSELB3 1 0 :1:3 
-`uc 1 ANSELB4 1 0 :1:4 
-`uc 1 ANSELB5 1 0 :1:5 
-`uc 1 ANSELB6 1 0 :1:6 
-`uc 1 ANSELB7 1 0 :1:7 
-]
-"19972
-[s S2562 . 1 `uc 1 ANSB0 1 0 :1:0 
-`uc 1 ANSB1 1 0 :1:1 
-`uc 1 ANSB2 1 0 :1:2 
-`uc 1 ANSB3 1 0 :1:3 
-`uc 1 ANSB4 1 0 :1:4 
-`uc 1 ANSB5 1 0 :1:5 
-`uc 1 ANSB6 1 0 :1:6 
-`uc 1 ANSB7 1 0 :1:7 
-]
-[u S2571 . 1 `S2553 1 . 1 0 `S2562 1 . 1 0 ]
-[v _ANSELBbits ANSELBbits `VES2571  1 e 1 @7830 ]
 "20057
 [v _WPUB WPUB `VEuc  1 e 1 @7831 ]
-[s S2593 . 1 `uc 1 WPUB0 1 0 :1:0 
-`uc 1 WPUB1 1 0 :1:1 
-`uc 1 WPUB2 1 0 :1:2 
-`uc 1 WPUB3 1 0 :1:3 
-`uc 1 WPUB4 1 0 :1:4 
-`uc 1 WPUB5 1 0 :1:5 
-`uc 1 WPUB6 1 0 :1:6 
-`uc 1 WPUB7 1 0 :1:7 
-]
-"20074
-[u S2602 . 1 `S2593 1 . 1 0 ]
-[v _WPUBbits WPUBbits `VES2602  1 e 1 @7831 ]
 "20119
 [v _ODCONB ODCONB `VEuc  1 e 1 @7832 ]
 "20181
@@ -771,8 +750,41 @@ BME280_I2C_INTF 1
 [v _IOCCF IOCCF `VEuc  1 e 1 @7847 ]
 "21037
 [v _ANSELD ANSELD `VEuc  1 e 1 @7850 ]
+[s S2582 . 1 `uc 1 ANSELD0 1 0 :1:0 
+`uc 1 ANSELD1 1 0 :1:1 
+`uc 1 ANSELD2 1 0 :1:2 
+`uc 1 ANSELD3 1 0 :1:3 
+`uc 1 ANSELD4 1 0 :1:4 
+`uc 1 ANSELD5 1 0 :1:5 
+`uc 1 ANSELD6 1 0 :1:6 
+`uc 1 ANSELD7 1 0 :1:7 
+]
+"21064
+[s S2591 . 1 `uc 1 ANSD0 1 0 :1:0 
+`uc 1 ANSD1 1 0 :1:1 
+`uc 1 ANSD2 1 0 :1:2 
+`uc 1 ANSD3 1 0 :1:3 
+`uc 1 ANSD4 1 0 :1:4 
+`uc 1 ANSD5 1 0 :1:5 
+`uc 1 ANSD6 1 0 :1:6 
+`uc 1 ANSD7 1 0 :1:7 
+]
+[u S2600 . 1 `S2582 1 . 1 0 `S2591 1 . 1 0 ]
+[v _ANSELDbits ANSELDbits `VES2600  1 e 1 @7850 ]
 "21149
 [v _WPUD WPUD `VEuc  1 e 1 @7851 ]
+[s S2622 . 1 `uc 1 WPUD0 1 0 :1:0 
+`uc 1 WPUD1 1 0 :1:1 
+`uc 1 WPUD2 1 0 :1:2 
+`uc 1 WPUD3 1 0 :1:3 
+`uc 1 WPUD4 1 0 :1:4 
+`uc 1 WPUD5 1 0 :1:5 
+`uc 1 WPUD6 1 0 :1:6 
+`uc 1 WPUD7 1 0 :1:7 
+]
+"21166
+[u S2631 . 1 `S2622 1 . 1 0 ]
+[v _WPUDbits WPUDbits `VES2631  1 e 1 @7851 ]
 "21211
 [v _ODCOND ODCOND `VEuc  1 e 1 @7852 ]
 "21273
@@ -807,9 +819,9 @@ BME280_I2C_INTF 1
 "3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\errno.c
 [v _errno errno `i  1 e 2 0 ]
 "17 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
-[u S3235 . 2 `*.39S3237 1 next 2 0 `[1]uc 1 space 1 0 ]
-[s S3237 chunk 4 `ui 1 size 2 0 `S3235 1 . 2 2 ]
-[v ___freelist __freelist `*.4S3237  1 e 1 0 ]
+[u S3264 . 2 `*.39S3266 1 next 2 0 `[1]uc 1 space 1 0 ]
+[s S3266 chunk 4 `ui 1 size 2 0 `S3264 1 . 2 2 ]
+[v ___freelist __freelist `*.4S3266  1 e 1 0 ]
 "95 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/i2c_host/src/mssp2.c
 [v _I2C2_Callback I2C2_Callback `*.37(v  1 s 2 I2C2_Callback ]
 [s S139 . 14 `a 1 busy 1 0 `us 1 address 2 1 `*.39uc 1 writePtr 2 3 `ui 1 writeLength 2 5 `*.39uc 1 readPtr 2 7 `ui 1 readLength 2 9 `a 1 switchToRead 1 11 `E8063 1 errorState 1 12 `E8072 1 state 1 13 ]
@@ -1579,10 +1591,10 @@ BME280_I2C_INTF 1
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 [v sprintf@s s `*.6uc  1 a 1 wreg ]
-[u S3310 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
+[u S3339 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
 "13
-[s S3313 _IO_FILE 11 `S3310 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v sprintf@f f `S3313  1 a 11 57 ]
+[s S3342 _IO_FILE 11 `S3339 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v sprintf@f f `S3342  1 a 11 57 ]
 "12
 [v sprintf@ap ap `[1]*.5v  1 a 1 56 ]
 "9
@@ -1595,10 +1607,10 @@ BME280_I2C_INTF 1
 "13 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_snprintf.c
 [v _snprintf snprintf `(i  1 e 2 0 ]
 {
-[u S3310 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
+[u S3339 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
 "17
-[s S3313 _IO_FILE 11 `S3310 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v snprintf@f f `S3313  1 a 11 63 ]
+[s S3342 _IO_FILE 11 `S3339 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v snprintf@f f `S3342  1 a 11 63 ]
 "15
 [v snprintf@cnt cnt `i  1 a 2 60 ]
 "16
@@ -1674,37 +1686,37 @@ BME280_I2C_INTF 1
 "1546 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
-[s S3348 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.4S3348  1 a 1 wreg ]
+[s S3377 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.4S3377  1 a 1 wreg ]
 "1549
 [v vfprintf@cfmt cfmt `*.26uc  1 a 2 53 ]
 "1546
-[v vfprintf@fp fp `*.4S3348  1 a 1 wreg ]
+[v vfprintf@fp fp `*.4S3377  1 a 1 wreg ]
 [v vfprintf@fmt fmt `*.26DCuc  1 p 2 50 ]
 [v vfprintf@ap ap `*.4*.5v  1 p 1 52 ]
 "1551
 "1546
-[v vfprintf@fp fp `*.4S3348  1 a 1 52 ]
+[v vfprintf@fp fp `*.4S3377  1 a 1 52 ]
 "1569
 } 0
 "1048
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S3348 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.4S3348  1 a 1 wreg ]
-[u S3402 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `*.39v 1 vp 2 0 `d 1 f 4 0 ]
+[s S3377 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.4S3377  1 a 1 wreg ]
+[u S3431 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `*.39v 1 vp 2 0 `d 1 f 4 0 ]
 "1059
-[v vfpfcnvrt@convarg convarg `S3402  1 a 4 44 ]
+[v vfpfcnvrt@convarg convarg `S3431  1 a 4 44 ]
 "1050
 [v vfpfcnvrt@cp cp `*.26uc  1 a 2 50 ]
 [v vfpfcnvrt@c c `uc  1 a 1 48 ]
 "1048
-[v vfpfcnvrt@fp fp `*.4S3348  1 a 1 wreg ]
+[v vfpfcnvrt@fp fp `*.4S3377  1 a 1 wreg ]
 [v vfpfcnvrt@fmt fmt `*.4*.26uc  1 p 1 48 ]
 [v vfpfcnvrt@ap ap `*.4*.5v  1 p 1 49 ]
 "1062
 "1048
-[v vfpfcnvrt@fp fp `*.4S3348  1 a 1 49 ]
+[v vfpfcnvrt@fp fp `*.4S3377  1 a 1 49 ]
 "1543
 } 0
 "3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strncmp.c
@@ -1722,8 +1734,8 @@ BME280_I2C_INTF 1
 "862 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
 [v _stoa stoa `(i  1 s 2 stoa ]
 {
-[s S3348 _IO_FILE 0 ]
-[v stoa@fp fp `*.4S3348  1 a 1 wreg ]
+[s S3377 _IO_FILE 0 ]
+[v stoa@fp fp `*.4S3377  1 a 1 wreg ]
 "864
 [v stoa@nuls nuls `[7]uc  1 a 7 12 ]
 "865
@@ -1735,28 +1747,28 @@ BME280_I2C_INTF 1
 [v stoa@i i `i  1 a 2 21 ]
 [v stoa@w w `i  1 a 2 19 ]
 "862
-[v stoa@fp fp `*.4S3348  1 a 1 wreg ]
+[v stoa@fp fp `*.4S3377  1 a 1 wreg ]
 [v stoa@s s `*.26uc  1 p 2 8 ]
 "864
 [v stoa@F1180 F1180 `[7]uc  1 s 7 F1180 ]
 "862
-[v stoa@fp fp `*.4S3348  1 a 1 23 ]
+[v stoa@fp fp `*.4S3377  1 a 1 23 ]
 "913
 } 0
 "531
 [v _efgtoa efgtoa `(i  1 s 2 efgtoa ]
 {
-[s S3348 _IO_FILE 0 ]
-[v efgtoa@fp fp `*.4S3348  1 a 1 wreg ]
-[u S3371 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
+[s S3377 _IO_FILE 0 ]
+[v efgtoa@fp fp `*.4S3377  1 a 1 wreg ]
+[u S3400 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
 "536
-[v efgtoa@u u `S3371  1 a 4 44 ]
-[v efgtoa@g g `S3371  1 a 4 36 ]
+[v efgtoa@u u `S3400  1 a 4 44 ]
+[v efgtoa@g g `S3400  1 a 4 36 ]
 "535
 [v efgtoa@l l `d  1 a 4 29 ]
 [v efgtoa@h h `d  1 a 4 25 ]
 "536
-[v efgtoa@ou ou `S3371  1 a 4 19 ]
+[v efgtoa@ou ou `S3400  1 a 4 19 ]
 "534
 [v efgtoa@n n `i  1 a 2 42 ]
 [v efgtoa@e e `i  1 a 2 40 ]
@@ -1774,12 +1786,12 @@ BME280_I2C_INTF 1
 [v efgtoa@esign esign `uc  1 a 1 5 ]
 [v efgtoa@pp pp `uc  1 a 1 4 ]
 "531
-[v efgtoa@fp fp `*.4S3348  1 a 1 wreg ]
+[v efgtoa@fp fp `*.4S3377  1 a 1 wreg ]
 [v efgtoa@f f `d  1 p 4 29 ]
 [v efgtoa@c c `uc  1 p 1 33 ]
 "539
 "531
-[v efgtoa@fp fp `*.4S3348  1 a 1 12 ]
+[v efgtoa@fp fp `*.4S3377  1 a 1 12 ]
 "812
 } 0
 "3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strcpy.c
@@ -1824,9 +1836,9 @@ BME280_I2C_INTF 1
 "3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\floorf.c
 [v _floorf floorf `(f  1 e 4 0 ]
 {
-[u S3514 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S3543 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "5
-[v floorf@u u `S3514  1 a 4 25 ]
+[v floorf@u u `S3543  1 a 4 25 ]
 "7
 [v floorf@m m `ul  1 a 4 19 ]
 "6
@@ -1834,21 +1846,21 @@ BME280_I2C_INTF 1
 "3
 [v floorf@x x `f  1 p 4 73 ]
 "4
-[v floorf@F526 F526 `S3514  1 s 4 F526 ]
+[v floorf@F526 F526 `S3543  1 s 4 F526 ]
 "27
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\__fpclassifyf.c
 [v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
 {
-[u S3514 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S3543 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v ___fpclassifyf@u u `S3514  1 a 4 12 ]
+[v ___fpclassifyf@u u `S3543  1 a 4 12 ]
 "7
 [v ___fpclassifyf@e e `i  1 a 2 10 ]
 "4
 [v ___fpclassifyf@x x `f  1 p 4 0 ]
 "5
-[v ___fpclassifyf@F465 F465 `S3514  1 s 4 F465 ]
+[v ___fpclassifyf@F465 F465 `S3543  1 s 4 F465 ]
 "11
 } 0
 "43 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fltol.c
@@ -1891,8 +1903,8 @@ BME280_I2C_INTF 1
 "470 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
 {
-[s S3348 _IO_FILE 0 ]
-[v dtoa@fp fp `*.4S3348  1 a 1 wreg ]
+[s S3377 _IO_FILE 0 ]
+[v dtoa@fp fp `*.4S3377  1 a 1 wreg ]
 "473
 [v dtoa@i i `i  1 a 2 35 ]
 [v dtoa@w w `i  1 a 2 32 ]
@@ -1900,28 +1912,28 @@ BME280_I2C_INTF 1
 "472
 [v dtoa@s s `uc  1 a 1 34 ]
 "470
-[v dtoa@fp fp `*.4S3348  1 a 1 wreg ]
+[v dtoa@fp fp `*.4S3377  1 a 1 wreg ]
 [v dtoa@d d `i  1 p 2 24 ]
 "476
 "470
-[v dtoa@fp fp `*.4S3348  1 a 1 27 ]
+[v dtoa@fp fp `*.4S3377  1 a 1 27 ]
 "527
 } 0
 "152
 [v _pad pad `(i  1 s 2 pad ]
 {
-[s S3348 _IO_FILE 0 ]
-[v pad@fp fp `*.4S3348  1 a 1 wreg ]
+[s S3377 _IO_FILE 0 ]
+[v pad@fp fp `*.4S3377  1 a 1 wreg ]
 "154
 [v pad@w w `i  1 a 2 21 ]
 [v pad@i i `i  1 a 2 19 ]
 "152
-[v pad@fp fp `*.4S3348  1 a 1 wreg ]
+[v pad@fp fp `*.4S3377  1 a 1 wreg ]
 [v pad@buf buf `*.7uc  1 p 1 15 ]
 [v pad@p p `i  1 p 2 16 ]
 "164
 "152
-[v pad@fp fp `*.4S3348  1 a 1 23 ]
+[v pad@fp fp `*.4S3377  1 a 1 23 ]
 "183
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strlen.c
@@ -1943,9 +1955,9 @@ BME280_I2C_INTF 1
 [v fputs@c c `uc  1 a 1 12 ]
 "8
 [v fputs@s s `*.7DCuc  1 a 1 wreg ]
-[u S3310 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
-[s S3313 _IO_FILE 11 `S3310 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputs@fp fp `*.4S3313  1 p 1 8 ]
+[u S3339 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
+[s S3342 _IO_FILE 11 `S3339 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputs@fp fp `*.4S3342  1 p 1 8 ]
 "13
 [v fputs@s s `*.7DCuc  1 a 1 11 ]
 "19
@@ -1954,9 +1966,9 @@ BME280_I2C_INTF 1
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[u S3310 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
-[s S3313 _IO_FILE 11 `S3310 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.4S3313  1 p 1 2 ]
+[u S3339 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
+[s S3342 _IO_FILE 11 `S3339 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.4S3342  1 p 1 2 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\putch.c
@@ -2019,15 +2031,15 @@ BME280_I2C_INTF 1
 {
 "16
 [v roundf@y y `f  1 a 4 39 ]
-[u S3514 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S3543 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "14
-[v roundf@u u `S3514  1 a 4 35 ]
+[v roundf@u u `S3543  1 a 4 35 ]
 "15
 [v roundf@e e `i  1 a 2 29 ]
 "12
 [v roundf@x x `f  1 p 4 21 ]
 "13
-[v roundf@F527 F527 `S3514  1 s 4 F527 ]
+[v roundf@F527 F527 `S3543  1 s 4 F527 ]
 "36
 } 0
 "242 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcadd.c
@@ -2062,17 +2074,17 @@ BME280_I2C_INTF 1
 "8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S3088 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S3117 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S3093 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S3096 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3088 1 fAsBytes 4 0 `S3093 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S3096  1 a 4 34 ]
+[s S3122 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S3125 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3117 1 fAsBytes 4 0 `S3122 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S3125  1 a 4 34 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 30 ]
-[s S3165 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S3194 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S3168 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S3165 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S3168  1 a 2 38 ]
+[u S3197 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S3194 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S3197  1 a 2 38 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 29 ]
 "11

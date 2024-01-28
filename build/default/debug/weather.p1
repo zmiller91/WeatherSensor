@@ -1,30 +1,30 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"19951 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19951:     struct {
-[s S983 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S983 . ANSELB0 ANSELB1 ANSELB2 ANSELB3 ANSELB4 ANSELB5 ANSELB6 ANSELB7 ]
-"19961
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19961:     struct {
-[s S984 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S984 . ANSB0 ANSB1 ANSB2 ANSB3 ANSB4 ANSB5 ANSB6 ANSB7 ]
-"19950
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19950: typedef union {
-[u S982 `S983 1 `S984 1 ]
-[n S982 . . . ]
-"19972
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 19972: extern volatile ANSELBbits_t ANSELBbits __attribute__((address(0x1E96)));
-[v _ANSELBbits `VS982 ~T0 @X0 0 e@7830 ]
-"20063
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 20063:     struct {
-[s S986 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S986 . WPUB0 WPUB1 WPUB2 WPUB3 WPUB4 WPUB5 WPUB6 WPUB7 ]
-"20062
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 20062: typedef union {
-[u S985 `S986 1 ]
-[n S985 . . ]
-"20074
-[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 20074: extern volatile WPUBbits_t WPUBbits __attribute__((address(0x1E97)));
-[v _WPUBbits `VS985 ~T0 @X0 0 e@7831 ]
+"21043 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 21043:     struct {
+[s S1017 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1017 . ANSELD0 ANSELD1 ANSELD2 ANSELD3 ANSELD4 ANSELD5 ANSELD6 ANSELD7 ]
+"21053
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 21053:     struct {
+[s S1018 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1018 . ANSD0 ANSD1 ANSD2 ANSD3 ANSD4 ANSD5 ANSD6 ANSD7 ]
+"21042
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 21042: typedef union {
+[u S1016 `S1017 1 `S1018 1 ]
+[n S1016 . . . ]
+"21064
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 21064: extern volatile ANSELDbits_t ANSELDbits __attribute__((address(0x1EAA)));
+[v _ANSELDbits `VS1016 ~T0 @X0 0 e@7850 ]
+"21155
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 21155:     struct {
+[s S1020 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1020 . WPUD0 WPUD1 WPUD2 WPUD3 WPUD4 WPUD5 WPUD6 WPUD7 ]
+"21154
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 21154: typedef union {
+[u S1019 `S1020 1 ]
+[n S1019 . . ]
+"21166
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 21166: extern volatile WPUDbits_t WPUDbits __attribute__((address(0x1EAB)));
+[v _WPUDbits `VS1019 ~T0 @X0 0 e@7851 ]
 "38 weather.c
 [; ;weather.c: 38: struct bme280_dev weather_dev() {
 [c E508 0 1 .. ]
@@ -1253,31 +1253,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _weather_init ]
 [f ]
 "32
-[; ;weather.c: 32:     do { ANSELBbits.ANSB1 = 0; } while(0);
+[; ;weather.c: 32:     do { ANSELDbits.ANSD2 = 0; } while(0);
 [e :U 1096 ]
 {
-[e = . . _ANSELBbits 1 1 -> -> 0 `i `uc ]
+[e = . . _ANSELDbits 1 2 -> -> 0 `i `uc ]
 }
 [e :U 1095 ]
 "33
-[; ;weather.c: 33:     do { WPUBbits.WPUB1 = 1; } while(0);
+[; ;weather.c: 33:     do { WPUDbits.WPUD2 = 1; } while(0);
 [e :U 1099 ]
 {
-[e = . . _WPUBbits 0 1 -> -> 1 `i `uc ]
+[e = . . _WPUDbits 0 2 -> -> 1 `i `uc ]
 }
 [e :U 1098 ]
 "34
-[; ;weather.c: 34:     do { ANSELBbits.ANSB2 = 0; } while(0);
+[; ;weather.c: 34:     do { ANSELDbits.ANSD3 = 0; } while(0);
 [e :U 1102 ]
 {
-[e = . . _ANSELBbits 1 2 -> -> 0 `i `uc ]
+[e = . . _ANSELDbits 1 3 -> -> 0 `i `uc ]
 }
 [e :U 1101 ]
 "35
-[; ;weather.c: 35:     do { WPUBbits.WPUB2 = 1; } while(0);
+[; ;weather.c: 35:     do { WPUDbits.WPUD3 = 1; } while(0);
 [e :U 1105 ]
 {
-[e = . . _WPUBbits 0 2 -> -> 1 `i `uc ]
+[e = . . _WPUDbits 0 3 -> -> 1 `i `uc ]
 }
 [e :U 1104 ]
 "36

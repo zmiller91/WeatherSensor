@@ -14269,8 +14269,8 @@ void rylr998_read();
 void rylr998_init() {
 
 
-    do { TRISCbits.TRISC7 = 1; } while(0);
-    do { TRISCbits.TRISC6 = 0; } while(0);
+    do { TRISBbits.TRISB5 = 1; } while(0);
+    do { TRISCbits.TRISC2 = 0; } while(0);
 
     EUSART1_Enable();
     EUSART1_TransmitEnable();
