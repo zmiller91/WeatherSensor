@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"53 ./mcc_generated_files/system/../uart/../system/system.h
-[; ;./mcc_generated_files/system/../uart/../system/system.h: 53: void SYSTEM_Initialize(void);
+"54 ./mcc_generated_files/system/../uart/../system/system.h
+[; ;./mcc_generated_files/system/../uart/../system/system.h: 54: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "419 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 419:     struct {
@@ -14,7 +14,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "426
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS31 ~T0 @X0 0 e@11 ]
-"1024
+"31 ./rylr998.h
+[; ;./rylr998.h: 31: void rylr998_init();
+[v _rylr998_init `(v ~T0 @X0 0 e? ]
+"15 ./weather.h
+[; ;./weather.h: 15: void weather_init();
+[v _weather_init `(v ~T0 @X0 0 e? ]
+"1024 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1024:     struct {
 [s S54 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S54 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
@@ -29,26 +35,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
 [v __delay `JF359 ~T0 @X0 0 e ]
 [p i __delay ]
-"31 ./rylr998.h
-[; ;./rylr998.h: 31: void rylr998_init();
-[v _rylr998_init `(v ~T0 @X0 0 e? ]
-"15 ./weather.h
-[; ;./weather.h: 15: void weather_init();
-[v _weather_init `(v ~T0 @X0 0 e? ]
-"77 main.c
-[; ;main.c: 77:     struct bme280_dev dev = weather_dev();
-[c E8474 0 1 .. ]
-[n E8474 bme280_intf BME280_SPI_INTF BME280_I2C_INTF  ]
-[v F8533 `(c ~T0 @X0 0 tf4`uc`*uc`ul`*v ]
-[v F8539 `(c ~T0 @X0 0 tf4`uc`*Cuc`ul`*v ]
-[v F8545 `(v ~T0 @X0 0 tf2`ul`*v ]
+"83 main.c
+[; ;main.c: 83:         struct bme280_dev dev = weather_dev();
+[c E8475 0 1 .. ]
+[n E8475 bme280_intf BME280_SPI_INTF BME280_I2C_INTF  ]
+[v F8534 `(c ~T0 @X0 0 tf4`uc`*uc`ul`*v ]
+[v F8540 `(c ~T0 @X0 0 tf4`uc`*Cuc`ul`*v ]
+[v F8546 `(v ~T0 @X0 0 tf2`ul`*v ]
 "323 ./bme280_defs.h
 [; ;./bme280_defs.h: 323: {
 [s S1089 `us 1 `s 1 `s 1 `us 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `s 1 `uc 1 `s 1 `uc 1 `s 1 `s 1 `c 1 `l 1 ]
 [n S1089 bme280_calib_data dig_t1 dig_t2 dig_t3 dig_p1 dig_p2 dig_p3 dig_p4 dig_p5 dig_p6 dig_p7 dig_p8 dig_p9 dig_h1 dig_h2 dig_h3 dig_h4 dig_h5 dig_h6 t_fine ]
 "454
 [; ;./bme280_defs.h: 454: {
-[s S1093 `uc 1 `E8474 1 `*v 1 `c 1 `*F8533 1 `*F8539 1 `*F8545 1 `S1089 1 ]
+[s S1093 `uc 1 `E8475 1 `*v 1 `c 1 `*F8534 1 `*F8540 1 `*F8546 1 `S1089 1 ]
 [n S1093 bme280_dev chip_id intf intf_ptr intf_rslt read write delay_us calib_data ]
 "16 ./weather.h
 [; ;./weather.h: 16: struct bme280_dev weather_dev();
@@ -63,6 +63,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32 ./rylr998.h
 [; ;./rylr998.h: 32: void rylr998_send(uint8_t address, char tag[], double metric);
 [v _rylr998_send `(v ~T0 @X0 0 ef3`uc`*uc`d ]
+"1832 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1832: extern volatile unsigned char WDTCON __attribute__((address(0x18C)));
+[v _WDTCON `Vuc ~T0 @X0 0 e@396 ]
 "110 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1222,40 +1225,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "70
 [; ;main.c: 70:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"71
-[; ;main.c: 71:     do { LATAbits.LATA2 = 1; } while(0);
-[e :U 1097 ]
+"72
+[; ;main.c: 72:     rylr998_init();
+[e ( _rylr998_init ..  ]
+"73
+[; ;main.c: 73:     weather_init();
+[e ( _weather_init ..  ]
+"75
+[; ;main.c: 75:     while(1) {
+[e :U 1096 ]
+{
+"77
+[; ;main.c: 77:         do { LATAbits.LATA2 = 1; } while(0);
+[e :U 1100 ]
 {
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 }
-[e :U 1096 ]
-"72
-[; ;main.c: 72:     _delay((unsigned long)((1000)*(32000000/4000.0)));
+[e :U 1099 ]
+"78
+[; ;main.c: 78:         _delay((unsigned long)((1000)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"74
-[; ;main.c: 74:     rylr998_init();
+"80
+[; ;main.c: 80:         rylr998_init();
 [e ( _rylr998_init ..  ]
-"75
-[; ;main.c: 75:     weather_init();
+"81
+[; ;main.c: 81:         weather_init();
 [e ( _weather_init ..  ]
-"77
-[; ;main.c: 77:     struct bme280_dev dev = weather_dev();
+"83
+[; ;main.c: 83:         struct bme280_dev dev = weather_dev();
 [v _dev `S1093 ~T0 @X0 1 a ]
 [e = _dev ( _weather_dev ..  ]
-"79
-[; ;main.c: 79:     while(1) {
-[e :U 1099 ]
-{
-"81
-[; ;main.c: 81:         do { LATAbits.LATA2 = 1; } while(0);
-[e :U 1103 ]
-{
-[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
-}
-[e :U 1102 ]
-"82
-[; ;main.c: 82:         _delay((unsigned long)((1000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "84
 [; ;main.c: 84:         struct bme280_data weather = weather_read(&dev);
 [v _weather `S1090 ~T0 @X0 1 a ]
@@ -1280,38 +1279,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "96
 [; ;main.c: 96:         do { LATAbits.LATA2 = 0; } while(0);
-[e :U 1106 ]
+[e :U 1103 ]
 {
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 1105 ]
-"97
-[; ;main.c: 97:         for(uint8_t i = 0; i < 15; i++) {
+[e :U 1102 ]
+"99
+[; ;main.c: 99:         WDTCON = 0x1B;
+[e = _WDTCON -> -> 27 `i `uc ]
+"100
+[; ;main.c: 100:         for(uint8_t i = 0; i < 8; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 15 `i 1107  ]
-[e $U 1108  ]
-[e :U 1107 ]
+[e $ < -> _i `i -> 8 `i 1104  ]
+[e $U 1105  ]
+[e :U 1104 ]
 {
-"98
-[; ;main.c: 98:             _delay((unsigned long)((2000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"99
-[; ;main.c: 99:         }
+"101
+[; ;main.c: 101:             __asm("sleep");
+[; <" sleep ;# ">
+"102
+[; ;main.c: 102:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 15 `i 1107  ]
-[e :U 1108 ]
+[e $ < -> _i `i -> 8 `i 1104  ]
+[e :U 1105 ]
 }
-"101
-[; ;main.c: 101:     }
+"103
+[; ;main.c: 103:         WDTCON = 0x1A;
+[e = _WDTCON -> -> 26 `i `uc ]
+"105
+[; ;main.c: 105:     }
 }
-[e :U 1098 ]
-[e $U 1099  ]
-[e :U 1100 ]
-"102
-[; ;main.c: 102: }
+[e :U 1095 ]
+[e $U 1096  ]
+[e :U 1097 ]
+"106
+[; ;main.c: 106: }
 [e :UE 1094 ]
 }
 [a 2C 72 85 77 73 68 73 84 89 0 ]

@@ -42,6 +42,7 @@
 #include "../system/pins.h"
 #include "../uart/eusart1.h"
 #include "../i2c_host/mssp2.h"
+#include "../system/watchdog.h"
 #include "../system/interrupt.h"
 
 /**

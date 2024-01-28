@@ -68,19 +68,20 @@ int main(void){
     SYSTEM_Initialize();
     INTERRUPT_GlobalInterruptEnable();
     INTERRUPT_PeripheralInterruptEnable();
-    DEV_PWR_SetHigh();
-    __delay_ms(1000);
     
     rylr998_init();
     weather_init();
-    
-    struct bme280_dev dev = weather_dev();
 
     while(1) {
         
+        // Turn the devices on and wait a second so they can power up.
         DEV_PWR_SetHigh();
         __delay_ms(1000);
+    
+        rylr998_init();
+        weather_init();
         
+        struct bme280_dev dev = weather_dev();
         struct bme280_data weather = weather_read(&dev);
 
         rylr998_send(32, "TEMPERATURE", weather.temperature);
@@ -92,11 +93,17 @@ int main(void){
         rylr998_send(32, "PRESSURE", weather.pressure);
         __delay_ms(1000);
         
-        
+        // Turn the devices off so they don't draw any current.
         DEV_PWR_SetLow();
-        for(uint8_t i = 0; i < 15; i++) {
-            __delay_ms(2000);
+        
+        // Turn the watchdog timer on for a handful of SLEEP cycles and then
+        // turn the timer off so the process can be restarted.
+        //WDTSEN ON; WDTPS 1:262144; WDTCS LFINTOSC (31 kHz); 
+        WDTCON = 0x1B;
+        for(uint8_t i = 0; i < 114; i++) {
+            SLEEP();
         }
+        WDTCON = 0x1A;
         
     }    
 }

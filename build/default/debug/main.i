@@ -13853,6 +13853,11 @@ void I2C2_ISR(void);
 void I2C2_ERROR_ISR(void);
 # 44 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
+# 1 "./mcc_generated_files/system/../system/watchdog.h" 1
+# 52 "./mcc_generated_files/system/../system/watchdog.h"
+void WDT_Initialize(void);
+# 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
+
 # 1 "./mcc_generated_files/system/../system/interrupt.h" 1
 # 85 "./mcc_generated_files/system/../system/interrupt.h"
 void INTERRUPT_Initialize (void);
@@ -13866,7 +13871,7 @@ void INT_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT_InterruptHandler)(void);
 # 175 "./mcc_generated_files/system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
-# 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 
 
@@ -14142,19 +14147,19 @@ int main(void){
     SYSTEM_Initialize();
     (INTCONbits.GIE = 1);
     (INTCONbits.PEIE = 1);
-    do { LATAbits.LATA2 = 1; } while(0);
-    _delay((unsigned long)((1000)*(32000000/4000.0)));
 
     rylr998_init();
     weather_init();
-
-    struct bme280_dev dev = weather_dev();
 
     while(1) {
 
         do { LATAbits.LATA2 = 1; } while(0);
         _delay((unsigned long)((1000)*(32000000/4000.0)));
 
+        rylr998_init();
+        weather_init();
+
+        struct bme280_dev dev = weather_dev();
         struct bme280_data weather = weather_read(&dev);
 
         rylr998_send(32, "TEMPERATURE", weather.temperature);
@@ -14168,9 +14173,13 @@ int main(void){
 
 
         do { LATAbits.LATA2 = 0; } while(0);
-        for(uint8_t i = 0; i < 15; i++) {
-            _delay((unsigned long)((2000)*(32000000/4000.0)));
+
+
+        WDTCON = 0x1B;
+        for(uint8_t i = 0; i < 8; i++) {
+            __asm("sleep");
         }
+        WDTCON = 0x1A;
 
     }
 }
