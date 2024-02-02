@@ -12,9 +12,12 @@
 #include <xc.h>
 #include "mcc_generated_files/system/system.h"
 
+#define WEATHER_OK                                      INT8_C(1)
+#define WEATHER_TIMEOUT                                 INT8_C(-89)
+
 void weather_init();
 struct bme280_dev weather_dev();
-struct bme280_data weather_read(struct bme280_dev *dev);
+int8_t weather_read(struct bme280_dev *dev, struct bme280_data *data);
 bool weather_is_measurement_done(struct bme280_dev *dev);
 
 /***************************************************************************/

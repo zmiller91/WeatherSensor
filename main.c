@@ -40,6 +40,7 @@
 #include "weather.h"
 #include "bme280.h"
 #include "rylr998.h"
+#include "timeout.h"
 
 
 
@@ -73,7 +74,7 @@ void write_eeprom(uint16_t address, uint8_t *data, uint8_t size) {
     }
 }
 
-uint8_t read_eeprom(uint16_t address, uint8_t data[], uint8_t size) {
+void read_eeprom(uint16_t address, uint8_t data[], uint8_t size) {
     
     NVM_UnlockKeySet(0xaa55);
     for(uint8_t i = 0; i < size; i++) {   
@@ -89,38 +90,36 @@ int main(void){
     INTERRUPT_PeripheralInterruptEnable();
     
     // Retrieve the serial number from EEPROM. We are writing to it first because
-    // MPLAB X will reset the EEPROM memory when it flashes the chip. There is
+    // MPLAB will reset the EEPROM memory when it flashes the chip. There is
     // config to not do that, but it doesn't appear to work.
     uint8_t serial_number[9] = {0};
     write_eeprom(0xF000, "ABCDEFGH", 8);
     read_eeprom(0xF000, serial_number, 8);
     printf(serial_number);
     serial_number[9] = '\0'; // needs to be null terminated
-    
-    rylr998_init();
-    weather_init();
-    
-
+      
     while(1) {
-        
-        // Turn the devices on and wait a second so they can power up.
-        DEV_PWR_SetHigh();
-        __delay_ms(1000);
     
         rylr998_init();
         weather_init();
         
+        // Turn the devices on and wait a second so they can power up.
+        DEV_PWR_SetHigh();
+        __delay_ms(1000);
+        
+        struct bme280_data weather;
         struct bme280_dev dev = weather_dev();
-        struct bme280_data weather = weather_read(&dev);
+        int8_t response_code = weather_read(&dev, &weather);
+        if(response_code > 0) {
+            rylr998_send(32, &serial_number, "TEMPERATURE", weather.temperature);
+            __delay_ms(1000);
 
-        rylr998_send(32, &serial_number, "TEMPERATURE", weather.temperature);
-        __delay_ms(1000);
+            rylr998_send(32, serial_number, "HUMIDITY", weather.humidity);
+            __delay_ms(1000);
 
-        rylr998_send(32, serial_number, "HUMIDITY", weather.humidity);
-        __delay_ms(1000);
-
-        rylr998_send(32, serial_number, "PRESSURE", weather.pressure);
-        __delay_ms(1000);
+            rylr998_send(32, serial_number, "PRESSURE", weather.pressure);
+            __delay_ms(1000);
+        }
         
         // Turn the devices off so they don't draw any current.
         DEV_PWR_SetLow();

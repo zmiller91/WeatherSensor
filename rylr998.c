@@ -16,6 +16,7 @@
 #include "mcc_generated_files/system/system.h"
 
 #include "rylr998.h"
+#include "timeout.h"
 
 void rylr998_init() {
     
@@ -26,13 +27,14 @@ void rylr998_init() {
     EUSART1_Enable();
     EUSART1_TransmitEnable();
     EUSART1_ReceiveEnable();
+    timeout_init();
 }
 
-void rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
+int8_t rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
     
     // Limit the size of the tag to 20 characters
     if(sizeof(tag) > 20) {
-        // TODO: Return error
+        return RYLR998_INVALID_DATA;
     }
     
     // There shouldn't be more than 10 characters in the metric, including
@@ -48,11 +50,15 @@ void rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
     sprintf(buffer, "AT+SEND=%i,%i,%s::%s::%s\r\n", address, payload_size, serial, tag, data);
     printf(buffer);
     
-    rylr998_write(&buffer);
-    rylr998_read();
+    int8_t response_code = rylr998_write(&buffer);
+    if(response_code < 0) {
+        return response_code;
+    }
+    
+    return rylr998_read();
 }
 
-void rylr998_write(char *data) {
+int8_t rylr998_write(char *data) {
     
     bool carriage_found = false;
     bool newline_found = false;
@@ -63,7 +69,13 @@ void rylr998_write(char *data) {
         
         char c = data[i];
         EUSART1_Write(c);
-        while(!EUSART1_IsTxDone());
+        
+        timeout_start();
+        while(!EUSART1_IsTxDone() && !timeout_timed_out());
+        timeout_stop();
+        if(timeout_timed_out()) {
+            return RYLR998_TIMEOUT;
+        }
         
         carriage_found = carriage_found || (data[i] == '\r');
         newline_found = newline_found || (data[i] == '\n');
@@ -73,14 +85,21 @@ void rylr998_write(char *data) {
     }
     
     if(!carriage_found || !newline_found) {
-        //TODO: return error, terminal characters not found
+        return RYLR998_INVALID_DATA;
     }
+    
+    return RYLR998_OK;
 }
 
-void rylr998_read() {
+int8_t rylr998_read() {
     
     //TODO: Add a timer here so this doesn't perpetually poll
-    while(!EUSART1_IsRxReady());
+    timeout_start();
+    while(!EUSART1_IsRxReady() && !timeout_timed_out());
+    timeout_stop();
+    if(timeout_timed_out()) {
+        return RYLR998_TIMEOUT;
+    }
     
     bool carriage_found = false;
     bool newline_found = false;
@@ -100,12 +119,20 @@ void rylr998_read() {
             break;
         }
         
-        //TODO: Add a timer here so it doesn't perpetually poll
-        while(!EUSART1_IsRxReady());
+        timeout_start();
+        while(!EUSART1_IsRxReady() && !timeout_timed_out());
+        timeout_stop();
+        if(timeout_timed_out()) {
+            return RYLR998_TIMEOUT;
+        }
         
     }
     
     bool success = strcmp("+OK", data) == 0;
-    printf(success);
+    if(success) {
+        return RYLR998_OK;
+    }
     
+    // TODO: return more appropriate error code
+    return RYLR998_UNLISTED_FAILURE;
 }

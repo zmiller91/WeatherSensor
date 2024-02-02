@@ -2,7 +2,7 @@
 
 manifest_file_version: 1.0.0
 project: Third
-creation_date: 2024-01-27T21:38:59.417-06:00[America/Chicago]
+creation_date: 2024-02-02T16:12:07.229-06:00[America/Chicago]
 operating_system: Windows 10
 mcc_mode: IDE
 mcc_mode_version: v6.10
@@ -28,5 +28,6 @@ modules:
 - {name: '@mchp-mcc/scf-pic8-memory-v2', type: MELODY, version: 5.0.1}
 - {name: '@mchp-mcc/scf-pic8-mssp-v1', type: MELODY, version: 7.0.1}
 - {name: '@mchp-mcc/scf-pic8-osc-v3', type: MELODY, version: 1.0.1}
+- {name: '@mchp-mcc/scf-pic8-tmr2-v1', type: MELODY, version: 4.0.18}
 - {name: '@mchp-mcc/scf-pic8-wdt-v1', type: MELODY, version: 5.0.5}
 - {name: '@mchp-mcc/uart-driver', type: MELODY, version: 1.10.0}

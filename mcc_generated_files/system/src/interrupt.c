@@ -65,7 +65,11 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     }
     else if(INTCONbits.PEIE == 1)
     {
-        if(PIE4bits.BCL2IE == 1 && PIR4bits.BCL2IF == 1)
+        if(PIE2bits.TMR6IE == 1 && PIR2bits.TMR6IF == 1)
+        {
+            TMR6_ISR();
+        } 
+        else if(PIE4bits.BCL2IE == 1 && PIR4bits.BCL2IF == 1)
         {
             I2C2_ERROR_ISR();
         } 

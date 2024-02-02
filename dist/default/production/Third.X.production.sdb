@@ -22,7 +22,7 @@ I2C_STATE_ERROR 6
 I2C_STATE_STOP 7
 I2C_STATE_RESET 8
 ]
-"118 C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+"112 C:\Users\zmiller\MPLABXProjects\Third.X\main.c
 [e E8493 bme280_intf `uc
 BME280_SPI_INTF 0
 BME280_I2C_INTF 1
@@ -192,9 +192,9 @@ NVM_ERROR 1
 [v _parseDHT11Byte parseDHT11Byte `(uc  1 e 1 0 ]
 "66 C:\Users\zmiller\MPLABXProjects\Third.X\main.c
 [v _write_eeprom write_eeprom `(v  1 e 1 0 ]
-"71
-[v _read_eeprom read_eeprom `(uc  1 e 1 0 ]
 "76
+[v _read_eeprom read_eeprom `(uc  1 e 1 0 ]
+"85
 [v _main main `(i  1 e 2 0 ]
 "114 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/i2c_host/src/mssp2.c
 [v _I2C2_Initialize I2C2_Initialize `(v  1 e 1 0 ]
@@ -356,9 +356,9 @@ NVM_ERROR 1
 [v _rylr998_init rylr998_init `(v  1 e 1 0 ]
 "31
 [v _rylr998_send rylr998_send `(v  1 e 1 0 ]
-"58
+"55
 [v _rylr998_write rylr998_write `(v  1 e 1 0 ]
-"83
+"80
 [v _rylr998_read rylr998_read `(v  1 e 1 0 ]
 "31 C:\Users\zmiller\MPLABXProjects\Third.X\weather.c
 [v _weather_init weather_init `(v  1 e 1 0 ]
@@ -366,7 +366,7 @@ NVM_ERROR 1
 "323
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
 "38 C:\Users\zmiller\MPLABXProjects\Third.X\weather.c
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v _weather_dev weather_dev `(S1498  1 e 47 0 ]
 "388 C:\Users\zmiller\MPLABXProjects\Third.X/bme280_defs.h
 [s S1530 bme280_data 12 `d 1 pressure 4 0 `d 1 temperature 4 4 `d 1 humidity 4 8 ]
@@ -396,7 +396,7 @@ NVM_ERROR 1
 [v _TRISA TRISA `VEuc  1 e 1 @18 ]
 "794
 [v _TRISB TRISB `VEuc  1 e 1 @19 ]
-[s S2513 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S2520 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -406,11 +406,11 @@ NVM_ERROR 1
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "811
-[u S2522 . 1 `S2513 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES2522  1 e 1 @19 ]
+[u S2529 . 1 `S2520 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES2529  1 e 1 @19 ]
 "856
 [v _TRISC TRISC `VEuc  1 e 1 @20 ]
-[s S2534 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S2541 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -420,8 +420,8 @@ NVM_ERROR 1
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "873
-[u S2543 . 1 `S2534 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES2543  1 e 1 @20 ]
+[u S2550 . 1 `S2541 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES2550  1 e 1 @20 ]
 "918
 [v _TRISD TRISD `VEuc  1 e 1 @21 ]
 "980
@@ -731,7 +731,7 @@ NVM_ERROR 1
 [v _NVMADRH NVMADRH `VEuc  1 e 1 @7309 ]
 "13189
 [v _NVMDATL NVMDATL `VEuc  1 e 1 @7310 ]
-[s S2906 . 1 `uc 1 RD 1 0 :1:0 
+[s S2914 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -740,8 +740,8 @@ NVM_ERROR 1
 `uc 1 NVMREGS 1 0 :1:6 
 ]
 "13333
-[u S2914 . 1 `S2906 1 . 1 0 ]
-[v _NVMCON1bits NVMCON1bits `VES2914  1 e 1 @7312 ]
+[u S2922 . 1 `S2914 1 . 1 0 ]
+[v _NVMCON1bits NVMCON1bits `VES2922  1 e 1 @7312 ]
 "13373
 [v _NVMCON2 NVMCON2 `VEuc  1 e 1 @7313 ]
 "17857
@@ -806,7 +806,7 @@ NVM_ERROR 1
 [v _IOCCF IOCCF `VEuc  1 e 1 @7847 ]
 "21037
 [v _ANSELD ANSELD `VEuc  1 e 1 @7850 ]
-[s S2650 . 1 `uc 1 ANSELD0 1 0 :1:0 
+[s S2658 . 1 `uc 1 ANSELD0 1 0 :1:0 
 `uc 1 ANSELD1 1 0 :1:1 
 `uc 1 ANSELD2 1 0 :1:2 
 `uc 1 ANSELD3 1 0 :1:3 
@@ -816,7 +816,7 @@ NVM_ERROR 1
 `uc 1 ANSELD7 1 0 :1:7 
 ]
 "21064
-[s S2659 . 1 `uc 1 ANSD0 1 0 :1:0 
+[s S2667 . 1 `uc 1 ANSD0 1 0 :1:0 
 `uc 1 ANSD1 1 0 :1:1 
 `uc 1 ANSD2 1 0 :1:2 
 `uc 1 ANSD3 1 0 :1:3 
@@ -825,11 +825,11 @@ NVM_ERROR 1
 `uc 1 ANSD6 1 0 :1:6 
 `uc 1 ANSD7 1 0 :1:7 
 ]
-[u S2668 . 1 `S2650 1 . 1 0 `S2659 1 . 1 0 ]
-[v _ANSELDbits ANSELDbits `VES2668  1 e 1 @7850 ]
+[u S2676 . 1 `S2658 1 . 1 0 `S2667 1 . 1 0 ]
+[v _ANSELDbits ANSELDbits `VES2676  1 e 1 @7850 ]
 "21149
 [v _WPUD WPUD `VEuc  1 e 1 @7851 ]
-[s S2690 . 1 `uc 1 WPUD0 1 0 :1:0 
+[s S2698 . 1 `uc 1 WPUD0 1 0 :1:0 
 `uc 1 WPUD1 1 0 :1:1 
 `uc 1 WPUD2 1 0 :1:2 
 `uc 1 WPUD3 1 0 :1:3 
@@ -839,8 +839,8 @@ NVM_ERROR 1
 `uc 1 WPUD7 1 0 :1:7 
 ]
 "21166
-[u S2699 . 1 `S2690 1 . 1 0 ]
-[v _WPUDbits WPUDbits `VES2699  1 e 1 @7851 ]
+[u S2707 . 1 `S2698 1 . 1 0 ]
+[v _WPUDbits WPUDbits `VES2707  1 e 1 @7851 ]
 "21211
 [v _ODCOND ODCOND `VEuc  1 e 1 @7852 ]
 "21273
@@ -875,9 +875,9 @@ NVM_ERROR 1
 "3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\errno.c
 [v _errno errno `i  1 e 2 0 ]
 "17 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lite_free.c
-[u S3380 . 2 `*.39S3382 1 next 2 0 `[1]uc 1 space 1 0 ]
-[s S3382 chunk 4 `ui 1 size 2 0 `S3380 1 . 2 2 ]
-[v ___freelist __freelist `*.4S3382  1 e 1 0 ]
+[u S3388 . 2 `*.39S3390 1 next 2 0 `[1]uc 1 space 1 0 ]
+[s S3390 chunk 4 `ui 1 size 2 0 `S3388 1 . 2 2 ]
+[v ___freelist __freelist `*.4S3390  1 e 1 0 ]
 "95 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/i2c_host/src/mssp2.c
 [v _I2C2_Callback I2C2_Callback `*.37(v  1 s 2 I2C2_Callback ]
 [s S139 . 14 `a 1 busy 1 0 `us 1 address 2 1 `*.39uc 1 writePtr 2 3 `ui 1 writeLength 2 5 `*.39uc 1 readPtr 2 7 `ui 1 readLength 2 9 `a 1 switchToRead 1 11 `E8063 1 errorState 1 12 `E8072 1 state 1 13 ]
@@ -905,28 +905,32 @@ NVM_ERROR 1
 [v _EUSART1_OverrunErrorHandler EUSART1_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "23 C:\Users\zmiller\MPLABXProjects\Third.X\weather.c
 [v _dev_addr dev_addr `uc  1 s 1 dev_addr ]
-"76 C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+"85 C:\Users\zmiller\MPLABXProjects\Third.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"137
-[v main@i i `uc  1 a 1 8 ]
+"131
+[v main@i i `uc  1 a 1 9 ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-"118
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
-[v main@dev dev `S1498  1 a 47 21 ]
+"112
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[v main@dev dev `S1498  1 a 47 22 ]
 [s S1530 bme280_data 12 `d 1 pressure 4 0 `d 1 temperature 4 4 `d 1 humidity 4 8 ]
-"119
-[v main@weather weather `S1530  1 a 12 9 ]
-"96
-[v main@serial_number serial_number `[8]uc  1 a 8 0 ]
-"143
+"113
+[v main@weather weather `S1530  1 a 12 10 ]
+"94
+[v main@serial_number serial_number `[9]uc  1 a 9 0 ]
+"137
 } 0
 "66
 [v _write_eeprom write_eeprom `(v  1 e 1 0 ]
 {
-[v write_eeprom@address address `us  1 p 2 4 ]
-[v write_eeprom@data data `uc  1 p 1 6 ]
-"69
+"70
+[v write_eeprom@i i `uc  1 a 1 79 ]
+"66
+[v write_eeprom@address address `us  1 p 2 55 ]
+[v write_eeprom@data data `*.25uc  1 p 2 57 ]
+[v write_eeprom@size size `uc  1 p 1 59 ]
+"74
 } 0
 "97 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/nvm/src/nvm.c
 [v _EEPROM_Write EEPROM_Write `(v  1 e 1 0 ]
@@ -944,7 +948,7 @@ NVM_ERROR 1
 [v _weather_read weather_read `(S1530  1 e 12 0 ]
 {
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v weather_read@dev dev `*.6S1498  1 a 1 wreg ]
 "81
 [v weather_read@comp_data comp_data `S1530  1 a 12 36 ]
@@ -959,7 +963,7 @@ NVM_ERROR 1
 [v _weather_is_measurement_done weather_is_measurement_done `(a  1 e 1 0 ]
 {
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v weather_is_measurement_done@dev dev `*.6S1498  1 a 1 wreg ]
 "100
 [v weather_is_measurement_done@status_reg status_reg `uc  1 a 1 60 ]
@@ -974,9 +978,9 @@ NVM_ERROR 1
 [v _bme280_get_sensor_data bme280_get_sensor_data `(c  1 e 1 0 ]
 {
 [v bme280_get_sensor_data@sensor_comp sensor_comp `uc  1 a 1 wreg ]
-[s S1854 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
+[s S1861 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
 "723
-[v bme280_get_sensor_data@uncomp_data uncomp_data `S1854  1 a 12 10 ]
+[v bme280_get_sensor_data@uncomp_data uncomp_data `S1861  1 a 12 10 ]
 "722
 [v bme280_get_sensor_data@reg_data reg_data `[8]uc  1 a 8 0 ]
 "717
@@ -986,10 +990,10 @@ NVM_ERROR 1
 [s S1530 bme280_data 12 `d 1 pressure 4 0 `d 1 temperature 4 4 `d 1 humidity 4 8 ]
 [v bme280_get_sensor_data@comp_data comp_data `*.5S1530  1 p 1 70 ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v bme280_get_sensor_data@dev dev `*.6S1498  1 p 1 71 ]
 "722
-[v bme280_get_sensor_data@F287 F287 `S1854  1 s 12 F287 ]
+[v bme280_get_sensor_data@F287 F287 `S1861  1 s 12 F287 ]
 [v bme280_get_sensor_data@sensor_comp sensor_comp `uc  1 a 1 8 ]
 "747
 } 0
@@ -1005,8 +1009,8 @@ NVM_ERROR 1
 [v parse_sensor_data@data_xlsb data_xlsb `ul  1 a 4 9 ]
 "1028
 [v parse_sensor_data@reg_data reg_data `*.5DCuc  1 a 1 wreg ]
-[s S1854 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
-[v parse_sensor_data@uncomp_data uncomp_data `*.5S1854  1 p 1 0 ]
+[s S1861 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
+[v parse_sensor_data@uncomp_data uncomp_data `*.5S1861  1 p 1 0 ]
 "1036
 [v parse_sensor_data@reg_data reg_data `*.5DCuc  1 a 1 21 ]
 "1051
@@ -1019,9 +1023,9 @@ NVM_ERROR 1
 [v bme280_compensate_data@rslt rslt `c  1 a 1 77 ]
 "754
 [v bme280_compensate_data@sensor_comp sensor_comp `uc  1 a 1 wreg ]
-[s S1854 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
+[s S1861 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
 "755
-[v bme280_compensate_data@uncomp_data uncomp_data `*.5DCS1854  1 p 1 70 ]
+[v bme280_compensate_data@uncomp_data uncomp_data `*.5DCS1861  1 p 1 70 ]
 [s S1530 bme280_data 12 `d 1 pressure 4 0 `d 1 temperature 4 4 `d 1 humidity 4 8 ]
 "756
 [v bme280_compensate_data@comp_data comp_data `*.5S1530  1 p 1 71 ]
@@ -1035,8 +1039,8 @@ NVM_ERROR 1
 "1128
 [v _compensate_temperature compensate_temperature `(d  1 s 4 compensate_temperature ]
 {
-[s S1854 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
-[v compensate_temperature@uncomp_data uncomp_data `*.5DCS1854  1 a 1 wreg ]
+[s S1861 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
+[v compensate_temperature@uncomp_data uncomp_data `*.5DCS1861  1 a 1 wreg ]
 "1131
 [v compensate_temperature@var2 var2 `d  1 a 4 46 ]
 "1132
@@ -1048,19 +1052,19 @@ NVM_ERROR 1
 "1133
 [v compensate_temperature@temperature_min temperature_min `d  1 a 4 29 ]
 "1128
-[v compensate_temperature@uncomp_data uncomp_data `*.5DCS1854  1 a 1 wreg ]
+[v compensate_temperature@uncomp_data uncomp_data `*.5DCS1861  1 a 1 wreg ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
 [v compensate_temperature@calib_data calib_data `*.6S1478  1 p 1 21 ]
 "1133
 "1128
-[v compensate_temperature@uncomp_data uncomp_data `*.5DCS1854  1 a 1 37 ]
+[v compensate_temperature@uncomp_data uncomp_data `*.5DCS1861  1 a 1 37 ]
 "1153
 } 0
 "1159
 [v _compensate_pressure compensate_pressure `(d  1 s 4 compensate_pressure ]
 {
-[s S1854 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
-[v compensate_pressure@uncomp_data uncomp_data `*.5DCS1854  1 a 1 wreg ]
+[s S1861 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
+[v compensate_pressure@uncomp_data uncomp_data `*.5DCS1861  1 a 1 wreg ]
 "1162
 [v compensate_pressure@var1 var1 `d  1 a 4 62 ]
 "1165
@@ -1074,20 +1078,20 @@ NVM_ERROR 1
 "1164
 [v compensate_pressure@var3 var3 `d  1 a 4 25 ]
 "1159
-[v compensate_pressure@uncomp_data uncomp_data `*.5DCS1854  1 a 1 wreg ]
+[v compensate_pressure@uncomp_data uncomp_data `*.5DCS1861  1 a 1 wreg ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
 "1160
 [v compensate_pressure@calib_data calib_data `*.6DCS1478  1 p 1 21 ]
 "1166
 "1159
-[v compensate_pressure@uncomp_data uncomp_data `*.5DCS1854  1 a 1 41 ]
+[v compensate_pressure@uncomp_data uncomp_data `*.5DCS1861  1 a 1 41 ]
 "1201
 } 0
 "1207
 [v _compensate_humidity compensate_humidity `(d  1 s 4 compensate_humidity ]
 {
-[s S1854 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
-[v compensate_humidity@uncomp_data uncomp_data `*.5DCS1854  1 a 1 wreg ]
+[s S1861 bme280_uncomp_data 12 `ul 1 pressure 4 0 `ul 1 temperature 4 4 `ul 1 humidity 4 8 ]
+[v compensate_humidity@uncomp_data uncomp_data `*.5DCS1861  1 a 1 wreg ]
 "1210
 [v compensate_humidity@humidity humidity `d  1 a 4 62 ]
 "1218
@@ -1107,13 +1111,13 @@ NVM_ERROR 1
 "1214
 [v compensate_humidity@var2 var2 `d  1 a 4 25 ]
 "1207
-[v compensate_humidity@uncomp_data uncomp_data `*.5DCS1854  1 a 1 wreg ]
+[v compensate_humidity@uncomp_data uncomp_data `*.5DCS1861  1 a 1 wreg ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
 "1208
 [v compensate_humidity@calib_data calib_data `*.6DCS1478  1 p 1 21 ]
 "1211
 "1207
-[v compensate_humidity@uncomp_data uncomp_data `*.5DCS1854  1 a 1 41 ]
+[v compensate_humidity@uncomp_data uncomp_data `*.5DCS1861  1 a 1 41 ]
 "1239
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\xxtofl.c
@@ -1140,14 +1144,14 @@ NVM_ERROR 1
 "323
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
 "38 C:\Users\zmiller\MPLABXProjects\Third.X\weather.c
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v _weather_dev weather_dev `(S1498  1 e 47 0 ]
 {
 "41
 [v weather_dev@dev dev `S1498  1 a 47 5 ]
-[s S1801 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
+[s S1808 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
 "42
-[v weather_dev@settings settings `S1801  1 a 5 0 ]
+[v weather_dev@settings settings `S1808  1 a 5 0 ]
 "72
 } 0
 "555 C:\Users\zmiller\MPLABXProjects\Third.X\bme280.c
@@ -1160,12 +1164,12 @@ NVM_ERROR 1
 [v bme280_set_sensor_settings@rslt rslt `c  1 a 1 1 ]
 "555
 [v bme280_set_sensor_settings@desired_settings desired_settings `uc  1 a 1 wreg ]
-[s S1801 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
+[s S1808 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
 "556
-[v bme280_set_sensor_settings@settings settings `*.6DCS1801  1 p 1 77 ]
+[v bme280_set_sensor_settings@settings settings `*.6DCS1808  1 p 1 77 ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
 "557
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v bme280_set_sensor_settings@dev dev `*.6S1498  1 p 1 78 ]
 "562
 [v bme280_set_sensor_settings@desired_settings desired_settings `uc  1 a 1 0 ]
@@ -1194,7 +1198,7 @@ NVM_ERROR 1
 "627
 [v bme280_set_sensor_mode@sensor_mode sensor_mode `uc  1 a 1 wreg ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v bme280_set_sensor_mode@dev dev `*.6S1498  1 p 1 77 ]
 "632
 [v bme280_set_sensor_mode@sensor_mode sensor_mode `uc  1 a 1 0 ]
@@ -1213,7 +1217,7 @@ NVM_ERROR 1
 "1056
 [v write_power_mode@sensor_mode sensor_mode `uc  1 a 1 wreg ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v write_power_mode@dev dev `*.6S1498  1 p 1 70 ]
 "1059
 [v write_power_mode@sensor_mode sensor_mode `uc  1 a 1 60 ]
@@ -1223,11 +1227,11 @@ NVM_ERROR 1
 [v _put_device_to_sleep put_device_to_sleep `(c  1 s 1 put_device_to_sleep ]
 {
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v put_device_to_sleep@dev dev `*.6S1498  1 a 1 wreg ]
-[s S1801 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
+[s S1808 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
 "1086
-[v put_device_to_sleep@settings settings `S1801  1 a 5 73 ]
+[v put_device_to_sleep@settings settings `S1808  1 a 5 73 ]
 "1085
 [v put_device_to_sleep@reg_data reg_data `[4]uc  1 a 4 67 ]
 "1084
@@ -1242,18 +1246,18 @@ NVM_ERROR 1
 "1108
 [v _reload_device_settings reload_device_settings `(c  1 s 1 reload_device_settings ]
 {
-[s S1801 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[v reload_device_settings@settings settings `*.4DCS1801  1 a 1 wreg ]
+[s S1808 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
+[v reload_device_settings@settings settings `*.4DCS1808  1 a 1 wreg ]
 "1110
 [v reload_device_settings@rslt rslt `c  1 a 1 66 ]
 "1108
-[v reload_device_settings@settings settings `*.4DCS1801  1 a 1 wreg ]
+[v reload_device_settings@settings settings `*.4DCS1808  1 a 1 wreg ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v reload_device_settings@dev dev `*.6S1498  1 p 1 76 ]
 "1112
 "1108
-[v reload_device_settings@settings settings `*.4DCS1801  1 a 1 65 ]
+[v reload_device_settings@settings settings `*.4DCS1808  1 a 1 65 ]
 "1120
 } 0
 "859
@@ -1264,10 +1268,10 @@ NVM_ERROR 1
 [v set_osr_settings@rslt rslt `c  1 a 1 63 ]
 "859
 [v set_osr_settings@desired_settings desired_settings `uc  1 a 1 wreg ]
-[s S1801 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[v set_osr_settings@settings settings `*.39DCS1801  1 p 2 73 ]
+[s S1808 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
+[v set_osr_settings@settings settings `*.39DCS1808  1 p 2 73 ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v set_osr_settings@dev dev `*.6S1498  1 p 1 75 ]
 "861
 [v set_osr_settings@desired_settings desired_settings `uc  1 a 1 64 ]
@@ -1285,12 +1289,12 @@ NVM_ERROR 1
 [v set_osr_press_temp_settings@rslt rslt `c  1 a 1 60 ]
 "912
 [v set_osr_press_temp_settings@desired_settings desired_settings `uc  1 a 1 wreg ]
-[s S1801 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
+[s S1808 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
 "913
-[v set_osr_press_temp_settings@settings settings `*.39DCS1801  1 p 2 70 ]
+[v set_osr_press_temp_settings@settings settings `*.39DCS1808  1 p 2 70 ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
 "914
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v set_osr_press_temp_settings@dev dev `*.6S1498  1 p 1 72 ]
 "917
 [v set_osr_press_temp_settings@desired_settings desired_settings `uc  1 a 1 59 ]
@@ -1301,8 +1305,8 @@ NVM_ERROR 1
 {
 [v fill_osr_temp_settings@reg_data reg_data `*.4uc  1 a 1 wreg ]
 [v fill_osr_temp_settings@reg_data reg_data `*.4uc  1 a 1 wreg ]
-[s S1801 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[v fill_osr_temp_settings@settings settings `*.39DCS1801  1 p 2 0 ]
+[s S1808 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
+[v fill_osr_temp_settings@settings settings `*.39DCS1808  1 p 2 0 ]
 "1007
 [v fill_osr_temp_settings@reg_data reg_data `*.4uc  1 a 1 4 ]
 "1008
@@ -1312,8 +1316,8 @@ NVM_ERROR 1
 {
 [v fill_osr_press_settings@reg_data reg_data `*.4uc  1 a 1 wreg ]
 [v fill_osr_press_settings@reg_data reg_data `*.4uc  1 a 1 wreg ]
-[s S1801 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[v fill_osr_press_settings@settings settings `*.39DCS1801  1 p 2 0 ]
+[s S1808 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
+[v fill_osr_press_settings@settings settings `*.39DCS1808  1 p 2 0 ]
 "998
 [v fill_osr_press_settings@reg_data reg_data `*.4uc  1 a 1 4 ]
 "999
@@ -1329,11 +1333,11 @@ NVM_ERROR 1
 [v set_osr_humidity_settings@rslt rslt `c  1 a 1 60 ]
 "882
 [v set_osr_humidity_settings@ctrl_hum ctrl_hum `uc  1 a 1 59 ]
-[s S1801 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
+[s S1808 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
 "879
-[v set_osr_humidity_settings@settings settings `*.39DCS1801  1 p 2 70 ]
+[v set_osr_humidity_settings@settings settings `*.39DCS1808  1 p 2 70 ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v set_osr_humidity_settings@dev dev `*.6S1498  1 p 1 72 ]
 "906
 } 0
@@ -1349,12 +1353,12 @@ NVM_ERROR 1
 [v set_filter_standby_settings@rslt rslt `c  1 a 1 60 ]
 "945
 [v set_filter_standby_settings@desired_settings desired_settings `uc  1 a 1 wreg ]
-[s S1801 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
+[s S1808 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
 "946
-[v set_filter_standby_settings@settings settings `*.39DCS1801  1 p 2 70 ]
+[v set_filter_standby_settings@settings settings `*.39DCS1808  1 p 2 70 ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
 "947
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v set_filter_standby_settings@dev dev `*.6S1498  1 p 1 72 ]
 "950
 [v set_filter_standby_settings@desired_settings desired_settings `uc  1 a 1 59 ]
@@ -1365,8 +1369,8 @@ NVM_ERROR 1
 {
 [v fill_standby_settings@reg_data reg_data `*.4uc  1 a 1 wreg ]
 [v fill_standby_settings@reg_data reg_data `*.4uc  1 a 1 wreg ]
-[s S1801 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[v fill_standby_settings@settings settings `*.39DCS1801  1 p 2 0 ]
+[s S1808 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
+[v fill_standby_settings@settings settings `*.39DCS1808  1 p 2 0 ]
 "989
 [v fill_standby_settings@reg_data reg_data `*.4uc  1 a 1 4 ]
 "990
@@ -1376,8 +1380,8 @@ NVM_ERROR 1
 {
 [v fill_filter_settings@reg_data reg_data `*.4uc  1 a 1 wreg ]
 [v fill_filter_settings@reg_data reg_data `*.4uc  1 a 1 wreg ]
-[s S1801 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[v fill_filter_settings@settings settings `*.39DCS1801  1 p 2 0 ]
+[s S1808 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
+[v fill_filter_settings@settings settings `*.39DCS1808  1 p 2 0 ]
 "980
 [v fill_filter_settings@reg_data reg_data `*.4uc  1 a 1 4 ]
 "981
@@ -1391,7 +1395,7 @@ NVM_ERROR 1
 "654
 [v bme280_get_sensor_mode@sensor_mode sensor_mode `*.5uc  1 a 1 wreg ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v bme280_get_sensor_mode@dev dev `*.6S1498  1 p 1 70 ]
 "658
 [v bme280_get_sensor_mode@sensor_mode sensor_mode `*.5uc  1 a 1 60 ]
@@ -1401,7 +1405,7 @@ NVM_ERROR 1
 [v _bme280_init bme280_init `(c  1 e 1 0 ]
 {
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v bme280_init@dev dev `*.6S1498  1 a 1 wreg ]
 "416
 [v bme280_init@chip_id chip_id `uc  1 a 1 67 ]
@@ -1418,7 +1422,7 @@ NVM_ERROR 1
 [v _get_calib_data get_calib_data `(c  1 s 1 get_calib_data ]
 {
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v get_calib_data@dev dev `*.6S1498  1 a 1 wreg ]
 "1440
 [v get_calib_data@calib_data calib_data `[26]uc  1 a 26 0 ]
@@ -1438,7 +1442,7 @@ NVM_ERROR 1
 [v parse_temp_press_calib_data@calib_data calib_data `*.6S1478  1 a 1 2 ]
 "1487
 [v parse_temp_press_calib_data@reg_data reg_data `*.5DCuc  1 a 1 wreg ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v parse_temp_press_calib_data@dev dev `*.6S1498  1 p 1 0 ]
 "1489
 [v parse_temp_press_calib_data@reg_data reg_data `*.5DCuc  1 a 1 3 ]
@@ -1461,7 +1465,7 @@ NVM_ERROR 1
 [v parse_humidity_calib_data@calib_data calib_data `*.6S1478  1 a 1 12 ]
 "1510
 [v parse_humidity_calib_data@reg_data reg_data `*.5DCuc  1 a 1 wreg ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v parse_humidity_calib_data@dev dev `*.6S1498  1 p 1 0 ]
 "1512
 [v parse_humidity_calib_data@reg_data reg_data `*.5DCuc  1 a 1 13 ]
@@ -1471,7 +1475,7 @@ NVM_ERROR 1
 [v _bme280_soft_reset bme280_soft_reset `(c  1 e 1 0 ]
 {
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v bme280_soft_reset@dev dev `*.6S1498  1 a 1 wreg ]
 "681
 [v bme280_soft_reset@status_reg status_reg `uc  1 a 1 64 ]
@@ -1507,7 +1511,7 @@ NVM_ERROR 1
 [v bme280_set_regs@reg_data reg_data `*.4DCuc  1 p 1 43 ]
 [v bme280_set_regs@len len `ul  1 p 4 44 ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v bme280_set_regs@dev dev `*.6S1498  1 p 1 48 ]
 "492
 [v bme280_set_regs@reg_addr reg_addr `*.4uc  1 a 1 29 ]
@@ -1539,7 +1543,7 @@ NVM_ERROR 1
 [v bme280_i2c_write@reg_addr reg_addr `uc  1 p 1 7 ]
 [v bme280_i2c_write@reg_data reg_data `*.4DCuc  1 p 1 8 ]
 [v bme280_i2c_write@length length `ul  1 p 4 9 ]
-[v bme280_i2c_write@intf_ptr intf_ptr `*.5v  1 p 1 13 ]
+[v bme280_i2c_write@intf_ptr intf_ptr `*.1v  1 p 1 13 ]
 "150
 } 0
 "142 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/i2c_host/src/mssp2.c
@@ -1557,26 +1561,26 @@ NVM_ERROR 1
 [v _bme280_delay_us bme280_delay_us `(v  1 e 1 0 ]
 {
 [v bme280_delay_us@period period `ul  1 p 4 0 ]
-[v bme280_delay_us@intf_ptr intf_ptr `*.5v  1 p 1 4 ]
+[v bme280_delay_us@intf_ptr intf_ptr `*.1v  1 p 1 4 ]
 "160
 } 0
 "602 C:\Users\zmiller\MPLABXProjects\Third.X\bme280.c
 [v _bme280_get_sensor_settings bme280_get_sensor_settings `(c  1 e 1 0 ]
 {
-[s S1801 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[v bme280_get_sensor_settings@settings settings `*.6S1801  1 a 1 wreg ]
+[s S1808 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
+[v bme280_get_sensor_settings@settings settings `*.6S1808  1 a 1 wreg ]
 "605
 [v bme280_get_sensor_settings@reg_data reg_data `[4]uc  1 a 4 59 ]
 "604
 [v bme280_get_sensor_settings@rslt rslt `c  1 a 1 64 ]
 "602
-[v bme280_get_sensor_settings@settings settings `*.6S1801  1 a 1 wreg ]
+[v bme280_get_sensor_settings@settings settings `*.6S1808  1 a 1 wreg ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v bme280_get_sensor_settings@dev dev `*.6S1498  1 p 1 70 ]
 "607
 "602
-[v bme280_get_sensor_settings@settings settings `*.6S1801  1 a 1 63 ]
+[v bme280_get_sensor_settings@settings settings `*.6S1808  1 a 1 63 ]
 "622
 } 0
 "1015
@@ -1584,8 +1588,8 @@ NVM_ERROR 1
 {
 [v parse_device_settings@reg_data reg_data `*.4DCuc  1 a 1 wreg ]
 [v parse_device_settings@reg_data reg_data `*.4DCuc  1 a 1 wreg ]
-[s S1801 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
-[v parse_device_settings@settings settings `*.39S1801  1 p 2 0 ]
+[s S1808 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
+[v parse_device_settings@settings settings `*.39S1808  1 p 2 0 ]
 "1017
 [v parse_device_settings@reg_data reg_data `*.4DCuc  1 a 1 6 ]
 "1022
@@ -1601,7 +1605,7 @@ NVM_ERROR 1
 [v bme280_get_regs@reg_data reg_data `*.39uc  1 p 2 63 ]
 [v bme280_get_regs@len len `ul  1 p 4 65 ]
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v bme280_get_regs@dev dev `*.6S1498  1 p 1 69 ]
 "454
 [v bme280_get_regs@reg_addr reg_addr `uc  1 a 1 57 ]
@@ -1611,7 +1615,7 @@ NVM_ERROR 1
 [v _null_ptr_check null_ptr_check `(c  1 s 1 null_ptr_check ]
 {
 [s S1478 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
-[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.5v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
+[s S1498 bme280_dev 47 `uc 1 chip_id 1 0 `E8493 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1478 1 calib_data 37 10 ]
 [v null_ptr_check@dev dev `*.6DCS1498  1 a 1 wreg ]
 "1557
 [v null_ptr_check@rslt rslt `c  1 a 1 2 ]
@@ -1628,7 +1632,7 @@ NVM_ERROR 1
 [v bme280_i2c_read@reg_addr reg_addr `uc  1 p 1 55 ]
 [v bme280_i2c_read@reg_data reg_data `*.39uc  1 p 2 56 ]
 [v bme280_i2c_read@length length `ul  1 p 4 58 ]
-[v bme280_i2c_read@intf_ptr intf_ptr `*.5v  1 p 1 62 ]
+[v bme280_i2c_read@intf_ptr intf_ptr `*.1v  1 p 1 62 ]
 "130
 } 0
 "180 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/i2c_host/src/mssp2.c
@@ -1663,45 +1667,43 @@ NVM_ERROR 1
 [v _rylr998_send rylr998_send `(v  1 e 1 0 ]
 {
 [v rylr998_send@address address `uc  1 a 1 wreg ]
-"50
-[v rylr998_send@buffer buffer `[50]uc  1 a 50 0 ]
+"47
+[v rylr998_send@buffer buffer `[60]uc  1 a 60 0 ]
 "40
-[v rylr998_send@t t `[10]uc  1 a 10 50 ]
+[v rylr998_send@data data `[10]uc  1 a 10 67 ]
 "41
-[v rylr998_send@rounded rounded `f  1 a 4 61 ]
+[v rylr998_send@rounded rounded `f  1 a 4 74 ]
 "46
-[v rylr998_send@payload_size payload_size `i  1 a 2 69 ]
+[v rylr998_send@payload_size payload_size `i  1 a 2 78 ]
 "31
 [v rylr998_send@address address `uc  1 a 1 wreg ]
-[v rylr998_send@tag tag `*.25uc  1 p 2 63 ]
-[v rylr998_send@metric metric `d  1 p 4 65 ]
-[v rylr998_send@address address `uc  1 a 1 60 ]
-"56
+[v rylr998_send@serial serial `*.6uc  1 p 1 67 ]
+[v rylr998_send@tag tag `*.25uc  1 p 2 68 ]
+[v rylr998_send@metric metric `d  1 p 4 70 ]
+[v rylr998_send@address address `uc  1 a 1 77 ]
+"53
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[v sprintf@s s `*.6uc  1 a 1 wreg ]
-[u S3455 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
+[u S3463 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
 "13
-[s S3458 _IO_FILE 11 `S3455 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v sprintf@f f `S3458  1 a 11 57 ]
+[s S3466 _IO_FILE 11 `S3463 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v sprintf@f f `S3466  1 a 11 56 ]
 "12
-[v sprintf@ap ap `[1]*.5v  1 a 1 56 ]
+[v sprintf@ap ap `[1]*.5v  1 a 1 55 ]
 "9
-[v sprintf@s s `*.6uc  1 a 1 wreg ]
-[v sprintf@fmt fmt `*.25DCuc  1 p 2 53 ]
-"15
-[v sprintf@s s `*.6uc  1 a 1 55 ]
+[v sprintf@s s `*.39uc  1 p 2 53 ]
+[v sprintf@fmt fmt `*.25DCuc  1 p 2 55 ]
 "23
 } 0
 "13 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_snprintf.c
 [v _snprintf snprintf `(i  1 e 2 0 ]
 {
-[u S3455 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
+[u S3463 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
 "17
-[s S3458 _IO_FILE 11 `S3455 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v snprintf@f f `S3458  1 a 11 63 ]
+[s S3466 _IO_FILE 11 `S3463 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v snprintf@f f `S3466  1 a 11 63 ]
 "15
 [v snprintf@cnt cnt `i  1 a 2 60 ]
 "16
@@ -1712,23 +1714,23 @@ NVM_ERROR 1
 [v snprintf@fmt fmt `*.25DCuc  1 p 2 57 ]
 "39
 } 0
-"58 C:\Users\zmiller\MPLABXProjects\Third.X\rylr998.c
+"55 C:\Users\zmiller\MPLABXProjects\Third.X\rylr998.c
 [v _rylr998_write rylr998_write `(v  1 e 1 0 ]
 {
 [v rylr998_write@data data `*.6uc  1 a 1 wreg ]
-"67
+"64
 [v rylr998_write@c c `uc  1 a 1 55 ]
-"65
+"62
 [v rylr998_write@i i `uc  1 a 1 61 ]
-"61
-[v rylr998_write@newline_found newline_found `a  1 a 1 60 ]
-"60
-[v rylr998_write@carriage_found carriage_found `a  1 a 1 59 ]
 "58
+[v rylr998_write@newline_found newline_found `a  1 a 1 60 ]
+"57
+[v rylr998_write@carriage_found carriage_found `a  1 a 1 59 ]
+"55
 [v rylr998_write@data data `*.6uc  1 a 1 wreg ]
-"60
+"57
 [v rylr998_write@data data `*.6uc  1 a 1 58 ]
-"81
+"78
 } 0
 "235 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
 [v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
@@ -1741,22 +1743,22 @@ NVM_ERROR 1
 {
 "206
 } 0
-"83 C:\Users\zmiller\MPLABXProjects\Third.X\rylr998.c
+"80 C:\Users\zmiller\MPLABXProjects\Third.X\rylr998.c
 [v _rylr998_read rylr998_read `(v  1 e 1 0 ]
 {
-"94
-[v rylr998_read@byte byte `uc  1 a 1 56 ]
-"92
-[v rylr998_read@i i `uc  1 a 1 55 ]
 "91
-[v rylr998_read@data data `[50]uc  1 a 50 0 ]
+[v rylr998_read@byte byte `uc  1 a 1 66 ]
 "89
-[v rylr998_read@newline_found newline_found `a  1 a 1 54 ]
+[v rylr998_read@i i `uc  1 a 1 65 ]
 "88
-[v rylr998_read@carriage_found carriage_found `a  1 a 1 53 ]
+[v rylr998_read@data data `[60]uc  1 a 60 0 ]
+"86
+[v rylr998_read@newline_found newline_found `a  1 a 1 64 ]
+"85
+[v rylr998_read@carriage_found carriage_found `a  1 a 1 63 ]
+"108
+[v rylr998_read@success success `a  1 a 1 60 ]
 "111
-[v rylr998_read@success success `a  1 a 1 50 ]
-"114
 } 0
 "3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strcmp.c
 [v _strcmp strcmp `(i  1 e 2 0 ]
@@ -1777,37 +1779,37 @@ NVM_ERROR 1
 "1546 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
-[s S3493 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.4S3493  1 a 1 wreg ]
+[s S3501 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.4S3501  1 a 1 wreg ]
 "1549
 [v vfprintf@cfmt cfmt `*.26uc  1 a 2 53 ]
 "1546
-[v vfprintf@fp fp `*.4S3493  1 a 1 wreg ]
+[v vfprintf@fp fp `*.4S3501  1 a 1 wreg ]
 [v vfprintf@fmt fmt `*.26DCuc  1 p 2 50 ]
 [v vfprintf@ap ap `*.4*.5v  1 p 1 52 ]
 "1551
 "1546
-[v vfprintf@fp fp `*.4S3493  1 a 1 52 ]
+[v vfprintf@fp fp `*.4S3501  1 a 1 52 ]
 "1569
 } 0
 "1048
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S3493 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.4S3493  1 a 1 wreg ]
-[u S3547 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `*.39v 1 vp 2 0 `d 1 f 4 0 ]
+[s S3501 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.4S3501  1 a 1 wreg ]
+[u S3555 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `*.39v 1 vp 2 0 `d 1 f 4 0 ]
 "1059
-[v vfpfcnvrt@convarg convarg `S3547  1 a 4 44 ]
+[v vfpfcnvrt@convarg convarg `S3555  1 a 4 44 ]
 "1050
 [v vfpfcnvrt@cp cp `*.26uc  1 a 2 50 ]
 [v vfpfcnvrt@c c `uc  1 a 1 48 ]
 "1048
-[v vfpfcnvrt@fp fp `*.4S3493  1 a 1 wreg ]
+[v vfpfcnvrt@fp fp `*.4S3501  1 a 1 wreg ]
 [v vfpfcnvrt@fmt fmt `*.4*.26uc  1 p 1 48 ]
 [v vfpfcnvrt@ap ap `*.4*.5v  1 p 1 49 ]
 "1062
 "1048
-[v vfpfcnvrt@fp fp `*.4S3493  1 a 1 49 ]
+[v vfpfcnvrt@fp fp `*.4S3501  1 a 1 49 ]
 "1543
 } 0
 "3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strncmp.c
@@ -1825,8 +1827,8 @@ NVM_ERROR 1
 "862 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
 [v _stoa stoa `(i  1 s 2 stoa ]
 {
-[s S3493 _IO_FILE 0 ]
-[v stoa@fp fp `*.4S3493  1 a 1 wreg ]
+[s S3501 _IO_FILE 0 ]
+[v stoa@fp fp `*.4S3501  1 a 1 wreg ]
 "864
 [v stoa@nuls nuls `[7]uc  1 a 7 12 ]
 "865
@@ -1838,28 +1840,28 @@ NVM_ERROR 1
 [v stoa@i i `i  1 a 2 21 ]
 [v stoa@w w `i  1 a 2 19 ]
 "862
-[v stoa@fp fp `*.4S3493  1 a 1 wreg ]
+[v stoa@fp fp `*.4S3501  1 a 1 wreg ]
 [v stoa@s s `*.26uc  1 p 2 8 ]
 "864
 [v stoa@F1180 F1180 `[7]uc  1 s 7 F1180 ]
 "862
-[v stoa@fp fp `*.4S3493  1 a 1 23 ]
+[v stoa@fp fp `*.4S3501  1 a 1 23 ]
 "913
 } 0
 "531
 [v _efgtoa efgtoa `(i  1 s 2 efgtoa ]
 {
-[s S3493 _IO_FILE 0 ]
-[v efgtoa@fp fp `*.4S3493  1 a 1 wreg ]
-[u S3516 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
+[s S3501 _IO_FILE 0 ]
+[v efgtoa@fp fp `*.4S3501  1 a 1 wreg ]
+[u S3524 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
 "536
-[v efgtoa@u u `S3516  1 a 4 44 ]
-[v efgtoa@g g `S3516  1 a 4 36 ]
+[v efgtoa@u u `S3524  1 a 4 44 ]
+[v efgtoa@g g `S3524  1 a 4 36 ]
 "535
 [v efgtoa@l l `d  1 a 4 29 ]
 [v efgtoa@h h `d  1 a 4 25 ]
 "536
-[v efgtoa@ou ou `S3516  1 a 4 19 ]
+[v efgtoa@ou ou `S3524  1 a 4 19 ]
 "534
 [v efgtoa@n n `i  1 a 2 42 ]
 [v efgtoa@e e `i  1 a 2 40 ]
@@ -1877,12 +1879,12 @@ NVM_ERROR 1
 [v efgtoa@esign esign `uc  1 a 1 5 ]
 [v efgtoa@pp pp `uc  1 a 1 4 ]
 "531
-[v efgtoa@fp fp `*.4S3493  1 a 1 wreg ]
+[v efgtoa@fp fp `*.4S3501  1 a 1 wreg ]
 [v efgtoa@f f `d  1 p 4 29 ]
 [v efgtoa@c c `uc  1 p 1 33 ]
 "539
 "531
-[v efgtoa@fp fp `*.4S3493  1 a 1 12 ]
+[v efgtoa@fp fp `*.4S3501  1 a 1 12 ]
 "812
 } 0
 "3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strcpy.c
@@ -1927,9 +1929,9 @@ NVM_ERROR 1
 "3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\floorf.c
 [v _floorf floorf `(f  1 e 4 0 ]
 {
-[u S3659 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S3667 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "5
-[v floorf@u u `S3659  1 a 4 25 ]
+[v floorf@u u `S3667  1 a 4 25 ]
 "7
 [v floorf@m m `ul  1 a 4 19 ]
 "6
@@ -1937,21 +1939,21 @@ NVM_ERROR 1
 "3
 [v floorf@x x `f  1 p 4 73 ]
 "4
-[v floorf@F526 F526 `S3659  1 s 4 F526 ]
+[v floorf@F526 F526 `S3667  1 s 4 F526 ]
 "27
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\__fpclassifyf.c
 [v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
 {
-[u S3659 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S3667 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v ___fpclassifyf@u u `S3659  1 a 4 12 ]
+[v ___fpclassifyf@u u `S3667  1 a 4 12 ]
 "7
 [v ___fpclassifyf@e e `i  1 a 2 10 ]
 "4
 [v ___fpclassifyf@x x `f  1 p 4 0 ]
 "5
-[v ___fpclassifyf@F465 F465 `S3659  1 s 4 F465 ]
+[v ___fpclassifyf@F465 F465 `S3667  1 s 4 F465 ]
 "11
 } 0
 "43 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fltol.c
@@ -1994,8 +1996,8 @@ NVM_ERROR 1
 "470 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
 {
-[s S3493 _IO_FILE 0 ]
-[v dtoa@fp fp `*.4S3493  1 a 1 wreg ]
+[s S3501 _IO_FILE 0 ]
+[v dtoa@fp fp `*.4S3501  1 a 1 wreg ]
 "473
 [v dtoa@i i `i  1 a 2 35 ]
 [v dtoa@w w `i  1 a 2 32 ]
@@ -2003,28 +2005,28 @@ NVM_ERROR 1
 "472
 [v dtoa@s s `uc  1 a 1 34 ]
 "470
-[v dtoa@fp fp `*.4S3493  1 a 1 wreg ]
+[v dtoa@fp fp `*.4S3501  1 a 1 wreg ]
 [v dtoa@d d `i  1 p 2 24 ]
 "476
 "470
-[v dtoa@fp fp `*.4S3493  1 a 1 27 ]
+[v dtoa@fp fp `*.4S3501  1 a 1 27 ]
 "527
 } 0
 "152
 [v _pad pad `(i  1 s 2 pad ]
 {
-[s S3493 _IO_FILE 0 ]
-[v pad@fp fp `*.4S3493  1 a 1 wreg ]
+[s S3501 _IO_FILE 0 ]
+[v pad@fp fp `*.4S3501  1 a 1 wreg ]
 "154
 [v pad@w w `i  1 a 2 21 ]
 [v pad@i i `i  1 a 2 19 ]
 "152
-[v pad@fp fp `*.4S3493  1 a 1 wreg ]
+[v pad@fp fp `*.4S3501  1 a 1 wreg ]
 [v pad@buf buf `*.7uc  1 p 1 15 ]
 [v pad@p p `i  1 p 2 16 ]
 "164
 "152
-[v pad@fp fp `*.4S3493  1 a 1 23 ]
+[v pad@fp fp `*.4S3501  1 a 1 23 ]
 "183
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strlen.c
@@ -2046,9 +2048,9 @@ NVM_ERROR 1
 [v fputs@c c `uc  1 a 1 12 ]
 "8
 [v fputs@s s `*.7DCuc  1 a 1 wreg ]
-[u S3455 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
-[s S3458 _IO_FILE 11 `S3455 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputs@fp fp `*.4S3458  1 p 1 8 ]
+[u S3463 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
+[s S3466 _IO_FILE 11 `S3463 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputs@fp fp `*.4S3466  1 p 1 8 ]
 "13
 [v fputs@s s `*.7DCuc  1 a 1 11 ]
 "19
@@ -2057,9 +2059,9 @@ NVM_ERROR 1
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[u S3455 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
-[s S3458 _IO_FILE 11 `S3455 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.4S3458  1 p 1 2 ]
+[u S3463 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
+[s S3466 _IO_FILE 11 `S3463 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.4S3466  1 p 1 2 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\putch.c
@@ -2122,15 +2124,15 @@ NVM_ERROR 1
 {
 "16
 [v roundf@y y `f  1 a 4 39 ]
-[u S3659 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S3667 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "14
-[v roundf@u u `S3659  1 a 4 35 ]
+[v roundf@u u `S3667  1 a 4 35 ]
 "15
 [v roundf@e e `i  1 a 2 29 ]
 "12
 [v roundf@x x `f  1 p 4 21 ]
 "13
-[v roundf@F527 F527 `S3659  1 s 4 F527 ]
+[v roundf@F527 F527 `S3667  1 s 4 F527 ]
 "36
 } 0
 "242 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcadd.c
@@ -2165,17 +2167,17 @@ NVM_ERROR 1
 "8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S3233 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S3241 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S3238 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S3241 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3233 1 fAsBytes 4 0 `S3238 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S3241  1 a 4 34 ]
+[s S3246 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S3249 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3241 1 fAsBytes 4 0 `S3246 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S3249  1 a 4 34 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 30 ]
-[s S3310 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S3318 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S3313 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S3310 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S3313  1 a 2 38 ]
+[u S3321 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S3318 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S3321  1 a 2 38 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 29 ]
 "11
@@ -2228,13 +2230,24 @@ NVM_ERROR 1
 {
 "128
 } 0
-"71 C:\Users\zmiller\MPLABXProjects\Third.X\main.c
+"76 C:\Users\zmiller\MPLABXProjects\Third.X\main.c
 [v _read_eeprom read_eeprom `(uc  1 e 1 0 ]
 {
+"79
+[v read_eeprom@i i `uc  1 a 1 7 ]
+"76
 [v read_eeprom@address address `us  1 p 2 2 ]
+[v read_eeprom@data data `*.6uc  1 p 1 4 ]
+[v read_eeprom@size size `uc  1 p 1 5 ]
+"83
+} 0
+"70 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/nvm/src/nvm.c
+[v _NVM_UnlockKeySet NVM_UnlockKeySet `(v  1 e 1 0 ]
+{
+[v NVM_UnlockKeySet@unlockKey unlockKey `us  1 p 2 0 ]
 "74
 } 0
-"48 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/nvm/src/nvm.c
+"48
 [v _NVM_IsBusy NVM_IsBusy `(a  1 e 1 0 ]
 {
 "51
@@ -2318,12 +2331,6 @@ NVM_ERROR 1
 [v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
 {
 "54
-} 0
-"70 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/nvm/src/nvm.c
-[v _NVM_UnlockKeySet NVM_UnlockKeySet `(v  1 e 1 0 ]
-{
-[v NVM_UnlockKeySet@unlockKey unlockKey `us  1 p 2 0 ]
-"74
 } 0
 "59 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/system/src/interrupt.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]

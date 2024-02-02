@@ -10,6 +10,7 @@
 
 #include "bme280.h"
 #include "weather.h"
+#include "timeout.h"
 
 /******************************************************************************/
 /*!                               Macros                                      */
@@ -33,6 +34,7 @@ void weather_init() {
     IO_SCL_SetPullup();
     IO_SDA_SetDigitalMode();
     IO_SDA_SetPullup();
+    timeout_init();
 }
 
 struct bme280_dev weather_dev() { 
@@ -75,26 +77,36 @@ struct bme280_dev weather_dev() {
 /*!
  *  @brief This internal API is used to get compensated temperature data.
  */
-struct bme280_data weather_read(struct bme280_dev *dev)
+int8_t weather_read(struct bme280_dev *dev, struct bme280_data *weather)
 {
     int8_t rslt = BME280_E_NULL_PTR;
-    struct bme280_data comp_data;
     
     // Force a reading and wait a second for the measurement
     rslt = bme280_set_sensor_mode(BME280_POWERMODE_NORMAL, dev);
-    printf(rslt);
+    if(rslt != BME280_OK) {
+        return rslt;
+    }
+    
     __delay_ms(1000);
     
-    // Wait while the device is still measuring
-    while(!weather_is_measurement_done(dev)) {
+    timeout_start();
+    while(!weather_is_measurement_done(dev) && !timeout_timed_out()) {
         __delay_ms(100);
     }
     
+    timeout_stop();
+    if(timeout_timed_out()) {
+        return WEATHER_TIMEOUT;
+    }
+    
     // Get the results
-    rslt = bme280_get_sensor_data(BME280_ALL, &comp_data, dev);
-    return comp_data;
+    rslt = bme280_get_sensor_data(BME280_ALL, weather, dev);
+    if(rslt != BME280_OK) {
+        return rslt;
+    }
+    
+    return WEATHER_OK;
 }
-
 
 bool weather_is_measurement_done(struct bme280_dev *dev) {
     uint8_t status_reg;
@@ -124,7 +136,13 @@ BME280_INTF_RET_TYPE bme280_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32
         return BME280_E_COMM_FAIL;
     }
     
-    while(I2C2_IsBusy());
+    timeout_start();
+    while(I2C2_IsBusy() && !timeout_timed_out());
+    timeout_stop();
+    if(timeout_timed_out()) {
+        return BME280_E_COMM_FAIL;
+    }
+    
     printf(reg_data);
     return BME280_INTF_RET_SUCCESS;
 }
@@ -145,7 +163,13 @@ BME280_INTF_RET_TYPE bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data,
         return BME280_E_COMM_FAIL;
     }
     
-    while(I2C2_IsBusy());
+    timeout_start();
+    while(I2C2_IsBusy() && !timeout_timed_out());
+    timeout_stop();
+    if(timeout_timed_out()) {
+        return BME280_E_COMM_FAIL;
+    }
+    
     return BME280_INTF_RET_SUCCESS;
 }
 

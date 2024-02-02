@@ -14332,7 +14332,7 @@ void SYSTEM_Initialize(void);
 # 1 "./rylr998.h" 1
 # 31 "./rylr998.h"
 void rylr998_init();
-void rylr998_send(uint8_t address, char tag[], double metric);
+void rylr998_send(uint8_t address, char serial[], char tag[], double metric);
 void rylr998_write(char data[]);
 void rylr998_read();
 # 18 "rylr998.c" 2
@@ -14349,7 +14349,7 @@ void rylr998_init() {
     EUSART1_ReceiveEnable();
 }
 
-void rylr998_send(uint8_t address, char tag[], double metric) {
+void rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
 
 
     if(sizeof(tag) > 20) {
@@ -14358,18 +14358,15 @@ void rylr998_send(uint8_t address, char tag[], double metric) {
 
 
 
-    char t[10];
+    char data[10];
     float rounded = roundf(metric * 100) / 100;
-    sprintf(t, "%g", rounded);
+    sprintf(data, "%g", rounded);
 
 
 
-    int payload_size = snprintf(((void*)0), 0, "%s::%s", tag, t);
-    printf(payload_size);
-
-
-    char buffer[50] = {0};
-    sprintf(buffer, "AT+SEND=%i,%i,%s::%s\r\n", address, payload_size, tag, t);
+    int payload_size = snprintf(((void*)0), 0, "%s::%s::%s", serial, tag, data);
+    char buffer[60] = {0};
+    sprintf(buffer, "AT+SEND=%i,%i,%s::%s::%s\r\n", address, payload_size, serial, tag, data);
     printf(buffer);
 
     rylr998_write(&buffer);
@@ -14383,7 +14380,7 @@ void rylr998_write(char *data) {
 
     uint8_t size = sizeof(data);
     printf(size);
-    for(uint8_t i = 0; i < 50; i++) {
+    for(uint8_t i = 0; i < 60; i++) {
 
         char c = data[i];
         EUSART1_Write(c);
@@ -14409,7 +14406,7 @@ void rylr998_read() {
     _Bool carriage_found = 0;
     _Bool newline_found = 0;
 
-    char data[50] = {0};
+    char data[60] = {0};
     for(uint8_t i = 0; i < sizeof(data); i++) {
 
         uint8_t byte = EUSART1_Read();

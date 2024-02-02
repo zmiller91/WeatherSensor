@@ -1,4 +1,10 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"124 ./mcc_generated_files/system/../nvm/nvm.h
+[; ;./mcc_generated_files/system/../nvm/nvm.h: 124: void NVM_UnlockKeySet(uint16_t unlockKey);
+[v _NVM_UnlockKeySet `(v ~T0 @X0 0 ef1`us ]
+"107 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 107: int printf(const char *restrict, ...);
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "99 ./mcc_generated_files/system/../nvm/nvm.h
 [; ;./mcc_generated_files/system/../nvm/nvm.h: 99: _Bool NVM_IsBusy(void);
 [v _NVM_IsBusy `(a ~T0 @X0 0 ef ]
@@ -23,18 +29,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "426
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS31 ~T0 @X0 0 e@11 ]
-"124 ./mcc_generated_files/system/../nvm/nvm.h
-[; ;./mcc_generated_files/system/../nvm/nvm.h: 124: void NVM_UnlockKeySet(uint16_t unlockKey);
-[v _NVM_UnlockKeySet `(v ~T0 @X0 0 ef1`us ]
 "31 ./rylr998.h
 [; ;./rylr998.h: 31: void rylr998_init();
 [v _rylr998_init `(v ~T0 @X0 0 e? ]
 "15 ./weather.h
 [; ;./weather.h: 15: void weather_init();
 [v _weather_init `(v ~T0 @X0 0 e? ]
-"107 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h
-[; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 107: int printf(const char *restrict, ...);
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "1024 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1024:     struct {
 [s S54 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -50,8 +50,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\builtins.h
 [v __delay `JF359 ~T0 @X0 0 e ]
 [p i __delay ]
-"118 main.c
-[; ;main.c: 118:         struct bme280_dev dev = weather_dev();
+"112 main.c
+[; ;main.c: 112:         struct bme280_dev dev = weather_dev();
 [c E8493 0 1 .. ]
 [n E8493 bme280_intf BME280_SPI_INTF BME280_I2C_INTF  ]
 [v F8552 `(c ~T0 @X0 0 tf4`uc`*uc`ul`*v ]
@@ -76,8 +76,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./weather.h: 17: struct bme280_data weather_read(struct bme280_dev *dev);
 [v _weather_read `(S1090 ~T0 @X0 0 ef1`*S1093 ]
 "32 ./rylr998.h
-[; ;./rylr998.h: 32: void rylr998_send(uint8_t address, char tag[], double metric);
-[v _rylr998_send `(v ~T0 @X0 0 ef3`uc`*uc`d ]
+[; ;./rylr998.h: 32: void rylr998_send(uint8_t address, char serial[], char tag[], double metric);
+[v _rylr998_send `(v ~T0 @X0 0 ef4`uc`*uc`*uc`d ]
 "1832 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1832: extern volatile unsigned char WDTCON __attribute__((address(0x18C)));
 [v _WDTCON `Vuc ~T0 @X0 0 e@396 ]
@@ -1225,208 +1225,226 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 22220: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
 "66 main.c
-[; ;main.c: 66: void write_eeprom(uint16_t address, uint8_t data) {
-[v _write_eeprom `(v ~T0 @X0 1 ef2`us`uc ]
+[; ;main.c: 66: void write_eeprom(uint16_t address, uint8_t *data, uint8_t size) {
+[v _write_eeprom `(v ~T0 @X0 1 ef3`us`*uc`uc ]
 {
 [e :U _write_eeprom ]
 [v _address `us ~T0 @X0 1 r1 ]
-[v _data `uc ~T0 @X0 1 r2 ]
+[v _data `*uc ~T0 @X0 1 r2 ]
+[v _size `uc ~T0 @X0 1 r3 ]
 [f ]
-"67
-[; ;main.c: 67:     while(NVM_IsBusy());
-[e $U 1095  ]
-[e :U 1096 ]
-[e :U 1095 ]
-[e $ != -> ( _NVM_IsBusy ..  `i -> 0 `i 1096  ]
-[e :U 1097 ]
 "68
-[; ;main.c: 68:     EEPROM_Write(address, data);
-[e ( _EEPROM_Write (2 , _address _data ]
+[; ;main.c: 68:     NVM_UnlockKeySet(0xaa55);
+[e ( _NVM_UnlockKeySet (1 -> -> 43605 `ui `us ]
 "69
-[; ;main.c: 69: }
-[e :UE 1094 ]
-}
-"71
-[; ;main.c: 71: uint8_t read_eeprom(uint16_t address) {
-[v _read_eeprom `(uc ~T0 @X0 1 ef1`us ]
+[; ;main.c: 69:     printf(size);
+[e ( _printf -> _size `*Cuc ]
+"70
+[; ;main.c: 70:     for(uint8_t i = 0; i < size; i++) {
 {
-[e :U _read_eeprom ]
-[v _address `us ~T0 @X0 1 r1 ]
-[f ]
-"72
-[; ;main.c: 72:     while(NVM_IsBusy());
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $U 1098  ]
+[e :U 1095 ]
+{
+"71
+[; ;main.c: 71:         while(NVM_IsBusy());
 [e $U 1099  ]
 [e :U 1100 ]
 [e :U 1099 ]
 [e $ != -> ( _NVM_IsBusy ..  `i -> 0 `i 1100  ]
 [e :U 1101 ]
+"72
+[; ;main.c: 72:         EEPROM_Write(address + i, data[i]);
+[e ( _EEPROM_Write (2 , -> + -> _address `ui -> _i `ui `us *U + _data * -> _i `ux -> -> # *U _data `ui `ux ]
 "73
-[; ;main.c: 73:     return EEPROM_Read(address);
-[e ) ( _EEPROM_Read (1 _address ]
-[e $UE 1098  ]
+[; ;main.c: 73:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1098 ]
+[e $ < -> _i `i -> _size `i 1095  ]
+[e :U 1096 ]
+}
 "74
 [; ;main.c: 74: }
-[e :UE 1098 ]
+[e :UE 1094 ]
+}
+"76
+[; ;main.c: 76: uint8_t read_eeprom(uint16_t address, uint8_t data[], uint8_t size) {
+[v _read_eeprom `(uc ~T0 @X0 1 ef3`us`*uc`uc ]
+{
+[e :U _read_eeprom ]
+[v _address `us ~T0 @X0 1 r1 ]
+[v _data `*uc ~T0 @X0 1 r2 ]
+[v _size `uc ~T0 @X0 1 r3 ]
+[f ]
+"78
+[; ;main.c: 78:     NVM_UnlockKeySet(0xaa55);
+[e ( _NVM_UnlockKeySet (1 -> -> 43605 `ui `us ]
+"79
+[; ;main.c: 79:     for(uint8_t i = 0; i < size; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $U 1106  ]
+[e :U 1103 ]
+{
+"80
+[; ;main.c: 80:         while(NVM_IsBusy());
+[e $U 1107  ]
+[e :U 1108 ]
+[e :U 1107 ]
+[e $ != -> ( _NVM_IsBusy ..  `i -> 0 `i 1108  ]
+[e :U 1109 ]
+"81
+[; ;main.c: 81:         data[i] = EEPROM_Read(address + i);
+[e = *U + _data * -> _i `ux -> -> # *U _data `ui `ux ( _EEPROM_Read (1 -> + -> _address `ui -> _i `ui `us ]
+"82
+[; ;main.c: 82:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1106 ]
+[e $ < -> _i `i -> _size `i 1103  ]
+[e :U 1104 ]
+}
+"83
+[; ;main.c: 83: }
+[e :UE 1102 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"76
-[; ;main.c: 76: int main(void){
+"85
+[; ;main.c: 85: int main(void){
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"78
-[; ;main.c: 78:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"79
-[; ;main.c: 79:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"80
-[; ;main.c: 80:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"82
-[; ;main.c: 82:     NVM_UnlockKeySet(0xaa55);
-[e ( _NVM_UnlockKeySet (1 -> -> 43605 `ui `us ]
-"84
-[; ;main.c: 84:     write_eeprom(0xF000, 'a');
-[e ( _write_eeprom (2 , -> -> 61440 `ui `us -> -> 97 `ui `uc ]
-"85
-[; ;main.c: 85:     write_eeprom(0xF001, 'b');
-[e ( _write_eeprom (2 , -> -> 61441 `ui `us -> -> 98 `ui `uc ]
-"86
-[; ;main.c: 86:     write_eeprom(0xF002, 'c');
-[e ( _write_eeprom (2 , -> -> 61442 `ui `us -> -> 99 `ui `uc ]
 "87
-[; ;main.c: 87:     write_eeprom(0xF003, 'd');
-[e ( _write_eeprom (2 , -> -> 61443 `ui `us -> -> 100 `ui `uc ]
+[; ;main.c: 87:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "88
-[; ;main.c: 88:     write_eeprom(0xF004, 'e');
-[e ( _write_eeprom (2 , -> -> 61444 `ui `us -> -> 101 `ui `uc ]
+[; ;main.c: 88:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
 "89
-[; ;main.c: 89:     write_eeprom(0xF005, 'a');
-[e ( _write_eeprom (2 , -> -> 61445 `ui `us -> -> 97 `ui `uc ]
-"90
-[; ;main.c: 90:     write_eeprom(0xF006, 'g');
-[e ( _write_eeprom (2 , -> -> 61446 `ui `us -> -> 103 `ui `uc ]
-"91
-[; ;main.c: 91:     write_eeprom(0xF007, 'h');
-[e ( _write_eeprom (2 , -> -> 61447 `ui `us -> -> 104 `ui `uc ]
-"93
-[; ;main.c: 93:     rylr998_init();
-[e ( _rylr998_init ..  ]
-"94
-[; ;main.c: 94:     weather_init();
-[e ( _weather_init ..  ]
-[v F8679 `uc ~T0 @X0 -> 8 `i s ]
-[i F8679
+[; ;main.c: 89:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+[v F8685 `uc ~T0 @X0 -> 9 `i s ]
+[i F8685
 :U ..
-"96
-[; ;main.c: 96:     uint8_t serial_number[] = {
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
+"94
+[; ;main.c: 94:     uint8_t serial_number[9] = {0};
 -> -> 0 `i `uc
 ..
 ]
-[v _serial_number `uc ~T0 @X0 -> 8 `i a ]
-[e = _serial_number F8679 ]
-[e ; = *U + &U _serial_number * -> -> -> 0 `i `ui `ux -> -> # *U &U _serial_number `ui `ux ( _read_eeprom (1 -> -> 61440 `ui `us ; = *U + &U _serial_number * -> -> -> 1 `i `ui `ux -> -> # *U &U _serial_number `ui `ux ( _read_eeprom (1 -> -> 61441 `ui `us ; = *U + &U _serial_number * -> -> -> 2 `i `ui `ux -> -> # *U &U _serial_number `ui `ux ( _read_eeprom (1 -> -> 61442 `ui `us ; = *U + &U _serial_number * -> -> -> 3 `i `ui `ux -> -> # *U &U _serial_number `ui `ux ( _read_eeprom (1 -> -> 61443 `ui `us ; = *U + &U _serial_number * -> -> -> 4 `i `ui `ux -> -> # *U &U _serial_number `ui `ux ( _read_eeprom (1 -> -> 61444 `ui `us ; = *U + &U _serial_number * -> -> -> 5 `i `ui `ux -> -> # *U &U _serial_number `ui `ux ( _read_eeprom (1 -> -> 61445 `ui `us ; = *U + &U _serial_number * -> -> -> 6 `i `ui `ux -> -> # *U &U _serial_number `ui `ux ( _read_eeprom (1 -> -> 61446 `ui `us = *U + &U _serial_number * -> -> -> 7 `i `ui `ux -> -> # *U &U _serial_number `ui `ux ( _read_eeprom (1 -> -> 61447 `ui `us ]
-"107
-[; ;main.c: 107:     printf(serial_number);
+[v _serial_number `uc ~T0 @X0 -> 9 `i a ]
+[e = _serial_number F8685 ]
+"95
+[; ;main.c: 95:     write_eeprom(0xF000, "ABCDEFGH", 8);
+[e ( _write_eeprom (3 , , -> -> 61440 `ui `us :s 1C -> -> 8 `i `uc ]
+"96
+[; ;main.c: 96:     read_eeprom(0xF000, serial_number, 8);
+[e ( _read_eeprom (3 , , -> -> 61440 `ui `us &U _serial_number -> -> 8 `i `uc ]
+"97
+[; ;main.c: 97:     printf(serial_number);
 [e ( _printf -> &U _serial_number `*Cuc ]
-"109
-[; ;main.c: 109:     while(1) {
-[e :U 1104 ]
+"98
+[; ;main.c: 98:     serial_number[9] = '\0';
+[e = *U + &U _serial_number * -> -> -> 9 `i `ui `ux -> -> # *U &U _serial_number `ui `ux -> -> 0 `ui `uc ]
+"101
+[; ;main.c: 101:     rylr998_init();
+[e ( _rylr998_init ..  ]
+"102
+[; ;main.c: 102:     weather_init();
+[e ( _weather_init ..  ]
+"103
+[; ;main.c: 103:     while(1) {
+[e :U 1112 ]
 {
-"112
-[; ;main.c: 112:         do { LATAbits.LATA2 = 1; } while(0);
-[e :U 1108 ]
+"106
+[; ;main.c: 106:         do { LATAbits.LATA2 = 1; } while(0);
+[e :U 1116 ]
 {
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 }
-[e :U 1107 ]
-"113
-[; ;main.c: 113:         _delay((unsigned long)((1000)*(32000000/4000.0)));
+[e :U 1115 ]
+"107
+[; ;main.c: 107:         _delay((unsigned long)((1000)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"115
-[; ;main.c: 115:         rylr998_init();
+"109
+[; ;main.c: 109:         rylr998_init();
 [e ( _rylr998_init ..  ]
-"116
-[; ;main.c: 116:         weather_init();
+"110
+[; ;main.c: 110:         weather_init();
 [e ( _weather_init ..  ]
-"118
-[; ;main.c: 118:         struct bme280_dev dev = weather_dev();
+"112
+[; ;main.c: 112:         struct bme280_dev dev = weather_dev();
 [v _dev `S1093 ~T0 @X0 1 a ]
 [e = _dev ( _weather_dev ..  ]
-"119
-[; ;main.c: 119:         struct bme280_data weather = weather_read(&dev);
+"113
+[; ;main.c: 113:         struct bme280_data weather = weather_read(&dev);
 [v _weather `S1090 ~T0 @X0 1 a ]
 [e = _weather ( _weather_read (1 &U _dev ]
+"115
+[; ;main.c: 115:         rylr998_send(32, &serial_number, "TEMPERATURE", weather.temperature);
+[e ( _rylr998_send (4 , , , -> -> 32 `i `uc -> &U _serial_number `*uc :s 2C . _weather 1 ]
+"116
+[; ;main.c: 116:         _delay((unsigned long)((1000)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"118
+[; ;main.c: 118:         rylr998_send(32, serial_number, "HUMIDITY", weather.humidity);
+[e ( _rylr998_send (4 , , , -> -> 32 `i `uc -> &U _serial_number `*uc :s 3C . _weather 2 ]
+"119
+[; ;main.c: 119:         _delay((unsigned long)((1000)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
 "121
-[; ;main.c: 121:         rylr998_send(32, "TEMPERATURE", weather.temperature);
-[e ( _rylr998_send (3 , , -> -> 32 `i `uc :s 1C . _weather 1 ]
+[; ;main.c: 121:         rylr998_send(32, serial_number, "PRESSURE", weather.pressure);
+[e ( _rylr998_send (4 , , , -> -> 32 `i `uc -> &U _serial_number `*uc :s 4C . _weather 0 ]
 "122
 [; ;main.c: 122:         _delay((unsigned long)((1000)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"124
-[; ;main.c: 124:         rylr998_send(32, "HUMIDITY", weather.humidity);
-[e ( _rylr998_send (3 , , -> -> 32 `i `uc :s 2C . _weather 2 ]
 "125
-[; ;main.c: 125:         _delay((unsigned long)((1000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"127
-[; ;main.c: 127:         rylr998_send(32, "PRESSURE", weather.pressure);
-[e ( _rylr998_send (3 , , -> -> 32 `i `uc :s 3C . _weather 0 ]
-"128
-[; ;main.c: 128:         _delay((unsigned long)((1000)*(32000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"131
-[; ;main.c: 131:         do { LATAbits.LATA2 = 0; } while(0);
-[e :U 1111 ]
+[; ;main.c: 125:         do { LATAbits.LATA2 = 0; } while(0);
+[e :U 1119 ]
 {
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 1110 ]
-"136
-[; ;main.c: 136:         WDTCON = 0x1B;
+[e :U 1118 ]
+"130
+[; ;main.c: 130:         WDTCON = 0x1B;
 [e = _WDTCON -> -> 27 `i `uc ]
-"137
-[; ;main.c: 137:         for(uint8_t i = 0; i < 114; i++) {
+"131
+[; ;main.c: 131:         for(uint8_t i = 0; i < 114; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 114 `i 1112  ]
-[e $U 1113  ]
-[e :U 1112 ]
+[e $ < -> _i `i -> 114 `i 1120  ]
+[e $U 1121  ]
+[e :U 1120 ]
 {
-"138
-[; ;main.c: 138:             __asm("sleep");
+"132
+[; ;main.c: 132:             __asm("sleep");
 [; <" sleep ;# ">
-"139
-[; ;main.c: 139:         }
+"133
+[; ;main.c: 133:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 114 `i 1112  ]
-[e :U 1113 ]
+[e $ < -> _i `i -> 114 `i 1120  ]
+[e :U 1121 ]
 }
-"140
-[; ;main.c: 140:         WDTCON = 0x1A;
+"134
+[; ;main.c: 134:         WDTCON = 0x1A;
 [e = _WDTCON -> -> 26 `i `uc ]
-"142
-[; ;main.c: 142:     }
+"136
+[; ;main.c: 136:     }
 }
-[e :U 1103 ]
-[e $U 1104  ]
-[e :U 1105 ]
-"143
-[; ;main.c: 143: }
-[e :UE 1102 ]
+[e :U 1111 ]
+[e $U 1112  ]
+[e :U 1113 ]
+"137
+[; ;main.c: 137: }
+[e :UE 1110 ]
 }
 [p f _printf 9437696 ]
-[a 2C 72 85 77 73 68 73 84 89 0 ]
-[a 1C 84 69 77 80 69 82 65 84 85 82 69 0 ]
-[a 3C 80 82 69 83 83 85 82 69 0 ]
+[a 3C 72 85 77 73 68 73 84 89 0 ]
+[a 1C 65 66 67 68 69 70 71 72 0 ]
+[a 2C 84 69 77 80 69 82 65 84 85 82 69 0 ]
+[a 4C 80 82 69 83 83 85 82 69 0 ]

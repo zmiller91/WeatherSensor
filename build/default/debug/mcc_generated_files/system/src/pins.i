@@ -13309,7 +13309,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\\pic\\include\\xc.h" 2 3
 # 38 "mcc_generated_files/system/src/../pins.h" 2
-# 153 "mcc_generated_files/system/src/../pins.h"
+# 172 "mcc_generated_files/system/src/../pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13346,7 +13346,7 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    ANSELA = 0xFB;
+    ANSELA = 0xF9;
     ANSELB = 0xDF;
     ANSELC = 0xFB;
     ANSELD = 0xF3;

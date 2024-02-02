@@ -13393,7 +13393,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 153 "./mcc_generated_files/system/../system/pins.h"
+# 172 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13920,10 +13920,250 @@ eeprom_data_t EEPROM_Read(eeprom_address_t address);
 void EEPROM_Write(eeprom_address_t address, eeprom_data_t data);
 # 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
+# 1 "./mcc_generated_files/system/../timer/tmr6.h" 1
+# 39 "./mcc_generated_files/system/../timer/tmr6.h"
+# 1 "./mcc_generated_files/system/../timer/timer_interface.h" 1
+# 42 "./mcc_generated_files/system/../timer/timer_interface.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 1 3
+# 19 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 132 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef int ptrdiff_t;
+# 20 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 2 3
+# 42 "./mcc_generated_files/system/../timer/timer_interface.h" 2
+
+
+
+
+
+
+
+
+struct TMR_INTERFACE
+{
+    void (*Initialize)(void);
+    void (*Start)(void);
+    void (*Stop)(void);
+    void (*PeriodCountSet)(size_t count);
+    void (*TimeoutCallbackRegister)(void (* CallbackHandler)(void));
+    void (*Tasks)(void);
+};
+# 39 "./mcc_generated_files/system/../timer/tmr6.h" 2
+# 101 "./mcc_generated_files/system/../timer/tmr6.h"
+extern const struct TMR_INTERFACE TimeoutTimer;
+
+
+
+
+
+
+typedef enum
+{
+# 118 "./mcc_generated_files/system/../timer/tmr6.h"
+   TMR6_ROP_STARTS_TMRON,
+
+
+
+
+   TMR6_ROP_STARTS_TMRON_ERSHIGH,
+
+
+
+
+   TMR6_ROP_STARTS_TMRON_ERSLOW,
+
+
+
+
+   TMR6_ROP_RESETS_ERSBOTHEDGE,
+
+
+
+
+   TMR6_ROP_RESETS_ERSRISINGEDGE,
+
+
+
+
+   TMR6_ROP_RESETS_ERSFALLINGEDGE,
+
+
+
+
+   TMR6_ROP_RESETS_ERSLOW,
+
+
+
+
+   TMR6_ROP_RESETS_ERSHIGH,
+# 164 "./mcc_generated_files/system/../timer/tmr6.h"
+   TMR6_OS_STARTS_TMRON,
+
+
+
+
+   TMR6_OS_STARTS_ERSRISINGEDGE ,
+
+
+
+
+   TMR6_OS_STARTS_ERSFALLINGEDGE ,
+
+
+
+
+   TMR6_OS_STARTS_ERSBOTHEDGE,
+
+
+
+
+
+   TMR6_OS_STARTS_ERSFIRSTRISINGEDGE,
+
+
+
+
+
+   TMR6_OS_STARTS_ERSFIRSTFALLINGEDGE,
+
+
+
+
+
+   TMR6_OS_STARTS_ERSRISINGEDGEDETECT,
+
+
+
+
+   TMR6_OS_STARTS_ERSFALLINGEDGEDETECT,
+
+
+
+
+   TMR6_OS_STARTS_TMRON_ERSHIGH = 0x16,
+
+
+
+
+   TMR6_OS_STARTS_TMRON_ERSLOW = 0x17,
+# 221 "./mcc_generated_files/system/../timer/tmr6.h"
+   TMR6_MS_STARTS_TMRON_ERSRISINGEDGEDETECT = 0x11,
+
+
+
+
+   TMR6_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT = 0x12,
+
+
+
+
+
+   TMR6_MS_STARTS_TMRON_ERSBOTHEDGE = 0x13
+
+} TMR6_HLT_MODE;
+
+
+
+
+
+
+typedef enum
+{
+
+
+
+    TMR6_T6CKIPPS_PIN = 0x0,
+
+
+
+    TMR6_TMR2_POSTSCALED = 0x1,
+
+
+
+    TMR6_TMR4_POSTSCALED = 0x2,
+
+
+
+    TMR6_CCP1OUT = 0x4,
+
+
+
+    TMR6_CCP2OUT = 0x5,
+
+
+
+    TMR6_PWM3OUT = 0x6,
+
+
+
+    TMR6_PWM4OUT = 0x7,
+
+
+
+    TMR6_PWM5OUT = 0x8,
+
+
+
+    TMR6_CMP1OUT = 0x9,
+
+
+
+    TMR6_ZCDOUT = 0xa,
+
+
+
+    TMR6_CLC1OUT = 0xb,
+
+
+
+    TMR6_CLC2OUT = 0xc,
+
+
+
+    TMR6_CLC3OUT = 0xd,
+
+
+
+    TMR6_CLC4OUT = 0xe
+} TMR6_HLT_EXT_RESET_SOURCE;
+# 311 "./mcc_generated_files/system/../timer/tmr6.h"
+void TMR6_Initialize(void);
+# 320 "./mcc_generated_files/system/../timer/tmr6.h"
+void TMR6_ModeSet(TMR6_HLT_MODE mode);
+# 329 "./mcc_generated_files/system/../timer/tmr6.h"
+void TMR6_ExtResetSourceSet(TMR6_HLT_EXT_RESET_SOURCE reset);
+# 338 "./mcc_generated_files/system/../timer/tmr6.h"
+void TMR6_Start(void);
+# 347 "./mcc_generated_files/system/../timer/tmr6.h"
+void TMR6_Stop(void);
+# 356 "./mcc_generated_files/system/../timer/tmr6.h"
+uint8_t TMR6_Read(void);
+# 365 "./mcc_generated_files/system/../timer/tmr6.h"
+void TMR6_Write(uint8_t timerVal);
+# 374 "./mcc_generated_files/system/../timer/tmr6.h"
+void TMR6_PeriodCountSet(size_t periodVal);
+
+
+
+
+
+
+
+void TMR6_ISR(void);
+
+
+
+
+
+
+
+void TMR6_OverflowCallbackRegister(void (* InterruptHandler)(void));
+# 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
+
 # 1 "./mcc_generated_files/system/../system/watchdog.h" 1
 # 52 "./mcc_generated_files/system/../system/watchdog.h"
 void WDT_Initialize(void);
-# 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 47 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../system/interrupt.h" 1
 # 85 "./mcc_generated_files/system/../system/interrupt.h"
@@ -13938,7 +14178,7 @@ void INT_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT_InterruptHandler)(void);
 # 175 "./mcc_generated_files/system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
-# 47 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 48 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 
 
@@ -13955,14 +14195,6 @@ void SYSTEM_Initialize(void);
 # 1 "./bme280.h" 1
 # 50 "./bme280.h"
 # 1 "./bme280_defs.h" 1
-# 44 "./bme280_defs.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 1 3
-# 19 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 132 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef int ptrdiff_t;
-# 20 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 2 3
-# 44 "./bme280_defs.h" 2
 # 259 "./bme280_defs.h"
 enum bme280_intf {
 
@@ -14159,15 +14391,18 @@ int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *
 
 
 
+
+
+
 void weather_init();
 struct bme280_dev weather_dev();
-struct bme280_data weather_read(struct bme280_dev *dev);
+int8_t weather_read(struct bme280_dev *dev, struct bme280_data *data);
 _Bool weather_is_measurement_done(struct bme280_dev *dev);
-# 40 "./weather.h"
+# 43 "./weather.h"
 int8_t bme280_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, void *intf_ptr);
-# 58 "./weather.h"
+# 61 "./weather.h"
 int8_t bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr);
-# 69 "./weather.h"
+# 72 "./weather.h"
 void bme280_delay_us(uint32_t period_us, void *intf_ptr);
 # 40 "main.c" 2
 
@@ -14202,13 +14437,28 @@ int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *
 # 41 "main.c" 2
 
 # 1 "./rylr998.h" 1
-# 31 "./rylr998.h"
+# 37 "./rylr998.h"
 void rylr998_init();
-void rylr998_send(uint8_t address, char serial[], char tag[], double metric);
-void rylr998_write(char data[]);
-void rylr998_read();
+int8_t rylr998_send(uint8_t address, char serial[], char tag[], double metric);
+int8_t rylr998_write(char data[]);
+int8_t rylr998_read();
 # 42 "main.c" 2
-# 66 "main.c"
+
+# 1 "./timeout.h" 1
+# 38 "./timeout.h"
+void timeout_init();
+
+void timeout_start();
+
+void timeout_stop();
+
+void timeot_reset();
+
+_Bool timeout_timed_out();
+
+void timer_increment();
+# 43 "main.c" 2
+# 67 "main.c"
 void write_eeprom(uint16_t address, uint8_t *data, uint8_t size) {
 
     NVM_UnlockKeySet(0xaa55);
@@ -14219,7 +14469,7 @@ void write_eeprom(uint16_t address, uint8_t *data, uint8_t size) {
     }
 }
 
-uint8_t read_eeprom(uint16_t address, uint8_t data[], uint8_t size) {
+void read_eeprom(uint16_t address, uint8_t data[], uint8_t size) {
 
     NVM_UnlockKeySet(0xaa55);
     for(uint8_t i = 0; i < size; i++) {
@@ -14243,30 +14493,28 @@ int main(void){
     printf(serial_number);
     serial_number[9] = '\0';
 
-    rylr998_init();
-    weather_init();
-
-
     while(1) {
+
+        rylr998_init();
+        weather_init();
 
 
         do { LATAbits.LATA2 = 1; } while(0);
         _delay((unsigned long)((1000)*(32000000/4000.0)));
 
-        rylr998_init();
-        weather_init();
-
+        struct bme280_data weather;
         struct bme280_dev dev = weather_dev();
-        struct bme280_data weather = weather_read(&dev);
+        int8_t response_code = weather_read(&dev, &weather);
+        if(response_code > 0) {
+            rylr998_send(32, &serial_number, "TEMPERATURE", weather.temperature);
+            _delay((unsigned long)((1000)*(32000000/4000.0)));
 
-        rylr998_send(32, &serial_number, "TEMPERATURE", weather.temperature);
-        _delay((unsigned long)((1000)*(32000000/4000.0)));
+            rylr998_send(32, serial_number, "HUMIDITY", weather.humidity);
+            _delay((unsigned long)((1000)*(32000000/4000.0)));
 
-        rylr998_send(32, serial_number, "HUMIDITY", weather.humidity);
-        _delay((unsigned long)((1000)*(32000000/4000.0)));
-
-        rylr998_send(32, serial_number, "PRESSURE", weather.pressure);
-        _delay((unsigned long)((1000)*(32000000/4000.0)));
+            rylr998_send(32, serial_number, "PRESSURE", weather.pressure);
+            _delay((unsigned long)((1000)*(32000000/4000.0)));
+        }
 
 
         do { LATAbits.LATA2 = 0; } while(0);

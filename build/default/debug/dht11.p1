@@ -1240,7 +1240,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _status ( _dht11CheckResponse ..  ]
 "75
 [; ;dht11.c: 75:     if(status == DHT11_OK) {
-[e $ ! == -> _status `i -> _DHT11_OK `i 1090  ]
+[e $ ! == -> _status `i -> _DHT11_OK `i 1091  ]
 {
 "78
 [; ;dht11.c: 78:         uint8_t data[80];
@@ -1250,9 +1250,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 80 `i 1091  ]
-[e $U 1092  ]
-[e :U 1091 ]
+[e $ < -> _i `i -> 80 `i 1092  ]
+[e $U 1093  ]
+[e :U 1092 ]
 {
 "82
 [; ;dht11.c: 82:             uint8_t lowTick = 0;
@@ -1260,8 +1260,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _lowTick -> -> 0 `i `uc ]
 "83
 [; ;dht11.c: 83:             while(!IO_RB5_GetValue() && lowTick < TIMEOUT) {
-[e $U 1094  ]
-[e :U 1095 ]
+[e $U 1095  ]
+[e :U 1096 ]
 {
 "84
 [; ;dht11.c: 84:                 lowTick++;
@@ -1269,19 +1269,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "85
 [; ;dht11.c: 85:             }
 }
-[e :U 1094 ]
+[e :U 1095 ]
 "83
 [; ;dht11.c: 83:             while(!IO_RB5_GetValue() && lowTick < TIMEOUT) {
-[e $ && ! != ( _IO_RB5_GetValue ..  -> 0 `i < -> _lowTick `i -> _TIMEOUT `i 1095  ]
-[e :U 1096 ]
+[e $ && ! != ( _IO_RB5_GetValue ..  -> 0 `i < -> _lowTick `i -> _TIMEOUT `i 1096  ]
+[e :U 1097 ]
 "89
 [; ;dht11.c: 89:             uint8_t highTick = 0;
 [v _highTick `uc ~T0 @X0 1 a ]
 [e = _highTick -> -> 0 `i `uc ]
 "90
 [; ;dht11.c: 90:             while(IO_RB5_GetValue() && highTick < TIMEOUT) {
-[e $U 1097  ]
-[e :U 1098 ]
+[e $U 1098  ]
+[e :U 1099 ]
 {
 "91
 [; ;dht11.c: 91:                 highTick++;
@@ -1289,11 +1289,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "92
 [; ;dht11.c: 92:             }
 }
-[e :U 1097 ]
+[e :U 1098 ]
 "90
 [; ;dht11.c: 90:             while(IO_RB5_GetValue() && highTick < TIMEOUT) {
-[e $ && != ( _IO_RB5_GetValue ..  -> 0 `i < -> _highTick `i -> _TIMEOUT `i 1098  ]
-[e :U 1099 ]
+[e $ && != ( _IO_RB5_GetValue ..  -> 0 `i < -> _highTick `i -> _TIMEOUT `i 1099  ]
+[e :U 1100 ]
 "97
 [; ;dht11.c: 97:             data[i] = lowTick;
 [e = *U + &U _data * -> _i `ux -> -> # *U &U _data `ui `ux _lowTick ]
@@ -1304,12 +1304,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;dht11.c: 99:         }
 }
 [e = _i -> + -> _i `i -> 2 `i `uc ]
-[e $ < -> _i `i -> 80 `i 1091  ]
-[e :U 1092 ]
+[e $ < -> _i `i -> 80 `i 1092  ]
+[e :U 1093 ]
 }
 "103
 [; ;dht11.c: 103:         if(dht11ValidateResponse(data) == DHT11_OK) {
-[e $ ! == -> ( _dht11ValidateResponse (1 &U _data `i -> _DHT11_OK `i 1100  ]
+[e $ ! == -> ( _dht11ValidateResponse (1 &U _data `i -> _DHT11_OK `i 1101  ]
 {
 "105
 [; ;dht11.c: 105:             uint8_t humidity = parseDHT11Byte(data, (uint8_t) 0);
@@ -1333,7 +1333,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _checkSum ( _parseDHT11Byte (2 , &U _data -> -> 4 `i `uc ]
 "111
 [; ;dht11.c: 111:             if (checkSum == ((humidity + humidityDecimal + temp + tempDecimal) & 0xFF)) {
-[e $ ! == -> _checkSum `i & + + + -> _humidity `i -> _humidityDecimal `i -> _temp `i -> _tempDecimal `i -> 255 `i 1101  ]
+[e $ ! == -> _checkSum `i & + + + -> _humidity `i -> _humidityDecimal `i -> _temp `i -> _tempDecimal `i -> 255 `i 1102  ]
 {
 "112
 [; ;dht11.c: 112:                 printf("VALID");
@@ -1341,7 +1341,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "113
 [; ;dht11.c: 113:             }
 }
-[e :U 1101 ]
+[e :U 1102 ]
 "115
 [; ;dht11.c: 115:             printf(humidity);
 [e ( _printf -> _humidity `*Cuc ]
@@ -1360,14 +1360,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "120
 [; ;dht11.c: 120:         }
 }
-[e :U 1100 ]
+[e :U 1101 ]
 "122
 [; ;dht11.c: 122:     }
 }
-[e :U 1090 ]
+[e :U 1091 ]
 "123
 [; ;dht11.c: 123: }
-[e :UE 1089 ]
+[e :UE 1090 ]
 }
 "131
 [; ;dht11.c: 131: void dht11Start() {
@@ -1404,7 +1404,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _IO_RB5_SetDigitalInput ..  ]
 "150
 [; ;dht11.c: 150: }
-[e :UE 1102 ]
+[e :UE 1103 ]
 }
 "152
 [; ;dht11.c: 152: uint8_t dht11CheckResponse() {
@@ -1418,101 +1418,101 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _tick -> -> 0 `i `uc ]
 "157
 [; ;dht11.c: 157:     while(IO_RB5_GetValue()) {
-[e $U 1104  ]
-[e :U 1105 ]
+[e $U 1105  ]
+[e :U 1106 ]
 {
 "158
 [; ;dht11.c: 158:         if(tick > TIMEOUT) {
-[e $ ! > -> _tick `i -> _TIMEOUT `i 1107  ]
+[e $ ! > -> _tick `i -> _TIMEOUT `i 1108  ]
 {
 "159
 [; ;dht11.c: 159:             return DHT11_ERROR;
 [e ) _DHT11_ERROR ]
-[e $UE 1103  ]
+[e $UE 1104  ]
 "160
 [; ;dht11.c: 160:         }
 }
-[e :U 1107 ]
+[e :U 1108 ]
 "162
 [; ;dht11.c: 162:         tick++;
 [e ++ _tick -> -> 1 `i `uc ]
 "163
 [; ;dht11.c: 163:     };
 }
-[e :U 1104 ]
+[e :U 1105 ]
 "157
 [; ;dht11.c: 157:     while(IO_RB5_GetValue()) {
-[e $ != ( _IO_RB5_GetValue ..  -> 0 `i 1105  ]
-[e :U 1106 ]
+[e $ != ( _IO_RB5_GetValue ..  -> 0 `i 1106  ]
+[e :U 1107 ]
 "166
 [; ;dht11.c: 166:     tick = 0;
 [e = _tick -> -> 0 `i `uc ]
 "167
 [; ;dht11.c: 167:     while(!IO_RB5_GetValue()) {
-[e $U 1108  ]
-[e :U 1109 ]
+[e $U 1109  ]
+[e :U 1110 ]
 {
 "168
 [; ;dht11.c: 168:         if(tick > TIMEOUT) {
-[e $ ! > -> _tick `i -> _TIMEOUT `i 1111  ]
+[e $ ! > -> _tick `i -> _TIMEOUT `i 1112  ]
 {
 "169
 [; ;dht11.c: 169:             return DHT11_ERROR;
 [e ) _DHT11_ERROR ]
-[e $UE 1103  ]
+[e $UE 1104  ]
 "170
 [; ;dht11.c: 170:         }
 }
-[e :U 1111 ]
+[e :U 1112 ]
 "172
 [; ;dht11.c: 172:         tick++;
 [e ++ _tick -> -> 1 `i `uc ]
 "173
 [; ;dht11.c: 173:     };
 }
-[e :U 1108 ]
+[e :U 1109 ]
 "167
 [; ;dht11.c: 167:     while(!IO_RB5_GetValue()) {
-[e $ ! != ( _IO_RB5_GetValue ..  -> 0 `i 1109  ]
-[e :U 1110 ]
+[e $ ! != ( _IO_RB5_GetValue ..  -> 0 `i 1110  ]
+[e :U 1111 ]
 "176
 [; ;dht11.c: 176:     tick = 0;
 [e = _tick -> -> 0 `i `uc ]
 "177
 [; ;dht11.c: 177:     while(IO_RB5_GetValue()) {
-[e $U 1112  ]
-[e :U 1113 ]
+[e $U 1113  ]
+[e :U 1114 ]
 {
 "178
 [; ;dht11.c: 178:         if(tick > TIMEOUT) {
-[e $ ! > -> _tick `i -> _TIMEOUT `i 1115  ]
+[e $ ! > -> _tick `i -> _TIMEOUT `i 1116  ]
 {
 "179
 [; ;dht11.c: 179:             return DHT11_ERROR;
 [e ) _DHT11_ERROR ]
-[e $UE 1103  ]
+[e $UE 1104  ]
 "180
 [; ;dht11.c: 180:         }
 }
-[e :U 1115 ]
+[e :U 1116 ]
 "182
 [; ;dht11.c: 182:         tick++;
 [e ++ _tick -> -> 1 `i `uc ]
 "183
 [; ;dht11.c: 183:     };
 }
-[e :U 1112 ]
+[e :U 1113 ]
 "177
 [; ;dht11.c: 177:     while(IO_RB5_GetValue()) {
-[e $ != ( _IO_RB5_GetValue ..  -> 0 `i 1113  ]
-[e :U 1114 ]
+[e $ != ( _IO_RB5_GetValue ..  -> 0 `i 1114  ]
+[e :U 1115 ]
 "186
 [; ;dht11.c: 186:     return DHT11_OK;
 [e ) _DHT11_OK ]
-[e $UE 1103  ]
+[e $UE 1104  ]
 "187
 [; ;dht11.c: 187: }
-[e :UE 1103 ]
+[e :UE 1104 ]
 }
 "189
 [; ;dht11.c: 189: uint8_t dht11ValidateResponse(uint8_t byteArray[]) {
@@ -1526,36 +1526,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 80 `i 1117  ]
-[e $U 1118  ]
-[e :U 1117 ]
+[e $ < -> _i `i -> 80 `i 1118  ]
+[e $U 1119  ]
+[e :U 1118 ]
 {
 "191
 [; ;dht11.c: 191:         if(byteArray[i] == TIMEOUT) {
-[e $ ! == -> *U + _byteArray * -> _i `ux -> -> # *U _byteArray `ui `ux `i -> _TIMEOUT `i 1120  ]
+[e $ ! == -> *U + _byteArray * -> _i `ux -> -> # *U _byteArray `ui `ux `i -> _TIMEOUT `i 1121  ]
 {
 "192
 [; ;dht11.c: 192:             return DHT11_ERROR;
 [e ) _DHT11_ERROR ]
-[e $UE 1116  ]
+[e $UE 1117  ]
 "193
 [; ;dht11.c: 193:         }
 }
-[e :U 1120 ]
+[e :U 1121 ]
 "194
 [; ;dht11.c: 194:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 80 `i 1117  ]
-[e :U 1118 ]
+[e $ < -> _i `i -> 80 `i 1118  ]
+[e :U 1119 ]
 }
 "196
 [; ;dht11.c: 196:     return DHT11_OK;
 [e ) _DHT11_OK ]
-[e $UE 1116  ]
+[e $UE 1117  ]
 "197
 [; ;dht11.c: 197: }
-[e :UE 1116 ]
+[e :UE 1117 ]
 }
 "199
 [; ;dht11.c: 199: uint8_t parseDHT11Byte(uint8_t byteArray[], uint8_t byte) {
@@ -1582,8 +1582,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i _startPos ]
-[e $U 1125  ]
-[e :U 1122 ]
+[e $U 1126  ]
+[e :U 1123 ]
 {
 "206
 [; ;dht11.c: 206:         uint8_t low = byteArray[i];
@@ -1595,7 +1595,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _high *U + _byteArray * -> + -> _i `i -> 1 `i `x -> -> # *U _byteArray `i `x ]
 "208
 [; ;dht11.c: 208:         if (low < high) {
-[e $ ! < -> _low `i -> _high `i 1126  ]
+[e $ ! < -> _low `i -> _high `i 1127  ]
 {
 "209
 [; ;dht11.c: 209:             uint8_t _bit = ((uint8_t)1) << (7 - idx);
@@ -1607,7 +1607,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "211
 [; ;dht11.c: 211:         }
 }
-[e :U 1126 ]
+[e :U 1127 ]
 "213
 [; ;dht11.c: 213:         idx++;
 [e ++ _idx -> -> 1 `i `uc ]
@@ -1615,17 +1615,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;dht11.c: 214:     }
 }
 [e = _i -> + -> _i `i -> 2 `i `uc ]
-[e :U 1125 ]
-[e $ < -> _i `i + -> _startPos `i -> 16 `i 1122  ]
-[e :U 1123 ]
+[e :U 1126 ]
+[e $ < -> _i `i + -> _startPos `i -> 16 `i 1123  ]
+[e :U 1124 ]
 }
 "216
 [; ;dht11.c: 216:     return result;
 [e ) _result ]
-[e $UE 1121  ]
+[e $UE 1122  ]
 "217
 [; ;dht11.c: 217: }
-[e :UE 1121 ]
+[e :UE 1122 ]
 }
 [p f _printf 9437696 ]
 [a 1C 86 65 76 73 68 0 ]

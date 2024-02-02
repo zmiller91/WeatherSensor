@@ -1243,13 +1243,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 1089 ]
 }
 "31
-[; ;rylr998.c: 31: void rylr998_send(uint8_t address, char tag[], double metric) {
-[v _rylr998_send `(v ~T0 @X0 1 ef3`uc`*uc`d ]
+[; ;rylr998.c: 31: void rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
+[v _rylr998_send `(v ~T0 @X0 1 ef4`uc`*uc`*uc`d ]
 {
 [e :U _rylr998_send ]
 [v _address `uc ~T0 @X0 1 r1 ]
-[v _tag `*uc ~T0 @X0 1 r2 ]
-[v _metric `d ~T0 @X0 1 r3 ]
+[v _serial `*uc ~T0 @X0 1 r2 ]
+[v _tag `*uc ~T0 @X0 1 r3 ]
+[v _metric `d ~T0 @X0 1 r4 ]
 [f ]
 "34
 [; ;rylr998.c: 34:     if(sizeof(tag) > 20) {
@@ -1260,162 +1261,159 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 1097 ]
 "40
-[; ;rylr998.c: 40:     char t[10];
-[v _t `uc ~T0 @X0 -> 10 `i a ]
+[; ;rylr998.c: 40:     char data[10];
+[v _data `uc ~T0 @X0 -> 10 `i a ]
 "41
 [; ;rylr998.c: 41:     float rounded = roundf(metric * 100) / 100;
 [v _rounded `f ~T0 @X0 1 a ]
 [e = _rounded / ( _roundf (1 -> * _metric -> -> 100 `i `d `f -> -> 100 `i `f ]
 "42
-[; ;rylr998.c: 42:     sprintf(t, "%g", rounded);
-[e ( _sprintf (1 , (. , &U _t :s 1C -> _rounded `d ]
+[; ;rylr998.c: 42:     sprintf(data, "%g", rounded);
+[e ( _sprintf (1 , (. , &U _data :s 1C -> _rounded `d ]
 "46
-[; ;rylr998.c: 46:     int payload_size = snprintf(((void*)0), 0, "%s::%s", tag, t);
+[; ;rylr998.c: 46:     int payload_size = snprintf(((void*)0), 0, "%s::%s::%s", serial, tag, data);
 [v _payload_size `i ~T0 @X0 1 a ]
-[e = _payload_size ( _snprintf (2 , , (. , , -> -> -> 0 `i `*v `*uc -> -> 0 `i `ui :s 2C _tag &U _t ]
-"47
-[; ;rylr998.c: 47:     printf(payload_size);
-[e ( _printf -> _payload_size `*Cuc ]
-[v F8932 `uc ~T0 @X0 -> 50 `i s ]
-[i F8932
+[e = _payload_size ( _snprintf (2 , , , (. , , -> -> -> 0 `i `*v `*uc -> -> 0 `i `ui :s 2C _serial _tag &U _data ]
+[v F8934 `uc ~T0 @X0 -> 60 `i s ]
+[i F8934
 :U ..
-"50
-[; ;rylr998.c: 50:     char buffer[50] = {0};
+"47
+[; ;rylr998.c: 47:     char buffer[60] = {0};
 -> -> 0 `i `uc
 ..
 ]
-[v _buffer `uc ~T0 @X0 -> 50 `i a ]
-[e = _buffer F8932 ]
-"51
-[; ;rylr998.c: 51:     sprintf(buffer, "AT+SEND=%i,%i,%s::%s\r\n", address, payload_size, tag, t);
-[e ( _sprintf (1 , , , , (. , &U _buffer :s 3C -> _address `i _payload_size _tag &U _t ]
-"52
-[; ;rylr998.c: 52:     printf(buffer);
+[v _buffer `uc ~T0 @X0 -> 60 `i a ]
+[e = _buffer F8934 ]
+"48
+[; ;rylr998.c: 48:     sprintf(buffer, "AT+SEND=%i,%i,%s::%s::%s\r\n", address, payload_size, serial, tag, data);
+[e ( _sprintf (1 , , , , , (. , &U _buffer :s 3C -> _address `i _payload_size _serial _tag &U _data ]
+"49
+[; ;rylr998.c: 49:     printf(buffer);
 [e ( _printf -> &U _buffer `*Cuc ]
-"54
-[; ;rylr998.c: 54:     rylr998_write(&buffer);
+"51
+[; ;rylr998.c: 51:     rylr998_write(&buffer);
 [e ( _rylr998_write (1 -> &U _buffer `*uc ]
-"55
-[; ;rylr998.c: 55:     rylr998_read();
+"52
+[; ;rylr998.c: 52:     rylr998_read();
 [e ( _rylr998_read ..  ]
-"56
-[; ;rylr998.c: 56: }
+"53
+[; ;rylr998.c: 53: }
 [e :UE 1096 ]
 }
-"58
-[; ;rylr998.c: 58: void rylr998_write(char *data) {
+"55
+[; ;rylr998.c: 55: void rylr998_write(char *data) {
 [v _rylr998_write `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _rylr998_write ]
 [v _data `*uc ~T0 @X0 1 r1 ]
 [f ]
-"60
-[; ;rylr998.c: 60:     _Bool carriage_found = 0;
+"57
+[; ;rylr998.c: 57:     _Bool carriage_found = 0;
 [v _carriage_found `a ~T0 @X0 1 a ]
 [e = _carriage_found -> -> 0 `i `a ]
-"61
-[; ;rylr998.c: 61:     _Bool newline_found = 0;
+"58
+[; ;rylr998.c: 58:     _Bool newline_found = 0;
 [v _newline_found `a ~T0 @X0 1 a ]
 [e = _newline_found -> -> 0 `i `a ]
-"63
-[; ;rylr998.c: 63:     uint8_t size = sizeof(data);
+"60
+[; ;rylr998.c: 60:     uint8_t size = sizeof(data);
 [v _size `uc ~T0 @X0 1 a ]
 [e = _size -> -> # _data `ui `uc ]
-"64
-[; ;rylr998.c: 64:     printf(size);
+"61
+[; ;rylr998.c: 61:     printf(size);
 [e ( _printf -> _size `*Cuc ]
-"65
-[; ;rylr998.c: 65:     for(uint8_t i = 0; i < 50; i++) {
+"62
+[; ;rylr998.c: 62:     for(uint8_t i = 0; i < 60; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 50 `i 1099  ]
+[e $ < -> _i `i -> 60 `i 1099  ]
 [e $U 1100  ]
 [e :U 1099 ]
 {
-"67
-[; ;rylr998.c: 67:         char c = data[i];
+"64
+[; ;rylr998.c: 64:         char c = data[i];
 [v _c `uc ~T0 @X0 1 a ]
 [e = _c *U + _data * -> _i `ux -> -> # *U _data `ui `ux ]
-"68
-[; ;rylr998.c: 68:         EUSART1_Write(c);
+"65
+[; ;rylr998.c: 65:         EUSART1_Write(c);
 [e ( _EUSART1_Write (1 -> _c `uc ]
-"69
-[; ;rylr998.c: 69:         while(!EUSART1_IsTxDone());
+"66
+[; ;rylr998.c: 66:         while(!EUSART1_IsTxDone());
 [e $U 1102  ]
 [e :U 1103 ]
 [e :U 1102 ]
 [e $ ! != -> ( _EUSART1_IsTxDone ..  `i -> 0 `i 1103  ]
 [e :U 1104 ]
-"71
-[; ;rylr998.c: 71:         carriage_found = carriage_found || (data[i] == '\r');
+"68
+[; ;rylr998.c: 68:         carriage_found = carriage_found || (data[i] == '\r');
 [e = _carriage_found -> -> || != -> _carriage_found `i -> 0 `i == -> *U + _data * -> _i `ux -> -> # *U _data `ui `ux `ui -> 13 `ui `i `a ]
-"72
-[; ;rylr998.c: 72:         newline_found = newline_found || (data[i] == '\n');
+"69
+[; ;rylr998.c: 69:         newline_found = newline_found || (data[i] == '\n');
 [e = _newline_found -> -> || != -> _newline_found `i -> 0 `i == -> *U + _data * -> _i `ux -> -> # *U _data `ui `ux `ui -> 10 `ui `i `a ]
-"73
-[; ;rylr998.c: 73:         if(carriage_found && newline_found) {
+"70
+[; ;rylr998.c: 70:         if(carriage_found && newline_found) {
 [e $ ! && != -> _carriage_found `i -> 0 `i != -> _newline_found `i -> 0 `i 1105  ]
 {
-"74
-[; ;rylr998.c: 74:             break;
+"71
+[; ;rylr998.c: 71:             break;
 [e $U 1100  ]
-"75
-[; ;rylr998.c: 75:         }
+"72
+[; ;rylr998.c: 72:         }
 }
 [e :U 1105 ]
-"76
-[; ;rylr998.c: 76:     }
+"73
+[; ;rylr998.c: 73:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 50 `i 1099  ]
+[e $ < -> _i `i -> 60 `i 1099  ]
 [e :U 1100 ]
 }
-"78
-[; ;rylr998.c: 78:     if(!carriage_found || !newline_found) {
+"75
+[; ;rylr998.c: 75:     if(!carriage_found || !newline_found) {
 [e $ ! || ! != -> _carriage_found `i -> 0 `i ! != -> _newline_found `i -> 0 `i 1106  ]
 {
-"80
-[; ;rylr998.c: 80:     }
+"77
+[; ;rylr998.c: 77:     }
 }
 [e :U 1106 ]
-"81
-[; ;rylr998.c: 81: }
+"78
+[; ;rylr998.c: 78: }
 [e :UE 1098 ]
 }
-"83
-[; ;rylr998.c: 83: void rylr998_read() {
+"80
+[; ;rylr998.c: 80: void rylr998_read() {
 [v _rylr998_read `(v ~T0 @X0 1 ef ]
 {
 [e :U _rylr998_read ]
 [f ]
-"86
-[; ;rylr998.c: 86:     while(!EUSART1_IsRxReady());
+"83
+[; ;rylr998.c: 83:     while(!EUSART1_IsRxReady());
 [e $U 1108  ]
 [e :U 1109 ]
 [e :U 1108 ]
 [e $ ! != -> ( _EUSART1_IsRxReady ..  `i -> 0 `i 1109  ]
 [e :U 1110 ]
-"88
-[; ;rylr998.c: 88:     _Bool carriage_found = 0;
+"85
+[; ;rylr998.c: 85:     _Bool carriage_found = 0;
 [v _carriage_found `a ~T0 @X0 1 a ]
 [e = _carriage_found -> -> 0 `i `a ]
-"89
-[; ;rylr998.c: 89:     _Bool newline_found = 0;
+"86
+[; ;rylr998.c: 86:     _Bool newline_found = 0;
 [v _newline_found `a ~T0 @X0 1 a ]
 [e = _newline_found -> -> 0 `i `a ]
-[v F8945 `uc ~T0 @X0 -> 50 `i s ]
-[i F8945
+[v F8947 `uc ~T0 @X0 -> 60 `i s ]
+[i F8947
 :U ..
-"91
-[; ;rylr998.c: 91:     char data[50] = {0};
+"88
+[; ;rylr998.c: 88:     char data[60] = {0};
 -> -> 0 `i `uc
 ..
 ]
-[v _data `uc ~T0 @X0 -> 50 `i a ]
-[e = _data F8945 ]
-"92
-[; ;rylr998.c: 92:     for(uint8_t i = 0; i < sizeof(data); i++) {
+[v _data `uc ~T0 @X0 -> 60 `i a ]
+[e = _data F8947 ]
+"89
+[; ;rylr998.c: 89:     for(uint8_t i = 0; i < sizeof(data); i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -1423,67 +1421,67 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 1112  ]
 [e :U 1111 ]
 {
-"94
-[; ;rylr998.c: 94:         uint8_t byte = EUSART1_Read();
+"91
+[; ;rylr998.c: 91:         uint8_t byte = EUSART1_Read();
 [v _byte `uc ~T0 @X0 1 a ]
 [e = _byte ( _EUSART1_Read ..  ]
-"95
-[; ;rylr998.c: 95:         carriage_found = carriage_found || (byte == '\r');
+"92
+[; ;rylr998.c: 92:         carriage_found = carriage_found || (byte == '\r');
 [e = _carriage_found -> -> || != -> _carriage_found `i -> 0 `i == -> _byte `ui -> 13 `ui `i `a ]
-"96
-[; ;rylr998.c: 96:         newline_found = newline_found || (byte == '\n');
+"93
+[; ;rylr998.c: 93:         newline_found = newline_found || (byte == '\n');
 [e = _newline_found -> -> || != -> _newline_found `i -> 0 `i == -> _byte `ui -> 10 `ui `i `a ]
-"98
-[; ;rylr998.c: 98:         if(!(byte == '\r' || byte == '\n')) {
+"95
+[; ;rylr998.c: 95:         if(!(byte == '\r' || byte == '\n')) {
 [e $ ! ! || == -> _byte `ui -> 13 `ui == -> _byte `ui -> 10 `ui 1114  ]
 {
-"99
-[; ;rylr998.c: 99:             data[i] = byte;
+"96
+[; ;rylr998.c: 96:             data[i] = byte;
 [e = *U + &U _data * -> _i `ux -> -> # *U &U _data `ui `ux -> _byte `uc ]
-"100
-[; ;rylr998.c: 100:         }
+"97
+[; ;rylr998.c: 97:         }
 }
 [e :U 1114 ]
-"102
-[; ;rylr998.c: 102:         if(carriage_found && newline_found) {
+"99
+[; ;rylr998.c: 99:         if(carriage_found && newline_found) {
 [e $ ! && != -> _carriage_found `i -> 0 `i != -> _newline_found `i -> 0 `i 1115  ]
 {
-"103
-[; ;rylr998.c: 103:             break;
+"100
+[; ;rylr998.c: 100:             break;
 [e $U 1112  ]
-"104
-[; ;rylr998.c: 104:         }
+"101
+[; ;rylr998.c: 101:         }
 }
 [e :U 1115 ]
-"107
-[; ;rylr998.c: 107:         while(!EUSART1_IsRxReady());
+"104
+[; ;rylr998.c: 104:         while(!EUSART1_IsRxReady());
 [e $U 1116  ]
 [e :U 1117 ]
 [e :U 1116 ]
 [e $ ! != -> ( _EUSART1_IsRxReady ..  `i -> 0 `i 1117  ]
 [e :U 1118 ]
-"109
-[; ;rylr998.c: 109:     }
+"106
+[; ;rylr998.c: 106:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `ui -> # _data `ui 1111  ]
 [e :U 1112 ]
 }
-"111
-[; ;rylr998.c: 111:     _Bool success = strcmp("+OK", data) == 0;
+"108
+[; ;rylr998.c: 108:     _Bool success = strcmp("+OK", data) == 0;
 [v _success `a ~T0 @X0 1 a ]
 [e = _success -> -> == ( _strcmp (2 , :s 4C -> &U _data `*Cuc -> 0 `i `i `a ]
-"112
-[; ;rylr998.c: 112:     printf(success);
+"109
+[; ;rylr998.c: 109:     printf(success);
 [e ( _printf -> _success `*Cuc ]
-"114
-[; ;rylr998.c: 114: }
+"111
+[; ;rylr998.c: 111: }
 [e :UE 1107 ]
 }
 [p f _sprintf 8654976 ]
 [p f _snprintf 8650752 ]
 [p f _printf 9437696 ]
-[a 2C 37 115 58 58 37 115 0 ]
+[a 2C 37 115 58 58 37 115 58 58 37 115 0 ]
 [a 1C 37 103 0 ]
 [a 4C 43 79 75 0 ]
-[a 3C 65 84 43 83 69 78 68 61 37 105 44 37 105 44 37 115 58 58 37 115 13 10 0 ]
+[a 3C 65 84 43 83 69 78 68 61 37 105 44 37 105 44 37 115 58 58 37 115 58 58 37 115 13 10 0 ]

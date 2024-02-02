@@ -33,6 +33,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "171
 [; ;./mcc_generated_files/system/../uart/eusart1.h: 171: __attribute__((inline)) void EUSART1_ReceiveEnable(void);
 [v _EUSART1_ReceiveEnable `TF8762 ~T0 @X0 0 e ]
+"38 ./timeout.h
+[; ;./timeout.h: 38: void timeout_init();
+[v _timeout_init `(v ~T0 @X0 0 e? ]
 "348 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\math.h
 [; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\math.h: 348: float roundf(float);
 [v _roundf `(f ~T0 @X0 0 ef1`f ]
@@ -45,19 +48,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 "107
 [; ;C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\stdio.h: 107: int printf(const char *restrict, ...);
 [v _printf `(i ~T0 @X0 0 ev`*Cuc ]
-"33 ./rylr998.h
-[; ;./rylr998.h: 33: void rylr998_write(char data[]);
-[v _rylr998_write `(v ~T0 @X0 0 ef1`*uc ]
-"34
-[; ;./rylr998.h: 34: void rylr998_read();
-[v _rylr998_read `(v ~T0 @X0 0 e? ]
+"39 ./rylr998.h
+[; ;./rylr998.h: 39: int8_t rylr998_write(char data[]);
+[v _rylr998_write `(c ~T0 @X0 0 ef1`*uc ]
+"40
+[; ;./rylr998.h: 40: int8_t rylr998_read();
+[v _rylr998_read `(c ~T0 @X0 0 e? ]
 "283 ./mcc_generated_files/system/../uart/eusart1.h
 [; ;./mcc_generated_files/system/../uart/eusart1.h: 283: void EUSART1_Write(uint8_t txData);
 [v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
-"255
+"40 ./timeout.h
+[; ;./timeout.h: 40: void timeout_start();
+[v _timeout_start `(v ~T0 @X0 0 e? ]
+"255 ./mcc_generated_files/system/../uart/eusart1.h
 [; ;./mcc_generated_files/system/../uart/eusart1.h: 255: _Bool EUSART1_IsTxDone(void);
 [v _EUSART1_IsTxDone `(a ~T0 @X0 0 ef ]
-"237
+"46 ./timeout.h
+[; ;./timeout.h: 46: _Bool timeout_timed_out();
+[v _timeout_timed_out `(a ~T0 @X0 0 e? ]
+"42
+[; ;./timeout.h: 42: void timeout_stop();
+[v _timeout_stop `(v ~T0 @X0 0 e? ]
+"237 ./mcc_generated_files/system/../uart/eusart1.h
 [; ;./mcc_generated_files/system/../uart/eusart1.h: 237: _Bool EUSART1_IsRxReady(void);
 [v _EUSART1_IsRxReady `(a ~T0 @X0 0 ef ]
 "273
@@ -1209,42 +1221,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22220
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 22220: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"20 rylr998.c
-[; ;rylr998.c: 20: void rylr998_init() {
+"21 rylr998.c
+[; ;rylr998.c: 21: void rylr998_init() {
 [v _rylr998_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _rylr998_init ]
 [f ]
-"23
-[; ;rylr998.c: 23:     do { TRISBbits.TRISB5 = 1; } while(0);
-[e :U 1092 ]
+"24
+[; ;rylr998.c: 24:     do { TRISBbits.TRISB5 = 1; } while(0);
+[e :U 1093 ]
 {
 [e = . . _TRISBbits 0 5 -> -> 1 `i `uc ]
 }
-[e :U 1091 ]
-"24
-[; ;rylr998.c: 24:     do { TRISCbits.TRISC2 = 0; } while(0);
-[e :U 1095 ]
+[e :U 1092 ]
+"25
+[; ;rylr998.c: 25:     do { TRISCbits.TRISC2 = 0; } while(0);
+[e :U 1096 ]
 {
 [e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
 }
-[e :U 1094 ]
-"26
-[; ;rylr998.c: 26:     EUSART1_Enable();
-[e ( _EUSART1_Enable ..  ]
+[e :U 1095 ]
 "27
-[; ;rylr998.c: 27:     EUSART1_TransmitEnable();
-[e ( _EUSART1_TransmitEnable ..  ]
+[; ;rylr998.c: 27:     EUSART1_Enable();
+[e ( _EUSART1_Enable ..  ]
 "28
-[; ;rylr998.c: 28:     EUSART1_ReceiveEnable();
-[e ( _EUSART1_ReceiveEnable ..  ]
+[; ;rylr998.c: 28:     EUSART1_TransmitEnable();
+[e ( _EUSART1_TransmitEnable ..  ]
 "29
-[; ;rylr998.c: 29: }
-[e :UE 1089 ]
-}
+[; ;rylr998.c: 29:     EUSART1_ReceiveEnable();
+[e ( _EUSART1_ReceiveEnable ..  ]
+"30
+[; ;rylr998.c: 30:     timeout_init();
+[e ( _timeout_init ..  ]
 "31
-[; ;rylr998.c: 31: void rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
-[v _rylr998_send `(v ~T0 @X0 1 ef4`uc`*uc`*uc`d ]
+[; ;rylr998.c: 31: }
+[e :UE 1090 ]
+}
+"33
+[; ;rylr998.c: 33: int8_t rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
+[v _rylr998_send `(c ~T0 @X0 1 ef4`uc`*uc`*uc`d ]
 {
 [e :U _rylr998_send ]
 [v _address `uc ~T0 @X0 1 r1 ]
@@ -1252,231 +1267,324 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _tag `*uc ~T0 @X0 1 r3 ]
 [v _metric `d ~T0 @X0 1 r4 ]
 [f ]
-"34
-[; ;rylr998.c: 34:     if(sizeof(tag) > 20) {
-[e $ ! > -> # _tag `ui -> -> 20 `i `ui 1097  ]
-{
 "36
-[; ;rylr998.c: 36:     }
+[; ;rylr998.c: 36:     if(sizeof(tag) > 20) {
+[e $ ! > -> # _tag `ui -> -> 20 `i `ui 1098  ]
+{
+"37
+[; ;rylr998.c: 37:         return -97;
+[e ) -> -U -> 97 `i `c ]
+[e $UE 1097  ]
+"38
+[; ;rylr998.c: 38:     }
 }
-[e :U 1097 ]
-"40
-[; ;rylr998.c: 40:     char data[10];
+[e :U 1098 ]
+"42
+[; ;rylr998.c: 42:     char data[10];
 [v _data `uc ~T0 @X0 -> 10 `i a ]
-"41
-[; ;rylr998.c: 41:     float rounded = roundf(metric * 100) / 100;
+"43
+[; ;rylr998.c: 43:     float rounded = roundf(metric * 100) / 100;
 [v _rounded `f ~T0 @X0 1 a ]
 [e = _rounded / ( _roundf (1 -> * _metric -> -> 100 `i `d `f -> -> 100 `i `f ]
-"42
-[; ;rylr998.c: 42:     sprintf(data, "%g", rounded);
+"44
+[; ;rylr998.c: 44:     sprintf(data, "%g", rounded);
 [e ( _sprintf (1 , (. , &U _data :s 1C -> _rounded `d ]
-"46
-[; ;rylr998.c: 46:     int payload_size = snprintf(((void*)0), 0, "%s::%s::%s", serial, tag, data);
+"48
+[; ;rylr998.c: 48:     int payload_size = snprintf(((void*)0), 0, "%s::%s::%s", serial, tag, data);
 [v _payload_size `i ~T0 @X0 1 a ]
 [e = _payload_size ( _snprintf (2 , , , (. , , -> -> -> 0 `i `*v `*uc -> -> 0 `i `ui :s 2C _serial _tag &U _data ]
-[v F8934 `uc ~T0 @X0 -> 60 `i s ]
-[i F8934
+[v F9014 `uc ~T0 @X0 -> 60 `i s ]
+[i F9014
 :U ..
-"47
-[; ;rylr998.c: 47:     char buffer[60] = {0};
+"49
+[; ;rylr998.c: 49:     char buffer[60] = {0};
 -> -> 0 `i `uc
 ..
 ]
 [v _buffer `uc ~T0 @X0 -> 60 `i a ]
-[e = _buffer F8934 ]
-"48
-[; ;rylr998.c: 48:     sprintf(buffer, "AT+SEND=%i,%i,%s::%s::%s\r\n", address, payload_size, serial, tag, data);
+[e = _buffer F9014 ]
+"50
+[; ;rylr998.c: 50:     sprintf(buffer, "AT+SEND=%i,%i,%s::%s::%s\r\n", address, payload_size, serial, tag, data);
 [e ( _sprintf (1 , , , , , (. , &U _buffer :s 3C -> _address `i _payload_size _serial _tag &U _data ]
-"49
-[; ;rylr998.c: 49:     printf(buffer);
-[e ( _printf -> &U _buffer `*Cuc ]
 "51
-[; ;rylr998.c: 51:     rylr998_write(&buffer);
-[e ( _rylr998_write (1 -> &U _buffer `*uc ]
-"52
-[; ;rylr998.c: 52:     rylr998_read();
-[e ( _rylr998_read ..  ]
+[; ;rylr998.c: 51:     printf(buffer);
+[e ( _printf -> &U _buffer `*Cuc ]
 "53
-[; ;rylr998.c: 53: }
-[e :UE 1096 ]
-}
+[; ;rylr998.c: 53:     int8_t response_code = rylr998_write(&buffer);
+[v _response_code `c ~T0 @X0 1 a ]
+[e = _response_code ( _rylr998_write (1 -> &U _buffer `*uc ]
+"54
+[; ;rylr998.c: 54:     if(response_code < 0) {
+[e $ ! < -> _response_code `i -> 0 `i 1099  ]
+{
 "55
-[; ;rylr998.c: 55: void rylr998_write(char *data) {
-[v _rylr998_write `(v ~T0 @X0 1 ef1`*uc ]
+[; ;rylr998.c: 55:         return response_code;
+[e ) _response_code ]
+[e $UE 1097  ]
+"56
+[; ;rylr998.c: 56:     }
+}
+[e :U 1099 ]
+"58
+[; ;rylr998.c: 58:     return rylr998_read();
+[e ) ( _rylr998_read ..  ]
+[e $UE 1097  ]
+"59
+[; ;rylr998.c: 59: }
+[e :UE 1097 ]
+}
+"61
+[; ;rylr998.c: 61: int8_t rylr998_write(char *data) {
+[v _rylr998_write `(c ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _rylr998_write ]
 [v _data `*uc ~T0 @X0 1 r1 ]
 [f ]
-"57
-[; ;rylr998.c: 57:     _Bool carriage_found = 0;
+"63
+[; ;rylr998.c: 63:     _Bool carriage_found = 0;
 [v _carriage_found `a ~T0 @X0 1 a ]
 [e = _carriage_found -> -> 0 `i `a ]
-"58
-[; ;rylr998.c: 58:     _Bool newline_found = 0;
+"64
+[; ;rylr998.c: 64:     _Bool newline_found = 0;
 [v _newline_found `a ~T0 @X0 1 a ]
 [e = _newline_found -> -> 0 `i `a ]
-"60
-[; ;rylr998.c: 60:     uint8_t size = sizeof(data);
+"66
+[; ;rylr998.c: 66:     uint8_t size = sizeof(data);
 [v _size `uc ~T0 @X0 1 a ]
 [e = _size -> -> # _data `ui `uc ]
-"61
-[; ;rylr998.c: 61:     printf(size);
+"67
+[; ;rylr998.c: 67:     printf(size);
 [e ( _printf -> _size `*Cuc ]
-"62
-[; ;rylr998.c: 62:     for(uint8_t i = 0; i < 60; i++) {
+"68
+[; ;rylr998.c: 68:     for(uint8_t i = 0; i < 60; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 60 `i 1099  ]
-[e $U 1100  ]
-[e :U 1099 ]
+[e $ < -> _i `i -> 60 `i 1101  ]
+[e $U 1102  ]
+[e :U 1101 ]
 {
-"64
-[; ;rylr998.c: 64:         char c = data[i];
+"70
+[; ;rylr998.c: 70:         char c = data[i];
 [v _c `uc ~T0 @X0 1 a ]
 [e = _c *U + _data * -> _i `ux -> -> # *U _data `ui `ux ]
-"65
-[; ;rylr998.c: 65:         EUSART1_Write(c);
-[e ( _EUSART1_Write (1 -> _c `uc ]
-"66
-[; ;rylr998.c: 66:         while(!EUSART1_IsTxDone());
-[e $U 1102  ]
-[e :U 1103 ]
-[e :U 1102 ]
-[e $ ! != -> ( _EUSART1_IsTxDone ..  `i -> 0 `i 1103  ]
-[e :U 1104 ]
-"68
-[; ;rylr998.c: 68:         carriage_found = carriage_found || (data[i] == '\r');
-[e = _carriage_found -> -> || != -> _carriage_found `i -> 0 `i == -> *U + _data * -> _i `ux -> -> # *U _data `ui `ux `ui -> 13 `ui `i `a ]
-"69
-[; ;rylr998.c: 69:         newline_found = newline_found || (data[i] == '\n');
-[e = _newline_found -> -> || != -> _newline_found `i -> 0 `i == -> *U + _data * -> _i `ux -> -> # *U _data `ui `ux `ui -> 10 `ui `i `a ]
-"70
-[; ;rylr998.c: 70:         if(carriage_found && newline_found) {
-[e $ ! && != -> _carriage_found `i -> 0 `i != -> _newline_found `i -> 0 `i 1105  ]
-{
 "71
-[; ;rylr998.c: 71:             break;
-[e $U 1100  ]
-"72
-[; ;rylr998.c: 72:         }
-}
-[e :U 1105 ]
+[; ;rylr998.c: 71:         EUSART1_Write(c);
+[e ( _EUSART1_Write (1 -> _c `uc ]
 "73
-[; ;rylr998.c: 73:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 60 `i 1099  ]
-[e :U 1100 ]
-}
+[; ;rylr998.c: 73:         timeout_start();
+[e ( _timeout_start ..  ]
+"74
+[; ;rylr998.c: 74:         while(!EUSART1_IsTxDone() && !timeout_timed_out());
+[e $U 1104  ]
+[e :U 1105 ]
+[e :U 1104 ]
+[e $ && ! != -> ( _EUSART1_IsTxDone ..  `i -> 0 `i ! != -> ( _timeout_timed_out ..  `i -> 0 `i 1105  ]
+[e :U 1106 ]
 "75
-[; ;rylr998.c: 75:     if(!carriage_found || !newline_found) {
-[e $ ! || ! != -> _carriage_found `i -> 0 `i ! != -> _newline_found `i -> 0 `i 1106  ]
+[; ;rylr998.c: 75:         timeout_stop();
+[e ( _timeout_stop ..  ]
+"76
+[; ;rylr998.c: 76:         if(timeout_timed_out()) {
+[e $ ! != -> ( _timeout_timed_out ..  `i -> 0 `i 1107  ]
 {
 "77
-[; ;rylr998.c: 77:     }
-}
-[e :U 1106 ]
+[; ;rylr998.c: 77:             return -98;
+[e ) -> -U -> 98 `i `c ]
+[e $UE 1100  ]
 "78
-[; ;rylr998.c: 78: }
-[e :UE 1098 ]
+[; ;rylr998.c: 78:         }
 }
+[e :U 1107 ]
 "80
-[; ;rylr998.c: 80: void rylr998_read() {
-[v _rylr998_read `(v ~T0 @X0 1 ef ]
+[; ;rylr998.c: 80:         carriage_found = carriage_found || (data[i] == '\r');
+[e = _carriage_found -> -> || != -> _carriage_found `i -> 0 `i == -> *U + _data * -> _i `ux -> -> # *U _data `ui `ux `ui -> 13 `ui `i `a ]
+"81
+[; ;rylr998.c: 81:         newline_found = newline_found || (data[i] == '\n');
+[e = _newline_found -> -> || != -> _newline_found `i -> 0 `i == -> *U + _data * -> _i `ux -> -> # *U _data `ui `ux `ui -> 10 `ui `i `a ]
+"82
+[; ;rylr998.c: 82:         if(carriage_found && newline_found) {
+[e $ ! && != -> _carriage_found `i -> 0 `i != -> _newline_found `i -> 0 `i 1108  ]
+{
+"83
+[; ;rylr998.c: 83:             break;
+[e $U 1102  ]
+"84
+[; ;rylr998.c: 84:         }
+}
+[e :U 1108 ]
+"85
+[; ;rylr998.c: 85:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 60 `i 1101  ]
+[e :U 1102 ]
+}
+"87
+[; ;rylr998.c: 87:     if(!carriage_found || !newline_found) {
+[e $ ! || ! != -> _carriage_found `i -> 0 `i ! != -> _newline_found `i -> 0 `i 1109  ]
+{
+"88
+[; ;rylr998.c: 88:         return -97;
+[e ) -> -U -> 97 `i `c ]
+[e $UE 1100  ]
+"89
+[; ;rylr998.c: 89:     }
+}
+[e :U 1109 ]
+"91
+[; ;rylr998.c: 91:     return 1;
+[e ) -> -> 1 `i `c ]
+[e $UE 1100  ]
+"92
+[; ;rylr998.c: 92: }
+[e :UE 1100 ]
+}
+"94
+[; ;rylr998.c: 94: int8_t rylr998_read() {
+[v _rylr998_read `(c ~T0 @X0 1 ef ]
 {
 [e :U _rylr998_read ]
 [f ]
-"83
-[; ;rylr998.c: 83:     while(!EUSART1_IsRxReady());
-[e $U 1108  ]
-[e :U 1109 ]
-[e :U 1108 ]
-[e $ ! != -> ( _EUSART1_IsRxReady ..  `i -> 0 `i 1109  ]
-[e :U 1110 ]
-"85
-[; ;rylr998.c: 85:     _Bool carriage_found = 0;
+"97
+[; ;rylr998.c: 97:     timeout_start();
+[e ( _timeout_start ..  ]
+"98
+[; ;rylr998.c: 98:     while(!EUSART1_IsRxReady() && !timeout_timed_out());
+[e $U 1111  ]
+[e :U 1112 ]
+[e :U 1111 ]
+[e $ && ! != -> ( _EUSART1_IsRxReady ..  `i -> 0 `i ! != -> ( _timeout_timed_out ..  `i -> 0 `i 1112  ]
+[e :U 1113 ]
+"99
+[; ;rylr998.c: 99:     timeout_stop();
+[e ( _timeout_stop ..  ]
+"100
+[; ;rylr998.c: 100:     if(timeout_timed_out()) {
+[e $ ! != -> ( _timeout_timed_out ..  `i -> 0 `i 1114  ]
+{
+"101
+[; ;rylr998.c: 101:         return -98;
+[e ) -> -U -> 98 `i `c ]
+[e $UE 1110  ]
+"102
+[; ;rylr998.c: 102:     }
+}
+[e :U 1114 ]
+"104
+[; ;rylr998.c: 104:     _Bool carriage_found = 0;
 [v _carriage_found `a ~T0 @X0 1 a ]
 [e = _carriage_found -> -> 0 `i `a ]
-"86
-[; ;rylr998.c: 86:     _Bool newline_found = 0;
+"105
+[; ;rylr998.c: 105:     _Bool newline_found = 0;
 [v _newline_found `a ~T0 @X0 1 a ]
 [e = _newline_found -> -> 0 `i `a ]
-[v F8947 `uc ~T0 @X0 -> 60 `i s ]
-[i F8947
+[v F9028 `uc ~T0 @X0 -> 60 `i s ]
+[i F9028
 :U ..
-"88
-[; ;rylr998.c: 88:     char data[60] = {0};
+"107
+[; ;rylr998.c: 107:     char data[60] = {0};
 -> -> 0 `i `uc
 ..
 ]
 [v _data `uc ~T0 @X0 -> 60 `i a ]
-[e = _data F8947 ]
-"89
-[; ;rylr998.c: 89:     for(uint8_t i = 0; i < sizeof(data); i++) {
+[e = _data F9028 ]
+"108
+[; ;rylr998.c: 108:     for(uint8_t i = 0; i < sizeof(data); i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `ui -> # _data `ui 1111  ]
-[e $U 1112  ]
-[e :U 1111 ]
+[e $ < -> _i `ui -> # _data `ui 1115  ]
+[e $U 1116  ]
+[e :U 1115 ]
 {
-"91
-[; ;rylr998.c: 91:         uint8_t byte = EUSART1_Read();
+"110
+[; ;rylr998.c: 110:         uint8_t byte = EUSART1_Read();
 [v _byte `uc ~T0 @X0 1 a ]
 [e = _byte ( _EUSART1_Read ..  ]
-"92
-[; ;rylr998.c: 92:         carriage_found = carriage_found || (byte == '\r');
+"111
+[; ;rylr998.c: 111:         carriage_found = carriage_found || (byte == '\r');
 [e = _carriage_found -> -> || != -> _carriage_found `i -> 0 `i == -> _byte `ui -> 13 `ui `i `a ]
-"93
-[; ;rylr998.c: 93:         newline_found = newline_found || (byte == '\n');
+"112
+[; ;rylr998.c: 112:         newline_found = newline_found || (byte == '\n');
 [e = _newline_found -> -> || != -> _newline_found `i -> 0 `i == -> _byte `ui -> 10 `ui `i `a ]
-"95
-[; ;rylr998.c: 95:         if(!(byte == '\r' || byte == '\n')) {
-[e $ ! ! || == -> _byte `ui -> 13 `ui == -> _byte `ui -> 10 `ui 1114  ]
+"114
+[; ;rylr998.c: 114:         if(!(byte == '\r' || byte == '\n')) {
+[e $ ! ! || == -> _byte `ui -> 13 `ui == -> _byte `ui -> 10 `ui 1118  ]
 {
-"96
-[; ;rylr998.c: 96:             data[i] = byte;
+"115
+[; ;rylr998.c: 115:             data[i] = byte;
 [e = *U + &U _data * -> _i `ux -> -> # *U &U _data `ui `ux -> _byte `uc ]
-"97
-[; ;rylr998.c: 97:         }
+"116
+[; ;rylr998.c: 116:         }
 }
-[e :U 1114 ]
-"99
-[; ;rylr998.c: 99:         if(carriage_found && newline_found) {
-[e $ ! && != -> _carriage_found `i -> 0 `i != -> _newline_found `i -> 0 `i 1115  ]
-{
-"100
-[; ;rylr998.c: 100:             break;
-[e $U 1112  ]
-"101
-[; ;rylr998.c: 101:         }
-}
-[e :U 1115 ]
-"104
-[; ;rylr998.c: 104:         while(!EUSART1_IsRxReady());
-[e $U 1116  ]
-[e :U 1117 ]
-[e :U 1116 ]
-[e $ ! != -> ( _EUSART1_IsRxReady ..  `i -> 0 `i 1117  ]
 [e :U 1118 ]
-"106
-[; ;rylr998.c: 106:     }
+"118
+[; ;rylr998.c: 118:         if(carriage_found && newline_found) {
+[e $ ! && != -> _carriage_found `i -> 0 `i != -> _newline_found `i -> 0 `i 1119  ]
+{
+"119
+[; ;rylr998.c: 119:             break;
+[e $U 1116  ]
+"120
+[; ;rylr998.c: 120:         }
+}
+[e :U 1119 ]
+"122
+[; ;rylr998.c: 122:         timeout_start();
+[e ( _timeout_start ..  ]
+"123
+[; ;rylr998.c: 123:         while(!EUSART1_IsRxReady() && !timeout_timed_out());
+[e $U 1120  ]
+[e :U 1121 ]
+[e :U 1120 ]
+[e $ && ! != -> ( _EUSART1_IsRxReady ..  `i -> 0 `i ! != -> ( _timeout_timed_out ..  `i -> 0 `i 1121  ]
+[e :U 1122 ]
+"124
+[; ;rylr998.c: 124:         timeout_stop();
+[e ( _timeout_stop ..  ]
+"125
+[; ;rylr998.c: 125:         if(timeout_timed_out()) {
+[e $ ! != -> ( _timeout_timed_out ..  `i -> 0 `i 1123  ]
+{
+"126
+[; ;rylr998.c: 126:             return -98;
+[e ) -> -U -> 98 `i `c ]
+[e $UE 1110  ]
+"127
+[; ;rylr998.c: 127:         }
+}
+[e :U 1123 ]
+"129
+[; ;rylr998.c: 129:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `ui -> # _data `ui 1111  ]
-[e :U 1112 ]
+[e $ < -> _i `ui -> # _data `ui 1115  ]
+[e :U 1116 ]
 }
-"108
-[; ;rylr998.c: 108:     _Bool success = strcmp("+OK", data) == 0;
+"131
+[; ;rylr998.c: 131:     _Bool success = strcmp("+OK", data) == 0;
 [v _success `a ~T0 @X0 1 a ]
 [e = _success -> -> == ( _strcmp (2 , :s 4C -> &U _data `*Cuc -> 0 `i `i `a ]
-"109
-[; ;rylr998.c: 109:     printf(success);
-[e ( _printf -> _success `*Cuc ]
-"111
-[; ;rylr998.c: 111: }
-[e :UE 1107 ]
+"132
+[; ;rylr998.c: 132:     if(success) {
+[e $ ! != -> _success `i -> 0 `i 1124  ]
+{
+"133
+[; ;rylr998.c: 133:         return 1;
+[e ) -> -> 1 `i `c ]
+[e $UE 1110  ]
+"134
+[; ;rylr998.c: 134:     }
+}
+[e :U 1124 ]
+"137
+[; ;rylr998.c: 137:     return -99;
+[e ) -> -U -> 99 `i `c ]
+[e $UE 1110  ]
+"138
+[; ;rylr998.c: 138: }
+[e :UE 1110 ]
 }
 [p f _snprintf 8650752 ]
 [p f _printf 9437696 ]

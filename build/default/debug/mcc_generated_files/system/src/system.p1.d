@@ -13,5 +13,7 @@ mcc_generated_files/system/src/../../i2c_host/i2c_host_event_types.h  \
 mcc_generated_files/system/src/../../i2c_host/i2c_host_types.h  \
 mcc_generated_files/system/src/../../i2c_host/i2c_host_interface.h  \
 mcc_generated_files/system/src/../../nvm/nvm.h  \
+mcc_generated_files/system/src/../../timer/tmr6.h  \
+mcc_generated_files/system/src/../../timer/timer_interface.h  \
 mcc_generated_files/system/src/../../system/watchdog.h  \
 mcc_generated_files/system/src/../../system/interrupt.h 

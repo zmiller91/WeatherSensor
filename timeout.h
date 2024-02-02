@@ -28,23 +28,24 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef DHT11_H
-#define	DHT11_H
+#ifndef XC_TIMEOUT_H
+#define	XC_TIMEOUT_H
 
+
+#include <stdbool.h>
 #include <xc.h> // include processor files - each processor file is guarded.  
 
+void timeout_init();
 
-uint8_t TIMEOUT = 100;
-uint8_t DHT11_ERROR = 101;
-uint8_t DHT11_OK = 202;
+void timeout_start();
 
-uint8_t parseDHT11Byte(uint8_t byteArray[], uint8_t byte);
-void dht11Start();
-uint8_t dht11CheckResponse();
-uint8_t dht11ValidateResponse(uint8_t byteArray[]);
-void dht11Run();
+void timeout_stop();
 
+void timeot_reset();
 
+bool timeout_timed_out();
 
-#endif	/* XC_HEADER_TEMPLATE_H */
+void timer_increment();
+
+#endif	/* XC_TIMEOUT_H */
 

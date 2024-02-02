@@ -12,6 +12,9 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 
+
+#define RYLR998_OK                                      INT8_C(1)
+
 /*! @name RYLR998 Error Codes */
 #define RYLR998_NO_ENTER                                INT8_C(-1)
 #define RYLR998_NO_AT                                   INT8_C(-2)
@@ -26,12 +29,15 @@
 #define RYLR998_PREAMBLE_VAL_NOT_ALLOWED                INT8_C(-18)
 #define RYLR998_RX_FAILED_HEADER_ERROR                  INT8_C(-19)
 #define RYLR998_TIME_SETTING_NOT_ALLOWED                INT8_C(-20)
+
+#define RYLR998_INVALID_DATA                            INT8_C(-97)
+#define RYLR998_TIMEOUT                                 INT8_C(-98)
 #define RYLR998_UNLISTED_FAILURE                        INT8_C(-99)
 
 void rylr998_init();
-void rylr998_send(uint8_t address, char serial[], char tag[], double metric);
-void rylr998_write(char data[]);
-void rylr998_read();
+int8_t rylr998_send(uint8_t address, char serial[], char tag[], double metric);
+int8_t rylr998_write(char data[]);
+int8_t rylr998_read();
 
 
 #endif	/* XC_HEADER_TEMPLATE_H */

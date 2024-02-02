@@ -1340,8 +1340,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 56:     TRISE = 0xF;
 [e = _TRISE -> -> 15 `i `uc ]
 "61
-[; ;mcc_generated_files/system/src/pins.c: 61:     ANSELA = 0xFB;
-[e = _ANSELA -> -> 251 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 61:     ANSELA = 0xF9;
+[e = _ANSELA -> -> 249 `i `uc ]
 "62
 [; ;mcc_generated_files/system/src/pins.c: 62:     ANSELB = 0xDF;
 [e = _ANSELB -> -> 223 `i `uc ]

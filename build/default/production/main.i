@@ -14204,19 +14204,28 @@ int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *
 # 1 "./rylr998.h" 1
 # 31 "./rylr998.h"
 void rylr998_init();
-void rylr998_send(uint8_t address, char tag[], double metric);
+void rylr998_send(uint8_t address, char serial[], char tag[], double metric);
 void rylr998_write(char data[]);
 void rylr998_read();
 # 42 "main.c" 2
 # 66 "main.c"
-void write_eeprom(uint16_t address, uint8_t data) {
-    while(NVM_IsBusy());
-    EEPROM_Write(address, data);
+void write_eeprom(uint16_t address, uint8_t *data, uint8_t size) {
+
+    NVM_UnlockKeySet(0xaa55);
+    printf(size);
+    for(uint8_t i = 0; i < size; i++) {
+        while(NVM_IsBusy());
+        EEPROM_Write(address + i, data[i]);
+    }
 }
 
-uint8_t read_eeprom(uint16_t address) {
-    while(NVM_IsBusy());
-    return EEPROM_Read(address);
+uint8_t read_eeprom(uint16_t address, uint8_t data[], uint8_t size) {
+
+    NVM_UnlockKeySet(0xaa55);
+    for(uint8_t i = 0; i < size; i++) {
+        while(NVM_IsBusy());
+        data[i] = EEPROM_Read(address + i);
+    }
 }
 
 int main(void){
@@ -14225,33 +14234,18 @@ int main(void){
     (INTCONbits.GIE = 1);
     (INTCONbits.PEIE = 1);
 
-    NVM_UnlockKeySet(0xaa55);
 
-    write_eeprom(0xF000, 'a');
-    write_eeprom(0xF001, 'b');
-    write_eeprom(0xF002, 'c');
-    write_eeprom(0xF003, 'd');
-    write_eeprom(0xF004, 'e');
-    write_eeprom(0xF005, 'a');
-    write_eeprom(0xF006, 'g');
-    write_eeprom(0xF007, 'h');
+
+
+    uint8_t serial_number[9] = {0};
+    write_eeprom(0xF000, "ABCDEFGH", 8);
+    read_eeprom(0xF000, serial_number, 8);
+    printf(serial_number);
+    serial_number[9] = '\0';
+
 
     rylr998_init();
     weather_init();
-
-    uint8_t serial_number[] = {
-        read_eeprom(0xF000),
-        read_eeprom(0xF001),
-        read_eeprom(0xF002),
-        read_eeprom(0xF003),
-        read_eeprom(0xF004),
-        read_eeprom(0xF005),
-        read_eeprom(0xF006),
-        read_eeprom(0xF007)
-    };
-
-    printf(serial_number);
-
     while(1) {
 
 
@@ -14264,13 +14258,13 @@ int main(void){
         struct bme280_dev dev = weather_dev();
         struct bme280_data weather = weather_read(&dev);
 
-        rylr998_send(32, "TEMPERATURE", weather.temperature);
+        rylr998_send(32, &serial_number, "TEMPERATURE", weather.temperature);
         _delay((unsigned long)((1000)*(32000000/4000.0)));
 
-        rylr998_send(32, "HUMIDITY", weather.humidity);
+        rylr998_send(32, serial_number, "HUMIDITY", weather.humidity);
         _delay((unsigned long)((1000)*(32000000/4000.0)));
 
-        rylr998_send(32, "PRESSURE", weather.pressure);
+        rylr998_send(32, serial_number, "PRESSURE", weather.pressure);
         _delay((unsigned long)((1000)*(32000000/4000.0)));
 
 

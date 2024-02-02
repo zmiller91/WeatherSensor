@@ -41,6 +41,7 @@ void SYSTEM_Initialize(void)
     EUSART1_Initialize();
     I2C2_Initialize();
     NVM_Initialize();
+    TMR6_Initialize();
     WDT_Initialize();
     INTERRUPT_Initialize();
 }

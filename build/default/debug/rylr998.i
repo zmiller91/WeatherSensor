@@ -13919,7 +13919,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 153 "./mcc_generated_files/system/../system/pins.h"
+# 172 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -14298,10 +14298,250 @@ eeprom_data_t EEPROM_Read(eeprom_address_t address);
 void EEPROM_Write(eeprom_address_t address, eeprom_data_t data);
 # 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
+# 1 "./mcc_generated_files/system/../timer/tmr6.h" 1
+# 39 "./mcc_generated_files/system/../timer/tmr6.h"
+# 1 "./mcc_generated_files/system/../timer/timer_interface.h" 1
+# 42 "./mcc_generated_files/system/../timer/timer_interface.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 1 3
+# 19 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 132 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef int ptrdiff_t;
+# 20 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 2 3
+# 42 "./mcc_generated_files/system/../timer/timer_interface.h" 2
+
+
+
+
+
+
+
+
+struct TMR_INTERFACE
+{
+    void (*Initialize)(void);
+    void (*Start)(void);
+    void (*Stop)(void);
+    void (*PeriodCountSet)(size_t count);
+    void (*TimeoutCallbackRegister)(void (* CallbackHandler)(void));
+    void (*Tasks)(void);
+};
+# 39 "./mcc_generated_files/system/../timer/tmr6.h" 2
+# 101 "./mcc_generated_files/system/../timer/tmr6.h"
+extern const struct TMR_INTERFACE TimeoutTimer;
+
+
+
+
+
+
+typedef enum
+{
+# 118 "./mcc_generated_files/system/../timer/tmr6.h"
+   TMR6_ROP_STARTS_TMRON,
+
+
+
+
+   TMR6_ROP_STARTS_TMRON_ERSHIGH,
+
+
+
+
+   TMR6_ROP_STARTS_TMRON_ERSLOW,
+
+
+
+
+   TMR6_ROP_RESETS_ERSBOTHEDGE,
+
+
+
+
+   TMR6_ROP_RESETS_ERSRISINGEDGE,
+
+
+
+
+   TMR6_ROP_RESETS_ERSFALLINGEDGE,
+
+
+
+
+   TMR6_ROP_RESETS_ERSLOW,
+
+
+
+
+   TMR6_ROP_RESETS_ERSHIGH,
+# 164 "./mcc_generated_files/system/../timer/tmr6.h"
+   TMR6_OS_STARTS_TMRON,
+
+
+
+
+   TMR6_OS_STARTS_ERSRISINGEDGE ,
+
+
+
+
+   TMR6_OS_STARTS_ERSFALLINGEDGE ,
+
+
+
+
+   TMR6_OS_STARTS_ERSBOTHEDGE,
+
+
+
+
+
+   TMR6_OS_STARTS_ERSFIRSTRISINGEDGE,
+
+
+
+
+
+   TMR6_OS_STARTS_ERSFIRSTFALLINGEDGE,
+
+
+
+
+
+   TMR6_OS_STARTS_ERSRISINGEDGEDETECT,
+
+
+
+
+   TMR6_OS_STARTS_ERSFALLINGEDGEDETECT,
+
+
+
+
+   TMR6_OS_STARTS_TMRON_ERSHIGH = 0x16,
+
+
+
+
+   TMR6_OS_STARTS_TMRON_ERSLOW = 0x17,
+# 221 "./mcc_generated_files/system/../timer/tmr6.h"
+   TMR6_MS_STARTS_TMRON_ERSRISINGEDGEDETECT = 0x11,
+
+
+
+
+   TMR6_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT = 0x12,
+
+
+
+
+
+   TMR6_MS_STARTS_TMRON_ERSBOTHEDGE = 0x13
+
+} TMR6_HLT_MODE;
+
+
+
+
+
+
+typedef enum
+{
+
+
+
+    TMR6_T6CKIPPS_PIN = 0x0,
+
+
+
+    TMR6_TMR2_POSTSCALED = 0x1,
+
+
+
+    TMR6_TMR4_POSTSCALED = 0x2,
+
+
+
+    TMR6_CCP1OUT = 0x4,
+
+
+
+    TMR6_CCP2OUT = 0x5,
+
+
+
+    TMR6_PWM3OUT = 0x6,
+
+
+
+    TMR6_PWM4OUT = 0x7,
+
+
+
+    TMR6_PWM5OUT = 0x8,
+
+
+
+    TMR6_CMP1OUT = 0x9,
+
+
+
+    TMR6_ZCDOUT = 0xa,
+
+
+
+    TMR6_CLC1OUT = 0xb,
+
+
+
+    TMR6_CLC2OUT = 0xc,
+
+
+
+    TMR6_CLC3OUT = 0xd,
+
+
+
+    TMR6_CLC4OUT = 0xe
+} TMR6_HLT_EXT_RESET_SOURCE;
+# 311 "./mcc_generated_files/system/../timer/tmr6.h"
+void TMR6_Initialize(void);
+# 320 "./mcc_generated_files/system/../timer/tmr6.h"
+void TMR6_ModeSet(TMR6_HLT_MODE mode);
+# 329 "./mcc_generated_files/system/../timer/tmr6.h"
+void TMR6_ExtResetSourceSet(TMR6_HLT_EXT_RESET_SOURCE reset);
+# 338 "./mcc_generated_files/system/../timer/tmr6.h"
+void TMR6_Start(void);
+# 347 "./mcc_generated_files/system/../timer/tmr6.h"
+void TMR6_Stop(void);
+# 356 "./mcc_generated_files/system/../timer/tmr6.h"
+uint8_t TMR6_Read(void);
+# 365 "./mcc_generated_files/system/../timer/tmr6.h"
+void TMR6_Write(uint8_t timerVal);
+# 374 "./mcc_generated_files/system/../timer/tmr6.h"
+void TMR6_PeriodCountSet(size_t periodVal);
+
+
+
+
+
+
+
+void TMR6_ISR(void);
+
+
+
+
+
+
+
+void TMR6_OverflowCallbackRegister(void (* InterruptHandler)(void));
+# 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
+
 # 1 "./mcc_generated_files/system/../system/watchdog.h" 1
 # 52 "./mcc_generated_files/system/../system/watchdog.h"
 void WDT_Initialize(void);
-# 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 47 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../system/interrupt.h" 1
 # 85 "./mcc_generated_files/system/../system/interrupt.h"
@@ -14316,7 +14556,7 @@ void INT_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT_InterruptHandler)(void);
 # 175 "./mcc_generated_files/system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
-# 47 "./mcc_generated_files/system/../uart/../system/system.h" 2
+# 48 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 
 
@@ -14330,12 +14570,27 @@ void SYSTEM_Initialize(void);
 
 
 # 1 "./rylr998.h" 1
-# 31 "./rylr998.h"
+# 37 "./rylr998.h"
 void rylr998_init();
-void rylr998_send(uint8_t address, char serial[], char tag[], double metric);
-void rylr998_write(char data[]);
-void rylr998_read();
+int8_t rylr998_send(uint8_t address, char serial[], char tag[], double metric);
+int8_t rylr998_write(char data[]);
+int8_t rylr998_read();
 # 18 "rylr998.c" 2
+
+# 1 "./timeout.h" 1
+# 38 "./timeout.h"
+void timeout_init();
+
+void timeout_start();
+
+void timeout_stop();
+
+void timeot_reset();
+
+_Bool timeout_timed_out();
+
+void timer_increment();
+# 19 "rylr998.c" 2
 
 
 void rylr998_init() {
@@ -14347,13 +14602,14 @@ void rylr998_init() {
     EUSART1_Enable();
     EUSART1_TransmitEnable();
     EUSART1_ReceiveEnable();
+    timeout_init();
 }
 
-void rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
+int8_t rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
 
 
     if(sizeof(tag) > 20) {
-
+        return -97;
     }
 
 
@@ -14369,11 +14625,15 @@ void rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
     sprintf(buffer, "AT+SEND=%i,%i,%s::%s::%s\r\n", address, payload_size, serial, tag, data);
     printf(buffer);
 
-    rylr998_write(&buffer);
-    rylr998_read();
+    int8_t response_code = rylr998_write(&buffer);
+    if(response_code < 0) {
+        return response_code;
+    }
+
+    return rylr998_read();
 }
 
-void rylr998_write(char *data) {
+int8_t rylr998_write(char *data) {
 
     _Bool carriage_found = 0;
     _Bool newline_found = 0;
@@ -14384,7 +14644,13 @@ void rylr998_write(char *data) {
 
         char c = data[i];
         EUSART1_Write(c);
-        while(!EUSART1_IsTxDone());
+
+        timeout_start();
+        while(!EUSART1_IsTxDone() && !timeout_timed_out());
+        timeout_stop();
+        if(timeout_timed_out()) {
+            return -98;
+        }
 
         carriage_found = carriage_found || (data[i] == '\r');
         newline_found = newline_found || (data[i] == '\n');
@@ -14394,14 +14660,21 @@ void rylr998_write(char *data) {
     }
 
     if(!carriage_found || !newline_found) {
-
+        return -97;
     }
+
+    return 1;
 }
 
-void rylr998_read() {
+int8_t rylr998_read() {
 
 
-    while(!EUSART1_IsRxReady());
+    timeout_start();
+    while(!EUSART1_IsRxReady() && !timeout_timed_out());
+    timeout_stop();
+    if(timeout_timed_out()) {
+        return -98;
+    }
 
     _Bool carriage_found = 0;
     _Bool newline_found = 0;
@@ -14421,12 +14694,20 @@ void rylr998_read() {
             break;
         }
 
-
-        while(!EUSART1_IsRxReady());
+        timeout_start();
+        while(!EUSART1_IsRxReady() && !timeout_timed_out());
+        timeout_stop();
+        if(timeout_timed_out()) {
+            return -98;
+        }
 
     }
 
     _Bool success = strcmp("+OK", data) == 0;
-    printf(success);
+    if(success) {
+        return 1;
+    }
 
+
+    return -99;
 }

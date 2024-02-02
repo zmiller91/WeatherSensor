@@ -11,6 +11,8 @@ mcc_generated_files/uart/src/../../system/../i2c_host/i2c_host_event_types.h  \
 mcc_generated_files/uart/src/../../system/../i2c_host/i2c_host_types.h  \
 mcc_generated_files/uart/src/../../system/../i2c_host/i2c_host_interface.h  \
 mcc_generated_files/uart/src/../../system/../nvm/nvm.h  \
+mcc_generated_files/uart/src/../../system/../timer/tmr6.h  \
+mcc_generated_files/uart/src/../../system/../timer/timer_interface.h  \
 mcc_generated_files/uart/src/../../system/../system/watchdog.h  \
 mcc_generated_files/uart/src/../../system/../system/interrupt.h  \
 mcc_generated_files/uart/src/../uart_drv_interface.h  \
