@@ -1272,14 +1272,6 @@ vfpfcnvrt(FILE *fp, char *fmt[], va_list ap)
    *fmt = cp+1;
    return (int) dtoa(fp, convarg.sint);
   }
-# 1348 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\sources\\c99\\common\\doprnt.c"
-  if (*cp == 'n') {
-# 1391 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\sources\\c99\\common\\doprnt.c"
-   *(*(int* *)__va_arg(*(int* **)ap, (int*)0)) = (int) nout;
-
-   *fmt = cp+1;
-   return (int) 0;
-  }
 # 1409 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\sources\\c99\\common\\doprnt.c"
         if (*fmt[0] == 's' || !strncmp(*fmt, "lls", ((sizeof("lls")/sizeof("lls"[0]))-1))) {
 
@@ -1339,18 +1331,7 @@ vfpfcnvrt(FILE *fp, char *fmt[], va_list ap)
 
    }
   }
-
-
-
-
-        if ((*fmt)[0] == '%') {
-            ++*fmt;
-            fputc((int)'%', fp);
-            return (int) 1;
-        }
-
-
-
+# 1535 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\sources\\c99\\common\\doprnt.c"
         ++*fmt;
         return (int) 0;
     }

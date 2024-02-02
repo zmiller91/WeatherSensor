@@ -14487,7 +14487,6 @@ int8_t bme280_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t length, voi
         return -2;
     }
 
-    printf(reg_data);
     return 0;
 }
 

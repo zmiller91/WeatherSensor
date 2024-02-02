@@ -14459,17 +14459,16 @@ _Bool timeout_timed_out();
 void timer_increment();
 # 43 "main.c" 2
 # 67 "main.c"
-void write_eeprom(uint16_t address, uint8_t *data, uint8_t size) {
+void write_eeprom(uint16_t address, char *data, uint8_t size) {
 
     NVM_UnlockKeySet(0xaa55);
-    printf(size);
     for(uint8_t i = 0; i < size; i++) {
         while(NVM_IsBusy());
         EEPROM_Write(address + i, data[i]);
     }
 }
 
-void read_eeprom(uint16_t address, uint8_t data[], uint8_t size) {
+void read_eeprom(uint16_t address, char data[], uint8_t size) {
 
     NVM_UnlockKeySet(0xaa55);
     for(uint8_t i = 0; i < size; i++) {
@@ -14487,11 +14486,10 @@ int main(void){
 
 
 
-    uint8_t serial_number[9] = {0};
+    char serial_number[9] = {0};
     write_eeprom(0xF000, "ABCDEFGH", 8);
     read_eeprom(0xF000, serial_number, 8);
-    printf(serial_number);
-    serial_number[9] = '\0';
+    serial_number[8] = '\0';
 
     while(1) {
 

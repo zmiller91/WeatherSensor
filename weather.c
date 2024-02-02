@@ -143,7 +143,6 @@ BME280_INTF_RET_TYPE bme280_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32
         return BME280_E_COMM_FAIL;
     }
     
-    printf(reg_data);
     return BME280_INTF_RET_SUCCESS;
 }
 

@@ -64,17 +64,16 @@
  * @return 
  */
 
-void write_eeprom(uint16_t address, uint8_t *data, uint8_t size) {
+void write_eeprom(uint16_t address, char *data, uint8_t size) {
     
     NVM_UnlockKeySet(0xaa55);
-    printf(size);
     for(uint8_t i = 0; i < size; i++) {   
         while(NVM_IsBusy());
         EEPROM_Write(address + i, data[i]);
     }
 }
 
-void read_eeprom(uint16_t address, uint8_t data[], uint8_t size) {
+void read_eeprom(uint16_t address, char data[], uint8_t size) {
     
     NVM_UnlockKeySet(0xaa55);
     for(uint8_t i = 0; i < size; i++) {   
@@ -92,11 +91,10 @@ int main(void){
     // Retrieve the serial number from EEPROM. We are writing to it first because
     // MPLAB will reset the EEPROM memory when it flashes the chip. There is
     // config to not do that, but it doesn't appear to work.
-    uint8_t serial_number[9] = {0};
+    char serial_number[9] = {0};
     write_eeprom(0xF000, "ABCDEFGH", 8);
     read_eeprom(0xF000, serial_number, 8);
-    printf(serial_number);
-    serial_number[9] = '\0'; // needs to be null terminated
+    serial_number[8] = '\0'; // needs to be null terminated
       
     while(1) {
     

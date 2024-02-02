@@ -32,11 +32,6 @@ void rylr998_init() {
 
 int8_t rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
     
-    // Limit the size of the tag to 20 characters
-    if(sizeof(tag) > 20) {
-        return RYLR998_INVALID_DATA;
-    }
-    
     // There shouldn't be more than 10 characters in the metric, including
     // decimals and negative signs.
     char data[10];
@@ -48,7 +43,6 @@ int8_t rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
     int payload_size = snprintf(NULL, 0, "%s::%s::%s", serial, tag, data);
     char buffer[60] = {0};
     sprintf(buffer, "AT+SEND=%i,%i,%s::%s::%s\r\n", address, payload_size, serial, tag, data);
-    printf(buffer);
     
     int8_t response_code = rylr998_write(&buffer);
     if(response_code < 0) {
@@ -64,7 +58,6 @@ int8_t rylr998_write(char *data) {
     bool newline_found = false;
     
     uint8_t size = sizeof(data);
-    printf(size);
     for(uint8_t i = 0; i < 60; i++) {
         
         char c = data[i];
