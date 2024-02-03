@@ -13322,17 +13322,19 @@ extern __bank0 __bit __timeout;
 
 
 
-void timeout_init();
+void timeout_init(void);
 
-void timeout_start();
+void timeout_start(void);
 
-void timeout_stop();
+void timeout_stop(void);
 
-void timeot_reset();
+void timeot_reset(void);
 
-_Bool timeout_timed_out();
+_Bool timeout_timed_out(void);
 
-void timer_increment();
+void timer_increment(void);
+
+_Bool timeout_wait(_Bool (* StatusHandler)(void));
 # 10 "timeout.c" 2
 
 
@@ -13581,36 +13583,40 @@ void TMR6_OverflowCallbackRegister(void (* InterruptHandler)(void));
 
 uint8_t MAX_OVERFLOWS = 40;
 uint8_t OVERFLOW_COUNT = 0;
-_Bool TIMED_OUT = 1;
 
-void timeout_init(){
+_Bool timeout_wait(_Bool (* StatusHandler)(void)) {
+    timeout_start();
+    while(StatusHandler() && !timeout_timed_out());
+    timeout_stop();
+    return !timeout_timed_out();
+}
+
+void timeout_init(void){
     TMR6_OverflowCallbackRegister(timer_increment);
 }
 
-void timeout_start(){
+void timeout_start(void){
     timeot_reset();
     TMR6_Start();
 }
 
-void timeout_stop() {
+void timeout_stop(void) {
     TMR6_Stop();
 }
 
-void timeot_reset() {
+void timeot_reset(void) {
 
     PIR2bits.TMR6IF = 0;
     OVERFLOW_COUNT = 0;
-    TIMED_OUT = 0;
 }
 
-_Bool timeout_timed_out() {
-    return TIMED_OUT;
+_Bool timeout_timed_out(void) {
+    return OVERFLOW_COUNT >= MAX_OVERFLOWS;
 }
 
-void timer_increment() {
+void timer_increment(void) {
     OVERFLOW_COUNT++;
-    TIMED_OUT = OVERFLOW_COUNT >= MAX_OVERFLOWS;
-    if(TIMED_OUT) {
+    if(timeout_timed_out()) {
         timeout_stop();
     }
 }

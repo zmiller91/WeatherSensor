@@ -26,10 +26,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 21166: extern volatile WPUDbits_t WPUDbits __attribute__((address(0x1EAB)));
 [v _WPUDbits `VS1019 ~T0 @X0 0 e@7851 ]
 "38 ./timeout.h
-[; ;./timeout.h: 38: void timeout_init();
-[v _timeout_init `(v ~T0 @X0 0 e? ]
+[; ;./timeout.h: 38: void timeout_init(void);
+[v _timeout_init `(v ~T0 @X0 0 ef ]
 "40 weather.c
-[; ;weather.c: 40: struct bme280_dev weather_dev() {
+[; ;weather.c: 40: struct bme280_dev weather_dev(void) {
 [c E508 0 1 .. ]
 [n E508 bme280_intf BME280_SPI_INTF BME280_I2C_INTF  ]
 [v F567 `(c ~T0 @X0 0 tf4`uc`*uc`ul`*v ]
@@ -81,17 +81,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v __delay `JF667 ~T0 @X0 0 e ]
 [p i __delay ]
 "40 ./timeout.h
-[; ;./timeout.h: 40: void timeout_start();
-[v _timeout_start `(v ~T0 @X0 0 e? ]
+[; ;./timeout.h: 40: void timeout_start(void);
+[v _timeout_start `(v ~T0 @X0 0 ef ]
 "21 ./weather.h
 [; ;./weather.h: 21: _Bool weather_is_measurement_done(struct bme280_dev *dev);
 [v _weather_is_measurement_done `(a ~T0 @X0 0 ef1`*S12 ]
 "46 ./timeout.h
-[; ;./timeout.h: 46: _Bool timeout_timed_out();
-[v _timeout_timed_out `(a ~T0 @X0 0 e? ]
+[; ;./timeout.h: 46: _Bool timeout_timed_out(void);
+[v _timeout_timed_out `(a ~T0 @X0 0 ef ]
 "42
-[; ;./timeout.h: 42: void timeout_stop();
-[v _timeout_stop `(v ~T0 @X0 0 e? ]
+[; ;./timeout.h: 42: void timeout_stop(void);
+[v _timeout_stop `(v ~T0 @X0 0 ef ]
 "290 ./bme280.h
 [; ;./bme280.h: 290: int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
 [; ;./bme280.h: 290: int8_t bme280_get_sensor_data(uint8_t sensor_comp, struct bme280_data *comp_data, struct bme280_dev *dev);
@@ -103,7 +103,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "182 ./mcc_generated_files/system/../i2c_host/mssp2.h
 [; ;./mcc_generated_files/system/../i2c_host/mssp2.h: 182: _Bool I2C2_WriteRead(uint16_t address, uint8_t *writeData, size_t writeLength, uint8_t *readData, size_t readLength);
 [v _I2C2_WriteRead `(a ~T0 @X0 0 ef5`us`*uc`ui`*uc`ui ]
-"204
+[v F8579 `(a ~T0 @X0 0 tf ]
+"50 ./timeout.h
+[; ;./timeout.h: 50: _Bool timeout_wait(_Bool (* StatusHandler)(void));
+[v _timeout_wait `(a ~T0 @X0 0 ef1`*F8579 ]
+"204 ./mcc_generated_files/system/../i2c_host/mssp2.h
 [; ;./mcc_generated_files/system/../i2c_host/mssp2.h: 204: _Bool I2C2_IsBusy(void);
 [v _I2C2_IsBusy `(a ~T0 @X0 0 ef ]
 "116
@@ -1256,7 +1260,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;weather.c: 24: static uint8_t dev_addr;
 [v _dev_addr `uc ~T0 @X0 1 s ]
 "32
-[; ;weather.c: 32: void weather_init() {
+[; ;weather.c: 32: void weather_init(void) {
 [v _weather_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _weather_init ]
@@ -1297,7 +1301,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 1094 ]
 }
 "40
-[; ;weather.c: 40: struct bme280_dev weather_dev() {
+[; ;weather.c: 40: struct bme280_dev weather_dev(void) {
 [v _weather_dev `(S12 ~T0 @X0 1 ef ]
 {
 [e :U _weather_dev ]
@@ -1508,149 +1512,123 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 1117 ]
 "139
-[; ;weather.c: 139:     timeout_start();
-[e ( _timeout_start ..  ]
-"140
-[; ;weather.c: 140:     while(I2C2_IsBusy() && !timeout_timed_out());
-[e $U 1118  ]
-[e :U 1119 ]
-[e :U 1118 ]
-[e $ && != -> ( _I2C2_IsBusy ..  `i -> 0 `i ! != -> ( _timeout_timed_out ..  `i -> 0 `i 1119  ]
-[e :U 1120 ]
-"141
-[; ;weather.c: 141:     timeout_stop();
-[e ( _timeout_stop ..  ]
-"142
-[; ;weather.c: 142:     if(timeout_timed_out()) {
-[e $ ! != -> ( _timeout_timed_out ..  `i -> 0 `i 1121  ]
+[; ;weather.c: 139:     if(!timeout_wait(I2C2_IsBusy)) {
+[e $ ! ! != -> ( _timeout_wait (1 &U _I2C2_IsBusy `i -> 0 `i 1118  ]
 {
-"143
-[; ;weather.c: 143:         return -2;
+"140
+[; ;weather.c: 140:         return -2;
 [e ) -> -U -> 2 `i `c ]
 [e $UE 1116  ]
-"144
-[; ;weather.c: 144:     }
+"141
+[; ;weather.c: 141:     }
 }
-[e :U 1121 ]
-"146
-[; ;weather.c: 146:     return 0;
+[e :U 1118 ]
+"143
+[; ;weather.c: 143:     return 0;
 [e ) -> -> 0 `i `c ]
 [e $UE 1116  ]
-"147
-[; ;weather.c: 147: }
+"144
+[; ;weather.c: 144: }
 [e :UE 1116 ]
 }
-"152
-[; ;weather.c: 152: int8_t bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr)
+"149
+[; ;weather.c: 149: int8_t bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr)
 [v _bme280_i2c_write `(c ~T0 @X0 1 ef4`uc`*Cuc`ul`*v ]
-"153
-[; ;weather.c: 153: {
+"150
+[; ;weather.c: 150: {
 {
 [e :U _bme280_i2c_write ]
-"152
-[; ;weather.c: 152: int8_t bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr)
+"149
+[; ;weather.c: 149: int8_t bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data, uint32_t length, void *intf_ptr)
 [v _reg_addr `uc ~T0 @X0 1 r1 ]
 [v _reg_data `*Cuc ~T0 @X0 1 r2 ]
 [v _length `ul ~T0 @X0 1 r3 ]
 [v _intf_ptr `*v ~T0 @X0 1 r4 ]
-"153
-[; ;weather.c: 153: {
+"150
+[; ;weather.c: 150: {
 [f ]
-[v F8641 `uc ~T0 @X0 -> 20 `i s ]
-[i F8641
+[v F8647 `uc ~T0 @X0 -> 20 `i s ]
+[i F8647
 :U ..
-"154
-[; ;weather.c: 154:     uint8_t buf[10 * 2] = {0};
+"151
+[; ;weather.c: 151:     uint8_t buf[10 * 2] = {0};
 -> -> 0 `i `uc
 ..
 ]
 [v _buf `uc ~T0 @X0 -> 20 `i a ]
-[e = _buf F8641 ]
-"155
-[; ;weather.c: 155:     buf[0] = reg_addr;
+[e = _buf F8647 ]
+"152
+[; ;weather.c: 152:     buf[0] = reg_addr;
 [e = *U + &U _buf * -> -> -> 0 `i `ui `ux -> -> # *U &U _buf `ui `ux _reg_addr ]
-"156
-[; ;weather.c: 156:     for(uint8_t i = 0; i < length + 1; i++) {
+"153
+[; ;weather.c: 153:     for(uint8_t i = 0; i < length + 1; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $U 1126  ]
-[e :U 1123 ]
+[e $U 1123  ]
+[e :U 1120 ]
 {
-"157
-[; ;weather.c: 157:         buf[i + 1] = reg_data[i];
+"154
+[; ;weather.c: 154:         buf[i + 1] = reg_data[i];
 [e = *U + &U _buf * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _buf `ui `ux *U + _reg_data * -> _i `ux -> -> # *U _reg_data `ui `ux ]
-"158
-[; ;weather.c: 158:     }
+"155
+[; ;weather.c: 155:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 1126 ]
-[e $ < -> _i `ul + _length -> -> -> 1 `i `l `ul 1123  ]
+[e :U 1123 ]
+[e $ < -> _i `ul + _length -> -> -> 1 `i `l `ul 1120  ]
+[e :U 1121 ]
+}
+"158
+[; ;weather.c: 158:     if(!I2C2_Write(dev_addr, buf, length + 1)) {
+[e $ ! ! != -> ( _I2C2_Write (3 , , -> _dev_addr `us &U _buf -> + _length -> -> -> 1 `i `l `ul `ui `i -> 0 `i 1124  ]
+{
+"159
+[; ;weather.c: 159:         return -2;
+[e ) -> -U -> 2 `i `c ]
+[e $UE 1119  ]
+"160
+[; ;weather.c: 160:     }
+}
 [e :U 1124 ]
-}
-"161
-[; ;weather.c: 161:     if(!I2C2_Write(dev_addr, &buf, length + 1)) {
-[e $ ! ! != -> ( _I2C2_Write (3 , , -> _dev_addr `us -> &U _buf `*uc -> + _length -> -> -> 1 `i `l `ul `ui `i -> 0 `i 1127  ]
-{
 "162
-[; ;weather.c: 162:         return -2;
-[e ) -> -U -> 2 `i `c ]
-[e $UE 1122  ]
-"163
-[; ;weather.c: 163:     }
-}
-[e :U 1127 ]
-"165
-[; ;weather.c: 165:     timeout_start();
-[e ( _timeout_start ..  ]
-"166
-[; ;weather.c: 166:     while(I2C2_IsBusy() && !timeout_timed_out());
-[e $U 1128  ]
-[e :U 1129 ]
-[e :U 1128 ]
-[e $ && != -> ( _I2C2_IsBusy ..  `i -> 0 `i ! != -> ( _timeout_timed_out ..  `i -> 0 `i 1129  ]
-[e :U 1130 ]
-"167
-[; ;weather.c: 167:     timeout_stop();
-[e ( _timeout_stop ..  ]
-"168
-[; ;weather.c: 168:     if(timeout_timed_out()) {
-[e $ ! != -> ( _timeout_timed_out ..  `i -> 0 `i 1131  ]
+[; ;weather.c: 162:     if(!timeout_wait(I2C2_IsBusy)) {
+[e $ ! ! != -> ( _timeout_wait (1 &U _I2C2_IsBusy `i -> 0 `i 1125  ]
 {
-"169
-[; ;weather.c: 169:         return -2;
+"163
+[; ;weather.c: 163:         return -2;
 [e ) -> -U -> 2 `i `c ]
-[e $UE 1122  ]
-"170
-[; ;weather.c: 170:     }
+[e $UE 1119  ]
+"164
+[; ;weather.c: 164:     }
 }
-[e :U 1131 ]
-"172
-[; ;weather.c: 172:     return 0;
+[e :U 1125 ]
+"166
+[; ;weather.c: 166:     return 0;
 [e ) -> -> 0 `i `c ]
-[e $UE 1122  ]
-"173
-[; ;weather.c: 173: }
-[e :UE 1122 ]
+[e $UE 1119  ]
+"167
+[; ;weather.c: 167: }
+[e :UE 1119 ]
 }
-"178
-[; ;weather.c: 178: void bme280_delay_us(uint32_t period, void *intf_ptr)
+"172
+[; ;weather.c: 172: void bme280_delay_us(uint32_t period, void *intf_ptr)
 [v _bme280_delay_us `(v ~T0 @X0 1 ef2`ul`*v ]
-"179
-[; ;weather.c: 179: {
+"173
+[; ;weather.c: 173: {
 {
 [e :U _bme280_delay_us ]
-"178
-[; ;weather.c: 178: void bme280_delay_us(uint32_t period, void *intf_ptr)
+"172
+[; ;weather.c: 172: void bme280_delay_us(uint32_t period, void *intf_ptr)
 [v _period `ul ~T0 @X0 1 r1 ]
 [v _intf_ptr `*v ~T0 @X0 1 r2 ]
-"179
-[; ;weather.c: 179: {
+"173
+[; ;weather.c: 173: {
 [f ]
-"182
-[; ;weather.c: 182:     _delay((unsigned long)((1000)*(32000000/4000000.0)));
+"176
+[; ;weather.c: 176:     _delay((unsigned long)((1000)*(32000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"183
-[; ;weather.c: 183: }
-[e :UE 1132 ]
+"177
+[; ;weather.c: 177: }
+[e :UE 1126 ]
 }

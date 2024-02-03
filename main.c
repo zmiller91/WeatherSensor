@@ -109,7 +109,7 @@ int main(void){
         struct bme280_dev dev = weather_dev();
         int8_t response_code = weather_read(&dev, &weather);
         if(response_code > 0) {
-            rylr998_send(32, &serial_number, "TEMPERATURE", weather.temperature);
+            rylr998_send(32, serial_number, "TEMPERATURE", weather.temperature);
             __delay_ms(1000);
 
             rylr998_send(32, serial_number, "HUMIDITY", weather.humidity);

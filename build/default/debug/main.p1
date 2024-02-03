@@ -27,11 +27,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS31 ~T0 @X0 0 e@11 ]
 "37 ./rylr998.h
-[; ;./rylr998.h: 37: void rylr998_init();
-[v _rylr998_init `(v ~T0 @X0 0 e? ]
+[; ;./rylr998.h: 37: void rylr998_init(void);
+[v _rylr998_init `(v ~T0 @X0 0 ef ]
 "18 ./weather.h
-[; ;./weather.h: 18: void weather_init();
-[v _weather_init `(v ~T0 @X0 0 e? ]
+[; ;./weather.h: 18: void weather_init(void);
+[v _weather_init `(v ~T0 @X0 0 ef ]
 "1024 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC16F1xxxx_DFP/1.18.352/xc8\pic\include\proc\pic16f18076.h: 1024:     struct {
 [s S54 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -67,8 +67,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S1094 `uc 1 `E8566 1 `*v 1 `c 1 `*F8625 1 `*F8631 1 `*F8637 1 `S1090 1 ]
 [n S1094 bme280_dev chip_id intf intf_ptr intf_rslt read write delay_us calib_data ]
 "19 ./weather.h
-[; ;./weather.h: 19: struct bme280_dev weather_dev();
-[v _weather_dev `(S1094 ~T0 @X0 0 e? ]
+[; ;./weather.h: 19: struct bme280_dev weather_dev(void);
+[v _weather_dev `(S1094 ~T0 @X0 0 ef ]
 "20
 [; ;./weather.h: 20: int8_t weather_read(struct bme280_dev *dev, struct bme280_data *data);
 [v _weather_read `(c ~T0 @X0 0 ef2`*S1094`*S1091 ]
@@ -1321,8 +1321,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "89
 [; ;main.c: 89:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-[v F8765 `uc ~T0 @X0 -> 9 `i s ]
-[i F8765
+[v F8771 `uc ~T0 @X0 -> 9 `i s ]
+[i F8771
 :U ..
 "94
 [; ;main.c: 94:     char serial_number[9] = {0};
@@ -1330,7 +1330,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _serial_number `uc ~T0 @X0 -> 9 `i a ]
-[e = _serial_number F8765 ]
+[e = _serial_number F8771 ]
 "95
 [; ;main.c: 95:     write_eeprom(0xF000, "ABCDEFGH", 8);
 [e ( _write_eeprom (3 , , -> -> 61440 `ui `us :s 1C -> -> 8 `i `uc ]
@@ -1376,8 +1376,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! > -> _response_code `i -> 0 `i 1118  ]
 {
 "112
-[; ;main.c: 112:             rylr998_send(32, &serial_number, "TEMPERATURE", weather.temperature);
-[e ( _rylr998_send (4 , , , -> -> 32 `i `uc -> &U _serial_number `*uc :s 2C . _weather 1 ]
+[; ;main.c: 112:             rylr998_send(32, serial_number, "TEMPERATURE", weather.temperature);
+[e ( _rylr998_send (4 , , , -> -> 32 `i `uc &U _serial_number :s 2C . _weather 1 ]
 "113
 [; ;main.c: 113:             _delay((unsigned long)((1000)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]

@@ -15,36 +15,40 @@
 // Timer overflows every 50 milliseconds. 40 overflows us 2 seconds.
 uint8_t MAX_OVERFLOWS = 40;
 uint8_t OVERFLOW_COUNT = 0;
-bool TIMED_OUT = true;
 
-void timeout_init(){
+bool timeout_wait(bool (* StatusHandler)(void)) {
+    timeout_start();
+    while(StatusHandler() && !timeout_timed_out());
+    timeout_stop();
+    return !timeout_timed_out();
+}
+
+void timeout_init(void){
     TMR6_OverflowCallbackRegister(timer_increment);
 }
 
-void timeout_start(){
+void timeout_start(void){
     timeot_reset();
     TMR6_Start();
 }
 
-void timeout_stop() {
+void timeout_stop(void) {
     TMR6_Stop();
 }
 
-void timeot_reset() {
+void timeot_reset(void) {
     // clear the TMR6 interrupt flag
     PIR2bits.TMR6IF = 0;
     OVERFLOW_COUNT = 0;
-    TIMED_OUT = false;
 }
 
-bool timeout_timed_out() {
-    return TIMED_OUT;
+bool timeout_timed_out(void) {
+    return OVERFLOW_COUNT >= MAX_OVERFLOWS;
 }
 
-void timer_increment() {
+void timer_increment(void) {
     OVERFLOW_COUNT++;
-    TIMED_OUT = OVERFLOW_COUNT >= MAX_OVERFLOWS;
-    if(TIMED_OUT) {
+    if(timeout_timed_out()) {
         timeout_stop();
     }
 }

@@ -1,26 +1,26 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\zmiller\AppData\Local\Temp\xcAs14mc.\driver_tmp_3.o
+ C:\Users\zmiller\AppData\Local\Temp\xcBsmgg.1\driver_tmp_3.o
  -Odist/default/debug\Third.X.debug.hex
  -logfile=dist/default/debug\Third.X.debug.hxl
  -addressing=2
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 718Bh		(C:\Users\zmiller\AppData\Local\Temp\xcAs14mc.\driver_tmp_3.o)
-  7892h - 7FFFh		(C:\Users\zmiller\AppData\Local\Temp\xcAs14mc.\driver_tmp_3.o)
-  1000Eh - 10011h		(C:\Users\zmiller\AppData\Local\Temp\xcAs14mc.\driver_tmp_3.o)
-  10014h - 10017h		(C:\Users\zmiller\AppData\Local\Temp\xcAs14mc.\driver_tmp_3.o)
+  0h - 718Bh		(C:\Users\zmiller\AppData\Local\Temp\xcBsmgg.1\driver_tmp_3.o)
+  78CEh - 7FFFh		(C:\Users\zmiller\AppData\Local\Temp\xcBsmgg.1\driver_tmp_3.o)
+  1000Eh - 10011h		(C:\Users\zmiller\AppData\Local\Temp\xcBsmgg.1\driver_tmp_3.o)
+  10014h - 10017h		(C:\Users\zmiller\AppData\Local\Temp\xcBsmgg.1\driver_tmp_3.o)
  Unused ranges:
-  718Ch - 7891h
+  718Ch - 78CDh
   8000h - 1000Dh
   10012h - 10013h
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\zmiller\AppData\Local\Temp\xcAs14mc.\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\zmiller\AppData\Local\Temp\xcBsmgg.1\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -1842,10 +1842,7 @@
 00007170 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00007180 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- --
 ----------------------------------------------------------
-00007890 | -- -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000078A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000078B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000078C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000078C0 | -- -- -- -- -- -- -- -- -- -- -- -- -- -- H1 H1
 000078D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000078E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000078F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1

@@ -14571,29 +14571,33 @@ void SYSTEM_Initialize(void);
 
 # 1 "./rylr998.h" 1
 # 37 "./rylr998.h"
-void rylr998_init();
+void rylr998_init(void);
 int8_t rylr998_send(uint8_t address, char serial[], char tag[], double metric);
 int8_t rylr998_write(char data[]);
-int8_t rylr998_read();
+int8_t rylr998_read(void);
+_Bool rylr998_tx_busy(void);
+_Bool rylr998_rx_busy(void);
 # 18 "rylr998.c" 2
 
 # 1 "./timeout.h" 1
 # 38 "./timeout.h"
-void timeout_init();
+void timeout_init(void);
 
-void timeout_start();
+void timeout_start(void);
 
-void timeout_stop();
+void timeout_stop(void);
 
-void timeot_reset();
+void timeot_reset(void);
 
-_Bool timeout_timed_out();
+_Bool timeout_timed_out(void);
 
-void timer_increment();
+void timer_increment(void);
+
+_Bool timeout_wait(_Bool (* StatusHandler)(void));
 # 19 "rylr998.c" 2
 
 
-void rylr998_init() {
+void rylr998_init(void) {
 
 
     do { TRISBbits.TRISB5 = 1; } while(0);
@@ -14619,12 +14623,16 @@ int8_t rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
     char buffer[60] = {0};
     sprintf(buffer, "AT+SEND=%i,%i,%s::%s::%s\r\n", address, payload_size, serial, tag, data);
 
-    int8_t response_code = rylr998_write(&buffer);
+    int8_t response_code = rylr998_write(buffer);
     if(response_code < 0) {
         return response_code;
     }
 
     return rylr998_read();
+}
+
+_Bool rylr998_tx_busy(void) {
+    return !EUSART1_IsTxDone();
 }
 
 int8_t rylr998_write(char *data) {
@@ -14638,10 +14646,7 @@ int8_t rylr998_write(char *data) {
         char c = data[i];
         EUSART1_Write(c);
 
-        timeout_start();
-        while(!EUSART1_IsTxDone() && !timeout_timed_out());
-        timeout_stop();
-        if(timeout_timed_out()) {
+        if(!timeout_wait(rylr998_tx_busy)) {
             return -98;
         }
 
@@ -14659,13 +14664,13 @@ int8_t rylr998_write(char *data) {
     return 1;
 }
 
-int8_t rylr998_read() {
+_Bool rylr998_rx_busy(void) {
+    return !EUSART1_IsRxReady();
+}
 
+int8_t rylr998_read(void) {
 
-    timeout_start();
-    while(!EUSART1_IsRxReady() && !timeout_timed_out());
-    timeout_stop();
-    if(timeout_timed_out()) {
+    if(!timeout_wait(rylr998_rx_busy)) {
         return -98;
     }
 
@@ -14687,10 +14692,7 @@ int8_t rylr998_read() {
             break;
         }
 
-        timeout_start();
-        while(!EUSART1_IsRxReady() && !timeout_timed_out());
-        timeout_stop();
-        if(timeout_timed_out()) {
+        if(!timeout_wait(rylr998_rx_busy)) {
             return -98;
         }
 

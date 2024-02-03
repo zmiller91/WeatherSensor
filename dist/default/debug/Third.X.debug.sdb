@@ -401,21 +401,28 @@ TMR6_CLC4OUT 14
 "33
 [v _rylr998_send rylr998_send `(c  1 e 1 0 ]
 "55
+[v _rylr998_tx_busy rylr998_tx_busy `(a  1 e 1 0 ]
+"59
 [v _rylr998_write rylr998_write `(c  1 e 1 0 ]
-"87
+"88
+[v _rylr998_rx_busy rylr998_rx_busy `(a  1 e 1 0 ]
+"92
 [v _rylr998_read rylr998_read `(c  1 e 1 0 ]
-"20 C:\Users\zmiller\MPLABXProjects\Third.X\timeout.c
+"19 C:\Users\zmiller\MPLABXProjects\Third.X\timeout.c
+[v _timeout_wait timeout_wait `(a  1 e 1 0 ]
+"26
 [v _timeout_init timeout_init `(v  1 e 1 0 ]
-"24
+"30
 [v _timeout_start timeout_start `(v  1 e 1 0 ]
-"29
+"35
 [v _timeout_stop timeout_stop `(v  1 e 1 0 ]
 [v i1_timeout_stop timeout_stop `(v  1 e 1 0 ]
-"33
+"39
 [v _timeot_reset timeot_reset `(v  1 e 1 0 ]
-"40
+"45
 [v _timeout_timed_out timeout_timed_out `(a  1 e 1 0 ]
-"44
+[v i1_timeout_timed_out timeout_timed_out `(a  1 e 1 0 ]
+"49
 [v _timer_increment timer_increment `(v  1 e 1 0 ]
 "32 C:\Users\zmiller\MPLABXProjects\Third.X\weather.c
 [v _weather_init weather_init `(v  1 e 1 0 ]
@@ -431,9 +438,9 @@ TMR6_CLC4OUT 14
 [v _weather_is_measurement_done weather_is_measurement_done `(a  1 e 1 0 ]
 "132
 [v _bme280_i2c_read bme280_i2c_read `(c  1 e 1 0 ]
-"152
+"149
 [v _bme280_i2c_write bme280_i2c_write `(c  1 e 1 0 ]
-"178
+"172
 [v _bme280_delay_us bme280_delay_us `(v  1 e 1 0 ]
 [s S824 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
@@ -597,16 +604,16 @@ TMR6_CLC4OUT 14
 [v _PR6 PR6 `VEuc  1 e 1 @793 ]
 "6168
 [v _T6CON T6CON `VEuc  1 e 1 @794 ]
-[s S3162 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S3169 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "6204
-[s S3166 . 1 `uc 1 T6OUTPS 1 0 :4:0 
+[s S3173 . 1 `uc 1 T6OUTPS 1 0 :4:0 
 `uc 1 T6CKPS 1 0 :3:4 
 `uc 1 T6ON 1 0 :1:7 
 ]
-[s S3170 . 1 `uc 1 T6OUTPS0 1 0 :1:0 
+[s S3177 . 1 `uc 1 T6OUTPS0 1 0 :1:0 
 `uc 1 T6OUTPS1 1 0 :1:1 
 `uc 1 T6OUTPS2 1 0 :1:2 
 `uc 1 T6OUTPS3 1 0 :1:3 
@@ -614,7 +621,7 @@ TMR6_CLC4OUT 14
 `uc 1 T6CKPS1 1 0 :1:5 
 `uc 1 T6CKPS2 1 0 :1:6 
 ]
-[s S3178 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S3185 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -623,17 +630,17 @@ TMR6_CLC4OUT 14
 `uc 1 CKPS2 1 0 :1:6 
 `uc 1 TMR6ON 1 0 :1:7 
 ]
-[u S3187 . 1 `S3162 1 . 1 0 `S3166 1 . 1 0 `S3170 1 . 1 0 `S3178 1 . 1 0 ]
-[v _T6CONbits T6CONbits `VES3187  1 e 1 @794 ]
+[u S3194 . 1 `S3169 1 . 1 0 `S3173 1 . 1 0 `S3177 1 . 1 0 `S3185 1 . 1 0 ]
+[v _T6CONbits T6CONbits `VES3194  1 e 1 @794 ]
 "6314
 [v _T6HLT T6HLT `VEuc  1 e 1 @795 ]
-[s S3059 . 1 `uc 1 MODE 1 0 :5:0 
+[s S3066 . 1 `uc 1 MODE 1 0 :5:0 
 `uc 1 CSYNC 1 0 :1:5 
 `uc 1 CPOL 1 0 :1:6 
 `uc 1 PSYNC 1 0 :1:7 
 ]
 "6349
-[s S3064 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S3071 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
@@ -641,40 +648,40 @@ TMR6_CLC4OUT 14
 `uc 1 CKSYNC 1 0 :1:5 
 `uc 1 CKPOL 1 0 :1:6 
 ]
-[s S3072 . 1 `uc 1 T6MODE 1 0 :5:0 
+[s S3079 . 1 `uc 1 T6MODE 1 0 :5:0 
 `uc 1 T6CSYNC 1 0 :1:5 
 `uc 1 T6CPOL 1 0 :1:6 
 `uc 1 T6PSYNC 1 0 :1:7 
 ]
-[s S3077 . 1 `uc 1 T6MODE0 1 0 :1:0 
+[s S3084 . 1 `uc 1 T6MODE0 1 0 :1:0 
 `uc 1 T6MODE1 1 0 :1:1 
 `uc 1 T6MODE2 1 0 :1:2 
 `uc 1 T6MODE3 1 0 :1:3 
 `uc 1 T6MODE4 1 0 :1:4 
 ]
-[u S3083 . 1 `S3059 1 . 1 0 `S3064 1 . 1 0 `S3072 1 . 1 0 `S3077 1 . 1 0 ]
-[v _T6HLTbits T6HLTbits `VES3083  1 e 1 @795 ]
+[u S3090 . 1 `S3066 1 . 1 0 `S3071 1 . 1 0 `S3079 1 . 1 0 `S3084 1 . 1 0 ]
+[v _T6HLTbits T6HLTbits `VES3090  1 e 1 @795 ]
 "6454
 [v _T6CLKCON T6CLKCON `VEuc  1 e 1 @796 ]
 "6612
 [v _T6RST T6RST `VEuc  1 e 1 @797 ]
-[s S3128 . 1 `uc 1 RSEL 1 0 :8:0 
+[s S3135 . 1 `uc 1 RSEL 1 0 :8:0 
 ]
 "6637
-[s S3130 . 1 `uc 1 RSEL0 1 0 :1:0 
+[s S3137 . 1 `uc 1 RSEL0 1 0 :1:0 
 `uc 1 RSEL1 1 0 :1:1 
 `uc 1 RSEL2 1 0 :1:2 
 `uc 1 RSEL3 1 0 :1:3 
 ]
-[s S3135 . 1 `uc 1 T6RSEL 1 0 :8:0 
+[s S3142 . 1 `uc 1 T6RSEL 1 0 :8:0 
 ]
-[s S3137 . 1 `uc 1 T6RSEL0 1 0 :1:0 
+[s S3144 . 1 `uc 1 T6RSEL0 1 0 :1:0 
 `uc 1 T6RSEL1 1 0 :1:1 
 `uc 1 T6RSEL2 1 0 :1:2 
 `uc 1 T6RSEL3 1 0 :1:3 
 ]
-[u S3142 . 1 `S3128 1 . 1 0 `S3130 1 . 1 0 `S3135 1 . 1 0 `S3137 1 . 1 0 ]
-[v _T6RSTbits T6RSTbits `VES3142  1 e 1 @797 ]
+[u S3149 . 1 `S3135 1 . 1 0 `S3137 1 . 1 0 `S3142 1 . 1 0 `S3144 1 . 1 0 ]
+[v _T6RSTbits T6RSTbits `VES3149  1 e 1 @797 ]
 "10029
 [v _RC1REG RC1REG `VEuc  1 e 1 @1548 ]
 "10049
@@ -894,7 +901,7 @@ TMR6_CLC4OUT 14
 [v _NVMADRH NVMADRH `VEuc  1 e 1 @7309 ]
 "13189
 [v _NVMDATL NVMDATL `VEuc  1 e 1 @7310 ]
-[s S2902 . 1 `uc 1 RD 1 0 :1:0 
+[s S2909 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -903,8 +910,8 @@ TMR6_CLC4OUT 14
 `uc 1 NVMREGS 1 0 :1:6 
 ]
 "13333
-[u S2910 . 1 `S2902 1 . 1 0 ]
-[v _NVMCON1bits NVMCON1bits `VES2910  1 e 1 @7312 ]
+[u S2917 . 1 `S2909 1 . 1 0 ]
+[v _NVMCON1bits NVMCON1bits `VES2917  1 e 1 @7312 ]
 "13373
 [v _NVMCON2 NVMCON2 `VEuc  1 e 1 @7313 ]
 "17857
@@ -969,7 +976,7 @@ TMR6_CLC4OUT 14
 [v _IOCCF IOCCF `VEuc  1 e 1 @7847 ]
 "21037
 [v _ANSELD ANSELD `VEuc  1 e 1 @7850 ]
-[s S2646 . 1 `uc 1 ANSELD0 1 0 :1:0 
+[s S2642 . 1 `uc 1 ANSELD0 1 0 :1:0 
 `uc 1 ANSELD1 1 0 :1:1 
 `uc 1 ANSELD2 1 0 :1:2 
 `uc 1 ANSELD3 1 0 :1:3 
@@ -979,7 +986,7 @@ TMR6_CLC4OUT 14
 `uc 1 ANSELD7 1 0 :1:7 
 ]
 "21064
-[s S2655 . 1 `uc 1 ANSD0 1 0 :1:0 
+[s S2651 . 1 `uc 1 ANSD0 1 0 :1:0 
 `uc 1 ANSD1 1 0 :1:1 
 `uc 1 ANSD2 1 0 :1:2 
 `uc 1 ANSD3 1 0 :1:3 
@@ -988,11 +995,11 @@ TMR6_CLC4OUT 14
 `uc 1 ANSD6 1 0 :1:6 
 `uc 1 ANSD7 1 0 :1:7 
 ]
-[u S2664 . 1 `S2646 1 . 1 0 `S2655 1 . 1 0 ]
-[v _ANSELDbits ANSELDbits `VES2664  1 e 1 @7850 ]
+[u S2660 . 1 `S2642 1 . 1 0 `S2651 1 . 1 0 ]
+[v _ANSELDbits ANSELDbits `VES2660  1 e 1 @7850 ]
 "21149
 [v _WPUD WPUD `VEuc  1 e 1 @7851 ]
-[s S2686 . 1 `uc 1 WPUD0 1 0 :1:0 
+[s S2682 . 1 `uc 1 WPUD0 1 0 :1:0 
 `uc 1 WPUD1 1 0 :1:1 
 `uc 1 WPUD2 1 0 :1:2 
 `uc 1 WPUD3 1 0 :1:3 
@@ -1002,8 +1009,8 @@ TMR6_CLC4OUT 14
 `uc 1 WPUD7 1 0 :1:7 
 ]
 "21166
-[u S2695 . 1 `S2686 1 . 1 0 ]
-[v _WPUDbits WPUDbits `VES2695  1 e 1 @7851 ]
+[u S2691 . 1 `S2682 1 . 1 0 ]
+[v _WPUDbits WPUDbits `VES2691  1 e 1 @7851 ]
 "21211
 [v _ODCOND ODCOND `VEuc  1 e 1 @7852 ]
 "21273
@@ -1068,8 +1075,6 @@ TMR6_CLC4OUT 14
 [v _MAX_OVERFLOWS MAX_OVERFLOWS `uc  1 e 1 0 ]
 "17
 [v _OVERFLOW_COUNT OVERFLOW_COUNT `uc  1 e 1 0 ]
-"18
-[v _TIMED_OUT TIMED_OUT `a  1 e 1 0 ]
 "24 C:\Users\zmiller\MPLABXProjects\Third.X\weather.c
 [v _dev_addr dev_addr `uc  1 s 1 dev_addr ]
 "85 C:\Users\zmiller\MPLABXProjects\Third.X\main.c
@@ -1133,12 +1138,12 @@ TMR6_CLC4OUT 14
 [s S1563 bme280_dev 47 `uc 1 chip_id 1 0 `E8566 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1543 1 calib_data 37 10 ]
 [v weather_is_measurement_done@dev dev `*.6S1563  1 a 1 wreg ]
 "112
-[v weather_is_measurement_done@status_reg status_reg `uc  1 a 1 31 ]
+[v weather_is_measurement_done@status_reg status_reg `uc  1 a 1 33 ]
 "111
 [v weather_is_measurement_done@dev dev `*.6S1563  1 a 1 wreg ]
 "113
 "111
-[v weather_is_measurement_done@dev dev `*.6S1563  1 a 1 30 ]
+[v weather_is_measurement_done@dev dev `*.6S1563  1 a 1 32 ]
 "115
 } 0
 "715 C:\Users\zmiller\MPLABXProjects\Third.X\bme280.c
@@ -1554,14 +1559,14 @@ TMR6_CLC4OUT 14
 {
 [v bme280_get_sensor_mode@sensor_mode sensor_mode `*.4uc  1 a 1 wreg ]
 "656
-[v bme280_get_sensor_mode@rslt rslt `c  1 a 1 32 ]
+[v bme280_get_sensor_mode@rslt rslt `c  1 a 1 34 ]
 "654
 [v bme280_get_sensor_mode@sensor_mode sensor_mode `*.4uc  1 a 1 wreg ]
 [s S1543 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
 [s S1563 bme280_dev 47 `uc 1 chip_id 1 0 `E8566 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1543 1 calib_data 37 10 ]
-[v bme280_get_sensor_mode@dev dev `*.39S1563  1 p 2 30 ]
+[v bme280_get_sensor_mode@dev dev `*.39S1563  1 p 2 32 ]
 "658
-[v bme280_get_sensor_mode@sensor_mode sensor_mode `*.4uc  1 a 1 33 ]
+[v bme280_get_sensor_mode@sensor_mode sensor_mode `*.4uc  1 a 1 35 ]
 "672
 } 0
 "413
@@ -1571,14 +1576,14 @@ TMR6_CLC4OUT 14
 [s S1563 bme280_dev 47 `uc 1 chip_id 1 0 `E8566 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1543 1 calib_data 37 10 ]
 [v bme280_init@dev dev `*.5S1563  1 a 1 wreg ]
 "415
-[v bme280_init@rslt rslt `c  1 a 1 60 ]
+[v bme280_init@rslt rslt `c  1 a 1 62 ]
 "416
-[v bme280_init@chip_id chip_id `uc  1 a 1 59 ]
+[v bme280_init@chip_id chip_id `uc  1 a 1 61 ]
 "413
 [v bme280_init@dev dev `*.5S1563  1 a 1 wreg ]
 "416
 "413
-[v bme280_init@dev dev `*.5S1563  1 a 1 61 ]
+[v bme280_init@dev dev `*.5S1563  1 a 1 63 ]
 "444
 } 0
 "1434
@@ -1588,12 +1593,12 @@ TMR6_CLC4OUT 14
 [s S1563 bme280_dev 47 `uc 1 chip_id 1 0 `E8566 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1543 1 calib_data 37 10 ]
 [v get_calib_data@dev dev `*.5S1563  1 a 1 wreg ]
 "1440
-[v get_calib_data@calib_data calib_data `[26]uc  1 a 26 31 ]
+[v get_calib_data@calib_data calib_data `[26]uc  1 a 26 33 ]
 "1436
-[v get_calib_data@rslt rslt `c  1 a 1 57 ]
+[v get_calib_data@rslt rslt `c  1 a 1 59 ]
 "1434
 [v get_calib_data@dev dev `*.5S1563  1 a 1 wreg ]
-[v get_calib_data@dev dev `*.5S1563  1 a 1 58 ]
+[v get_calib_data@dev dev `*.5S1563  1 a 1 60 ]
 "1466
 } 0
 "1487
@@ -1691,19 +1696,19 @@ TMR6_CLC4OUT 14
 [v interleave_reg_addr@reg_addr reg_addr `*.4DCuc  1 a 1 6 ]
 "1481
 } 0
-"152 C:\Users\zmiller\MPLABXProjects\Third.X\weather.c
+"149 C:\Users\zmiller\MPLABXProjects\Third.X\weather.c
 [v _bme280_i2c_write bme280_i2c_write `(c  1 e 1 0 ]
 {
-"156
+"153
 [v bme280_i2c_write@i i `uc  1 a 1 40 ]
-"154
+"151
 [v bme280_i2c_write@buf buf `[20]uc  1 a 20 20 ]
-"152
+"149
 [v bme280_i2c_write@reg_addr reg_addr `uc  1 p 1 5 ]
 [v bme280_i2c_write@reg_data reg_data `*.4DCuc  1 p 1 6 ]
 [v bme280_i2c_write@length length `ul  1 p 4 7 ]
 [v bme280_i2c_write@intf_ptr intf_ptr `*.1v  1 p 1 11 ]
-"173
+"167
 } 0
 "142 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/i2c_host/src/mssp2.c
 [v _I2C2_Write I2C2_Write `(a  1 e 1 0 ]
@@ -1716,12 +1721,12 @@ TMR6_CLC4OUT 14
 [v I2C2_Write@dataLength dataLength `ui  1 p 2 3 ]
 "159
 } 0
-"178 C:\Users\zmiller\MPLABXProjects\Third.X\weather.c
+"172 C:\Users\zmiller\MPLABXProjects\Third.X\weather.c
 [v _bme280_delay_us bme280_delay_us `(v  1 e 1 0 ]
 {
 [v bme280_delay_us@period period `ul  1 p 4 0 ]
 [v bme280_delay_us@intf_ptr intf_ptr `*.1v  1 p 1 4 ]
-"183
+"177
 } 0
 "602 C:\Users\zmiller\MPLABXProjects\Third.X\bme280.c
 [v _bme280_get_sensor_settings bme280_get_sensor_settings `(c  1 e 1 0 ]
@@ -1729,17 +1734,17 @@ TMR6_CLC4OUT 14
 [s S1780 bme280_settings 5 `uc 1 osr_p 1 0 `uc 1 osr_t 1 1 `uc 1 osr_h 1 2 `uc 1 filter 1 3 `uc 1 standby_time 1 4 ]
 [v bme280_get_sensor_settings@settings settings `*.5S1780  1 a 1 wreg ]
 "605
-[v bme280_get_sensor_settings@reg_data reg_data `[4]uc  1 a 4 31 ]
+[v bme280_get_sensor_settings@reg_data reg_data `[4]uc  1 a 4 33 ]
 "604
-[v bme280_get_sensor_settings@rslt rslt `c  1 a 1 36 ]
+[v bme280_get_sensor_settings@rslt rslt `c  1 a 1 38 ]
 "602
 [v bme280_get_sensor_settings@settings settings `*.5S1780  1 a 1 wreg ]
 [s S1543 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
 [s S1563 bme280_dev 47 `uc 1 chip_id 1 0 `E8566 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1543 1 calib_data 37 10 ]
-[v bme280_get_sensor_settings@dev dev `*.5S1563  1 p 1 30 ]
+[v bme280_get_sensor_settings@dev dev `*.5S1563  1 p 1 32 ]
 "607
 "602
-[v bme280_get_sensor_settings@settings settings `*.5S1780  1 a 1 35 ]
+[v bme280_get_sensor_settings@settings settings `*.5S1780  1 a 1 37 ]
 "622
 } 0
 "1015
@@ -1758,16 +1763,16 @@ TMR6_CLC4OUT 14
 {
 [v bme280_get_regs@reg_addr reg_addr `uc  1 a 1 wreg ]
 "451
-[v bme280_get_regs@rslt rslt `c  1 a 1 29 ]
+[v bme280_get_regs@rslt rslt `c  1 a 1 31 ]
 "449
 [v bme280_get_regs@reg_addr reg_addr `uc  1 a 1 wreg ]
-[v bme280_get_regs@reg_data reg_data `*.39uc  1 p 2 17 ]
-[v bme280_get_regs@len len `ul  1 p 4 19 ]
+[v bme280_get_regs@reg_data reg_data `*.39uc  1 p 2 19 ]
+[v bme280_get_regs@len len `ul  1 p 4 21 ]
 [s S1543 bme280_calib_data 37 `us 1 dig_t1 2 0 `s 1 dig_t2 2 2 `s 1 dig_t3 2 4 `us 1 dig_p1 2 6 `s 1 dig_p2 2 8 `s 1 dig_p3 2 10 `s 1 dig_p4 2 12 `s 1 dig_p5 2 14 `s 1 dig_p6 2 16 `s 1 dig_p7 2 18 `s 1 dig_p8 2 20 `s 1 dig_p9 2 22 `uc 1 dig_h1 1 24 `s 1 dig_h2 2 25 `uc 1 dig_h3 1 27 `s 1 dig_h4 2 28 `s 1 dig_h5 2 30 `c 1 dig_h6 1 32 `l 1 t_fine 4 33 ]
 [s S1563 bme280_dev 47 `uc 1 chip_id 1 0 `E8566 1 intf 1 1 `*.1v 1 intf_ptr 1 2 `c 1 intf_rslt 1 3 `*.37(c 1 read 2 4 `*.37(c 1 write 2 6 `*.37(v 1 delay_us 2 8 `S1543 1 calib_data 37 10 ]
-[v bme280_get_regs@dev dev `*.39S1563  1 p 2 23 ]
+[v bme280_get_regs@dev dev `*.39S1563  1 p 2 25 ]
 "454
-[v bme280_get_regs@reg_addr reg_addr `uc  1 a 1 28 ]
+[v bme280_get_regs@reg_addr reg_addr `uc  1 a 1 30 ]
 "479
 } 0
 "1555
@@ -1788,7 +1793,7 @@ TMR6_CLC4OUT 14
 [v bme280_i2c_read@reg_data reg_data `*.39uc  1 p 2 10 ]
 [v bme280_i2c_read@length length `ul  1 p 4 12 ]
 [v bme280_i2c_read@intf_ptr intf_ptr `*.1v  1 p 1 16 ]
-"147
+"144
 } 0
 "180 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/i2c_host/src/mssp2.c
 [v _I2C2_WriteRead I2C2_WriteRead `(a  1 e 1 0 ]
@@ -1812,11 +1817,6 @@ TMR6_CLC4OUT 14
 [v _I2C2_StartSend I2C2_StartSend `T(v  1 s 1 I2C2_StartSend ]
 {
 "428
-} 0
-"206
-[v _I2C2_IsBusy I2C2_IsBusy `(a  1 e 1 0 ]
-{
-"209
 } 0
 "33 C:\Users\zmiller\MPLABXProjects\Third.X\rylr998.c
 [v _rylr998_send rylr998_send `(c  1 e 1 0 ]
@@ -1845,10 +1845,10 @@ TMR6_CLC4OUT 14
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 [v sprintf@s s `*.5uc  1 a 1 wreg ]
-[u S3713 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
+[u S3726 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
 "13
-[s S3716 _IO_FILE 11 `S3713 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v sprintf@f f `S3716  1 a 11 37 ]
+[s S3729 _IO_FILE 11 `S3726 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v sprintf@f f `S3729  1 a 11 37 ]
 "12
 [v sprintf@ap ap `[1]*.5v  1 a 1 36 ]
 "9
@@ -1861,10 +1861,10 @@ TMR6_CLC4OUT 14
 "13 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_snprintf.c
 [v _snprintf snprintf `(i  1 e 2 0 ]
 {
-[u S3713 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
+[u S3726 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
 "17
-[s S3716 _IO_FILE 11 `S3713 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v snprintf@f f `S3716  1 a 11 42 ]
+[s S3729 _IO_FILE 11 `S3726 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v snprintf@f f `S3729  1 a 11 42 ]
 "15
 [v snprintf@cnt cnt `i  1 a 2 40 ]
 "16
@@ -1878,37 +1878,37 @@ TMR6_CLC4OUT 14
 "1546 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
-[s S3751 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.5S3751  1 a 1 wreg ]
+[s S3764 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.5S3764  1 a 1 wreg ]
 "1549
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 20 ]
 "1546
-[v vfprintf@fp fp `*.5S3751  1 a 1 wreg ]
+[v vfprintf@fp fp `*.5S3764  1 a 1 wreg ]
 [v vfprintf@fmt fmt `*.25DCuc  1 p 2 16 ]
 [v vfprintf@ap ap `*.5*.5v  1 p 1 18 ]
 "1551
 "1546
-[v vfprintf@fp fp `*.5S3751  1 a 1 19 ]
+[v vfprintf@fp fp `*.5S3764  1 a 1 19 ]
 "1569
 } 0
 "1048
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S3751 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.5S3751  1 a 1 wreg ]
-[u S3805 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `*.39v 1 vp 2 0 `d 1 f 4 0 ]
+[s S3764 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.5S3764  1 a 1 wreg ]
+[u S3818 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `*.39v 1 vp 2 0 `d 1 f 4 0 ]
 "1059
-[v vfpfcnvrt@convarg convarg `S3805  1 a 4 8 ]
+[v vfpfcnvrt@convarg convarg `S3818  1 a 4 8 ]
 "1050
 [v vfpfcnvrt@cp cp `*.25uc  1 a 2 14 ]
 [v vfpfcnvrt@c c `uc  1 a 1 12 ]
 "1048
-[v vfpfcnvrt@fp fp `*.5S3751  1 a 1 wreg ]
+[v vfpfcnvrt@fp fp `*.5S3764  1 a 1 wreg ]
 [v vfpfcnvrt@fmt fmt `*.5*.25uc  1 p 1 0 ]
 [v vfpfcnvrt@ap ap `*.5*.5v  1 p 1 1 ]
 "1062
 "1048
-[v vfpfcnvrt@fp fp `*.5S3751  1 a 1 13 ]
+[v vfpfcnvrt@fp fp `*.5S3764  1 a 1 13 ]
 "1543
 } 0
 "3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strncmp.c
@@ -1926,8 +1926,8 @@ TMR6_CLC4OUT 14
 "862 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
 [v _stoa stoa `(i  1 s 2 stoa ]
 {
-[s S3751 _IO_FILE 0 ]
-[v stoa@fp fp `*.5S3751  1 a 1 wreg ]
+[s S3764 _IO_FILE 0 ]
+[v stoa@fp fp `*.5S3764  1 a 1 wreg ]
 "864
 [v stoa@nuls nuls `[7]uc  1 a 7 9 ]
 "865
@@ -1939,51 +1939,51 @@ TMR6_CLC4OUT 14
 [v stoa@i i `i  1 a 2 18 ]
 [v stoa@w w `i  1 a 2 16 ]
 "862
-[v stoa@fp fp `*.5S3751  1 a 1 wreg ]
+[v stoa@fp fp `*.5S3764  1 a 1 wreg ]
 [v stoa@s s `*.26uc  1 p 2 5 ]
 "864
 [v stoa@F1180 F1180 `[7]uc  1 s 7 F1180 ]
 "862
-[v stoa@fp fp `*.5S3751  1 a 1 20 ]
+[v stoa@fp fp `*.5S3764  1 a 1 20 ]
 "913
 } 0
 "531
 [v _efgtoa efgtoa `(i  1 s 2 efgtoa ]
 {
-[s S3751 _IO_FILE 0 ]
-[v efgtoa@fp fp `*.5S3751  1 a 1 wreg ]
-[u S3774 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
+[s S3764 _IO_FILE 0 ]
+[v efgtoa@fp fp `*.5S3764  1 a 1 wreg ]
+[u S3787 flui 4 `d 1 f 4 0 `l 1 u 4 0 ]
 "536
-[v efgtoa@u u `S3774  1 a 4 76 ]
-[v efgtoa@g g `S3774  1 a 4 72 ]
+[v efgtoa@u u `S3787  1 a 4 76 ]
+[v efgtoa@g g `S3787  1 a 4 68 ]
 "535
 [v efgtoa@l l `d  1 a 4 61 ]
 [v efgtoa@h h `d  1 a 4 57 ]
 "536
-[v efgtoa@ou ou `S3774  1 a 4 53 ]
+[v efgtoa@ou ou `S3787  1 a 4 53 ]
 "534
-[v efgtoa@n n `i  1 a 2 70 ]
-[v efgtoa@e e `i  1 a 2 68 ]
+[v efgtoa@n n `i  1 a 2 74 ]
+[v efgtoa@e e `i  1 a 2 72 ]
 [v efgtoa@i i `i  1 a 2 66 ]
-[v efgtoa@w w `i  1 a 2 49 ]
+[v efgtoa@w w `i  1 a 2 51 ]
 [v efgtoa@p p `i  1 a 2 47 ]
 [v efgtoa@d d `i  1 a 2 45 ]
 [v efgtoa@m m `i  1 a 2 42 ]
 [v efgtoa@ne ne `i  1 a 2 40 ]
-[v efgtoa@t t `i  1 a 2 36 ]
+[v efgtoa@t t `i  1 a 2 38 ]
 "533
 [v efgtoa@sign sign `uc  1 a 1 65 ]
-[v efgtoa@mode mode `uc  1 a 1 52 ]
-[v efgtoa@nmode nmode `uc  1 a 1 51 ]
-[v efgtoa@esign esign `uc  1 a 1 39 ]
-[v efgtoa@pp pp `uc  1 a 1 38 ]
+[v efgtoa@mode mode `uc  1 a 1 50 ]
+[v efgtoa@nmode nmode `uc  1 a 1 49 ]
+[v efgtoa@esign esign `uc  1 a 1 37 ]
+[v efgtoa@pp pp `uc  1 a 1 36 ]
 "531
-[v efgtoa@fp fp `*.5S3751  1 a 1 wreg ]
+[v efgtoa@fp fp `*.5S3764  1 a 1 wreg ]
 [v efgtoa@f f `d  1 p 4 23 ]
 [v efgtoa@c c `uc  1 p 1 27 ]
 "539
 "531
-[v efgtoa@fp fp `*.5S3751  1 a 1 44 ]
+[v efgtoa@fp fp `*.5S3764  1 a 1 44 ]
 "812
 } 0
 "3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strcpy.c
@@ -2028,9 +2028,9 @@ TMR6_CLC4OUT 14
 "3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\floorf.c
 [v _floorf floorf `(f  1 e 4 0 ]
 {
-[u S3917 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S3930 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "5
-[v floorf@u u `S3917  1 a 4 19 ]
+[v floorf@u u `S3930  1 a 4 19 ]
 "7
 [v floorf@m m `ul  1 a 4 13 ]
 "6
@@ -2038,21 +2038,21 @@ TMR6_CLC4OUT 14
 "3
 [v floorf@x x `f  1 p 4 69 ]
 "4
-[v floorf@F526 F526 `S3917  1 s 4 F526 ]
+[v floorf@F526 F526 `S3930  1 s 4 F526 ]
 "27
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\__fpclassifyf.c
 [v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
 {
-[u S3917 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S3930 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v ___fpclassifyf@u u `S3917  1 a 4 8 ]
+[v ___fpclassifyf@u u `S3930  1 a 4 8 ]
 "7
 [v ___fpclassifyf@e e `i  1 a 2 6 ]
 "4
 [v ___fpclassifyf@x x `f  1 p 4 4 ]
 "5
-[v ___fpclassifyf@F465 F465 `S3917  1 s 4 F465 ]
+[v ___fpclassifyf@F465 F465 `S3930  1 s 4 F465 ]
 "11
 } 0
 "43 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fltol.c
@@ -2095,37 +2095,37 @@ TMR6_CLC4OUT 14
 "470 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
 {
-[s S3751 _IO_FILE 0 ]
-[v dtoa@fp fp `*.5S3751  1 a 1 wreg ]
+[s S3764 _IO_FILE 0 ]
+[v dtoa@fp fp `*.5S3764  1 a 1 wreg ]
 "473
-[v dtoa@i i `i  1 a 2 30 ]
+[v dtoa@i i `i  1 a 2 31 ]
 [v dtoa@w w `i  1 a 2 28 ]
 [v dtoa@p p `i  1 a 2 26 ]
 "472
-[v dtoa@s s `uc  1 a 1 32 ]
+[v dtoa@s s `uc  1 a 1 30 ]
 "470
-[v dtoa@fp fp `*.5S3751  1 a 1 wreg ]
+[v dtoa@fp fp `*.5S3764  1 a 1 wreg ]
 [v dtoa@d d `i  1 p 2 20 ]
 "476
 "470
-[v dtoa@fp fp `*.5S3751  1 a 1 25 ]
+[v dtoa@fp fp `*.5S3764  1 a 1 23 ]
 "527
 } 0
 "152
 [v _pad pad `(i  1 s 2 pad ]
 {
-[s S3751 _IO_FILE 0 ]
-[v pad@fp fp `*.5S3751  1 a 1 wreg ]
+[s S3764 _IO_FILE 0 ]
+[v pad@fp fp `*.5S3764  1 a 1 wreg ]
 "154
 [v pad@w w `i  1 a 2 17 ]
 [v pad@i i `i  1 a 2 15 ]
 "152
-[v pad@fp fp `*.5S3751  1 a 1 wreg ]
+[v pad@fp fp `*.5S3764  1 a 1 wreg ]
 [v pad@buf buf `*.7uc  1 p 1 11 ]
 [v pad@p p `i  1 p 2 12 ]
 "164
 "152
-[v pad@fp fp `*.5S3751  1 a 1 19 ]
+[v pad@fp fp `*.5S3764  1 a 1 19 ]
 "183
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strlen.c
@@ -2142,25 +2142,25 @@ TMR6_CLC4OUT 14
 {
 [v fputs@s s `*.7DCuc  1 a 1 wreg ]
 "11
-[v fputs@i i `i  1 a 2 8 ]
+[v fputs@i i `i  1 a 2 9 ]
 "10
-[v fputs@c c `uc  1 a 1 7 ]
+[v fputs@c c `uc  1 a 1 8 ]
 "8
 [v fputs@s s `*.7DCuc  1 a 1 wreg ]
-[u S3713 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
-[s S3716 _IO_FILE 11 `S3713 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputs@fp fp `*.5S3716  1 p 1 7 ]
+[u S3726 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
+[s S3729 _IO_FILE 11 `S3726 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputs@fp fp `*.5S3729  1 p 1 7 ]
 "13
-[v fputs@s s `*.7DCuc  1 a 1 10 ]
+[v fputs@s s `*.7DCuc  1 a 1 7 ]
 "19
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 4 ]
-[u S3713 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
-[s S3716 _IO_FILE 11 `S3713 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.5S3716  1 p 1 6 ]
+[u S3726 . 2 `*.39uc 1 buffer 2 0 `*.39DCuc 1 source 2 0 ]
+[s S3729 _IO_FILE 11 `S3726 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.5S3729  1 p 1 6 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\putch.c
@@ -2198,23 +2198,23 @@ TMR6_CLC4OUT 14
 [v ___awdiv@dividend dividend `i  1 p 2 6 ]
 "41
 } 0
-"55 C:\Users\zmiller\MPLABXProjects\Third.X\rylr998.c
+"59 C:\Users\zmiller\MPLABXProjects\Third.X\rylr998.c
 [v _rylr998_write rylr998_write `(c  1 e 1 0 ]
 {
 [v rylr998_write@data data `*.5uc  1 a 1 wreg ]
-"63
+"67
 [v rylr998_write@c c `uc  1 a 1 0 ]
-"61
+"65
 [v rylr998_write@i i `uc  1 a 1 6 ]
-"58
+"62
 [v rylr998_write@newline_found newline_found `a  1 a 1 5 ]
-"57
+"61
 [v rylr998_write@carriage_found carriage_found `a  1 a 1 4 ]
-"55
+"59
 [v rylr998_write@data data `*.5uc  1 a 1 wreg ]
-"57
+"61
 [v rylr998_write@data data `*.5uc  1 a 1 3 ]
-"85
+"86
 } 0
 "235 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
 [v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
@@ -2222,57 +2222,83 @@ TMR6_CLC4OUT 14
 [v EUSART1_Write@txData txData `uc  1 p 1 4 ]
 "238
 } 0
-"203
-[v _EUSART1_IsTxDone EUSART1_IsTxDone `(a  1 e 1 0 ]
-{
-"206
-} 0
-"87 C:\Users\zmiller\MPLABXProjects\Third.X\rylr998.c
+"92 C:\Users\zmiller\MPLABXProjects\Third.X\rylr998.c
 [v _rylr998_read rylr998_read `(c  1 e 1 0 ]
 {
-"103
+"104
 [v rylr998_read@byte byte `uc  1 a 1 67 ]
-"101
+"102
 [v rylr998_read@i i `uc  1 a 1 66 ]
-"100
+"101
 [v rylr998_read@data data `[60]uc  1 a 60 1 ]
-"98
+"99
 [v rylr998_read@newline_found newline_found `a  1 a 1 65 ]
-"97
+"98
 [v rylr998_read@carriage_found carriage_found `a  1 a 1 64 ]
-"124
+"122
 [v rylr998_read@success success `a  1 a 1 61 ]
-"131
+"129
 } 0
-"40 C:\Users\zmiller\MPLABXProjects\Third.X\timeout.c
+"19 C:\Users\zmiller\MPLABXProjects\Third.X\timeout.c
+[v _timeout_wait timeout_wait `(a  1 e 1 0 ]
+{
+[v timeout_wait@StatusHandler StatusHandler `*.37(a  1 p 2 5 ]
+"24
+} 0
+"45
 [v _timeout_timed_out timeout_timed_out `(a  1 e 1 0 ]
 {
-"42
+"47
 } 0
-"29
+"35
 [v _timeout_stop timeout_stop `(v  1 e 1 0 ]
 {
-"31
+"37
 } 0
 "100 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/timer/src/tmr6.c
 [v _TMR6_Stop TMR6_Stop `(v  1 e 1 0 ]
 {
 "104
 } 0
-"24 C:\Users\zmiller\MPLABXProjects\Third.X\timeout.c
+"30 C:\Users\zmiller\MPLABXProjects\Third.X\timeout.c
 [v _timeout_start timeout_start `(v  1 e 1 0 ]
 {
-"27
-} 0
 "33
+} 0
+"39
 [v _timeot_reset timeot_reset `(v  1 e 1 0 ]
 {
-"38
+"43
 } 0
 "94 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/timer/src/tmr6.c
 [v _TMR6_Start TMR6_Start `(v  1 e 1 0 ]
 {
 "98
+} 0
+"88 C:\Users\zmiller\MPLABXProjects\Third.X\rylr998.c
+[v _rylr998_rx_busy rylr998_rx_busy `(a  1 e 1 0 ]
+{
+"90
+} 0
+"206 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/i2c_host/src/mssp2.c
+[v _I2C2_IsBusy I2C2_IsBusy `(a  1 e 1 0 ]
+{
+"209
+} 0
+"55 C:\Users\zmiller\MPLABXProjects\Third.X\rylr998.c
+[v _rylr998_tx_busy rylr998_tx_busy `(a  1 e 1 0 ]
+{
+"57
+} 0
+"203 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
+[v _EUSART1_IsTxDone EUSART1_IsTxDone `(a  1 e 1 0 ]
+{
+"206
+} 0
+"193
+[v _EUSART1_IsRxReady EUSART1_IsRxReady `(a  1 e 1 0 ]
+{
+"196
 } 0
 "3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strcmp.c
 [v _strcmp strcmp `(i  1 e 2 0 ]
@@ -2296,25 +2322,20 @@ TMR6_CLC4OUT 14
 {
 "243
 } 0
-"193
-[v _EUSART1_IsRxReady EUSART1_IsRxReady `(a  1 e 1 0 ]
-{
-"196
-} 0
 "12 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\roundf.c
 [v _roundf roundf `(f  1 e 4 0 ]
 {
 "16
 [v roundf@y y `f  1 a 4 35 ]
-[u S3917 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S3930 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "14
-[v roundf@u u `S3917  1 a 4 31 ]
+[v roundf@u u `S3930  1 a 4 31 ]
 "15
 [v roundf@e e `i  1 a 2 25 ]
 "12
 [v roundf@x x `f  1 p 4 13 ]
 "13
-[v roundf@F527 F527 `S3917  1 s 4 F527 ]
+[v roundf@F527 F527 `S3930  1 s 4 F527 ]
 "36
 } 0
 "242 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcadd.c
@@ -2349,21 +2370,21 @@ TMR6_CLC4OUT 14
 "8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S3566 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S3579 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S3571 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S3574 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3566 1 fAsBytes 4 0 `S3571 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S3574  1 a 4 30 ]
+[s S3584 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S3587 . 4 `l 1 i 4 0 `d 1 f 4 0 `S3579 1 fAsBytes 4 0 `S3584 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S3587  1 a 4 30 ]
 "12
-[v ___flmul@grs grs `ul  1 a 4 24 ]
-[s S3643 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[v ___flmul@grs grs `ul  1 a 4 25 ]
+[s S3656 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S3646 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S3643 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S3646  1 a 2 34 ]
+[u S3659 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S3656 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S3659  1 a 2 34 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 29 ]
 "11
-[v ___flmul@aexp aexp `uc  1 a 1 28 ]
+[v ___flmul@aexp aexp `uc  1 a 1 24 ]
 "9
 [v ___flmul@sign sign `uc  1 a 1 23 ]
 "8
@@ -2397,10 +2418,10 @@ TMR6_CLC4OUT 14
 {
 "31
 } 0
-"20 C:\Users\zmiller\MPLABXProjects\Third.X\timeout.c
+"26 C:\Users\zmiller\MPLABXProjects\Third.X\timeout.c
 [v _timeout_init timeout_init `(v  1 e 1 0 ]
 {
-"22
+"28
 } 0
 "136 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/uart/src/eusart1.c
 [v _EUSART1_TransmitEnable EUSART1_TransmitEnable `T(v  1 e 1 0 ]
@@ -2545,15 +2566,20 @@ TMR6_CLC4OUT 14
 {
 "144
 } 0
-"44 C:\Users\zmiller\MPLABXProjects\Third.X\timeout.c
+"49 C:\Users\zmiller\MPLABXProjects\Third.X\timeout.c
 [v _timer_increment timer_increment `(v  1 e 1 0 ]
 {
-"50
+"54
 } 0
-"29
+"45
+[v i1_timeout_timed_out timeout_timed_out `(a  1 e 1 0 ]
+{
+"47
+} 0
+"35
 [v i1_timeout_stop timeout_stop `(v  1 e 1 0 ]
 {
-"31
+"37
 } 0
 "100 C:\Users\zmiller\MPLABXProjects\Third.X\mcc_generated_files/timer/src/tmr6.c
 [v i1_TMR6_Stop TMR6_Stop `(v  1 e 1 0 ]

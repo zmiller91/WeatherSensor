@@ -35,17 +35,19 @@
 #include <stdbool.h>
 #include <xc.h> // include processor files - each processor file is guarded.  
 
-void timeout_init();
+void timeout_init(void);
 
-void timeout_start();
+void timeout_start(void);
 
-void timeout_stop();
+void timeout_stop(void);
 
-void timeot_reset();
+void timeot_reset(void);
 
-bool timeout_timed_out();
+bool timeout_timed_out(void);
 
-void timer_increment();
+void timer_increment(void);
+
+bool timeout_wait(bool (* StatusHandler)(void));
 
 #endif	/* XC_TIMEOUT_H */
 

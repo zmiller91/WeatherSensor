@@ -14394,8 +14394,8 @@ int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *
 
 
 
-void weather_init();
-struct bme280_dev weather_dev();
+void weather_init(void);
+struct bme280_dev weather_dev(void);
 int8_t weather_read(struct bme280_dev *dev, struct bme280_data *data);
 _Bool weather_is_measurement_done(struct bme280_dev *dev);
 # 43 "./weather.h"
@@ -14438,25 +14438,29 @@ int8_t bme280_cal_meas_delay(uint32_t *max_delay, const struct bme280_settings *
 
 # 1 "./rylr998.h" 1
 # 37 "./rylr998.h"
-void rylr998_init();
+void rylr998_init(void);
 int8_t rylr998_send(uint8_t address, char serial[], char tag[], double metric);
 int8_t rylr998_write(char data[]);
-int8_t rylr998_read();
+int8_t rylr998_read(void);
+_Bool rylr998_tx_busy(void);
+_Bool rylr998_rx_busy(void);
 # 42 "main.c" 2
 
 # 1 "./timeout.h" 1
 # 38 "./timeout.h"
-void timeout_init();
+void timeout_init(void);
 
-void timeout_start();
+void timeout_start(void);
 
-void timeout_stop();
+void timeout_stop(void);
 
-void timeot_reset();
+void timeot_reset(void);
 
-_Bool timeout_timed_out();
+_Bool timeout_timed_out(void);
 
-void timer_increment();
+void timer_increment(void);
+
+_Bool timeout_wait(_Bool (* StatusHandler)(void));
 # 43 "main.c" 2
 # 67 "main.c"
 void write_eeprom(uint16_t address, char *data, uint8_t size) {
@@ -14504,7 +14508,7 @@ int main(void){
         struct bme280_dev dev = weather_dev();
         int8_t response_code = weather_read(&dev, &weather);
         if(response_code > 0) {
-            rylr998_send(32, &serial_number, "TEMPERATURE", weather.temperature);
+            rylr998_send(32, serial_number, "TEMPERATURE", weather.temperature);
             _delay((unsigned long)((1000)*(32000000/4000.0)));
 
             rylr998_send(32, serial_number, "HUMIDITY", weather.humidity);

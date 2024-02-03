@@ -29,7 +29,7 @@ static uint8_t dev_addr;
 
 
 
-void weather_init() {
+void weather_init(void) {
     IO_SCL_SetDigitalMode();
     IO_SCL_SetPullup();
     IO_SDA_SetDigitalMode();
@@ -37,7 +37,7 @@ void weather_init() {
     timeout_init();
 }
 
-struct bme280_dev weather_dev() { 
+struct bme280_dev weather_dev(void) { 
     
     int8_t rslt;
     struct bme280_dev dev;
@@ -136,10 +136,7 @@ BME280_INTF_RET_TYPE bme280_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32
         return BME280_E_COMM_FAIL;
     }
     
-    timeout_start();
-    while(I2C2_IsBusy() && !timeout_timed_out());
-    timeout_stop();
-    if(timeout_timed_out()) {
+    if(!timeout_wait(I2C2_IsBusy)) {
         return BME280_E_COMM_FAIL;
     }
     
@@ -158,14 +155,11 @@ BME280_INTF_RET_TYPE bme280_i2c_write(uint8_t reg_addr, const uint8_t *reg_data,
     }
     
     // TODO: Do something with this error
-    if(!I2C2_Write(dev_addr, &buf, length + 1)) {
+    if(!I2C2_Write(dev_addr, buf, length + 1)) {
         return BME280_E_COMM_FAIL;
     }
     
-    timeout_start();
-    while(I2C2_IsBusy() && !timeout_timed_out());
-    timeout_stop();
-    if(timeout_timed_out()) {
+    if(!timeout_wait(I2C2_IsBusy)) {
         return BME280_E_COMM_FAIL;
     }
     

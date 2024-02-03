@@ -34,10 +34,12 @@
 #define RYLR998_TIMEOUT                                 INT8_C(-98)
 #define RYLR998_UNLISTED_FAILURE                        INT8_C(-99)
 
-void rylr998_init();
+void rylr998_init(void);
 int8_t rylr998_send(uint8_t address, char serial[], char tag[], double metric);
 int8_t rylr998_write(char data[]);
-int8_t rylr998_read();
+int8_t rylr998_read(void);
+bool rylr998_tx_busy(void);
+bool rylr998_rx_busy(void);
 
 
 #endif	/* XC_HEADER_TEMPLATE_H */

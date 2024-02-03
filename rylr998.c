@@ -18,7 +18,7 @@
 #include "rylr998.h"
 #include "timeout.h"
 
-void rylr998_init() {
+void rylr998_init(void) {
     
     // Set the TX and RX pins and input and output
     UART_RX_SetDigitalInput();
@@ -44,12 +44,16 @@ int8_t rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
     char buffer[60] = {0};
     sprintf(buffer, "AT+SEND=%i,%i,%s::%s::%s\r\n", address, payload_size, serial, tag, data);
     
-    int8_t response_code = rylr998_write(&buffer);
+    int8_t response_code = rylr998_write(buffer);
     if(response_code < 0) {
         return response_code;
     }
     
     return rylr998_read();
+}
+
+bool rylr998_tx_busy(void) {
+    return !EUSART1_IsTxDone();
 }
 
 int8_t rylr998_write(char *data) {
@@ -63,10 +67,7 @@ int8_t rylr998_write(char *data) {
         char c = data[i];
         EUSART1_Write(c);
         
-        timeout_start();
-        while(!EUSART1_IsTxDone() && !timeout_timed_out());
-        timeout_stop();
-        if(timeout_timed_out()) {
+        if(!timeout_wait(rylr998_tx_busy)) {
             return RYLR998_TIMEOUT;
         }
         
@@ -84,13 +85,13 @@ int8_t rylr998_write(char *data) {
     return RYLR998_OK;
 }
 
-int8_t rylr998_read() {
+bool rylr998_rx_busy(void) {
+    return !EUSART1_IsRxReady();
+}
+
+int8_t rylr998_read(void) {
     
-    //TODO: Add a timer here so this doesn't perpetually poll
-    timeout_start();
-    while(!EUSART1_IsRxReady() && !timeout_timed_out());
-    timeout_stop();
-    if(timeout_timed_out()) {
+    if(!timeout_wait(rylr998_rx_busy)) {
         return RYLR998_TIMEOUT;
     }
     
@@ -112,10 +113,7 @@ int8_t rylr998_read() {
             break;
         }
         
-        timeout_start();
-        while(!EUSART1_IsRxReady() && !timeout_timed_out());
-        timeout_stop();
-        if(timeout_timed_out()) {
+        if(!timeout_wait(rylr998_rx_busy)) {
             return RYLR998_TIMEOUT;
         }
         

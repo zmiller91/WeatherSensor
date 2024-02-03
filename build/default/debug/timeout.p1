@@ -1,15 +1,25 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F7819 `(v ~T0 @X0 0 tf ]
+[v F7829 `(a ~T0 @X0 0 tf ]
+[v F7831 `(a ~T0 @X0 0 tf ]
+"40 ./timeout.h
+[; ;./timeout.h: 40: void timeout_start(void);
+[v _timeout_start `(v ~T0 @X0 0 ef ]
+"46
+[; ;./timeout.h: 46: _Bool timeout_timed_out(void);
+[v _timeout_timed_out `(a ~T0 @X0 0 ef ]
+"42
+[; ;./timeout.h: 42: void timeout_stop(void);
+[v _timeout_stop `(v ~T0 @X0 0 ef ]
+[v F7823 `(v ~T0 @X0 0 tf ]
 "390 ./mcc_generated_files/timer/tmr6.h
 [; ;./mcc_generated_files/timer/tmr6.h: 390: void TMR6_OverflowCallbackRegister(void (* InterruptHandler)(void));
-[v _TMR6_OverflowCallbackRegister `(v ~T0 @X0 0 ef1`*F7819 ]
+[v _TMR6_OverflowCallbackRegister `(v ~T0 @X0 0 ef1`*F7823 ]
 "48 ./timeout.h
-[; ;./timeout.h: 48: void timer_increment();
-[v _timer_increment `(v ~T0 @X0 0 e? ]
-[v F7826 `(v ~T0 @X0 0 tf ]
+[; ;./timeout.h: 48: void timer_increment(void);
+[v _timer_increment `(v ~T0 @X0 0 ef ]
 "44
-[; ;./timeout.h: 44: void timeot_reset();
-[v _timeot_reset `(v ~T0 @X0 0 e? ]
+[; ;./timeout.h: 44: void timeot_reset(void);
+[v _timeot_reset `(v ~T0 @X0 0 ef ]
 "338 ./mcc_generated_files/timer/tmr6.h
 [; ;./mcc_generated_files/timer/tmr6.h: 338: void TMR6_Start(void);
 [v _TMR6_Start `(v ~T0 @X0 0 ef ]
@@ -1182,111 +1192,127 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _OVERFLOW_COUNT
 -> -> 0 `i `uc
 ]
-"18
-[; ;timeout.c: 18: _Bool TIMED_OUT = 1;
-[v _TIMED_OUT `a ~T0 @X0 1 e ]
-[i _TIMED_OUT
--> -> 1 `i `a
-]
+"19
+[; ;timeout.c: 19: _Bool timeout_wait(_Bool (* StatusHandler)(void)) {
+[v _timeout_wait `(a ~T0 @X0 1 ef1`*F7829 ]
+{
+[e :U _timeout_wait ]
+[v _StatusHandler `*F7831 ~T0 @X0 1 r1 ]
+[f ]
 "20
-[; ;timeout.c: 20: void timeout_init(){
+[; ;timeout.c: 20:     timeout_start();
+[e ( _timeout_start ..  ]
+"21
+[; ;timeout.c: 21:     while(StatusHandler() && !timeout_timed_out());
+[e $U 1082  ]
+[e :U 1083 ]
+[e :U 1082 ]
+[e $ && != -> ( *U _StatusHandler ..  `i -> 0 `i ! != -> ( _timeout_timed_out ..  `i -> 0 `i 1083  ]
+[e :U 1084 ]
+"22
+[; ;timeout.c: 22:     timeout_stop();
+[e ( _timeout_stop ..  ]
+"23
+[; ;timeout.c: 23:     return !timeout_timed_out();
+[e ) -> -> ! != -> ( _timeout_timed_out ..  `i -> 0 `i `i `a ]
+[e $UE 1081  ]
+"24
+[; ;timeout.c: 24: }
+[e :UE 1081 ]
+}
+"26
+[; ;timeout.c: 26: void timeout_init(void){
 [v _timeout_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _timeout_init ]
 [f ]
-"21
-[; ;timeout.c: 21:     TMR6_OverflowCallbackRegister(timer_increment);
-[e ( _TMR6_OverflowCallbackRegister (1 -> &U _timer_increment `*F7826 ]
-"22
-[; ;timeout.c: 22: }
-[e :UE 1081 ]
+"27
+[; ;timeout.c: 27:     TMR6_OverflowCallbackRegister(timer_increment);
+[e ( _TMR6_OverflowCallbackRegister (1 &U _timer_increment ]
+"28
+[; ;timeout.c: 28: }
+[e :UE 1085 ]
 }
-"24
-[; ;timeout.c: 24: void timeout_start(){
+"30
+[; ;timeout.c: 30: void timeout_start(void){
 [v _timeout_start `(v ~T0 @X0 1 ef ]
 {
 [e :U _timeout_start ]
 [f ]
-"25
-[; ;timeout.c: 25:     timeot_reset();
+"31
+[; ;timeout.c: 31:     timeot_reset();
 [e ( _timeot_reset ..  ]
-"26
-[; ;timeout.c: 26:     TMR6_Start();
+"32
+[; ;timeout.c: 32:     TMR6_Start();
 [e ( _TMR6_Start ..  ]
-"27
-[; ;timeout.c: 27: }
-[e :UE 1082 ]
+"33
+[; ;timeout.c: 33: }
+[e :UE 1086 ]
 }
-"29
-[; ;timeout.c: 29: void timeout_stop() {
+"35
+[; ;timeout.c: 35: void timeout_stop(void) {
 [v _timeout_stop `(v ~T0 @X0 1 ef ]
 {
 [e :U _timeout_stop ]
 [f ]
-"30
-[; ;timeout.c: 30:     TMR6_Stop();
+"36
+[; ;timeout.c: 36:     TMR6_Stop();
 [e ( _TMR6_Stop ..  ]
-"31
-[; ;timeout.c: 31: }
-[e :UE 1083 ]
+"37
+[; ;timeout.c: 37: }
+[e :UE 1087 ]
 }
-"33
-[; ;timeout.c: 33: void timeot_reset() {
+"39
+[; ;timeout.c: 39: void timeot_reset(void) {
 [v _timeot_reset `(v ~T0 @X0 1 ef ]
 {
 [e :U _timeot_reset ]
 [f ]
-"35
-[; ;timeout.c: 35:     PIR2bits.TMR6IF = 0;
+"41
+[; ;timeout.c: 41:     PIR2bits.TMR6IF = 0;
 [e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
-"36
-[; ;timeout.c: 36:     OVERFLOW_COUNT = 0;
+"42
+[; ;timeout.c: 42:     OVERFLOW_COUNT = 0;
 [e = _OVERFLOW_COUNT -> -> 0 `i `uc ]
-"37
-[; ;timeout.c: 37:     TIMED_OUT = 0;
-[e = _TIMED_OUT -> -> 0 `i `a ]
-"38
-[; ;timeout.c: 38: }
-[e :UE 1084 ]
+"43
+[; ;timeout.c: 43: }
+[e :UE 1088 ]
 }
-"40
-[; ;timeout.c: 40: _Bool timeout_timed_out() {
+"45
+[; ;timeout.c: 45: _Bool timeout_timed_out(void) {
 [v _timeout_timed_out `(a ~T0 @X0 1 ef ]
 {
 [e :U _timeout_timed_out ]
 [f ]
-"41
-[; ;timeout.c: 41:     return TIMED_OUT;
-[e ) _TIMED_OUT ]
-[e $UE 1085  ]
-"42
-[; ;timeout.c: 42: }
-[e :UE 1085 ]
+"46
+[; ;timeout.c: 46:     return OVERFLOW_COUNT >= MAX_OVERFLOWS;
+[e ) -> -> >= -> _OVERFLOW_COUNT `i -> _MAX_OVERFLOWS `i `i `a ]
+[e $UE 1089  ]
+"47
+[; ;timeout.c: 47: }
+[e :UE 1089 ]
 }
-"44
-[; ;timeout.c: 44: void timer_increment() {
+"49
+[; ;timeout.c: 49: void timer_increment(void) {
 [v _timer_increment `(v ~T0 @X0 1 ef ]
 {
 [e :U _timer_increment ]
 [f ]
-"45
-[; ;timeout.c: 45:     OVERFLOW_COUNT++;
-[e ++ _OVERFLOW_COUNT -> -> 1 `i `uc ]
-"46
-[; ;timeout.c: 46:     TIMED_OUT = OVERFLOW_COUNT >= MAX_OVERFLOWS;
-[e = _TIMED_OUT -> -> >= -> _OVERFLOW_COUNT `i -> _MAX_OVERFLOWS `i `i `a ]
-"47
-[; ;timeout.c: 47:     if(TIMED_OUT) {
-[e $ ! != -> _TIMED_OUT `i -> 0 `i 1087  ]
-{
-"48
-[; ;timeout.c: 48:         timeout_stop();
-[e ( _timeout_stop ..  ]
-"49
-[; ;timeout.c: 49:     }
-}
-[e :U 1087 ]
 "50
-[; ;timeout.c: 50: }
-[e :UE 1086 ]
+[; ;timeout.c: 50:     OVERFLOW_COUNT++;
+[e ++ _OVERFLOW_COUNT -> -> 1 `i `uc ]
+"51
+[; ;timeout.c: 51:     if(timeout_timed_out()) {
+[e $ ! != -> ( _timeout_timed_out ..  `i -> 0 `i 1091  ]
+{
+"52
+[; ;timeout.c: 52:         timeout_stop();
+[e ( _timeout_stop ..  ]
+"53
+[; ;timeout.c: 53:     }
+}
+[e :U 1091 ]
+"54
+[; ;timeout.c: 54: }
+[e :UE 1090 ]
 }
