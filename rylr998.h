@@ -40,6 +40,7 @@ int8_t rylr998_write(char data[]);
 int8_t rylr998_read(void);
 bool rylr998_tx_busy(void);
 bool rylr998_rx_busy(void);
+int8_t rylr998_send_flat(uint8_t address, char serial[], double metrics[], uint8_t size);
 
 
 #endif	/* XC_HEADER_TEMPLATE_H */

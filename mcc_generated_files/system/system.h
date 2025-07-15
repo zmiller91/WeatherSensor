@@ -11,7 +11,7 @@
 */
 
 /*
-© [2024] Microchip Technology Inc. and its subsidiaries.
+© [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -40,11 +40,13 @@
 #include "config_bits.h"
 #include "../system/clock.h"
 #include "../system/pins.h"
+#include "../adcc/adcc.h"
 #include "../uart/eusart1.h"
+#include "../fvr/fvr.h"
 #include "../i2c_host/mssp2.h"
 #include "../nvm/nvm.h"
+#include "../timer/tmr1.h"
 #include "../timer/tmr6.h"
-#include "../system/watchdog.h"
 #include "../system/interrupt.h"
 
 /**

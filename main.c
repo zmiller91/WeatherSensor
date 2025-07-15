@@ -42,7 +42,7 @@
 #include "rylr998.h"
 #include "timeout.h"
 
-
+volatile uint16_t overflowCount = 0;
 
 /**
  * To get this program to work you have to:
@@ -67,7 +67,7 @@
 void write_eeprom(uint16_t address, char *data, uint8_t size) {
     
     NVM_UnlockKeySet(0xaa55);
-    for(uint8_t i = 0; i < size; i++) {   
+    for(uint8_t i = 0; i < size; i++) {  
         while(NVM_IsBusy());
         EEPROM_Write(address + i, data[i]);
     }
@@ -82,11 +82,40 @@ void read_eeprom(uint16_t address, char data[], uint8_t size) {
     }
 }
 
-int main(void){
+void MyTimer1Handler(void){
+    overflowCount++;
+}
+
+void low_power_mode(void){
+
+    // Turn the devices off so they don't draw any current.
+    DEV_PWR_SetLow();
     
+    ADCON0bits.ADON = 0;     // Disable ADC
+    FVRCONbits.FVREN = 0;     // Disable FVR
+    T6CONbits.TMR6ON = 0;     // Disable Timer6
+
+    // Turn the timer 1 on for a handful of SLEEP cycles and then
+    // turn the timer off so the process can be restarted.
+    TMR1_Start();
+    overflowCount = 0;
+    while (overflowCount < 114) {
+        SLEEP();  // Wait for interrupt
+        NOP();
+    }
+
+    TMR1_Stop();
+    FVRCONbits.FVREN = 1;
+    ADCON0bits.ADON = 1;
+    T6CONbits.TMR6ON = 1;
+}
+
+int main(void){
+
     SYSTEM_Initialize();
     INTERRUPT_GlobalInterruptEnable();
     INTERRUPT_PeripheralInterruptEnable();
+    TMR1_OverflowCallbackRegister(MyTimer1Handler); 
     
     // Retrieve the serial number from EEPROM. We are writing to it first because
     // MPLAB will reset the EEPROM memory when it flashes the chip. There is
@@ -94,10 +123,13 @@ int main(void){
     char serial_number[9] = {0};
     write_eeprom(0xF000, "ABCDEFGH", 8);
     read_eeprom(0xF000, serial_number, 8);
-    serial_number[8] = '\0'; // needs to be null terminated
-      
-    while(1) {
+    serial_number[8] = '\0'; // needs to be null terminated  
     
+    IO_RC4_SetDigitalInput();
+    IO_RC4_SetAnalogMode();   
+    
+    while(1) { 
+
         rylr998_init();
         weather_init();
         
@@ -108,28 +140,34 @@ int main(void){
         struct bme280_data weather;
         struct bme280_dev dev = weather_dev();
         int8_t response_code = weather_read(&dev, &weather);
+            
+        // Rylr needs a minimum of 2.5v
+        adc_result_t result = ADCC_GetSingleConversion(channel_ANC4);
+        
+        float max_bat_voltage = 3.0f; // Full battery voltage
+        float min_bat_voltage = 2.5f; // Minimum voltage needed for all components to work
+        float allowable_voltage_drop = max_bat_voltage - min_bat_voltage;
+        float adc_voltage = result / 1023.0f * 1.024f;
+        float battery_voltage = adc_voltage / 0.266f;
+        float bat_pct = (battery_voltage - min_bat_voltage) / allowable_voltage_drop * 100.0f;
+        
+        if (bat_pct > 100.0f) bat_pct = 100.0f;
+        if (bat_pct < 0.0f)   bat_pct = 0.0f;
+        
         if(response_code > 0) {
-            rylr998_send(32, serial_number, "TEMPERATURE", weather.temperature);
-            __delay_ms(1000);
-
-            rylr998_send(32, serial_number, "HUMIDITY", weather.humidity);
-            __delay_ms(1000);
-
-            rylr998_send(32, serial_number, "PRESSURE", weather.pressure);
-            __delay_ms(1000);
+            
+            double payload[4] = {
+                weather.temperature, 
+                weather.humidity, 
+                weather.pressure,
+                bat_pct};
+            
+            rylr998_send_flat(32, serial_number, payload, 4);
         }
         
-        // Turn the devices off so they don't draw any current.
-        DEV_PWR_SetLow();
-        
-        // Turn the watchdog timer on for a handful of SLEEP cycles and then
-        // turn the timer off so the process can be restarted.
-        //WDTSEN ON; WDTPS 1:262144; WDTCS LFINTOSC (31 kHz); 
-        WDTCON = 0x1B;
-        for(uint8_t i = 0; i < 114; i++) {
-            SLEEP();
-        }
-        WDTCON = 0x1A;
-        
+        low_power_mode();
+
     }    
 }
+
+

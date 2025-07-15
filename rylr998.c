@@ -52,6 +52,34 @@ int8_t rylr998_send(uint8_t address, char serial[], char tag[], double metric) {
     return rylr998_read();
 }
 
+int8_t rylr998_send_flat(uint8_t address, char serial[], double metrics[], uint8_t size) {
+    
+    char metricResult[60] = {0};
+    for(uint8_t idx = 0; idx < size; idx++) {
+        // There shouldn't be more than 10 characters in the metric, including
+        // decimals and negative signs.
+        char data[10];
+        float rounded = roundf(metrics[idx] * 100) / 100;
+        sprintf(data, "%g", rounded);
+        
+        char metricBuffer[60] = {0};
+        sprintf(metricResult, "%s::%s", metricResult, data);
+    }
+       
+    // Calculate the payload size, since any null values won't be written
+    // to the final buffer.
+    int payload_size = snprintf(NULL, 0, "%s%s", serial, metricResult);
+    char buffer[60] = {0};
+    sprintf(buffer, "AT+SEND=%i,%i,%s%s\r\n", address, payload_size, serial, metricResult);
+    printf(buffer);
+    int8_t response_code = rylr998_write(buffer);
+    if(response_code < 0) {
+        return response_code;
+    }
+    
+    return rylr998_read();
+}
+
 bool rylr998_tx_busy(void) {
     return !EUSART1_IsTxDone();
 }
